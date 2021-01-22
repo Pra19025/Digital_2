@@ -2641,7 +2641,7 @@ extern __bank0 __bit __timeout;
 
 
 
-#pragma config FOSC = XT
+#pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
 #pragma config MCLRE = OFF
@@ -2660,16 +2660,12 @@ extern __bank0 __bit __timeout;
 
 
 
-int variable;
-
-
-
-
-
-
-void Setup (void);
-void delay (char n);
-
+int bandera;
+int j1;
+int j2;
+# 48 "main.c"
+void Setup(void);
+void semaforo(void);
 
 
 
@@ -2678,49 +2674,76 @@ void delay (char n);
 
 void main(void) {
     Setup();
-    variable = 0;
+    bandera = 0;
 
 
 
 
 
+    while (1) {
 
+        if (PORTCbits.RC0 == 1) {
+            _delay((unsigned long)((15)*(4000000/4000.0)));
+            if (PORTCbits.RC0 == 0) {
+                PORTCbits.RC3 = 0;
+                PORTCbits.RC4 = 0;
+                j1 = 0;
+                j2 = 0;
+                semaforo();
 
-    while(1){
-
-        if(PORTCbits.RC0 == 1){
-
-            PORTCbits.RC5 = 1;
-            delay(15);
-            PORTCbits.RC5 = 0;
-            PORTCbits.RC6 = 1;
-            delay(15);
-            PORTCbits.RC6 = 0;
-            PORTCbits.RC7 = 1;
-            delay(15);
-            PORTCbits.RC7 = 0;
-
+                bandera = 1;
+            }
         }
 
-        if(PORTCbits.RC1 == 1){
-            delay(5);
-            if(PORTCbits.RC1 == 0){
-                PORTA++;
+        if (bandera == 1) {
+
+            if (PORTCbits.RC1 == 1) {
+                _delay((unsigned long)((15)*(4000000/4000.0)));
+                if (PORTCbits.RC1 == 0) {
+                    j1++;
+                    if (PORTA == 0) {
+                        PORTA++;
+                    } else {
+                        PORTA = (PORTA << 1);
+                    }
+                }
+            }
+
+            if (j1 == 8) {
+                PORTCbits.RC3 = 1;
+            }
+
+            if (PORTCbits.RC2 == 1) {
+                _delay((unsigned long)((15)*(4000000/4000.0)));
+                if (PORTCbits.RC2 == 0) {
+                    j2++;
+                    if (PORTB == 0) {
+                        PORTB++;
+
+                    } else {
+                        PORTB = (PORTB << 1);
+                    }
+                }
             }
 
 
+            if (j2 == 8) {
+                PORTCbits.RC4 = 1;
+            }
+
+            if (j1 == 8 | j2 == 8) {
+
+                bandera = 0;
+                PORTA = 0;
+                PORTB = 0;
+            }
+
+
+
         }
-
-
-
-
     }
-
-
     return;
 }
-
-
 
 
 
@@ -2728,6 +2751,7 @@ void main(void) {
 void Setup(void) {
     PORTA = 0;
     PORTB = 0;
+    PORTC = 0;
     PORTCbits.RC0 = 1;
     PORTCbits.RC1 = 1;
     PORTCbits.RC2 = 1;
@@ -2740,19 +2764,27 @@ void Setup(void) {
     ANSELH = 0;
     TRISB = 0;
     TRISA = 0;
+    TRISCbits.TRISC3 = 0;
+    TRISCbits.TRISC4 = 0;
     TRISCbits.TRISC5 = 0;
     TRISCbits.TRISC6 = 0;
     TRISCbits.TRISC7 = 0;
 
-    TRISB= 0;
+    TRISB = 0;
 
 }
 
+void semaforo(void) {
 
-void delay (char n){
-    for (int i = 0; i<n; i++){
-        for (int j = 0; j<255; j++) {
 
-    }
-    }
+    PORTCbits.RC5 = 1;
+    _delay((unsigned long)((250)*(4000000/4000.0)));
+    PORTCbits.RC5 = 0;
+    PORTCbits.RC6 = 1;
+    _delay((unsigned long)((250)*(4000000/4000.0)));
+    PORTCbits.RC6 = 0;
+    PORTCbits.RC7 = 1;
+    _delay((unsigned long)((250)*(4000000/4000.0)));
+    PORTCbits.RC7 = 0;
+
 }
