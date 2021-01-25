@@ -28,8 +28,8 @@
 //**********************************************************************************************************************************************
 // Variables 
 //**********************************************************************************************************************************************
-int bandera;
-int j1;
+int bandera;    //para verificar que el boton de inicio de carrera ha sido presionado
+int j1; //contadores para cuantas veces han apachado los jugadores los botones
 int j2;
 #define LEDR PORTCbits.RC5
 #define LEDA PORTCbits.RC6
@@ -64,37 +64,37 @@ void main(void) {
     while (1) {
 
         if (b0 == 1) {
-            __delay_ms(15);
+            __delay_ms(15); // antirebote para el botón, se implementa de igual manera para los otros 2
             if (b0 == 0) {
-                PORTCbits.RC3 = 0;
+                PORTCbits.RC3 = 0;  //se colocan en 0 los leds que indican el ganador
                 PORTCbits.RC4 = 0;
-                j1 = 0;
+                j1 = 0;                         //se colocan en 0 los contadores cada vez que se presiona el inicio de carrera
                 j2 = 0;
                 semaforo();
 
-                bandera = 1;
+                bandera = 1;    //se prende la bandera despues de ejecutar la secuencia del semaforo
             }
         }
 
-        if (bandera == 1) {
+        if (bandera == 1) { //si la bandera esta prendida se pueden presionar los botones
 
             if (b1 == 1) {
-                __delay_ms(15);
+                __delay_ms(15); 
                 if (b1 == 0) {
-                    j1++;
+                    j1++;   //cada vez que el jugador presiona en botón se incrementa esta variable. 
                     if (PORTA == 0) {
                         PORTA++;
                     } else {
-                        PORTA = (PORTA << 1);
+                        PORTA = (PORTA << 1); //se utiliza el rotate to right para hacer el contador de decadas
                     }
                 }
             }
 
-            if (j1 == 8) {
+            if (j1 == 8) { //si el jugador llega a 8, ha ganado, se prende el led que lo indica
                 PORTCbits.RC3 = 1;
             }
 
-            if (b2 == 1) {
+            if (b2 == 1) { //funciona de igual manera que el otro boton
                 __delay_ms(15);
                 if (b2 == 0) {
                     j2++;
@@ -112,7 +112,7 @@ void main(void) {
                 PORTCbits.RC4 = 1;
             }
 
-            if (j1 == 8 | j2 == 8) {
+            if (j1 == 8 | j2 == 8) {    //si alguno de los jugadores llega a 8, se prende la bandera, y se limpian los puertos
 
                 bandera = 0;
                 PORTA = 0;
@@ -129,7 +129,7 @@ void main(void) {
 // Funciones
 //**********************************************************************************************************************************************
 
-void Setup(void) {
+void Setup(void) { //configuracion 
     PORTA = 0;
     PORTB = 0;
     PORTC = 0;
@@ -155,12 +155,12 @@ void Setup(void) {
 
 }
 
-void semaforo(void) {
+void semaforo(void) { 
 
     //rutina que simula el semaforo
     LEDR = 1;
-    __delay_ms(250);
-    LEDR = 0;
+    __delay_ms(250);// se prenden los leds del semaforo con un delay entre si
+    LEDR = 0;//el delay se hace mas corto que lo que deberia ser debido a que proteus tarda mas en procesarlo
     LEDA = 1;
     __delay_ms(250);
     LEDA = 0;
