@@ -3,6 +3,10 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
+"13 C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\ADC.c
+[v _canalADC canalADC `(v  1 e 1 0 ]
+"140
+[v _configADC configADC `(v  1 e 1 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
@@ -11,35 +15,57 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"47 C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\main.c
+"50 C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\main.c
 [v _ISR ISR `II(v  1 e 1 0 ]
-"62
+"68
 [v _main main `(v  1 e 1 0 ]
+"105
+[v _Setup Setup `(v  1 e 1 0 ]
 "167 C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
-[s S26 . 1 `uc 1 RA0 1 0 :1:0 
-`uc 1 RA1 1 0 :1:1 
-`uc 1 RA2 1 0 :1:2 
-`uc 1 RA3 1 0 :1:3 
-`uc 1 RA4 1 0 :1:4 
-`uc 1 RA5 1 0 :1:5 
-`uc 1 RA6 1 0 :1:6 
-`uc 1 RA7 1 0 :1:7 
-]
-"184
-[u S35 . 1 `S26 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES35  1 e 1 @5 ]
 "229
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
 "291
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
-[s S94 . 1 `uc 1 ADON 1 0 :1:0 
+"353
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+[s S235 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"483
+[s S244 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 TMR0IE 1 0 :1:5 
+]
+[u S249 . 1 `S235 1 . 1 0 `S244 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES249  1 e 1 @11 ]
+[s S197 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+]
+"554
+[u S205 . 1 `S197 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES205  1 e 1 @12 ]
+"1239
+[v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
+[s S25 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 `uc 1 ADCS 1 0 :2:6 
 ]
 "1277
-[s S99 . 1 `uc 1 . 1 0 :1:0 
+[s S30 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -48,25 +74,55 @@
 `uc 1 ADCS0 1 0 :1:6 
 `uc 1 ADCS1 1 0 :1:7 
 ]
-[s S108 . 1 `uc 1 . 1 0 :1:0 
+[s S39 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S111 . 1 `uc 1 . 1 0 :1:0 
+[s S42 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[u S114 . 1 `S94 1 . 1 0 `S99 1 . 1 0 `S108 1 . 1 0 `S111 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES114  1 e 1 @31 ]
+[u S45 . 1 `S25 1 . 1 0 `S30 1 . 1 0 `S39 1 . 1 0 `S42 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES45  1 e 1 @31 ]
 "1417
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "1479
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
 "1541
 [v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"1603
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+[s S108 . 1 `uc 1 TRISE0 1 0 :1:0 
+`uc 1 TRISE1 1 0 :1:1 
+`uc 1 TRISE2 1 0 :1:2 
+`uc 1 TRISE3 1 0 :1:3 
+]
+"1678
+[u S113 . 1 `S108 1 . 1 0 ]
+[v _TRISEbits TRISEbits `VES113  1 e 1 @137 ]
+[s S216 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+]
+"1719
+[u S224 . 1 `S216 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES224  1 e 1 @140 ]
+[s S182 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 VCFG0 1 0 :1:4 
+`uc 1 VCFG1 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 ADFM 1 0 :1:7 
+]
+"2992
+[u S188 . 1 `S182 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES188  1 e 1 @159 ]
 "3388
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3450
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
-[s S49 . 1 `uc 1 ANS8 1 0 :1:0 
+[s S87 . 1 `uc 1 ANS8 1 0 :1:0 
 `uc 1 ANS9 1 0 :1:1 
 `uc 1 ANS10 1 0 :1:2 
 `uc 1 ANS11 1 0 :1:3 
@@ -74,17 +130,42 @@
 `uc 1 ANS13 1 0 :1:5 
 ]
 "3465
-[u S56 . 1 `S49 1 . 1 0 ]
-[v _ANSELHbits ANSELHbits `VES56  1 e 1 @393 ]
+[u S94 . 1 `S87 1 . 1 0 ]
+[v _ANSELHbits ANSELHbits `VES94  1 e 1 @393 ]
 "3588
 [v _ADIF ADIF `VEb  1 e 0 @102 ]
-"62 C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\main.c
+"4128
+[v _RBIE RBIE `VEb  1 e 0 @91 ]
+"38 C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\main.c
+[v _varADC varADC `VEuc  1 e 1 0 ]
+"39
+[v _varBoton1 varBoton1 `uc  1 e 1 0 ]
+"68
 [v _main main `(v  1 e 1 0 ]
 {
-"74
+"103
 } 0
-"47
+"140 C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\ADC.c
+[v _configADC configADC `(v  1 e 1 0 ]
+{
+"156
+} 0
+"13
+[v _canalADC canalADC `(v  1 e 1 0 ]
+{
+[v canalADC@canal canal `uc  1 a 1 wreg ]
+[v canalADC@canal canal `uc  1 a 1 wreg ]
+"15
+[v canalADC@canal canal `uc  1 a 1 3 ]
+"138
+} 0
+"105 C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\main.c
+[v _Setup Setup `(v  1 e 1 0 ]
+{
+"126
+} 0
+"50
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"56
+"66
 } 0

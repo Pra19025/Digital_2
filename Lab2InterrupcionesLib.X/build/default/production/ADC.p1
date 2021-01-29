@@ -22,6 +22,54 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1277
 [; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 1277: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0x01F)));
 [v _ADCON0bits `VS44 ~T0 @X0 0 e@31 ]
+"2984
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 2984:     struct {
+[s S116 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S116 . . VCFG0 VCFG1 . ADFM ]
+"2983
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 2983: typedef union {
+[u S115 `S116 1 ]
+[n S115 . . ]
+"2992
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 2992: extern volatile ADCON1bits_t ADCON1bits __attribute__((address(0x09F)));
+[v _ADCON1bits `VS115 ~T0 @X0 0 e@159 ]
+"544
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 544:     struct {
+[s S19 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S19 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF ]
+"543
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 543: typedef union {
+[u S18 `S19 1 ]
+[n S18 . . ]
+"554
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 554: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x00C)));
+[v _PIR1bits `VS18 ~T0 @X0 0 e@12 ]
+"1709
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 1709:     struct {
+[s S63 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S63 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE ]
+"1708
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 1708: typedef union {
+[u S62 `S63 1 ]
+[n S62 . . ]
+"1719
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 1719: extern volatile PIE1bits_t PIE1bits __attribute__((address(0x08C)));
+[v _PIE1bits `VS62 ~T0 @X0 0 e@140 ]
+"466
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 466:     struct {
+[s S16 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S16 . RBIF INTF T0IF RBIE INTE T0IE PEIE GIE ]
+"476
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 476:     struct {
+[s S17 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S17 . . TMR0IF . TMR0IE ]
+"465
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 465: typedef union {
+[u S15 `S16 1 `S17 1 ]
+[n S15 . . . ]
+"483
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 483: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
+[v _INTCONbits `VS15 ~T0 @X0 0 e@11 ]
 "55 C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h
 [; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 55: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -257,15 +305,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 3547: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
 "13 ADC.c
-[; ;ADC.c: 13: void configADC (uint8_t canal, uint8_t frec) {
-[v _configADC `(v ~T0 @X0 1 ef2`uc`uc ]
+[; ;ADC.c: 13: void canalADC(uint8_t canal) {
+[v _canalADC `(v ~T0 @X0 1 ef1`uc ]
 {
-[e :U _configADC ]
+[e :U _canalADC ]
 [v _canal `uc ~T0 @X0 1 r1 ]
-[v _frec `uc ~T0 @X0 1 r2 ]
 [f ]
 "15
-[; ;ADC.c: 15:     if(canal == 0){
+[; ;ADC.c: 15:     if (canal == 0) {
 [e $ ! == -> _canal `i -> 0 `i 139  ]
 {
 "16
@@ -285,7 +332,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 139 ]
 "23
-[; ;ADC.c: 23:     if(canal == 1){
+[; ;ADC.c: 23:     if (canal == 1) {
 [e $ ! == -> _canal `i -> 1 `i 140  ]
 {
 "24
@@ -305,7 +352,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 140 ]
 "32
-[; ;ADC.c: 32:     if(canal == 2){
+[; ;ADC.c: 32:     if (canal == 2) {
 [e $ ! == -> _canal `i -> 2 `i 141  ]
 {
 "33
@@ -325,7 +372,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 141 ]
 "41
-[; ;ADC.c: 41:     if(canal == 3){
+[; ;ADC.c: 41:     if (canal == 3) {
 [e $ ! == -> _canal `i -> 3 `i 142  ]
 {
 "42
@@ -345,7 +392,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 142 ]
 "50
-[; ;ADC.c: 50:     if(canal == 4){
+[; ;ADC.c: 50:     if (canal == 4) {
 [e $ ! == -> _canal `i -> 4 `i 143  ]
 {
 "51
@@ -365,7 +412,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 143 ]
 "59
-[; ;ADC.c: 59:     if(canal == 5){
+[; ;ADC.c: 59:     if (canal == 5) {
 [e $ ! == -> _canal `i -> 5 `i 144  ]
 {
 "60
@@ -385,7 +432,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 144 ]
 "68
-[; ;ADC.c: 68:     if(canal == 6){
+[; ;ADC.c: 68:     if (canal == 6) {
 [e $ ! == -> _canal `i -> 6 `i 145  ]
 {
 "69
@@ -405,7 +452,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 145 ]
 "77
-[; ;ADC.c: 77:     if(canal == 7){
+[; ;ADC.c: 77:     if (canal == 7) {
 [e $ ! == -> _canal `i -> 7 `i 146  ]
 {
 "78
@@ -425,7 +472,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 146 ]
 "86
-[; ;ADC.c: 86:     if(canal == 8 ){
+[; ;ADC.c: 86:     if (canal == 8) {
 [e $ ! == -> _canal `i -> 8 `i 147  ]
 {
 "87
@@ -445,7 +492,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 147 ]
 "94
-[; ;ADC.c: 94:     if(canal ==9){
+[; ;ADC.c: 94:     if (canal == 9) {
 [e $ ! == -> _canal `i -> 9 `i 148  ]
 {
 "95
@@ -465,7 +512,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 148 ]
 "102
-[; ;ADC.c: 102:     if(canal == 10){
+[; ;ADC.c: 102:     if (canal == 10) {
 [e $ ! == -> _canal `i -> 10 `i 149  ]
 {
 "103
@@ -485,7 +532,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 149 ]
 "111
-[; ;ADC.c: 111:     if(canal == 11){
+[; ;ADC.c: 111:     if (canal == 11) {
 [e $ ! == -> _canal `i -> 11 `i 150  ]
 {
 "112
@@ -505,7 +552,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 150 ]
 "120
-[; ;ADC.c: 120:     if(canal == 12){
+[; ;ADC.c: 120:     if (canal == 12) {
 [e $ ! == -> _canal `i -> 12 `i 151  ]
 {
 "121
@@ -525,7 +572,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 151 ]
 "129
-[; ;ADC.c: 129:     if(canal == 13){
+[; ;ADC.c: 129:     if (canal == 13) {
 [e $ ! == -> _canal `i -> 13 `i 152  ]
 {
 "130
@@ -545,9 +592,49 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 152 ]
 "137
-[; ;ADC.c: 137:     return;
-[e $UE 138  ]
+[; ;ADC.c: 137:     ADCON0bits.GO = 1;
+[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
 "138
 [; ;ADC.c: 138: }
 [e :UE 138 ]
+}
+"140
+[; ;ADC.c: 140: void configADC(void) {
+[v _configADC `(v ~T0 @X0 1 ef ]
+{
+[e :U _configADC ]
+[f ]
+"142
+[; ;ADC.c: 142:     ADCON0bits.ADCS0 = 1;
+[e = . . _ADCON0bits 1 6 -> -> 1 `i `uc ]
+"143
+[; ;ADC.c: 143:     ADCON0bits.ADCS1 = 0;
+[e = . . _ADCON0bits 1 7 -> -> 0 `i `uc ]
+"145
+[; ;ADC.c: 145:     ADCON1bits.VCFG0 = 0;
+[e = . . _ADCON1bits 0 1 -> -> 0 `i `uc ]
+"146
+[; ;ADC.c: 146:     ADCON1bits.VCFG1 = 0;
+[e = . . _ADCON1bits 0 2 -> -> 0 `i `uc ]
+"148
+[; ;ADC.c: 148:     ADCON1bits.ADFM = 0;
+[e = . . _ADCON1bits 0 4 -> -> 0 `i `uc ]
+"150
+[; ;ADC.c: 150:     PIR1bits.ADIF = 0;
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+"151
+[; ;ADC.c: 151:     PIE1bits.ADIE = 1;
+[e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
+"152
+[; ;ADC.c: 152:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+"153
+[; ;ADC.c: 153:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"155
+[; ;ADC.c: 155:     ADCON0bits.ADON = 1;
+[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
+"156
+[; ;ADC.c: 156: }
+[e :UE 153 ]
 }

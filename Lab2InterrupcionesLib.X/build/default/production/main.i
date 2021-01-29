@@ -2642,6 +2642,12 @@ extern __bank0 __bit __timeout;
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 10 "main.c" 2
 
+# 1 "./ADC.h" 1
+# 36 "./ADC.h"
+void canalADC(uint8_t canal);
+void configADC(void);
+# 11 "main.c" 2
+
 
 
 #pragma config FOSC = INTRC_NOCLKOUT
@@ -2658,28 +2664,59 @@ extern __bank0 __bit __timeout;
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
-# 42 "main.c"
+# 38 "main.c"
+volatile uint8_t varADC;
+uint8_t varBoton1;
+
+
+
+
 void Setup(void);
 
 
 
 
-void __attribute__((picinterrupt(("")))) ISR(void){
 
-    if(ADIF){
+void __attribute__((picinterrupt(("")))) ISR(void) {
 
+    if (ADIF == 1) {
+
+        varADC = ADRESH;
+        PORTD = varADC;
+        ADIF = 0;
+        ADCON0bits.GO = 1;
 
     }
 
+    if(RBIE == 1) {
+        varBoton1 = 1;
+    }
 
 
 }
 
-
-
-
-
 void main(void) {
+
+    Setup();
+    configADC();
+    canalADC(5);
+
+    static uint8_t tabla[] = {0b01110111,
+        0b01000001,
+        0b00111011,
+        0b01101011,
+        0b01001101,
+        0b01101110,
+        0b01111110,
+        0b01000011,
+        0b01111111,
+        0b01101111,
+        0b01101111,
+        0b01101111,
+        0b01101111,
+        0b01101111,
+        0b01101111,
+        0b01101111};
 
 
 
@@ -2688,28 +2725,32 @@ void main(void) {
 
     while (1) {
 
+
+
     }
 
     return;
 }
 
 void Setup(void) {
-    PORTA = 0;
-    PORTB = 0;
-    PORTC = 0;
 
-    PORTAbits.RA0 = 1;
-    PORTAbits.RA1 = 1;
-    PORTAbits.RA2 = 1;
+
+
 
     ANSEL = 0;
     ANSELH = 0;
-    ANSELHbits.ANS12;
+    ANSELHbits.ANS12 = 1;
 
     TRISA = 0;
     TRISB = 1;
     TRISC = 0;
+    TRISD = 0;
+    TRISEbits.TRISE0 = 1;
 
+    PORTA = 0;
+    PORTB = 0;
+    PORTC = 0;
+    PORTD = 0;
 
 
 }

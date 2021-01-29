@@ -33,7 +33,8 @@
 
 #include <xc.h> // include processor files - each processor file is guarded.  
 
-void configADC(uint8_t canal, uint8_t  frec);
+void canalADC(uint8_t canal);
+void configADC(void);
 
 #endif	/* ADC_H */
 
