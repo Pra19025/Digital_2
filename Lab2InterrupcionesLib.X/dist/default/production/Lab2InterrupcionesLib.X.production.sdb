@@ -17,19 +17,31 @@
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "50 C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\main.c
 [v _ISR ISR `II(v  1 e 1 0 ]
-"68
+"79
 [v _main main `(v  1 e 1 0 ]
-"105
+"116
 [v _Setup Setup `(v  1 e 1 0 ]
 "167 C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
 "229
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
+[s S103 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"246
+[u S112 . 1 `S103 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES112  1 e 1 @6 ]
 "291
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
 "353
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
-[s S235 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S71 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -39,14 +51,14 @@
 `uc 1 GIE 1 0 :1:7 
 ]
 "483
-[s S244 . 1 `uc 1 . 1 0 :2:0 
+[s S80 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 TMR0IE 1 0 :1:5 
 ]
-[u S249 . 1 `S235 1 . 1 0 `S244 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES249  1 e 1 @11 ]
-[s S197 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S85 . 1 `S71 1 . 1 0 `S80 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES85  1 e 1 @11 ]
+[s S331 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -55,8 +67,8 @@
 `uc 1 ADIF 1 0 :1:6 
 ]
 "554
-[u S205 . 1 `S197 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES205  1 e 1 @12 ]
+[u S339 . 1 `S331 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES339  1 e 1 @12 ]
 "1239
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
 [s S25 . 1 `uc 1 ADON 1 0 :1:0 
@@ -82,6 +94,20 @@
 ]
 [u S45 . 1 `S25 1 . 1 0 `S30 1 . 1 0 `S39 1 . 1 0 `S42 1 . 1 0 ]
 [v _ADCON0bits ADCON0bits `VES45  1 e 1 @31 ]
+[s S176 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nRBPU 1 0 :1:7 
+]
+"1367
+[s S183 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+]
+[u S187 . 1 `S176 1 . 1 0 `S183 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES187  1 e 1 @129 ]
 "1417
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "1479
@@ -90,15 +116,15 @@
 [v _TRISC TRISC `VEuc  1 e 1 @135 ]
 "1603
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
-[s S108 . 1 `uc 1 TRISE0 1 0 :1:0 
+[s S161 . 1 `uc 1 TRISE0 1 0 :1:0 
 `uc 1 TRISE1 1 0 :1:1 
 `uc 1 TRISE2 1 0 :1:2 
 `uc 1 TRISE3 1 0 :1:3 
 ]
 "1678
-[u S113 . 1 `S108 1 . 1 0 ]
-[v _TRISEbits TRISEbits `VES113  1 e 1 @137 ]
-[s S216 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[u S166 . 1 `S161 1 . 1 0 ]
+[v _TRISEbits TRISEbits `VES166  1 e 1 @137 ]
+[s S350 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -107,22 +133,36 @@
 `uc 1 ADIE 1 0 :1:6 
 ]
 "1719
-[u S224 . 1 `S216 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES224  1 e 1 @140 ]
-[s S182 . 1 `uc 1 . 1 0 :4:0 
+[u S358 . 1 `S350 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES358  1 e 1 @140 ]
+[s S202 . 1 `uc 1 IOCB 1 0 :8:0 
+]
+"2437
+[s S204 . 1 `uc 1 IOCB0 1 0 :1:0 
+`uc 1 IOCB1 1 0 :1:1 
+`uc 1 IOCB2 1 0 :1:2 
+`uc 1 IOCB3 1 0 :1:3 
+`uc 1 IOCB4 1 0 :1:4 
+`uc 1 IOCB5 1 0 :1:5 
+`uc 1 IOCB6 1 0 :1:6 
+`uc 1 IOCB7 1 0 :1:7 
+]
+[u S213 . 1 `S202 1 . 1 0 `S204 1 . 1 0 ]
+[v _IOCBbits IOCBbits `VES213  1 e 1 @150 ]
+[s S316 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "2992
-[u S188 . 1 `S182 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES188  1 e 1 @159 ]
+[u S322 . 1 `S316 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES322  1 e 1 @159 ]
 "3388
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3450
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
-[s S87 . 1 `uc 1 ANS8 1 0 :1:0 
+[s S140 . 1 `uc 1 ANS8 1 0 :1:0 
 `uc 1 ANS9 1 0 :1:1 
 `uc 1 ANS10 1 0 :1:2 
 `uc 1 ANS11 1 0 :1:3 
@@ -130,20 +170,16 @@
 `uc 1 ANS13 1 0 :1:5 
 ]
 "3465
-[u S94 . 1 `S87 1 . 1 0 ]
-[v _ANSELHbits ANSELHbits `VES94  1 e 1 @393 ]
+[u S147 . 1 `S140 1 . 1 0 ]
+[v _ANSELHbits ANSELHbits `VES147  1 e 1 @393 ]
 "3588
 [v _ADIF ADIF `VEb  1 e 0 @102 ]
-"4128
-[v _RBIE RBIE `VEb  1 e 0 @91 ]
 "38 C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\main.c
 [v _varADC varADC `VEuc  1 e 1 0 ]
-"39
-[v _varBoton1 varBoton1 `uc  1 e 1 0 ]
-"68
+"79
 [v _main main `(v  1 e 1 0 ]
 {
-"103
+"114
 } 0
 "140 C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\ADC.c
 [v _configADC configADC `(v  1 e 1 0 ]
@@ -159,13 +195,13 @@
 [v canalADC@canal canal `uc  1 a 1 3 ]
 "138
 } 0
-"105 C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\main.c
+"116 C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\main.c
 [v _Setup Setup `(v  1 e 1 0 ]
 {
-"126
+"145
 } 0
 "50
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"66
+"77
 } 0

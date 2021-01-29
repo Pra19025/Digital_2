@@ -2688,8 +2688,19 @@ void __attribute__((picinterrupt(("")))) ISR(void) {
 
     }
 
-    if(RBIE == 1) {
-        varBoton1 = 1;
+    if (INTCONbits.RBIF == 1) {
+
+        if (PORTBbits.RB0 == 1) {
+            PORTA++;
+        }
+
+
+        if (PORTBbits.RB1 == 1) {
+            PORTA--;
+        }
+
+        INTCONbits.RBIF = 0;
+
     }
 
 
@@ -2751,6 +2762,14 @@ void Setup(void) {
     PORTB = 0;
     PORTC = 0;
     PORTD = 0;
+    OPTION_REGbits.nRBPU = 0;
+    IOCBbits.IOCB0 = 1;
+    IOCBbits.IOCB1 = 1;
+
+    INTCONbits.RBIE = 1;
+    INTCONbits.GIE = 1;
+    INTCONbits.RBIF = 0;
+
 
 
 }

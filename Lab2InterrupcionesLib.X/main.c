@@ -57,9 +57,20 @@ void __interrupt() ISR(void) {
         ADCON0bits.GO = 1;
 
     }
-    
-    if(RBIE == 1) {
-        varBoton1 = 1;
+
+    if (INTCONbits.RBIF == 1) {
+
+        if (PORTBbits.RB0 == 1) {
+            PORTA++;
+        }
+
+
+        if (PORTBbits.RB1 == 1) {
+            PORTA--;
+        }
+
+        INTCONbits.RBIF = 0;
+
     }
 
 
@@ -103,24 +114,32 @@ void main(void) {
 }
 
 void Setup(void) { //configuracion 
-   
-    //INTCONbits.RBIE = 1;
+
+
 
 
     ANSEL = 0;
     ANSELH = 0;
     ANSELHbits.ANS12 = 1;
 
-    TRISA = 0;
-    TRISB = 1;
-    TRISC = 0;
-    TRISD = 0;
-    TRISEbits.TRISE0 = 1;
-    
+    TRISA = 0; //salida para los leds
+    TRISB = 1; //entradas de los botones, solo para eso se usa el puerto
+    TRISC = 0; // 7 segmentos
+    TRISD = 0; // multiplexado
+    TRISEbits.TRISE0 = 1; //entrada adc ansel 5
+
     PORTA = 0;
     PORTB = 0;
     PORTC = 0;
     PORTD = 0;
+    OPTION_REGbits.nRBPU = 0;
+    IOCBbits.IOCB0 = 1;
+    IOCBbits.IOCB1 = 1; //se habilita ISR para los botones
+
+    INTCONbits.RBIE = 1;
+    INTCONbits.GIE = 1;
+    INTCONbits.RBIF = 0;
+
 
 
 }
