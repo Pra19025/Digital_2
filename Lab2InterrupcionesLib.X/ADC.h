@@ -32,6 +32,7 @@
 #define	ADC_H
 
 #include <xc.h> // include processor files - each processor file is guarded.  
+#include <stdint.h>
 
 void canalADC(uint8_t canal);
 void configADC(void);

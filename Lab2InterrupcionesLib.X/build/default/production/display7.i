@@ -1,4 +1,4 @@
-# 1 "ADC.c"
+# 1 "display7.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "ADC.c" 2
+# 1 "display7.c" 2
 
 
 
@@ -2495,10 +2495,14 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 9 "ADC.c" 2
+# 9 "display7.c" 2
 
-# 1 "./ADC.h" 1
-# 35 "./ADC.h"
+# 1 "./display7.h" 1
+
+
+
+
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
 typedef signed char int8_t;
@@ -2632,158 +2636,66 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 35 "./ADC.h" 2
+# 6 "./display7.h" 2
 
 
-void canalADC(uint8_t canal);
-void configADC(void);
-# 10 "ADC.c" 2
+uint8_t tabla7(uint8_t entrada);
+void multiplexor(void);
+uint8_t NibbleH(uint8_t ValorADC);
+uint8_t NibbleL(uint8_t ValorADC);
+# 10 "display7.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
-# 11 "ADC.c" 2
+# 11 "display7.c" 2
 
 
-void canalADC(uint8_t canal) {
+uint8_t tabla7(uint8_t entrada) {
 
-    if (canal == 0) {
-        ADCON0bits.CHS3 = 0;
-        ADCON0bits.CHS2 = 0;
-        ADCON0bits.CHS1 = 0;
-        ADCON0bits.CHS0 = 0;
-
-    }
-
-    if (canal == 1) {
-        ADCON0bits.CHS3 = 0;
-        ADCON0bits.CHS2 = 0;
-        ADCON0bits.CHS1 = 0;
-        ADCON0bits.CHS0 = 1;
-
-    }
-
-
-    if (canal == 2) {
-        ADCON0bits.CHS3 = 0;
-        ADCON0bits.CHS2 = 0;
-        ADCON0bits.CHS1 = 1;
-        ADCON0bits.CHS0 = 0;
-
-    }
+    static uint8_t tabla[] = {0b01110111,
+        0b01000001,
+        0b00111011,
+        0b01101011,
+        0b01001101,
+        0b01101110,
+        0b01111110,
+        0b01000011,
+        0b01111111,
+        0b01101111,
+        0b01011111,
+        0b01111100,
+        0b00110110,
+        0b01111001,
+        0b00111110,
+        0b00011110};
 
 
-    if (canal == 3) {
-        ADCON0bits.CHS3 = 0;
-        ADCON0bits.CHS2 = 0;
-        ADCON0bits.CHS1 = 1;
-        ADCON0bits.CHS0 = 1;
 
-    }
-
-
-    if (canal == 4) {
-        ADCON0bits.CHS3 = 0;
-        ADCON0bits.CHS2 = 1;
-        ADCON0bits.CHS1 = 0;
-        ADCON0bits.CHS0 = 0;
-
-    }
-
-
-    if (canal == 5) {
-        ADCON0bits.CHS3 = 0;
-        ADCON0bits.CHS2 = 1;
-        ADCON0bits.CHS1 = 0;
-        ADCON0bits.CHS0 = 1;
-
-    }
-
-
-    if (canal == 6) {
-        ADCON0bits.CHS3 = 0;
-        ADCON0bits.CHS2 = 1;
-        ADCON0bits.CHS1 = 1;
-        ADCON0bits.CHS0 = 0;
-
-    }
-
-
-    if (canal == 7) {
-        ADCON0bits.CHS3 = 0;
-        ADCON0bits.CHS2 = 1;
-        ADCON0bits.CHS1 = 1;
-        ADCON0bits.CHS0 = 1;
-
-    }
-
-
-    if (canal == 8) {
-        ADCON0bits.CHS3 = 1;
-        ADCON0bits.CHS2 = 0;
-        ADCON0bits.CHS1 = 0;
-        ADCON0bits.CHS0 = 0;
-
-    }
-
-    if (canal == 9) {
-        ADCON0bits.CHS3 = 1;
-        ADCON0bits.CHS2 = 0;
-        ADCON0bits.CHS1 = 0;
-        ADCON0bits.CHS0 = 1;
-
-    }
-
-    if (canal == 10) {
-        ADCON0bits.CHS3 = 1;
-        ADCON0bits.CHS2 = 0;
-        ADCON0bits.CHS1 = 1;
-        ADCON0bits.CHS0 = 0;
-
-    }
-
-
-    if (canal == 11) {
-        ADCON0bits.CHS3 = 1;
-        ADCON0bits.CHS2 = 0;
-        ADCON0bits.CHS1 = 1;
-        ADCON0bits.CHS0 = 1;
-
-    }
-
-
-    if (canal == 12) {
-        ADCON0bits.CHS3 = 1;
-        ADCON0bits.CHS2 = 1;
-        ADCON0bits.CHS1 = 0;
-        ADCON0bits.CHS0 = 0;
-
-    }
-
-
-    if (canal == 13) {
-        ADCON0bits.CHS3 = 1;
-        ADCON0bits.CHS2 = 1;
-        ADCON0bits.CHS1 = 0;
-        ADCON0bits.CHS0 = 1;
-
-    }
-
-    ADCON0bits.GO = 1;
+    return tabla[entrada];
 }
 
-void configADC(void) {
+void multiplexor(void) {
+    OPTION_REG = 0x86;
+    TMR0 = 61;
+    INTCON = 0xA0;
+}
 
-    ADCON0bits.ADCS0 = 1;
-    ADCON0bits.ADCS1 = 0;
+uint8_t NibbleH(uint8_t ValorADC) {
 
-    ADCON1bits.VCFG0 = 0;
-    ADCON1bits.VCFG1 = 0;
+    uint8_t NibbleH = (ValorADC & 0b00001111);
 
-    ADCON1bits.ADFM = 0;
 
-    PIR1bits.ADIF = 0;
-    PIE1bits.ADIE = 1;
-    INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 1;
+    return NibbleH;
 
-    ADCON0bits.ADON = 1;
+}
+
+uint8_t NibbleL(uint8_t ValorADC) {
+
+    uint8_t aux = ValorADC ;
+    aux = (aux >> 4);
+    uint8_t NibbleL = (aux & 0b00001111);
+
+
+
+    return NibbleL;
+
 }

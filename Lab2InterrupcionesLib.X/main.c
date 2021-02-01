@@ -9,6 +9,7 @@
 #include <xc.h>
 #include <stdint.h>
 #include "ADC.h"
+#include "display7.h"
 
 // CONFIG1
 #pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN)
@@ -28,15 +29,18 @@
 
 
 
-#define pot PORTCbits.RA0
-#define b1 PORTCbits.RA1
-#define b2 PORTCbits.RA2
+
 
 //**********************************************************************************************************************************************
 // Variables 
 //**********************************************************************************************************************************************
 volatile uint8_t varADC;
-uint8_t varBoton1;
+uint8_t debounce1;
+uint8_t debounce2;
+uint8_t Nibble1;
+uint8_t Nibble2;
+uint8_t var1;
+
 //**********************************************************************************************************************************************
 // Prototipos de funciones 
 //**********************************************************************************************************************************************
@@ -52,7 +56,7 @@ void __interrupt() ISR(void) {
     if (ADIF == 1) {
 
         varADC = ADRESH;
-        PORTD = varADC;
+
         ADIF = 0;
         ADCON0bits.GO = 1;
 
@@ -60,18 +64,58 @@ void __interrupt() ISR(void) {
 
     if (INTCONbits.RBIF == 1) {
 
-        if (PORTBbits.RB0 == 1) {
-            PORTA++;
-        }
-
-
-        if (PORTBbits.RB1 == 1) {
-            PORTA--;
-        }
-
         INTCONbits.RBIF = 0;
+        
+        if (PORTBbits.RB1 == 1) {
+            debounce2++;
+            if (debounce2 > 1) {
+                debounce2 = 0;
+                PORTA--;
+                var1--;
+            }
+        }
+         
+       if (PORTBbits.RB0 == 1) {
+            debounce1++;
+            if (debounce1 > 1) {
+                debounce1 = 0;
+                PORTA++;
+                var1++;
+            }
+        }
+
+
 
     }
+
+    if (INTCONbits.TMR0IF == 1) {
+        INTCONbits.TMR0IF = 0;
+        TMR0 = 61;
+        PORTC = 0;
+        Nibble1 = NibbleH(varADC);
+        Nibble2 = NibbleL(varADC);
+
+        if (PORTD == 2) {
+            PORTD = 0;
+
+
+        }
+        if (PORTD == 0) {
+            PORTD++;
+
+            PORTC = tabla7(Nibble2);
+
+
+        } else {
+            PORTD = (PORTD << 1);
+
+            PORTC = tabla7(Nibble1);
+
+        }
+
+
+    }
+
 
 
 }
@@ -79,25 +123,11 @@ void __interrupt() ISR(void) {
 void main(void) {
 
     Setup();
+    multiplexor();
     configADC();
     canalADC(5);
 
-    static uint8_t tabla[] = {0b01110111,
-        0b01000001,
-        0b00111011,
-        0b01101011,
-        0b01001101,
-        0b01101110,
-        0b01111110,
-        0b01000011,
-        0b01111111,
-        0b01101111,
-        0b01101111,
-        0b01101111,
-        0b01101111,
-        0b01101111,
-        0b01101111,
-        0b01101111};
+
 
 
     //**********************************************************************************************************************************************
@@ -105,7 +135,14 @@ void main(void) {
     //**********************************************************************************************************************************************
 
     while (1) {
-
+        
+        if(var1 == varADC){
+            PORTDbits.RD2 = 1;
+            
+        }
+        else{
+            
+        }
 
 
     }
@@ -115,15 +152,12 @@ void main(void) {
 
 void Setup(void) { //configuracion 
 
-
-
-
     ANSEL = 0;
     ANSELH = 0;
-    ANSELHbits.ANS12 = 1;
+    ANSELbits.ANS5 = 1;
 
     TRISA = 0; //salida para los leds
-    TRISB = 1; //entradas de los botones, solo para eso se usa el puerto
+    TRISB = 255; //entradas de los botones, solo para eso se usa el puerto
     TRISC = 0; // 7 segmentos
     TRISD = 0; // multiplexado
     TRISEbits.TRISE0 = 1; //entrada adc ansel 5
@@ -132,14 +166,14 @@ void Setup(void) { //configuracion
     PORTB = 0;
     PORTC = 0;
     PORTD = 0;
-    OPTION_REGbits.nRBPU = 0;
+
     IOCBbits.IOCB0 = 1;
     IOCBbits.IOCB1 = 1; //se habilita ISR para los botones
 
     INTCONbits.RBIE = 1;
     INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
     INTCONbits.RBIF = 0;
-
 
 
 }
