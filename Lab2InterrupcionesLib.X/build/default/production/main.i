@@ -2687,7 +2687,7 @@ uint8_t debounce1;
 uint8_t debounce2;
 uint8_t Nibble1;
 uint8_t Nibble2;
-uint8_t var1;
+uint8_t var1 = 0;
 
 
 
@@ -2719,11 +2719,14 @@ void __attribute__((picinterrupt(("")))) ISR(void) {
             if (debounce2 > 1) {
                 debounce2 = 0;
                 PORTA--;
+
+
                 var1--;
+
             }
         }
 
-       if (PORTBbits.RB0 == 1) {
+        if (PORTBbits.RB0 == 1) {
             debounce1++;
             if (debounce1 > 1) {
                 debounce1 = 0;
@@ -2774,16 +2777,19 @@ void main(void) {
     multiplexor();
     configADC();
     canalADC(5);
-# 137 "main.c"
+# 140 "main.c"
     while (1) {
 
-        if(var1 == varADC){
-            PORTDbits.RD2 = 1;
+        if (var1 == varADC) {
+            PORTEbits.RE1 = 1;
 
+        } else {
+            PORTEbits.RE1 = 0;
         }
-        else{
 
-        }
+
+
+
 
 
     }
@@ -2802,12 +2808,13 @@ void Setup(void) {
     TRISC = 0;
     TRISD = 0;
     TRISEbits.TRISE0 = 1;
+    TRISEbits.TRISE1 = 0;
 
     PORTA = 0;
     PORTB = 0;
     PORTC = 0;
     PORTD = 0;
-
+    PORTE = 0;
     IOCBbits.IOCB0 = 1;
     IOCBbits.IOCB1 = 1;
 

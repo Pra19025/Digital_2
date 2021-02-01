@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.31\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\Lab2InterrupcionesLib.X.production.sym \
   --cmf=dist/default/production\Lab2InterrupcionesLib.X.production.cmf -z \
-  -Q16F887 -oC:\Users\noelp\AppData\Local\Temp\sh3s.2 \
+  -Q16F887 -oC:\Users\noelp\AppData\Local\Temp\s5e4.2 \
   --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/Lab2InterrupcionesLib.X.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK \
@@ -19,7 +19,7 @@ Linker command line:
   -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\noelp\AppData\Local\Temp\sh3s.o \
+  -pfunctab=ENTRY -k C:\Users\noelp\AppData\Local\Temp\s5e4.o \
   dist/default/production\Lab2InterrupcionesLib.X.production.o 
 
 Object code version is 3.11
@@ -29,7 +29,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\noelp\AppData\Local\Temp\sh3s.o
+C:\Users\noelp\AppData\Local\Temp\s5e4.o
                 end_init                              E        E        3        8       0
                 reset_vec                             0        0        3        0       0
                 config                             2007     2007        2        0       4
@@ -37,22 +37,22 @@ dist/default/production\Lab2InterrupcionesLib.X.production.o
                 cinit                                11       11       18        8       0
                 intentry                              4        4        A        8       0
                 config                             2007     2007        2        0       4
-                text8                               1D8      1D8        8        8       0
-                text7                               17D      17D       18        8       0
-                text6                               1E0      1E0        7        8       0
+                text8                               1DC      1DC        8        8       0
+                text7                               181      181       18        8       0
+                text6                               1E4      1E4        7        8       0
                 text5                                B8       B8       87        8       0
-                text4                               161      161       1C        8       0
+                text4                               163      163       1E        8       0
                 text3                                29       29       8F        8       0
-                text2                               195      195       15        8       0
-                text1                               1CD      1CD        B        8       0
-                maintext                            13F      13F       22        8       0
+                text2                               199      199       15        8       0
+                text1                               1D1      1D1        B        8       0
+                maintext                            13F      13F       24        8       0
                 cstackBANK0                          31       31        1       20       1
                 cstackCOMMON                         70       70        9       70       1
-                inittext                            1AA      1AA       13        8       0
+                inittext                            1AE      1AE       13        8       0
                 dataBANK0                            20       20       10       20       1
                 bssBANK0                             30       30        1       20       1
                 bssCOMMON                            79       79        5       70       1
-                idataBANK0                          1BD      1BD       10        8       0
+                idataBANK0                          1C1      1C1       10        8       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -62,17 +62,17 @@ TOTAL           Name                               Link     Load   Length     Sp
                 cinit                                11       11       18         0
                 intentry                              4        4        A         0
                 reset_vec                             0        0        3         0
-                text8                               1D8      1D8        8         0
-                text7                               17D      17D       18         0
-                text6                               1E0      1E0        7         0
+                text8                               1DC      1DC        8         0
+                text7                               181      181       18         0
+                text6                               1E4      1E4        7         0
                 text5                                B8       B8       87         0
-                text4                               161      161       1C         0
+                text4                               163      163       1E         0
                 text3                                29       29       8F         0
-                text2                               195      195       15         0
-                text1                               1CD      1CD        B         0
-                maintext                            13F      13F       22         0
-                inittext                            1AA      1AA       13         0
-                idataBANK0                          1BD      1BD       10         0
+                text2                               199      199       15         0
+                text1                               1D1      1D1        B         0
+                maintext                            13F      13F       24         0
+                inittext                            1AE      1AE       13         0
+                idataBANK0                          1C1      1C1       10         0
 
         CLASS   STRCODE        
 
@@ -122,7 +122,7 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000003  000003         0       0  CODE        2
-                intentry                       000004  0001E3  0001E7         8       0  CODE        2
+                intentry                       000004  0001E7  0001EB         8       0  CODE        2
                 dataBANK0                      000020  000012  000032        20       1  BANK0       1
                 cstackCOMMON                   000070  00000E  00007E        70       1  COMMON      1
 
@@ -135,12 +135,12 @@ UNUSED ADDRESS RANGES
         BANK2            0110-016F             60           1
         BANK3            0190-01EF             60           1
         CODE             0003-0003              1           2
-                         01E7-1FFF            800
+                         01EB-1FFF            800
         CONST            0003-0003              1           2
-                         01E7-1FFF            100
+                         01EB-1FFF            100
         EEDATA           2100-21FF            100           2
         ENTRY            0003-0003              1           2
-                         01E7-1FFF            100
+                         01EB-1FFF            100
         IDLOC            2000-2003              4           2
         RAM              0032-006F             3E           1
                          00A0-00EF             50
@@ -152,9 +152,9 @@ UNUSED ADDRESS RANGES
         SFR3             0180-018F             10           1
         STACK            0110-016F             60           1
         STRCODE          0003-0003              1           2
-                         01E7-1FFF           1E19
+                         01EB-1FFF           1E15
         STRING           0003-0003              1           2
-                         01E7-1FFF            100
+                         01EB-1FFF            100
 
                                   Symbol Table
 
@@ -176,8 +176,8 @@ _IOCBbits                (abs)        0096
 _ISR                     text5        00B8
 _Nibble1                 bssCOMMON    007A
 _Nibble2                 bssCOMMON    0079
-_NibbleH                 text8        01D8
-_NibbleL                 text7        017D
+_NibbleH                 text8        01DC
+_NibbleL                 text7        0181
 _OPTION_REG              (abs)        0081
 _PIE1bits                (abs)        008C
 _PIR1bits                (abs)        000C
@@ -186,8 +186,9 @@ _PORTB                   (abs)        0006
 _PORTBbits               (abs)        0006
 _PORTC                   (abs)        0007
 _PORTD                   (abs)        0008
-_PORTDbits               (abs)        0008
-_Setup                   text4        0161
+_PORTE                   (abs)        0009
+_PORTEbits               (abs)        0009
+_Setup                   text4        0163
 _TMR0                    (abs)        0001
 _TRISA                   (abs)        0085
 _TRISB                   (abs)        0086
@@ -224,7 +225,7 @@ __Hsfr0                  sfr0         0000
 __Hsfr1                  sfr1         0000
 __Hsfr2                  sfr2         0000
 __Hsfr3                  sfr3         0000
-__Hspace_0               (abs)        01E7
+__Hspace_0               (abs)        01EB
 __Hspace_1               (abs)        007E
 __Hspace_2               (abs)        0000
 __Hspace_3               (abs)        0000
@@ -270,7 +271,7 @@ __Lspace_4               (abs)        0000
 __Lstack                 stack        0000
 __Lstrings               strings      0000
 __Ltext                  text         0000
-__S0                     (abs)        01E7
+__S0                     (abs)        01EB
 __S1                     (abs)        007E
 __S2                     (abs)        0000
 __S3                     (abs)        0000
@@ -280,32 +281,32 @@ ___sp                    stack        0000
 ___stackhi               (abs)        0000
 ___stacklo               (abs)        0000
 __end_of_ISR             text5        013F
-__end_of_NibbleH         text8        01E0
-__end_of_NibbleL         text7        0195
-__end_of_Setup           text4        017D
+__end_of_NibbleH         text8        01E4
+__end_of_NibbleL         text7        0199
+__end_of_Setup           text4        0181
 __end_of__initialization cinit        0025
 __end_of_canalADC        text3        00B8
-__end_of_configADC       text2        01AA
-__end_of_main            maintext     0161
-__end_of_multiplexor     text1        01D8
-__end_of_tabla7          text6        01E7
+__end_of_configADC       text2        01AE
+__end_of_main            maintext     0163
+__end_of_multiplexor     text1        01DC
+__end_of_tabla7          text6        01EB
 __initialization         cinit        0011
 __pbssBANK0              bssBANK0     0030
 __pbssCOMMON             bssCOMMON    0079
 __pcstackBANK0           cstackBANK0  0031
 __pcstackCOMMON          cstackCOMMON 0070
 __pdataBANK0             dataBANK0    0020
-__pidataBANK0            idataBANK0   01BD
+__pidataBANK0            idataBANK0   01C1
 __pintentry              intentry     0004
 __pmaintext              maintext     013F
-__ptext1                 text1        01CD
-__ptext2                 text2        0195
+__ptext1                 text1        01D1
+__ptext2                 text2        0199
 __ptext3                 text3        0029
-__ptext4                 text4        0161
+__ptext4                 text4        0163
 __ptext5                 text5        00B8
-__ptext6                 text6        01E0
-__ptext7                 text7        017D
-__ptext8                 text8        01D8
+__ptext6                 text6        01E4
+__ptext7                 text7        0181
+__ptext8                 text8        01DC
 __size_of_ISR            (abs)        0000
 __size_of_NibbleH        (abs)        0000
 __size_of_NibbleL        (abs)        0000
@@ -316,19 +317,19 @@ __size_of_main           (abs)        0000
 __size_of_multiplexor    (abs)        0000
 __size_of_tabla7         (abs)        0000
 _canalADC                text3        0029
-_configADC               text2        0195
+_configADC               text2        0199
 _debounce1               bssCOMMON    007C
 _debounce2               bssCOMMON    007B
 _main                    maintext     013F
-_multiplexor             text1        01CD
-_tabla7                  text6        01E0
+_multiplexor             text1        01D1
+_tabla7                  text6        01E4
 _var1                    bssBANK0     0030
 _varADC                  bssCOMMON    007D
 btemp                    (abs)        007E
 canalADC@canal           cstackBANK0  0031
 end_of_initialization    cinit        0025
-init_fetch0              inittext     01AA
-init_ram0                inittext     01AE
+init_fetch0              inittext     01AE
+init_ram0                inittext     01B2
 interrupt_function       intentry     0004
 intlevel0                functab      0000
 intlevel1                functab      0000
@@ -349,7 +350,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 123 in file "main.c"
+		line 126 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -471,7 +472,7 @@ Total ram usage:        1 bytes
 
  *************** function _Setup *****************
  Defined at:
-		line 153 in file "main.c"
+		line 159 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -626,10 +627,10 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 display7.c
-		_multiplexor   		CODE           	01CD	0000	11
-		_NibbleL       		CODE           	017D	0000	24
-		_tabla7        		CODE           	01E0	0000	7
-		_NibbleH       		CODE           	01D8	0000	8
+		_multiplexor   		CODE           	01D1	0000	11
+		_NibbleL       		CODE           	0181	0000	24
+		_tabla7        		CODE           	01E4	0000	7
+		_NibbleH       		CODE           	01DC	0000	8
 
 display7.c estimated size: 50
 
@@ -640,14 +641,14 @@ shared estimated size: 20
 
 ADC.c
 		_canalADC      		CODE           	0029	0000	143
-		_configADC     		CODE           	0195	0000	21
+		_configADC     		CODE           	0199	0000	21
 
 ADC.c estimated size: 164
 
 main.c
 		_ISR           		CODE           	00B8	0000	135
-		_main          		CODE           	013F	0000	34
-		_Setup         		CODE           	0161	0000	28
+		_main          		CODE           	013F	0000	36
+		_Setup         		CODE           	0163	0000	30
 
-main.c estimated size: 197
+main.c estimated size: 201
 
