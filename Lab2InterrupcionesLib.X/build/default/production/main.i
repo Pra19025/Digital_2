@@ -2743,8 +2743,8 @@ void __attribute__((picinterrupt(("")))) ISR(void) {
         INTCONbits.TMR0IF = 0;
         TMR0 = 61;
         PORTC = 0;
-        Nibble1 = NibbleH(varADC);
-        Nibble2 = NibbleL(varADC);
+        Nibble1 = NibbleL(varADC);
+        Nibble2 = NibbleH(varADC);
 
         if (PORTD == 2) {
             PORTD = 0;

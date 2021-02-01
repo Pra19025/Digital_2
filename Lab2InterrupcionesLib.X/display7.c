@@ -11,7 +11,7 @@
 #include <stdint.h>
 
 uint8_t tabla7(uint8_t entrada) {
-
+//esta tabla permite obtener el valor que se requiere para mostrar un numero especifcio en el ADC
     static uint8_t tabla[] = {0b01110111,
         0b01000001,
         0b00111011,
@@ -35,28 +35,29 @@ uint8_t tabla7(uint8_t entrada) {
 }
 
 void multiplexor(void) {
+//configuración del timer
     OPTION_REG = 0x86;
     TMR0 = 61;
     INTCON = 0xA0;
 }
 
-uint8_t NibbleH(uint8_t ValorADC) {
-
-    uint8_t NibbleH = (ValorADC & 0b00001111);
+uint8_t NibbleL(uint8_t ValorADC) {
+//se obtiene el nibble de los 4 bits menos significativos
+    uint8_t NibbleL = (ValorADC & 0b00001111);
  
 
-    return NibbleH;
+    return NibbleL;
 
 }
 
-uint8_t NibbleL(uint8_t ValorADC) {
-
+uint8_t NibbleH(uint8_t ValorADC) {
+//se obtiene nibble de los 4 bits mas significativos
     uint8_t aux = ValorADC ;
     aux = (aux >> 4);
-    uint8_t NibbleL = (aux & 0b00001111);
+    uint8_t NibbleH= (aux & 0b00001111);
     //hay que hacer un swapf
     
 
-    return NibbleL;
+    return NibbleH;
 
 }

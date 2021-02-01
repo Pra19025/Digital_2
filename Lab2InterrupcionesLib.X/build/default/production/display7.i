@@ -2674,28 +2674,29 @@ uint8_t tabla7(uint8_t entrada) {
 }
 
 void multiplexor(void) {
+
     OPTION_REG = 0x86;
     TMR0 = 61;
     INTCON = 0xA0;
 }
 
-uint8_t NibbleH(uint8_t ValorADC) {
-
-    uint8_t NibbleH = (ValorADC & 0b00001111);
-
-
-    return NibbleH;
-
-}
-
 uint8_t NibbleL(uint8_t ValorADC) {
 
-    uint8_t aux = ValorADC ;
-    aux = (aux >> 4);
-    uint8_t NibbleL = (aux & 0b00001111);
-
+    uint8_t NibbleL = (ValorADC & 0b00001111);
 
 
     return NibbleL;
+
+}
+
+uint8_t NibbleH(uint8_t ValorADC) {
+
+    uint8_t aux = ValorADC ;
+    aux = (aux >> 4);
+    uint8_t NibbleH= (aux & 0b00001111);
+
+
+
+    return NibbleH;
 
 }

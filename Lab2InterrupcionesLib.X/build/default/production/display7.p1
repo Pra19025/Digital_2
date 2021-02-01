@@ -286,61 +286,61 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _multiplexor ]
 [f ]
-"38
-[; ;display7.c: 38:     OPTION_REG = 0x86;
-[e = _OPTION_REG -> -> 134 `i `uc ]
 "39
-[; ;display7.c: 39:     TMR0 = 61;
-[e = _TMR0 -> -> 61 `i `uc ]
+[; ;display7.c: 39:     OPTION_REG = 0x86;
+[e = _OPTION_REG -> -> 134 `i `uc ]
 "40
-[; ;display7.c: 40:     INTCON = 0xA0;
-[e = _INTCON -> -> 160 `i `uc ]
+[; ;display7.c: 40:     TMR0 = 61;
+[e = _TMR0 -> -> 61 `i `uc ]
 "41
-[; ;display7.c: 41: }
+[; ;display7.c: 41:     INTCON = 0xA0;
+[e = _INTCON -> -> 160 `i `uc ]
+"42
+[; ;display7.c: 42: }
 [e :UE 139 ]
 }
-"43
-[; ;display7.c: 43: uint8_t NibbleH(uint8_t ValorADC) {
-[v _NibbleH `(uc ~T0 @X0 1 ef1`uc ]
-{
-[e :U _NibbleH ]
-[v _ValorADC `uc ~T0 @X0 1 r1 ]
-[f ]
-"45
-[; ;display7.c: 45:     uint8_t NibbleH = (ValorADC & 0b00001111);
-[v _NibbleH `uc ~T0 @X0 1 a ]
-[e = _NibbleH -> & -> _ValorADC `i -> 15 `i `uc ]
-"48
-[; ;display7.c: 48:     return NibbleH;
-[e ) _NibbleH ]
-[e $UE 140  ]
-"50
-[; ;display7.c: 50: }
-[e :UE 140 ]
-}
-"52
-[; ;display7.c: 52: uint8_t NibbleL(uint8_t ValorADC) {
+"44
+[; ;display7.c: 44: uint8_t NibbleL(uint8_t ValorADC) {
 [v _NibbleL `(uc ~T0 @X0 1 ef1`uc ]
 {
 [e :U _NibbleL ]
 [v _ValorADC `uc ~T0 @X0 1 r1 ]
 [f ]
-"54
-[; ;display7.c: 54:     uint8_t aux = ValorADC ;
+"46
+[; ;display7.c: 46:     uint8_t NibbleL = (ValorADC & 0b00001111);
+[v _NibbleL `uc ~T0 @X0 1 a ]
+[e = _NibbleL -> & -> _ValorADC `i -> 15 `i `uc ]
+"49
+[; ;display7.c: 49:     return NibbleL;
+[e ) _NibbleL ]
+[e $UE 140  ]
+"51
+[; ;display7.c: 51: }
+[e :UE 140 ]
+}
+"53
+[; ;display7.c: 53: uint8_t NibbleH(uint8_t ValorADC) {
+[v _NibbleH `(uc ~T0 @X0 1 ef1`uc ]
+{
+[e :U _NibbleH ]
+[v _ValorADC `uc ~T0 @X0 1 r1 ]
+[f ]
+"55
+[; ;display7.c: 55:     uint8_t aux = ValorADC ;
 [v _aux `uc ~T0 @X0 1 a ]
 [e = _aux _ValorADC ]
-"55
-[; ;display7.c: 55:     aux = (aux >> 4);
-[e = _aux -> >> -> _aux `i -> 4 `i `uc ]
 "56
-[; ;display7.c: 56:     uint8_t NibbleL = (aux & 0b00001111);
-[v _NibbleL `uc ~T0 @X0 1 a ]
-[e = _NibbleL -> & -> _aux `i -> 15 `i `uc ]
-"60
-[; ;display7.c: 60:     return NibbleL;
-[e ) _NibbleL ]
+[; ;display7.c: 56:     aux = (aux >> 4);
+[e = _aux -> >> -> _aux `i -> 4 `i `uc ]
+"57
+[; ;display7.c: 57:     uint8_t NibbleH= (aux & 0b00001111);
+[v _NibbleH `uc ~T0 @X0 1 a ]
+[e = _NibbleH -> & -> _aux `i -> 15 `i `uc ]
+"61
+[; ;display7.c: 61:     return NibbleH;
+[e ) _NibbleH ]
 [e $UE 141  ]
-"62
-[; ;display7.c: 62: }
+"63
+[; ;display7.c: 63: }
 [e :UE 141 ]
 }

@@ -53,9 +53,9 @@ void Setup(void);
 
 void __interrupt() ISR(void) {
 
-    if (ADIF == 1) {
+    if (ADIF == 1) {    
 
-        varADC = ADRESH;
+        varADC = ADRESH;    //guardar valor de la lectura del adc en variable para comparacion y para 7 segmentos
 
         ADIF = 0;
         ADCON0bits.GO = 1;
@@ -66,9 +66,9 @@ void __interrupt() ISR(void) {
 
         INTCONbits.RBIF = 0;
 
-        if (PORTBbits.RB1 == 1) {
+        if (PORTBbits.RB1 == 1) {   //si se presionar RB1 se disminuye el valor del puerto A
             debounce2++;
-            if (debounce2 > 1) {
+            if (debounce2 > 1) {    //algoritmo del antirrebote, se usa valor de 1 debido a que la simulación no funciona bien con otros valores
                 debounce2 = 0;
                 PORTA--;
 
@@ -78,12 +78,12 @@ void __interrupt() ISR(void) {
             }
         }
 
-        if (PORTBbits.RB0 == 1) {
+        if (PORTBbits.RB0 == 1) {  //si se presiona RB0 aumenta el puerto A
             debounce1++;
             if (debounce1 > 1) {
                 debounce1 = 0;
                 PORTA++;
-                var1++;
+                var1++; //variable de control para comparacion con el valor del ADC y poder prender alarma
             }
         }
 
@@ -93,12 +93,12 @@ void __interrupt() ISR(void) {
 
     if (INTCONbits.TMR0IF == 1) {
         INTCONbits.TMR0IF = 0;
-        TMR0 = 61;
+        TMR0 = 61;  //TMR=  configurado para 25ms 
         PORTC = 0;
-        Nibble1 = NibbleH(varADC);
-        Nibble2 = NibbleL(varADC);
+        Nibble1 = NibbleL(varADC);  //se usan funciones de la libreria del display7
+        Nibble2 = NibbleH(varADC);
 
-        if (PORTD == 2) {
+        if (PORTD == 2) {   //para la multiplexación se varía el valor del puerto D entre 0 y 2 mediante rotación. 
             PORTD = 0;
 
 
@@ -124,7 +124,7 @@ void __interrupt() ISR(void) {
 }
 
 void main(void) {
-
+    //se configura todo a través de sus fuciones
     Setup();
     multiplexor();
     configADC();
@@ -139,7 +139,7 @@ void main(void) {
 
     while (1) {
 
-        if (var1 == varADC) {
+        if (var1 == varADC) {   //comparacion para la alarma
             PORTEbits.RE1 = 1;
 
         } else {

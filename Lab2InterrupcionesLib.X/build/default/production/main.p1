@@ -65,12 +65,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "290
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 290: extern volatile unsigned char PORTC __attribute__((address(0x007)));
 [v _PORTC `Vuc ~T0 @X0 0 e@7 ]
-"10 ./display7.h
-[; ;./display7.h: 10: uint8_t NibbleH(uint8_t ValorADC);
-[v _NibbleH `(uc ~T0 @X0 0 ef1`uc ]
-"11
+"11 ./display7.h
 [; ;./display7.h: 11: uint8_t NibbleL(uint8_t ValorADC);
 [v _NibbleL `(uc ~T0 @X0 0 ef1`uc ]
+"10
+[; ;./display7.h: 10: uint8_t NibbleH(uint8_t ValorADC);
+[v _NibbleH `(uc ~T0 @X0 0 ef1`uc ]
 "352 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
 [v _PORTD `Vuc ~T0 @X0 0 e@8 ]
@@ -485,7 +485,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 67:         PORTC = 0;
 [e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
 "69
-[; ;main.c: 69:         Nibble2 = NibbleL(varADC);
+[; ;main.c: 69:         Nibble2 = NibbleH(varADC);
 [e $ ! == -> . . _PORTBbits 0 1 `i -> 1 `i 141  ]
 {
 "70
@@ -559,10 +559,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _PORTC -> -> 0 `i `uc ]
 "98
 [; ;main.c: 98:     Setup();
-[e = _Nibble1 ( _NibbleH (1 _varADC ]
+[e = _Nibble1 ( _NibbleL (1 _varADC ]
 "99
 [; ;main.c: 99:     multiplexor();
-[e = _Nibble2 ( _NibbleL (1 _varADC ]
+[e = _Nibble2 ( _NibbleH (1 _varADC ]
 "101
 [; ;main.c: 101:     canalADC(5);
 [e $ ! == -> _PORTD `i -> 2 `i 146  ]

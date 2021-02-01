@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\noelp\AppData\Local\Temp\s5e4.o
+$C:\Users\noelp\AppData\Local\Temp\s2to.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 E E 3 2
 config CONFIG 4 2007 2007 2 2
@@ -23,8 +23,8 @@ text3 CODE 0 29 29 8F 2
 text4 CODE 0 163 163 1E 2
 text5 CODE 0 B8 B8 87 2
 text6 CODE 0 1E4 1E4 7 2
-text7 CODE 0 181 181 18 2
-text8 CODE 0 1DC 1DC 8 2
+text7 CODE 0 1DC 1DC 8 2
+text8 CODE 0 181 181 18 2
 maintext CODE 0 13F 13F 24 2
 cstackCOMMON COMMON 1 70 70 9 1
 cstackBANK0 BANK0 1 31 31 1 1
@@ -80,38 +80,38 @@ STRING 1EB-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Lab2InterrupcionesLib.X.production.o
-11 cinit CODE >827:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-11 cinit CODE >830:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-11 cinit CODE >895:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-12 cinit CODE >896:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-13 cinit CODE >897:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-14 cinit CODE >898:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-15 cinit CODE >899:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-16 cinit CODE >900:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-17 cinit CODE >901:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-18 cinit CODE >902:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-19 cinit CODE >903:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-1A cinit CODE >904:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-1F cinit CODE >908:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-20 cinit CODE >911:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-21 cinit CODE >912:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-22 cinit CODE >913:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-23 cinit CODE >914:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-24 cinit CODE >915:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-25 cinit CODE >921:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-25 cinit CODE >923:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-26 cinit CODE >924:C:\Users\noelp\AppData\Local\Temp\s5e4.s
+11 cinit CODE >827:C:\Users\noelp\AppData\Local\Temp\s2to.s
+11 cinit CODE >830:C:\Users\noelp\AppData\Local\Temp\s2to.s
+11 cinit CODE >895:C:\Users\noelp\AppData\Local\Temp\s2to.s
+12 cinit CODE >896:C:\Users\noelp\AppData\Local\Temp\s2to.s
+13 cinit CODE >897:C:\Users\noelp\AppData\Local\Temp\s2to.s
+14 cinit CODE >898:C:\Users\noelp\AppData\Local\Temp\s2to.s
+15 cinit CODE >899:C:\Users\noelp\AppData\Local\Temp\s2to.s
+16 cinit CODE >900:C:\Users\noelp\AppData\Local\Temp\s2to.s
+17 cinit CODE >901:C:\Users\noelp\AppData\Local\Temp\s2to.s
+18 cinit CODE >902:C:\Users\noelp\AppData\Local\Temp\s2to.s
+19 cinit CODE >903:C:\Users\noelp\AppData\Local\Temp\s2to.s
+1A cinit CODE >904:C:\Users\noelp\AppData\Local\Temp\s2to.s
+1F cinit CODE >908:C:\Users\noelp\AppData\Local\Temp\s2to.s
+20 cinit CODE >911:C:\Users\noelp\AppData\Local\Temp\s2to.s
+21 cinit CODE >912:C:\Users\noelp\AppData\Local\Temp\s2to.s
+22 cinit CODE >913:C:\Users\noelp\AppData\Local\Temp\s2to.s
+23 cinit CODE >914:C:\Users\noelp\AppData\Local\Temp\s2to.s
+24 cinit CODE >915:C:\Users\noelp\AppData\Local\Temp\s2to.s
+25 cinit CODE >921:C:\Users\noelp\AppData\Local\Temp\s2to.s
+25 cinit CODE >923:C:\Users\noelp\AppData\Local\Temp\s2to.s
+26 cinit CODE >924:C:\Users\noelp\AppData\Local\Temp\s2to.s
 4 intentry CODE >54:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\main.c
-1DC text8 CODE >43:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
-1DD text8 CODE >45:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
-1E2 text8 CODE >48:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
-1E3 text8 CODE >50:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
-181 text7 CODE >52:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
-182 text7 CODE >54:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
-186 text7 CODE >55:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
-192 text7 CODE >56:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
-197 text7 CODE >60:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
-198 text7 CODE >62:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
+181 text8 CODE >53:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
+182 text8 CODE >55:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
+186 text8 CODE >56:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
+192 text8 CODE >57:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
+197 text8 CODE >61:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
+198 text8 CODE >63:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
+1DC text7 CODE >44:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
+1DD text7 CODE >46:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
+1E2 text7 CODE >49:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
+1E3 text7 CODE >51:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
 1E4 text6 CODE >13:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
 1E5 text6 CODE >34:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
 1EA text6 CODE >35:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
@@ -258,10 +258,10 @@ B7 text3 CODE >138:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesL
 1AA text2 CODE >155:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\ADC.c
 1AD text2 CODE >156:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\ADC.c
 1D1 text1 CODE >37:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
-1D1 text1 CODE >38:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
-1D5 text1 CODE >39:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
-1D9 text1 CODE >40:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
-1DB text1 CODE >41:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
+1D1 text1 CODE >39:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
+1D5 text1 CODE >40:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
+1D9 text1 CODE >41:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
+1DB text1 CODE >42:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
 13F maintext CODE >126:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\main.c
 13F maintext CODE >128:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\main.c
 144 maintext CODE >129:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\main.c
@@ -271,23 +271,23 @@ B7 text3 CODE >138:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesL
 15C maintext CODE >143:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\main.c
 15D maintext CODE >145:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\main.c
 15E maintext CODE >146:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\main.c
-1AE inittext CODE >869:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-1AE inittext CODE >870:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-1AF inittext CODE >871:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-1B0 inittext CODE >872:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-1B1 inittext CODE >873:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-1B2 inittext CODE >880:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-1B2 inittext CODE >881:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-1B7 inittext CODE >882:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-1B8 inittext CODE >883:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-1B9 inittext CODE >884:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-1BA inittext CODE >885:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-1BB inittext CODE >886:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-1BC inittext CODE >887:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-1BD inittext CODE >888:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-1BE inittext CODE >889:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-1BF inittext CODE >890:C:\Users\noelp\AppData\Local\Temp\s5e4.s
-1C0 inittext CODE >891:C:\Users\noelp\AppData\Local\Temp\s5e4.s
+1AE inittext CODE >869:C:\Users\noelp\AppData\Local\Temp\s2to.s
+1AE inittext CODE >870:C:\Users\noelp\AppData\Local\Temp\s2to.s
+1AF inittext CODE >871:C:\Users\noelp\AppData\Local\Temp\s2to.s
+1B0 inittext CODE >872:C:\Users\noelp\AppData\Local\Temp\s2to.s
+1B1 inittext CODE >873:C:\Users\noelp\AppData\Local\Temp\s2to.s
+1B2 inittext CODE >880:C:\Users\noelp\AppData\Local\Temp\s2to.s
+1B2 inittext CODE >881:C:\Users\noelp\AppData\Local\Temp\s2to.s
+1B7 inittext CODE >882:C:\Users\noelp\AppData\Local\Temp\s2to.s
+1B8 inittext CODE >883:C:\Users\noelp\AppData\Local\Temp\s2to.s
+1B9 inittext CODE >884:C:\Users\noelp\AppData\Local\Temp\s2to.s
+1BA inittext CODE >885:C:\Users\noelp\AppData\Local\Temp\s2to.s
+1BB inittext CODE >886:C:\Users\noelp\AppData\Local\Temp\s2to.s
+1BC inittext CODE >887:C:\Users\noelp\AppData\Local\Temp\s2to.s
+1BD inittext CODE >888:C:\Users\noelp\AppData\Local\Temp\s2to.s
+1BE inittext CODE >889:C:\Users\noelp\AppData\Local\Temp\s2to.s
+1BF inittext CODE >890:C:\Users\noelp\AppData\Local\Temp\s2to.s
+1C0 inittext CODE >891:C:\Users\noelp\AppData\Local\Temp\s2to.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -314,21 +314,21 @@ __size_of_NibbleL 0 0 ABS 0 - dist/default/production\Lab2InterrupcionesLib.X.pr
 __Hstrings 0 0 ABS 0 strings -
 _ADIF 66 0 ABS 0 - dist/default/production\Lab2InterrupcionesLib.X.production.o
 _TMR0 1 0 ABS 0 - dist/default/production\Lab2InterrupcionesLib.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\noelp\AppData\Local\Temp\s5e4.o
+___sp 0 0 STACK 2 stack C:\Users\noelp\AppData\Local\Temp\s2to.o
 _main 27E 0 CODE 0 maintext dist/default/production\Lab2InterrupcionesLib.X.production.o
 _var1 30 0 BANK0 1 bssBANK0 dist/default/production\Lab2InterrupcionesLib.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Lab2InterrupcionesLib.X.production.o
-start 1C 0 CODE 0 init C:\Users\noelp\AppData\Local\Temp\s5e4.o
+start 1C 0 CODE 0 init C:\Users\noelp\AppData\Local\Temp\s2to.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Lab2InterrupcionesLib.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __LidataBANK0 0 0 ABS 0 idataBANK0 -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s5e4.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s5e4.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s5e4.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s5e4.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s5e4.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s5e4.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s2to.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s2to.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s2to.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s2to.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s2to.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s2to.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production\Lab2InterrupcionesLib.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
@@ -338,20 +338,20 @@ __size_of_configADC 0 0 ABS 0 - dist/default/production\Lab2InterrupcionesLib.X.
 _ADRESH 1E 0 ABS 0 - dist/default/production\Lab2InterrupcionesLib.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\Lab2InterrupcionesLib.X.production.o
 _configADC 332 0 CODE 0 text2 dist/default/production\Lab2InterrupcionesLib.X.production.o
-__end_of_NibbleH 3C8 0 CODE 0 text8 dist/default/production\Lab2InterrupcionesLib.X.production.o
-__end_of_NibbleL 332 0 CODE 0 text7 dist/default/production\Lab2InterrupcionesLib.X.production.o
+__end_of_NibbleH 332 0 CODE 0 text8 dist/default/production\Lab2InterrupcionesLib.X.production.o
+__end_of_NibbleL 3C8 0 CODE 0 text7 dist/default/production\Lab2InterrupcionesLib.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 _INTCON B 0 ABS 0 - dist/default/production\Lab2InterrupcionesLib.X.production.o
 _OPTION_REG 81 0 ABS 0 - dist/default/production\Lab2InterrupcionesLib.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\noelp\AppData\Local\Temp\s5e4.o
-___stacklo 0 0 ABS 0 - C:\Users\noelp\AppData\Local\Temp\s5e4.o
+___stackhi 0 0 ABS 0 - C:\Users\noelp\AppData\Local\Temp\s2to.o
+___stacklo 0 0 ABS 0 - C:\Users\noelp\AppData\Local\Temp\s2to.o
 __size_of_Setup 0 0 ABS 0 - dist/default/production\Lab2InterrupcionesLib.X.production.o
 start_initialization 22 0 CODE 0 cinit dist/default/production\Lab2InterrupcionesLib.X.production.o
 _TRISEbits 89 0 ABS 0 - dist/default/production\Lab2InterrupcionesLib.X.production.o
 __pcstackBANK0 31 0 BANK0 1 cstackBANK0 dist/default/production\Lab2InterrupcionesLib.X.production.o
 __end_of_multiplexor 3B8 0 CODE 0 text1 dist/default/production\Lab2InterrupcionesLib.X.production.o
 canalADC@canal 31 0 BANK0 1 cstackBANK0 dist/default/production\Lab2InterrupcionesLib.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\noelp\AppData\Local\Temp\s5e4.o
+___int_sp 0 0 STACK 2 stack C:\Users\noelp\AppData\Local\Temp\s2to.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -399,23 +399,23 @@ __S3 0 0 ABS 0 - -
 saved_w 7E 0 ABS 0 - dist/default/production\Lab2InterrupcionesLib.X.production.o
 __end_of_ISR 27E 0 CODE 0 text5 dist/default/production\Lab2InterrupcionesLib.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\noelp\AppData\Local\Temp\s5e4.o
-NibbleH@ValorADC 71 0 COMMON 1 cstackCOMMON dist/default/production\Lab2InterrupcionesLib.X.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\noelp\AppData\Local\Temp\s2to.o
+NibbleH@ValorADC 72 0 COMMON 1 cstackCOMMON dist/default/production\Lab2InterrupcionesLib.X.production.o
 __pdataBANK0 20 0 BANK0 1 dataBANK0 dist/default/production\Lab2InterrupcionesLib.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 _Nibble1 7A 0 COMMON 1 bssCOMMON dist/default/production\Lab2InterrupcionesLib.X.production.o
 _Nibble2 79 0 COMMON 1 bssCOMMON dist/default/production\Lab2InterrupcionesLib.X.production.o
-_NibbleH 3B8 0 CODE 0 text8 dist/default/production\Lab2InterrupcionesLib.X.production.o
-_NibbleL 302 0 CODE 0 text7 dist/default/production\Lab2InterrupcionesLib.X.production.o
+_NibbleH 302 0 CODE 0 text8 dist/default/production\Lab2InterrupcionesLib.X.production.o
+_NibbleL 3B8 0 CODE 0 text7 dist/default/production\Lab2InterrupcionesLib.X.production.o
 _PIE1bits 8C 0 ABS 0 - dist/default/production\Lab2InterrupcionesLib.X.production.o
 __size_of_canalADC 0 0 ABS 0 - dist/default/production\Lab2InterrupcionesLib.X.production.o
 __pmaintext 27E 0 CODE 0 maintext dist/default/production\Lab2InterrupcionesLib.X.production.o
 __size_of_multiplexor 0 0 ABS 0 - dist/default/production\Lab2InterrupcionesLib.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
-NibbleL@ValorADC 72 0 COMMON 1 cstackCOMMON dist/default/production\Lab2InterrupcionesLib.X.production.o
+NibbleL@ValorADC 71 0 COMMON 1 cstackCOMMON dist/default/production\Lab2InterrupcionesLib.X.production.o
 __Hinittext 0 0 ABS 0 inittext -
-NibbleL@aux 74 0 COMMON 1 cstackCOMMON dist/default/production\Lab2InterrupcionesLib.X.production.o
+NibbleH@aux 74 0 COMMON 1 cstackCOMMON dist/default/production\Lab2InterrupcionesLib.X.production.o
 _tabla7 3C8 0 CODE 0 text6 dist/default/production\Lab2InterrupcionesLib.X.production.o
 _varADC 7D 0 COMMON 1 bssCOMMON dist/default/production\Lab2InterrupcionesLib.X.production.o
 _ADCON0bits 1F 0 ABS 0 - dist/default/production\Lab2InterrupcionesLib.X.production.o
@@ -428,7 +428,7 @@ __Lspace_4 0 0 ABS 0 - -
 __pbssCOMMON 79 0 COMMON 1 bssCOMMON dist/default/production\Lab2InterrupcionesLib.X.production.o
 init_fetch0 35C 0 CODE 0 inittext dist/default/production\Lab2InterrupcionesLib.X.production.o
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
-NibbleL@NibbleL 73 0 COMMON 1 cstackCOMMON dist/default/production\Lab2InterrupcionesLib.X.production.o
+NibbleL@NibbleL 72 0 COMMON 1 cstackCOMMON dist/default/production\Lab2InterrupcionesLib.X.production.o
 _PIR1bits C 0 ABS 0 - dist/default/production\Lab2InterrupcionesLib.X.production.o
 __Lend_init 1C 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
@@ -446,8 +446,8 @@ __ptext3 52 0 CODE 0 text3 dist/default/production\Lab2InterrupcionesLib.X.produ
 __ptext4 2C6 0 CODE 0 text4 dist/default/production\Lab2InterrupcionesLib.X.production.o
 __ptext5 170 0 CODE 0 text5 dist/default/production\Lab2InterrupcionesLib.X.production.o
 __ptext6 3C8 0 CODE 0 text6 dist/default/production\Lab2InterrupcionesLib.X.production.o
-__ptext7 302 0 CODE 0 text7 dist/default/production\Lab2InterrupcionesLib.X.production.o
-__ptext8 3B8 0 CODE 0 text8 dist/default/production\Lab2InterrupcionesLib.X.production.o
+__ptext7 3B8 0 CODE 0 text7 dist/default/production\Lab2InterrupcionesLib.X.production.o
+__ptext8 302 0 CODE 0 text8 dist/default/production\Lab2InterrupcionesLib.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
@@ -457,7 +457,7 @@ __pidataBANK0 382 0 CODE 0 idataBANK0 dist/default/production\Lab2Interrupciones
 __Lclrtext 0 0 ABS 0 clrtext -
 _ANSELbits 188 0 ABS 0 - dist/default/production\Lab2InterrupcionesLib.X.production.o
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\Lab2InterrupcionesLib.X.production.o
-NibbleH@NibbleH 72 0 COMMON 1 cstackCOMMON dist/default/production\Lab2InterrupcionesLib.X.production.o
+NibbleH@NibbleH 73 0 COMMON 1 cstackCOMMON dist/default/production\Lab2InterrupcionesLib.X.production.o
 __Hend_init 22 0 CODE 0 end_init -
 init_ram0 364 0 CODE 0 inittext dist/default/production\Lab2InterrupcionesLib.X.production.o
 __end_of_main 2C6 0 CODE 0 maintext dist/default/production\Lab2InterrupcionesLib.X.production.o
