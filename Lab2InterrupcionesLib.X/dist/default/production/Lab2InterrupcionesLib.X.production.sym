@@ -191,7 +191,7 @@ cstackCOMMON 70 7D COMMON 70 1
 dataBANK0 20 31 BANK0 20 1
 %locals
 dist/default/production\Lab2InterrupcionesLib.X.production.o
-C:\Users\noelp\AppData\Local\Temp\s2to.s
+C:\Users\noelp\AppData\Local\Temp\sg4g.s
 827 11 0 CODE 0
 830 11 0 CODE 0
 895 11 0 CODE 0

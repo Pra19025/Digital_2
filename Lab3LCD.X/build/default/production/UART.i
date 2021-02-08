@@ -2674,10 +2674,10 @@ uint8_t UARTReadString(char *buf, uint8_t max_length);
 void UARTInit(const uint32_t baud_rate, const uint8_t BRGH) {
 
     if (BRGH == 0) {
-        SPBRG = 4000000/(64*baud_rate) - 1;
+        SPBRG = 8000000/(64*baud_rate) - 1;
         TXSTAbits.BRGH = 0;
     } else {
-        SPBRG = 4000000/(16*baud_rate) - 1;
+        SPBRG = 8000000/(16*baud_rate) - 1;
         TXSTAbits.BRGH = 1;
     }
 

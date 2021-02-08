@@ -44,7 +44,7 @@
 #define D5 PORTDbits.RD5
 #define D6 PORTDbits.RD6
 #define D7 PORTDbits.RD7
-#define _XTAL_FREQ 4000000
+#define _XTAL_FREQ 8000000
 
 #include <xc.h> // include processor files - each processor file is guarded.  
 #include <stdint.h>
@@ -57,6 +57,9 @@ void Lcd_Write_Char(char a);
 void Lcd_Write_String(char *a);
 void Lcd_Shift_Right(void);
 void Lcd_Shift_Left(void);
+
+void convert(char *data,float a, int place); //declaration
+
 
 
 

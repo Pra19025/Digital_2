@@ -2783,8 +2783,6 @@ void configADC(void) {
 
     PIR1bits.ADIF = 0;
     PIE1bits.ADIE = 1;
-    INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 1;
 
     ADCON0bits.ADON = 1;
 }

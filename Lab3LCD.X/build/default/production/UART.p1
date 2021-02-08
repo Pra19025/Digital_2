@@ -319,8 +319,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! == -> _BRGH `i -> 0 `i 139  ]
 {
 "12
-[; ;UART.c: 12:         SPBRG = 4000000/(64*baud_rate) - 1;
-[e = _SPBRG -> - / -> -> 4000000 `l `ul * -> -> -> 64 `i `l `ul _baud_rate -> -> -> 1 `i `l `ul `uc ]
+[; ;UART.c: 12:         SPBRG = 8000000/(64*baud_rate) - 1;
+[e = _SPBRG -> - / -> -> 8000000 `l `ul * -> -> -> 64 `i `l `ul _baud_rate -> -> -> 1 `i `l `ul `uc ]
 "13
 [; ;UART.c: 13:         TXSTAbits.BRGH = 0;
 [e = . . _TXSTAbits 0 2 -> -> 0 `i `uc ]
@@ -331,8 +331,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 139 ]
 {
 "15
-[; ;UART.c: 15:         SPBRG = 4000000/(16*baud_rate) - 1;
-[e = _SPBRG -> - / -> -> 4000000 `l `ul * -> -> -> 16 `i `l `ul _baud_rate -> -> -> 1 `i `l `ul `uc ]
+[; ;UART.c: 15:         SPBRG = 8000000/(16*baud_rate) - 1;
+[e = _SPBRG -> - / -> -> 8000000 `l `ul * -> -> -> 16 `i `l `ul _baud_rate -> -> -> 1 `i `l `ul `uc ]
 "16
 [; ;UART.c: 16:         TXSTAbits.BRGH = 1;
 [e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]

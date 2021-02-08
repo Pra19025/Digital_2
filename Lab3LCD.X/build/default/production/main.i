@@ -2646,6 +2646,8 @@ void Lcd_Write_Char(char a);
 void Lcd_Write_String(char *a);
 void Lcd_Shift_Right(void);
 void Lcd_Shift_Left(void);
+
+void convert(char *data,float a, int place);
 # 11 "main.c" 2
 
 # 1 "./ADC.h" 1
@@ -2701,6 +2703,7 @@ uint8_t UARTReadString(char *buf, uint8_t max_length);
 
 
 
+
 #pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -2720,14 +2723,16 @@ uint8_t UARTReadString(char *buf, uint8_t max_length);
 
 
 
-
+char buf[10];
+char buf2[10];
 uint8_t varADC1 = 0;
 uint8_t varADC2 = 0;
 uint8_t bandera = 0;
-float convertir = 0.00;
-uint8_t *resultado;
-char buf[20];
-int status;
+float convertir;
+float convertir2;
+char lectura;
+uint8_t control;
+
 
 
 
@@ -2741,32 +2746,22 @@ void Setup(void);
 
 void __attribute__((picinterrupt(("")))) ISR(void) {
 
-    if (ADIF == 1) {
 
-
-        if (bandera == 0) {
-            varADC1 = ADRESH;
-            canalADC(1);
-            bandera++;
-        } else {
-            varADC2 = ADRESH;
-            canalADC(0);
-            bandera = 0;
-        }
-      PORTB = varADC1;
-
-        ADIF = 0;
-        ADCON0bits.GO = 1;
-
-    }
 
 }
 
 void main(void) {
     Setup();
-
+    UARTInit(9600, 0);
     Lcd_Init();
     Lcd_Clear();
+
+    Lcd_Set_Cursor(1, 1);
+    Lcd_Write_String("S1");
+    Lcd_Set_Cursor(1, 8);
+    Lcd_Write_String("S2");
+    Lcd_Set_Cursor(1, 15);
+    Lcd_Write_String("S3");
 
     configADC();
     canalADC(0);
@@ -2774,27 +2769,42 @@ void main(void) {
 
     while (1) {
 
+        if (ADIF == 1) {
 
 
-        Lcd_Set_Cursor(1, 1);
-        Lcd_Write_String("S1");
-        Lcd_Set_Cursor(1, 8);
-        Lcd_Write_String("S2");
-        Lcd_Set_Cursor(1, 15);
-        Lcd_Write_String("S3");
+            if (bandera == 0) {
+                varADC1 = ADRESH;
+                canalADC(1);
+                bandera++;
+            } else {
+                varADC2 = ADRESH;
+                canalADC(0);
+                bandera = 0;
+            }
+            PORTB = varADC1;
 
-        convertir = (varADC1/255)*5;
+            ADIF = 0;
+            ADCON0bits.GO = 1;
+
+        }
 
 
-        Lcd_Set_Cursor(2,1);
+        convertir = 0;
+        convertir2 = 0;
+
+        convertir = (varADC1 / (float) 255)*5;
+        convert(buf, convertir, 2);
+
+        convertir2 = (varADC2 / (float) 255)*5;
+        convert(buf2, convertir2, 2);
+
+        Lcd_Set_Cursor(2, 1);
         Lcd_Write_String(buf);
 
-        Lcd_Set_Cursor(2,8);
-        Lcd_Write_String(varADC2);
-
-
-
-
+        Lcd_Set_Cursor(2, 8);
+        Lcd_Write_String(buf2);
+        _delay((unsigned long)((20)*(8000000/4000.0)));
+# 130 "main.c"
     }
 
     return;
@@ -2813,8 +2823,6 @@ void Setup(void) {
     PORTD = 0;
     PORTB = 0;
 
-    INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 1;
     ANSEL = 0;
     ANSELH = 0;
     ANSELbits.ANS0 = 1;

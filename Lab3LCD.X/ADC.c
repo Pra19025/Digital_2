@@ -147,11 +147,9 @@ void configADC(void) {
     ADCON1bits.VCFG1 = 0;
 
     ADCON1bits.ADFM = 0;
-//se activan interrupciones y se configuran
+
     PIR1bits.ADIF = 0;
     PIE1bits.ADIE = 1;
-    INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 1;
     //se prende ADC
     ADCON0bits.ADON = 1;
 }

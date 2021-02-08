@@ -18,7 +18,7 @@
 
 /****** CHANGE VALUES BELOW ******/
 // System clock frequency
-#define _XTAL_FREQ  4000000
+#define _XTAL_FREQ  8000000
 
 // Define the pins used
 #define UART_TRIS_RX     TRISBbits.TRISB2

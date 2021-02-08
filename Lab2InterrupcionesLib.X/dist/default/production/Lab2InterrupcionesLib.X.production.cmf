@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\noelp\AppData\Local\Temp\s2to.o
+$C:\Users\noelp\AppData\Local\Temp\sg4g.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 E E 3 2
 config CONFIG 4 2007 2007 2 2
@@ -80,27 +80,27 @@ STRING 1EB-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Lab2InterrupcionesLib.X.production.o
-11 cinit CODE >827:C:\Users\noelp\AppData\Local\Temp\s2to.s
-11 cinit CODE >830:C:\Users\noelp\AppData\Local\Temp\s2to.s
-11 cinit CODE >895:C:\Users\noelp\AppData\Local\Temp\s2to.s
-12 cinit CODE >896:C:\Users\noelp\AppData\Local\Temp\s2to.s
-13 cinit CODE >897:C:\Users\noelp\AppData\Local\Temp\s2to.s
-14 cinit CODE >898:C:\Users\noelp\AppData\Local\Temp\s2to.s
-15 cinit CODE >899:C:\Users\noelp\AppData\Local\Temp\s2to.s
-16 cinit CODE >900:C:\Users\noelp\AppData\Local\Temp\s2to.s
-17 cinit CODE >901:C:\Users\noelp\AppData\Local\Temp\s2to.s
-18 cinit CODE >902:C:\Users\noelp\AppData\Local\Temp\s2to.s
-19 cinit CODE >903:C:\Users\noelp\AppData\Local\Temp\s2to.s
-1A cinit CODE >904:C:\Users\noelp\AppData\Local\Temp\s2to.s
-1F cinit CODE >908:C:\Users\noelp\AppData\Local\Temp\s2to.s
-20 cinit CODE >911:C:\Users\noelp\AppData\Local\Temp\s2to.s
-21 cinit CODE >912:C:\Users\noelp\AppData\Local\Temp\s2to.s
-22 cinit CODE >913:C:\Users\noelp\AppData\Local\Temp\s2to.s
-23 cinit CODE >914:C:\Users\noelp\AppData\Local\Temp\s2to.s
-24 cinit CODE >915:C:\Users\noelp\AppData\Local\Temp\s2to.s
-25 cinit CODE >921:C:\Users\noelp\AppData\Local\Temp\s2to.s
-25 cinit CODE >923:C:\Users\noelp\AppData\Local\Temp\s2to.s
-26 cinit CODE >924:C:\Users\noelp\AppData\Local\Temp\s2to.s
+11 cinit CODE >827:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+11 cinit CODE >830:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+11 cinit CODE >895:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+12 cinit CODE >896:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+13 cinit CODE >897:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+14 cinit CODE >898:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+15 cinit CODE >899:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+16 cinit CODE >900:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+17 cinit CODE >901:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+18 cinit CODE >902:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+19 cinit CODE >903:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+1A cinit CODE >904:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+1F cinit CODE >908:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+20 cinit CODE >911:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+21 cinit CODE >912:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+22 cinit CODE >913:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+23 cinit CODE >914:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+24 cinit CODE >915:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+25 cinit CODE >921:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+25 cinit CODE >923:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+26 cinit CODE >924:C:\Users\noelp\AppData\Local\Temp\sg4g.s
 4 intentry CODE >54:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\main.c
 181 text8 CODE >53:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
 182 text8 CODE >55:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\display7.c
@@ -271,23 +271,23 @@ B7 text3 CODE >138:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesL
 15C maintext CODE >143:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\main.c
 15D maintext CODE >145:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\main.c
 15E maintext CODE >146:C:\Users\noelp\Documents\GitHub\Digital_2\Lab2InterrupcionesLib.X\main.c
-1AE inittext CODE >869:C:\Users\noelp\AppData\Local\Temp\s2to.s
-1AE inittext CODE >870:C:\Users\noelp\AppData\Local\Temp\s2to.s
-1AF inittext CODE >871:C:\Users\noelp\AppData\Local\Temp\s2to.s
-1B0 inittext CODE >872:C:\Users\noelp\AppData\Local\Temp\s2to.s
-1B1 inittext CODE >873:C:\Users\noelp\AppData\Local\Temp\s2to.s
-1B2 inittext CODE >880:C:\Users\noelp\AppData\Local\Temp\s2to.s
-1B2 inittext CODE >881:C:\Users\noelp\AppData\Local\Temp\s2to.s
-1B7 inittext CODE >882:C:\Users\noelp\AppData\Local\Temp\s2to.s
-1B8 inittext CODE >883:C:\Users\noelp\AppData\Local\Temp\s2to.s
-1B9 inittext CODE >884:C:\Users\noelp\AppData\Local\Temp\s2to.s
-1BA inittext CODE >885:C:\Users\noelp\AppData\Local\Temp\s2to.s
-1BB inittext CODE >886:C:\Users\noelp\AppData\Local\Temp\s2to.s
-1BC inittext CODE >887:C:\Users\noelp\AppData\Local\Temp\s2to.s
-1BD inittext CODE >888:C:\Users\noelp\AppData\Local\Temp\s2to.s
-1BE inittext CODE >889:C:\Users\noelp\AppData\Local\Temp\s2to.s
-1BF inittext CODE >890:C:\Users\noelp\AppData\Local\Temp\s2to.s
-1C0 inittext CODE >891:C:\Users\noelp\AppData\Local\Temp\s2to.s
+1AE inittext CODE >869:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+1AE inittext CODE >870:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+1AF inittext CODE >871:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+1B0 inittext CODE >872:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+1B1 inittext CODE >873:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+1B2 inittext CODE >880:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+1B2 inittext CODE >881:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+1B7 inittext CODE >882:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+1B8 inittext CODE >883:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+1B9 inittext CODE >884:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+1BA inittext CODE >885:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+1BB inittext CODE >886:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+1BC inittext CODE >887:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+1BD inittext CODE >888:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+1BE inittext CODE >889:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+1BF inittext CODE >890:C:\Users\noelp\AppData\Local\Temp\sg4g.s
+1C0 inittext CODE >891:C:\Users\noelp\AppData\Local\Temp\sg4g.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -314,21 +314,21 @@ __size_of_NibbleL 0 0 ABS 0 - dist/default/production\Lab2InterrupcionesLib.X.pr
 __Hstrings 0 0 ABS 0 strings -
 _ADIF 66 0 ABS 0 - dist/default/production\Lab2InterrupcionesLib.X.production.o
 _TMR0 1 0 ABS 0 - dist/default/production\Lab2InterrupcionesLib.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\noelp\AppData\Local\Temp\s2to.o
+___sp 0 0 STACK 2 stack C:\Users\noelp\AppData\Local\Temp\sg4g.o
 _main 27E 0 CODE 0 maintext dist/default/production\Lab2InterrupcionesLib.X.production.o
 _var1 30 0 BANK0 1 bssBANK0 dist/default/production\Lab2InterrupcionesLib.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Lab2InterrupcionesLib.X.production.o
-start 1C 0 CODE 0 init C:\Users\noelp\AppData\Local\Temp\s2to.o
+start 1C 0 CODE 0 init C:\Users\noelp\AppData\Local\Temp\sg4g.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Lab2InterrupcionesLib.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __LidataBANK0 0 0 ABS 0 idataBANK0 -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s2to.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s2to.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s2to.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s2to.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s2to.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s2to.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\sg4g.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\sg4g.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\sg4g.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\sg4g.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\sg4g.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\sg4g.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production\Lab2InterrupcionesLib.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
@@ -343,15 +343,15 @@ __end_of_NibbleL 3C8 0 CODE 0 text7 dist/default/production\Lab2InterrupcionesLi
 __Lmaintext 0 0 ABS 0 maintext -
 _INTCON B 0 ABS 0 - dist/default/production\Lab2InterrupcionesLib.X.production.o
 _OPTION_REG 81 0 ABS 0 - dist/default/production\Lab2InterrupcionesLib.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\noelp\AppData\Local\Temp\s2to.o
-___stacklo 0 0 ABS 0 - C:\Users\noelp\AppData\Local\Temp\s2to.o
+___stackhi 0 0 ABS 0 - C:\Users\noelp\AppData\Local\Temp\sg4g.o
+___stacklo 0 0 ABS 0 - C:\Users\noelp\AppData\Local\Temp\sg4g.o
 __size_of_Setup 0 0 ABS 0 - dist/default/production\Lab2InterrupcionesLib.X.production.o
 start_initialization 22 0 CODE 0 cinit dist/default/production\Lab2InterrupcionesLib.X.production.o
 _TRISEbits 89 0 ABS 0 - dist/default/production\Lab2InterrupcionesLib.X.production.o
 __pcstackBANK0 31 0 BANK0 1 cstackBANK0 dist/default/production\Lab2InterrupcionesLib.X.production.o
 __end_of_multiplexor 3B8 0 CODE 0 text1 dist/default/production\Lab2InterrupcionesLib.X.production.o
 canalADC@canal 31 0 BANK0 1 cstackBANK0 dist/default/production\Lab2InterrupcionesLib.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\noelp\AppData\Local\Temp\s2to.o
+___int_sp 0 0 STACK 2 stack C:\Users\noelp\AppData\Local\Temp\sg4g.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -399,7 +399,7 @@ __S3 0 0 ABS 0 - -
 saved_w 7E 0 ABS 0 - dist/default/production\Lab2InterrupcionesLib.X.production.o
 __end_of_ISR 27E 0 CODE 0 text5 dist/default/production\Lab2InterrupcionesLib.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\noelp\AppData\Local\Temp\s2to.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\noelp\AppData\Local\Temp\sg4g.o
 NibbleH@ValorADC 72 0 COMMON 1 cstackCOMMON dist/default/production\Lab2InterrupcionesLib.X.production.o
 __pdataBANK0 20 0 BANK0 1 dataBANK0 dist/default/production\Lab2InterrupcionesLib.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
