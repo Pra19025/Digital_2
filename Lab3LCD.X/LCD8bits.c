@@ -10,7 +10,7 @@ void Lcd_Cmd(char a) {
     RS = 0;     
     Lcd_Port(a);    
     EN = 1; // => E = 1
-    __delay_ms(5);
+    __delay_ms(1);
     EN = 0; // => E = 0
 }
 
@@ -49,7 +49,7 @@ void Lcd_Write_Char(char a) {
     RS = 1; // => RS = 1
     Lcd_Port(a); //Data transfer
     EN = 1;
-    __delay_us(40);
+    __delay_us(10);
     EN = 0;
 }
 
@@ -68,4 +68,6 @@ void Lcd_Shift_Left() {
     Lcd_Cmd(0x01);
     Lcd_Cmd(0x08);
 }
+
+
 

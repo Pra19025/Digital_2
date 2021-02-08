@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "UART.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,15 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-
-
-
-
-
-
-
-
+# 1 "UART.c" 2
+# 1 "./UART.h" 1
+# 16 "./UART.h"
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2495,7 +2489,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 9 "main.c" 2
+# 16 "./UART.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
@@ -2630,37 +2624,6 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 10 "main.c" 2
-
-# 1 "./LCD8bits.h" 1
-# 50 "./LCD8bits.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
-# 50 "./LCD8bits.h" 2
-
-void Lcd_Init(void);
-void Lcd_Port(char a);
-void Lcd_Cmd(char a);
-void Lcd_Clear(void);
-void Lcd_Set_Cursor(char a, char b);
-void Lcd_Write_Char(char a);
-void Lcd_Write_String(char *a);
-void Lcd_Shift_Right(void);
-void Lcd_Shift_Left(void);
-# 11 "main.c" 2
-
-# 1 "./ADC.h" 1
-# 35 "./ADC.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
-# 35 "./ADC.h" 2
-
-
-void canalADC(uint8_t canal);
-void configADC(void);
-# 12 "main.c" 2
-
-# 1 "./UART.h" 1
-# 17 "./UART.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 17 "./UART.h" 2
 # 32 "./UART.h"
 void UARTInit(const uint32_t baud_rate, const uint8_t BRGH);
@@ -2697,128 +2660,95 @@ char UARTReadChar();
 
 
 uint8_t UARTReadString(char *buf, uint8_t max_length);
-# 13 "main.c" 2
+# 1 "UART.c" 2
 
-
-
-#pragma config FOSC = INTRC_NOCLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
+# 2 "UART.c" 2
 
 
 
 
 
 
-uint8_t varADC1 = 0;
-uint8_t varADC2 = 0;
-uint8_t bandera = 0;
-float convertir = 0.00;
-uint8_t *resultado;
-char buf[20];
-int status;
+
+void UARTInit(const uint32_t baud_rate, const uint8_t BRGH) {
+
+    if (BRGH == 0) {
+        SPBRG = 4000000/(64*baud_rate) - 1;
+        TXSTAbits.BRGH = 0;
+    } else {
+        SPBRG = 4000000/(16*baud_rate) - 1;
+        TXSTAbits.BRGH = 1;
+    }
+
+
+    TXSTAbits.TX9 = 0;
+    TXSTAbits.TXEN = 1;
+    TXSTAbits.SYNC = 0;
+
+
+    RCSTAbits.SPEN = 1;
+    RCSTAbits.RX9 = 0;
+    RCSTAbits.CREN = 1;
+    RCSTAbits.FERR = 0;
+    RCSTAbits.OERR = 0;
+
+
+    TRISBbits.TRISB2 = 1;
+    TRISBbits.TRISB5 = 0;
+}
 
 
 
 
 
-void Setup(void);
+void UARTSendChar(const char c) {
+    while (TXSTAbits.TRMT == 0);
+    TXREG = c;
+}
 
 
 
 
 
-void __attribute__((picinterrupt(("")))) ISR(void) {
 
-    if (ADIF == 1) {
+void UARTSendString(const char* str, const uint8_t max_length) {
+    int i = 0;
+    for (i=0 ; i<max_length && str[i]!='\0' ; i++) {
+        UARTSendChar(str[i]);
+    }
+}
 
 
-        if (bandera == 0) {
-            varADC1 = ADRESH;
-            canalADC(1);
-            bandera++;
-        } else {
-            varADC2 = ADRESH;
-            canalADC(0);
-            bandera = 0;
+
+
+
+uint8_t UARTDataReady() {
+    return PIR1bits.RCIF;
+}
+
+
+
+
+
+char UARTReadChar() {
+    while (!UARTDataReady());
+    return RCREG;
+}
+# 81 "UART.c"
+uint8_t UARTReadString(char *buf, uint8_t max_length) {
+    uint8_t i = 0;
+    char tmp = 1;
+    for (i=0 ; i<max_length-1 ; i++) {
+        tmp = UARTReadChar();
+
+        if (tmp == '\0' || tmp == '\n' || tmp == '\r') {
+            break;
         }
-      PORTB = varADC1;
-
-        ADIF = 0;
-        ADCON0bits.GO = 1;
-
+        buf[i] = tmp;
     }
 
-}
+    buf[i+1] = '\0';
 
-void main(void) {
-    Setup();
-
-    Lcd_Init();
-    Lcd_Clear();
-
-    configADC();
-    canalADC(0);
-
-
-    while (1) {
-
-
-
-        Lcd_Set_Cursor(1, 1);
-        Lcd_Write_String("S1");
-        Lcd_Set_Cursor(1, 8);
-        Lcd_Write_String("S2");
-        Lcd_Set_Cursor(1, 15);
-        Lcd_Write_String("S3");
-
-        convertir = (varADC1/255)*5;
-
-
-        Lcd_Set_Cursor(2,1);
-        Lcd_Write_String(buf);
-
-        Lcd_Set_Cursor(2,8);
-        Lcd_Write_String(varADC2);
-
-
-
-
-    }
-
-    return;
-}
-
-void Setup(void) {
-
-    TRISA = 255;
-    TRISD = 0;
-    TRISC = 0;
-    TRISB = 0;
-
-
-    PORTA = 0;
-    PORTC = 0;
-    PORTD = 0;
-    PORTB = 0;
-
-    INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 1;
-    ANSEL = 0;
-    ANSELH = 0;
-    ANSELbits.ANS0 = 1;
-    ANSELbits.ANS1 = 1;
-
-
+    return i;
 }
