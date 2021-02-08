@@ -26,7 +26,6 @@
 #pragma config BOR4V = BOR40V   // Brown-out Reset Selection bit (Brown-out Reset set to 4.0V)
 #pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
 
-#define _XTAL_FREQ 4000000
 
 //**********************************************************************************************************************************************
 // Variables 
@@ -62,13 +61,13 @@ void main(void) {
         __delay_ms(100);
         Lcd_Set_Cursor(2, 1);
         Lcd_Write_String("MPLAB XC8");
-        __delay_ms(2000);
+        __delay_ms(200);
         Lcd_Clear();
         Lcd_Set_Cursor(1, 1);
         Lcd_Write_String("Developed By");
         Lcd_Set_Cursor(2, 1);
         Lcd_Write_String("electroSome");
-        __delay_ms(2000);
+        __delay_ms(200);
         Lcd_Clear();
         Lcd_Set_Cursor(1, 1);
         Lcd_Write_String("www.electroSome.com");

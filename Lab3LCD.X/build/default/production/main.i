@@ -2633,9 +2633,9 @@ typedef uint16_t uintptr_t;
 # 10 "main.c" 2
 
 # 1 "./LCD8bits.h" 1
-# 49 "./LCD8bits.h"
+# 50 "./LCD8bits.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
-# 49 "./LCD8bits.h" 2
+# 50 "./LCD8bits.h" 2
 
 void Lcd_Init(void);
 void Lcd_Port(char a);
@@ -2665,7 +2665,7 @@ void Lcd_Shift_Left(void);
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
-# 41 "main.c"
+# 40 "main.c"
 void Setup(void);
 
 
@@ -2678,25 +2678,25 @@ void __attribute__((picinterrupt(("")))) ISR(void) {
 
 void main(void) {
     Setup();
-    _delay((unsigned long)((100)*(4000000/4000.0)));
+    _delay((unsigned long)((100)*(8000000/4000.0)));
     Lcd_Init();
 
     while (1) {
 
         Lcd_Clear();
-        _delay((unsigned long)((100)*(4000000/4000.0)));
+        _delay((unsigned long)((100)*(8000000/4000.0)));
         Lcd_Set_Cursor(1, 1);
         Lcd_Write_String("LCD Library for");
-        _delay((unsigned long)((100)*(4000000/4000.0)));
+        _delay((unsigned long)((100)*(8000000/4000.0)));
         Lcd_Set_Cursor(2, 1);
         Lcd_Write_String("MPLAB XC8");
-        _delay((unsigned long)((2000)*(4000000/4000.0)));
+        _delay((unsigned long)((200)*(8000000/4000.0)));
         Lcd_Clear();
         Lcd_Set_Cursor(1, 1);
         Lcd_Write_String("Developed By");
         Lcd_Set_Cursor(2, 1);
         Lcd_Write_String("electroSome");
-        _delay((unsigned long)((2000)*(4000000/4000.0)));
+        _delay((unsigned long)((200)*(8000000/4000.0)));
         Lcd_Clear();
         Lcd_Set_Cursor(1, 1);
         Lcd_Write_String("www.electroSome.com");

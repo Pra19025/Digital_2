@@ -31,9 +31,10 @@
 // This is a guard condition so that contents of this file are not included
 // more than once.  
 #ifndef LCD8bits_h
-#define	LCD8bits_h
+#define LCD8bits_h
 #define RS PORTCbits.RC0    
 #define EN PORTCbits.RC1
+#define RW PORTCbits.RC2
 
 #define D0 PORTDbits.RD0
 #define D1 PORTDbits.RD1
@@ -43,7 +44,7 @@
 #define D5 PORTDbits.RD5
 #define D6 PORTDbits.RD6
 #define D7 PORTDbits.RD7
-#define _XTAL_FREQ 4000000
+#define _XTAL_FREQ 8000000
 
 #include <xc.h> // include processor files - each processor file is guarded.  
 #include <stdint.h>
