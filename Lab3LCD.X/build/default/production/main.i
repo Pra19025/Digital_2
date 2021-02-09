@@ -2723,18 +2723,15 @@ uint8_t UARTReadString(char *buf, uint8_t max_length);
 
 
 
-char buf[10];
-char buf2[10];
-char buf3[10];
-uint8_t varADC1 = 0;
-uint8_t varADC2 = 0;
+
+uint8_t varADC1;
+uint8_t varADC2;
 uint8_t bandera = 0;
-float convertir;
-float convertir2;
+char *convertir;
+char *convertir2;
 char lectura;
-uint8_t control;
 uint8_t varUART = 0;
-uint8_t UARTstring;
+char UARTstring;
 
 
 
@@ -2742,17 +2739,12 @@ uint8_t UARTstring;
 
 
 void Setup(void);
-char intToString(uint8_t value);
+char *intToString(uint8_t value);
+char *decimalASCII(uint8_t lectura);
 
 
 
 
-
-void __attribute__((picinterrupt(("")))) ISR(void) {
-
-
-
-}
 
 void main(void) {
     Setup();
@@ -2792,32 +2784,21 @@ void main(void) {
 
         }
 
+        convertir = decimalASCII(varADC1);
 
-        convertir = 0;
-        convertir2 = 0;
-
-        convertir = (varADC1 / (float) 255)*5;
-        convert(buf, convertir, 2);
         Lcd_Set_Cursor(2, 1);
-        Lcd_Write_String(buf);
+        Lcd_Write_String(convertir);
+        UARTSendString(convertir, 6);
+        UARTSendString("V ", 6);
 
-        UARTSendString(buf, 3);
-
-        convertir2 = (varADC2 / (float) 255)*5;
-        convert(buf2, convertir2, 2);
+        convertir2 = decimalASCII(varADC2);
         Lcd_Set_Cursor(2, 8);
-        Lcd_Write_String(buf2);
-        UARTSendString(buf2, 6);
-
-        Lcd_Set_Cursor(2, 15);
-        Lcd_Write_String(UARTstring);
-        _delay((unsigned long)((20)*(4000000/4000.0)));
-
-
-
-
+        Lcd_Write_String(convertir2);
+        UARTSendString(convertir2, 8);
+        UARTSendString("V  ", 6);
 
         if (UARTDataReady()) {
+            PORTB = 255;
             char entrada = UARTReadChar();
             if (entrada == '+') {
                 varUART++;
@@ -2829,12 +2810,14 @@ void main(void) {
                 }
             }
 
-
-            Lcd_Set_Cursor(2, 15);
-            UARTstring = intToString(varUART);
-
-
         }
+
+
+        Lcd_Set_Cursor(2, 14);
+        UARTstring = intToString(varUART);
+        Lcd_Write_String(UARTstring);
+
+
 
 
 
@@ -2849,8 +2832,6 @@ void Setup(void) {
     TRISD = 0;
     TRISC = 0;
     TRISB = 0;
-    TRISCbits.TRISC7 = 1;
-    TRISCbits.TRISC6 = 0;
 
 
     PORTA = 0;
@@ -2866,13 +2847,35 @@ void Setup(void) {
 
 }
 
-char intToString(uint8_t value) {
+char* decimalASCII(uint8_t lectura) {
+    float convertir3 = (lectura / (float) 51);
+    char cadena[5];
+    uint8_t entero = convertir3;
+
+    cadena[0] = entero + 48;
+    cadena[1] = '.';
+
+    convertir3 = (convertir3 - entero);
+    convertir3 *= 10;
+    entero = convertir3;
+    cadena[2] = entero + 48;
+
+    convertir3 -= entero;
+    convertir3 *= 10;
+
+    entero = convertir3;
+    cadena[3] = entero + 48;
+    cadena[4] = '\0';
+    return cadena;
+}
+
+char* intToString(uint8_t value) {
     char valor[4];
 
     uint8_t entero = value / 100;
     valor[0] = entero + 48;
 
-    value = value-(100 * entero);
+    value = value - (100 * entero);
 
     valor[1] = value / 10 + 48;
     valor[2] = value % 10 + 48;

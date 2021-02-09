@@ -54,7 +54,7 @@ uint8_t UARTDataReady(void);
  * Read one character
  * @return  byte read
  */
-char UARTReadChar();
+char UARTReadChar();    
 
 /**
  * Read a string, until we read '\0', up to max_length characters.

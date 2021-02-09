@@ -33,18 +33,15 @@
 //**********************************************************************************************************************************************
 // Variables 
 //**********************************************************************************************************************************************
-char buf[10];
-char buf2[10];
-char buf3[10];
-uint8_t varADC1 = 0;
-uint8_t varADC2 = 0;
+
+uint8_t varADC1;
+uint8_t varADC2;
 uint8_t bandera = 0;
-float convertir;
-float convertir2;
+char *convertir;
+char *convertir2;
 char lectura;
-uint8_t control;
 uint8_t varUART = 0;
-uint8_t UARTstring;
+char UARTstring;
 
 
 //**********************************************************************************************************************************************
@@ -52,18 +49,12 @@ uint8_t UARTstring;
 //**********************************************************************************************************************************************
 
 void Setup(void);
-char intToString(uint8_t value);
-char decimalASCII(uint8_t lectura);
+char *intToString(uint8_t value);
+char *decimalASCII(uint8_t lectura);
 
 //**************************************************************
 // Vector de interrupción
 //**************************************************************
-
-void __interrupt() ISR(void) {
-
-
-
-}
 
 void main(void) {
     Setup();
@@ -103,32 +94,21 @@ void main(void) {
 
         }
 
+        convertir = decimalASCII(varADC1);
 
-        convertir = 0;
-        convertir2 = 0;
-
-        convertir = (varADC1 / (float) 255)*5;
-        
         Lcd_Set_Cursor(2, 1);
-        Lcd_Write_String(buf);
-        
-        UARTSendString(buf, 3);
-        
-        convertir2 = (varADC2 / (float) 255)*5;
-        convert(buf2, convertir2, 2);
+        Lcd_Write_String(convertir);
+        UARTSendString(convertir, 6);
+        UARTSendString("V ", 6);
+
+        convertir2 = decimalASCII(varADC2);
         Lcd_Set_Cursor(2, 8);
-        Lcd_Write_String(buf2);
-        UARTSendString(buf2, 6);
-
-        Lcd_Set_Cursor(2, 15);
-        Lcd_Write_String(UARTstring);
-        __delay_ms(20);
-
-
-        // UARTSendString(buf, 6);
-
+        Lcd_Write_String(convertir2);
+        UARTSendString(convertir2, 8);
+        UARTSendString("V  ", 6);
 
         if (UARTDataReady()) {
+            PORTB = 255;
             char entrada = UARTReadChar();
             if (entrada == '+') {
                 varUART++;
@@ -140,12 +120,14 @@ void main(void) {
                 }
             }
 
-
-            Lcd_Set_Cursor(2, 15);
-            UARTstring = intToString(varUART);
-
-
         }
+        //PORTB = varUART;
+       
+        Lcd_Set_Cursor(2, 14);
+        UARTstring = intToString(varUART);
+        Lcd_Write_String(UARTstring);
+
+
 
 
 
@@ -160,8 +142,6 @@ void Setup(void) {
     TRISD = 0;
     TRISC = 0;
     TRISB = 0;
-    TRISCbits.TRISC7 = 1;
-    TRISCbits.TRISC6 = 0;
 
 
     PORTA = 0;
@@ -177,23 +157,23 @@ void Setup(void) {
 
 }
 
-char decimalASCII(uint8_t lectura){
-    float convertir = (lectura/255)*5;    //debido a que se leen 8 bits, 255 es el máximo
+char* decimalASCII(uint8_t lectura) {
+    float convertir3 = (lectura / (float) 51); //debido a que se leen 8 bits, 255 es el máximo
     char cadena[5];
-    uint8_t entero = convertir;
-    
+    uint8_t entero = convertir3;
+
     cadena[0] = entero + 48; //debido a que el 48 es la posición del 0 en ascii
     cadena[1] = '.';
-    
-    convertir = (convertir - entero); //debido a que convertir es float, y entero es entero, solo van a quedar los decimales después de esta operación en valor
-    convertir = convertir*10;
-    entero = convertir;
+
+    convertir3 = (convertir3 - entero); //debido a que convertir es float, y entero es entero, solo van a quedar los decimales después de esta operación en valor
+    convertir3 *= 10;
+    entero = convertir3;
     cadena[2] = entero + 48;
-    
-    convertir -= entero;
-    convertir = convertir *10;
-    
-    entero = convertir;
+
+    convertir3 -= entero;
+    convertir3 *= 10;
+
+    entero = convertir3;
     cadena[3] = entero + 48;
     cadena[4] = '\0';
     return cadena;
@@ -205,7 +185,7 @@ char* intToString(uint8_t value) {
     uint8_t entero = value / 100; // numero de centenas 
     valor[0] = entero + 48;
 
-    value = value-(100 * entero); // se quitan las decenas
+    value = value - (100 * entero); // se quitan las decenas
 
     valor[1] = value / 10 + 48; // decenas
     valor[2] = value % 10 + 48; // el resto
