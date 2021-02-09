@@ -2684,7 +2684,7 @@ void UARTSendString(const char* str, const uint8_t max_length);
 
 
 
-uint8_t UARTDataReady();
+uint8_t UARTDataReady(void);
 
 
 
@@ -2725,6 +2725,7 @@ uint8_t UARTReadString(char *buf, uint8_t max_length);
 
 char buf[10];
 char buf2[10];
+char buf3[10];
 uint8_t varADC1 = 0;
 uint8_t varADC2 = 0;
 uint8_t bandera = 0;
@@ -2732,6 +2733,8 @@ float convertir;
 float convertir2;
 char lectura;
 uint8_t control;
+uint8_t varUART = 0;
+uint8_t UARTstring;
 
 
 
@@ -2739,6 +2742,7 @@ uint8_t control;
 
 
 void Setup(void);
+char intToString(uint8_t value);
 
 
 
@@ -2752,7 +2756,7 @@ void __attribute__((picinterrupt(("")))) ISR(void) {
 
 void main(void) {
     Setup();
-    UARTInit(9600, 0);
+    UARTInit(9600, 1);
     Lcd_Init();
     Lcd_Clear();
 
@@ -2781,7 +2785,7 @@ void main(void) {
                 canalADC(0);
                 bandera = 0;
             }
-            PORTB = varADC1;
+
 
             ADIF = 0;
             ADCON0bits.GO = 1;
@@ -2794,17 +2798,46 @@ void main(void) {
 
         convertir = (varADC1 / (float) 255)*5;
         convert(buf, convertir, 2);
-
-        convertir2 = (varADC2 / (float) 255)*5;
-        convert(buf2, convertir2, 2);
-
         Lcd_Set_Cursor(2, 1);
         Lcd_Write_String(buf);
 
+        UARTSendString(buf, 3);
+
+        convertir2 = (varADC2 / (float) 255)*5;
+        convert(buf2, convertir2, 2);
         Lcd_Set_Cursor(2, 8);
         Lcd_Write_String(buf2);
-        _delay((unsigned long)((20)*(8000000/4000.0)));
-# 130 "main.c"
+        UARTSendString(buf2, 6);
+
+        Lcd_Set_Cursor(2, 15);
+        Lcd_Write_String(UARTstring);
+        _delay((unsigned long)((20)*(4000000/4000.0)));
+
+
+
+
+
+        if (UARTDataReady()) {
+            char entrada = UARTReadChar();
+            if (entrada == '+') {
+                varUART++;
+            } else if (entrada == '-') {
+                if (varUART == 0) {
+                    varUART = 0;
+                } else {
+                    varUART--;
+                }
+            }
+
+
+            Lcd_Set_Cursor(2, 15);
+            UARTstring = intToString(varUART);
+
+
+        }
+
+
+
     }
 
     return;
@@ -2816,6 +2849,8 @@ void Setup(void) {
     TRISD = 0;
     TRISC = 0;
     TRISB = 0;
+    TRISCbits.TRISC7 = 1;
+    TRISCbits.TRISC6 = 0;
 
 
     PORTA = 0;
@@ -2827,6 +2862,23 @@ void Setup(void) {
     ANSELH = 0;
     ANSELbits.ANS0 = 1;
     ANSELbits.ANS1 = 1;
+
+
+}
+
+char intToString(uint8_t value) {
+    char valor[4];
+
+    uint8_t entero = value / 100;
+    valor[0] = entero + 48;
+
+    value = value-(100 * entero);
+
+    valor[1] = value / 10 + 48;
+    valor[2] = value % 10 + 48;
+    valor[3] = '\0';
+
+    return valor;
 
 
 }

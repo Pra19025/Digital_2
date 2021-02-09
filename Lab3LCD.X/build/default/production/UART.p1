@@ -44,17 +44,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1068
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1068: extern volatile RCSTAbits_t RCSTAbits __attribute__((address(0x018)));
 [v _RCSTAbits `VS36 ~T0 @X0 0 e@24 ]
-"1484
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1484:     struct {
-[s S55 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S55 . TRISB0 TRISB1 TRISB2 TRISB3 TRISB4 TRISB5 TRISB6 TRISB7 ]
-"1483
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1483: typedef union {
-[u S54 `S55 1 ]
-[n S54 . . ]
-"1495
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1495: extern volatile TRISBbits_t TRISBbits __attribute__((address(0x086)));
-[v _TRISBbits `VS54 ~T0 @X0 0 e@134 ]
+"1546
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1546:     struct {
+[s S57 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S57 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"1545
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1545: typedef union {
+[u S56 `S57 1 ]
+[n S56 . . ]
+"1557
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1557: extern volatile TRISCbits_t TRISCbits __attribute__((address(0x087)));
+[v _TRISCbits `VS56 ~T0 @X0 0 e@135 ]
 "1133
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1133: extern volatile unsigned char TXREG __attribute__((address(0x019)));
 [v _TXREG `Vuc ~T0 @X0 0 e@25 ]
@@ -319,8 +319,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! == -> _BRGH `i -> 0 `i 139  ]
 {
 "12
-[; ;UART.c: 12:         SPBRG = 8000000/(64*baud_rate) - 1;
-[e = _SPBRG -> - / -> -> 8000000 `l `ul * -> -> -> 64 `i `l `ul _baud_rate -> -> -> 1 `i `l `ul `uc ]
+[; ;UART.c: 12:         SPBRG = 4000000/(64*baud_rate) - 1;
+[e = _SPBRG -> - / -> -> 4000000 `l `ul * -> -> -> 64 `i `l `ul _baud_rate -> -> -> 1 `i `l `ul `uc ]
 "13
 [; ;UART.c: 13:         TXSTAbits.BRGH = 0;
 [e = . . _TXSTAbits 0 2 -> -> 0 `i `uc ]
@@ -331,8 +331,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 139 ]
 {
 "15
-[; ;UART.c: 15:         SPBRG = 8000000/(16*baud_rate) - 1;
-[e = _SPBRG -> - / -> -> 8000000 `l `ul * -> -> -> 16 `i `l `ul _baud_rate -> -> -> 1 `i `l `ul `uc ]
+[; ;UART.c: 15:         SPBRG = 4000000/(16*baud_rate) - 1;
+[e = _SPBRG -> - / -> -> 4000000 `l `ul * -> -> -> 16 `i `l `ul _baud_rate -> -> -> 1 `i `l `ul `uc ]
 "16
 [; ;UART.c: 16:         TXSTAbits.BRGH = 1;
 [e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
@@ -365,11 +365,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;UART.c: 29:     RCSTAbits.OERR = 0;
 [e = . . _RCSTAbits 0 1 -> -> 0 `i `uc ]
 "32
-[; ;UART.c: 32:     TRISBbits.TRISB2 = 1;
-[e = . . _TRISBbits 0 2 -> -> 1 `i `uc ]
+[; ;UART.c: 32:     TRISCbits.TRISC7 = 1;
+[e = . . _TRISCbits 0 7 -> -> 1 `i `uc ]
 "33
-[; ;UART.c: 33:     TRISBbits.TRISB5 = 0;
-[e = . . _TRISBbits 0 5 -> -> 0 `i `uc ]
+[; ;UART.c: 33:     TRISCbits.TRISC6 = 0;
+[e = . . _TRISCbits 0 6 -> -> 0 `i `uc ]
 "34
 [; ;UART.c: 34: }
 [e :UE 138 ]

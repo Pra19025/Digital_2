@@ -44,7 +44,7 @@
 #define D5 PORTDbits.RD5
 #define D6 PORTDbits.RD6
 #define D7 PORTDbits.RD7
-#define _XTAL_FREQ 8000000
+#define _XTAL_FREQ 4000000
 
 #include <xc.h> // include processor files - each processor file is guarded.  
 #include <stdint.h>

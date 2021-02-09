@@ -18,11 +18,11 @@
 
 /****** CHANGE VALUES BELOW ******/
 // System clock frequency
-#define _XTAL_FREQ  8000000
+#define _XTAL_FREQ  4000000
 
 // Define the pins used
-#define UART_TRIS_RX     TRISBbits.TRISB2
-#define UART_TRIS_TX     TRISBbits.TRISB5
+#define UART_TRIS_RX     TRISCbits.TRISC7
+#define UART_TRIS_TX     TRISCbits.TRISC6
 
 /**
  * Initialize the UART module with given baud rate and speed mode
@@ -48,7 +48,7 @@ void UARTSendString(const char* str, const uint8_t max_length);
  * Determines whether a new data is available to read
  * @return 
  */
-uint8_t UARTDataReady();
+uint8_t UARTDataReady(void);
 
 /**
  * Read one character
