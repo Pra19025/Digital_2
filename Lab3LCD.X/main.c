@@ -58,10 +58,10 @@ char *decimalASCII(uint8_t lectura);
 
 void main(void) {
     Setup();
-    UARTInit(9600, 1);
+    UARTInit(9600, 1);  //se van a usar 9600 baudios
     Lcd_Init();
     Lcd_Clear();
-
+//se muestran comandos iniciales en la lcd
     Lcd_Set_Cursor(1, 1);
     Lcd_Write_String("S1");
     Lcd_Set_Cursor(1, 8);
@@ -74,7 +74,7 @@ void main(void) {
 
 
     while (1) {
-
+//rutina para el adc, se cambia de canal cada ciclo
         if (ADIF == 1) {
 
 
@@ -94,11 +94,11 @@ void main(void) {
 
         }
 
-        convertir = decimalASCII(varADC1);
+        convertir = decimalASCII(varADC1);  //se convierte la lectura del adc a una string, en formato para mandar ascii
 
         Lcd_Set_Cursor(2, 1);
-        Lcd_Write_String(convertir);
-        UARTSendString(convertir, 6);
+        Lcd_Write_String(convertir);//se escribe la variable en la lcd
+        UARTSendString(convertir, 6);   //se manda la variable a traves de UART
         UARTSendString("V ", 6);
 
         convertir2 = decimalASCII(varADC2);
@@ -107,11 +107,11 @@ void main(void) {
         UARTSendString(convertir2, 8);
         UARTSendString("V  ", 6);
 
-        if (UARTDataReady()) {
+        if (UARTDataReady()) {  //rutina en la cual se espera la recepcion de datos 
             PORTB = 255;
             char entrada = UARTReadChar();
             if (entrada == '+') {
-                varUART++;
+                varUART++;  //se controla la variable de contador
             } else if (entrada == '-') {
                 if (varUART == 0) {
                     varUART = 0;
@@ -125,7 +125,7 @@ void main(void) {
        
         Lcd_Set_Cursor(2, 14);
         UARTstring = intToString(varUART);
-        Lcd_Write_String(UARTstring);
+        Lcd_Write_String(UARTstring);   //se muestra la variable en la lcd
 
 
 
@@ -137,7 +137,7 @@ void main(void) {
 }
 
 void Setup(void) {
-
+//configuracion inicial
     TRISA = 255;
     TRISD = 0;
     TRISC = 0;
@@ -162,7 +162,7 @@ char* decimalASCII(uint8_t lectura) {
     char cadena[5];
     uint8_t entero = convertir3;
 
-    cadena[0] = entero + 48; //debido a que el 48 es la posición del 0 en ascii
+    cadena[0] = entero + 48; //48 es la posicion 0 en ascii
     cadena[1] = '.';
 
     convertir3 = (convertir3 - entero); //debido a que convertir es float, y entero es entero, solo van a quedar los decimales después de esta operación en valor
@@ -182,14 +182,14 @@ char* decimalASCII(uint8_t lectura) {
 char* intToString(uint8_t value) {
     char valor[4];
 
-    uint8_t entero = value / 100; // numero de centenas 
+    uint8_t entero = value / 100; // centenas
     valor[0] = entero + 48;
 
-    value = value - (100 * entero); // se quitan las decenas
+    value = value - (100 * entero); // ya no hay decenas
 
     valor[1] = value / 10 + 48; // decenas
     valor[2] = value % 10 + 48; // el resto
-    valor[3] = '\0'; //caracter nulo
+    valor[3] = '\0'; //caracter final
 
     return valor;
 
