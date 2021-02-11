@@ -8,6 +8,8 @@
 
 #include <xc.h>
 #include <stdint.h>
+#include "SPI.h"
+#include "UART.h"
 
 // CONFIG1
 #pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN)
@@ -51,8 +53,9 @@ void main(void) {
     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 
     while(1){
+        PORTCbits.RC2 = 0; //seleccionar esclavo
         
-        
+        PORTD = spiRead();
     }
     
     

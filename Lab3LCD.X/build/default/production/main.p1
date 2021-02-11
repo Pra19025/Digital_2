@@ -56,18 +56,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "53 main.c
 [; ;main.c: 53:             } else {
 [v _decimalASCII `(*uc ~T0 @X0 0 ef1`uc ]
-"45 ./UART.h
-[; ;./UART.h: 45: void UARTSendString(const char* str, const uint8_t max_length);
-[v _UARTSendString `(v ~T0 @X0 0 ef2`*Cuc`Cuc ]
-"51
+"51 ./UART.h
 [; ;./UART.h: 51: uint8_t UARTDataReady(void);
 [v _UARTDataReady `(uc ~T0 @X0 0 ef ]
+"57
+[; ;./UART.h: 57: char UARTReadChar();
+[v _UARTReadChar `(uc ~T0 @X0 0 e? ]
 "228 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
 [v _PORTB `Vuc ~T0 @X0 0 e@6 ]
-"57 ./UART.h
-[; ;./UART.h: 57: char UARTReadChar();
-[v _UARTReadChar `(uc ~T0 @X0 0 e? ]
 "52 main.c
 [; ;main.c: 52:                 bandera++;
 [v _intToString `(*uc ~T0 @X0 0 ef1`uc ]
@@ -83,6 +80,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1478
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1478: extern volatile unsigned char TRISB __attribute__((address(0x086)));
 [v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"1546
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1546:     struct {
+[s S57 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S57 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"1545
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1545: typedef union {
+[u S56 `S57 1 ]
+[n S56 . . ]
+"1557
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1557: extern volatile TRISCbits_t TRISCbits __attribute__((address(0x087)));
+[v _TRISCbits `VS56 ~T0 @X0 0 e@135 ]
 "166
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
 [v _PORTA `Vuc ~T0 @X0 0 e@5 ]
@@ -441,10 +449,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 68:         Lcd_Write_String(convertir);
 [e ( _Lcd_Write_String (1 :s 2C ]
 "69
-[; ;main.c: 69:         UARTSendString(convertir, 6);
+[; ;main.c: 69: 
 [e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 15 `i `uc ]
 "70
-[; ;main.c: 70:         UARTSendString("V ", 6);
+[; ;main.c: 70: 
 [e ( _Lcd_Write_String (1 :s 3C ]
 "72
 [; ;main.c: 72:         convertir2 = decimalASCII(varADC2);
@@ -453,7 +461,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 73:         Lcd_Set_Cursor(2, 8);
 [e ( _canalADC (1 -> -> 0 `i `uc ]
 "76
-[; ;main.c: 76:         UARTSendString("V  ", 6);
+[; ;main.c: 76: 
 [e :U 140 ]
 {
 "78
@@ -493,7 +501,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 144 ]
 "92
-[; ;main.c: 92: 
+[; ;main.c: 92:         PORTB = varUART;
 [e = _ADIF -> -> 0 `i `b ]
 "93
 [; ;main.c: 93: 
@@ -511,12 +519,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "100
 [; ;main.c: 100: 
 [e ( _Lcd_Write_String (1 _convertir ]
-"101
-[; ;main.c: 101: 
-[e ( _UARTSendString (2 , -> _convertir `*Cuc -> -> 6 `i `uc ]
-"102
-[; ;main.c: 102:     }
-[e ( _UARTSendString (2 , :s 4C -> -> 6 `i `uc ]
 "104
 [; ;main.c: 104:     return;
 [e = _convertir2 ( _decimalASCII (1 _varADC2 ]
@@ -526,25 +528,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 "106
 [; ;main.c: 106: 
 [e ( _Lcd_Write_String (1 _convertir2 ]
-"107
-[; ;main.c: 107: void Setup(void) {
-[e ( _UARTSendString (2 , -> _convertir2 `*Cuc -> -> 8 `i `uc ]
-"108
-[; ;main.c: 108: 
-[e ( _UARTSendString (2 , :s 5C -> -> 6 `i `uc ]
 "110
 [; ;main.c: 110:     TRISD = 0;
 [e $ ! != -> ( _UARTDataReady ..  `i -> 0 `i 145  ]
 {
 "111
 [; ;main.c: 111:     TRISC = 0;
-[e = _PORTB -> -> 255 `i `uc ]
-"112
-[; ;main.c: 112:     TRISB = 0;
 [v _entrada `uc ~T0 @X0 1 a ]
 [e = _entrada ( _UARTReadChar ..  ]
+"112
+[; ;main.c: 112:     TRISB = 0;
+[e = _PORTB -> -> 255 `i `uc ]
 "113
-[; ;main.c: 113: 
+[; ;main.c: 113:     TRISCbits.TRISC7 = 1;
 [e $ ! == -> _entrada `ui -> 43 `ui 146  ]
 {
 "114
@@ -586,6 +582,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 123:     ANSELbits.ANS1 = 1;
 }
 [e :U 145 ]
+"124
+[; ;main.c: 124: 
+[e = _PORTB _varUART ]
 "126
 [; ;main.c: 126: }
 [e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 14 `i `uc ]
@@ -626,6 +625,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "144
 [; ;main.c: 144:     entero = convertir3;
 [e = _TRISB -> -> 0 `i `uc ]
+"145
+[; ;main.c: 145:     cadena[3] = entero + 48;
+[e = . . _TRISCbits 0 7 -> -> 1 `i `uc ]
 "147
 [; ;main.c: 147:     return cadena;
 [e = _PORTA -> -> 0 `i `uc ]
@@ -731,5 +733,3 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 3C 83 51 0 ]
 [a 2C 83 50 0 ]
 [a 1C 83 49 0 ]
-[a 4C 86 32 0 ]
-[a 5C 86 32 32 0 ]

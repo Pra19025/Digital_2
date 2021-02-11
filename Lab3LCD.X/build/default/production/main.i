@@ -2788,18 +2788,18 @@ void main(void) {
 
         Lcd_Set_Cursor(2, 1);
         Lcd_Write_String(convertir);
-        UARTSendString(convertir, 6);
-        UARTSendString("V ", 6);
+
+
 
         convertir2 = decimalASCII(varADC2);
         Lcd_Set_Cursor(2, 8);
         Lcd_Write_String(convertir2);
-        UARTSendString(convertir2, 8);
-        UARTSendString("V  ", 6);
+
+
 
         if (UARTDataReady()) {
-            PORTB = 255;
             char entrada = UARTReadChar();
+            PORTB = 255;
             if (entrada == '+') {
                 varUART++;
             } else if (entrada == '-') {
@@ -2811,7 +2811,7 @@ void main(void) {
             }
 
         }
-
+        PORTB = varUART;
 
         Lcd_Set_Cursor(2, 14);
         UARTstring = intToString(varUART);
@@ -2832,7 +2832,7 @@ void Setup(void) {
     TRISD = 0;
     TRISC = 0;
     TRISB = 0;
-
+    TRISCbits.TRISC7 = 1;
 
     PORTA = 0;
     PORTC = 0;

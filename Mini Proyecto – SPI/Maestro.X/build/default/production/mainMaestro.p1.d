@@ -1,2 +1,4 @@
 build/default/production/mainMaestro.p1:  \
-mainMaestro.c 
+mainMaestro.c  \
+SPI.h  \
+UART.h 

@@ -2632,6 +2632,84 @@ typedef int16_t intptr_t;
 typedef uint16_t uintptr_t;
 # 10 "mainMaestro.c" 2
 
+# 1 "./SPI.h" 1
+# 17 "./SPI.h"
+typedef enum
+{
+    SPI_MASTER_OSC_DIV4 = 0b00100000,
+    SPI_MASTER_OSC_DIV16 = 0b00100001,
+    SPI_MASTER_OSC_DIV64 = 0b00100010,
+    SPI_MASTER_TMR2 = 0b00100011,
+    SPI_SLAVE_SS_EN = 0b00100100,
+    SPI_SLAVE_SS_DIS = 0b00100101
+}Spi_Type;
+
+typedef enum
+{
+    SPI_DATA_SAMPLE_MIDDLE = 0b00000000,
+    SPI_DATA_SAMPLE_END = 0b10000000
+}Spi_Data_Sample;
+
+typedef enum
+{
+    SPI_CLOCK_IDLE_HIGH = 0b00010000,
+    SPI_CLOCK_IDLE_LOW = 0b00000000
+}Spi_Clock_Idle;
+
+typedef enum
+{
+    SPI_IDLE_2_ACTIVE = 0b00000000,
+    SPI_ACTIVE_2_IDLE = 0b01000000
+}Spi_Transmit_Edge;
+
+
+void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
+void spiWrite(char);
+unsigned spiDataReady();
+char spiRead();
+# 11 "mainMaestro.c" 2
+
+# 1 "./UART.h" 1
+# 17 "./UART.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
+# 17 "./UART.h" 2
+# 32 "./UART.h"
+void UARTInit(const uint32_t baud_rate, const uint8_t BRGH);
+
+
+
+
+
+void UARTSendChar(const char c);
+
+
+
+
+
+
+void UARTSendString(const char* str, const uint8_t max_length);
+
+
+
+
+
+uint8_t UARTDataReady(void);
+
+
+
+
+
+char UARTReadChar();
+
+
+
+
+
+
+
+uint8_t UARTReadString(char *buf, uint8_t max_length);
+# 12 "mainMaestro.c" 2
+
 
 
 #pragma config FOSC = INTRC_NOCLKOUT
@@ -2648,7 +2726,7 @@ typedef uint16_t uintptr_t;
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
-# 38 "mainMaestro.c"
+# 40 "mainMaestro.c"
 void Setup(void);
 
 
@@ -2661,18 +2739,26 @@ void __attribute__((picinterrupt(("")))) ISR(void) {
 }
 
 void main(void) {
+    Setup();
+    spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+
+    while(1){
+        PORTCbits.RC2 = 0;
+
+        PORTD = spiRead();
+    }
 
 
     return;
 }
 
 
-void Setup(void){
+void Setup(void) {
 
 
     TRISCbits.TRISC5 = 0;
-    TRISCbits.TRISC3 = 0;
-    TRISAbits.TRISA5 = 1;
-    SSPCONbits.SSPEN = 1;
+            TRISCbits.TRISC3 = 0;
+            TRISAbits.TRISA5 = 1;
+            SSPCONbits.SSPEN = 1;
 
 }
