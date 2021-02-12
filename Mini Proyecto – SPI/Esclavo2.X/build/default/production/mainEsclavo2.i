@@ -2630,6 +2630,43 @@ typedef int16_t intptr_t;
 typedef uint16_t uintptr_t;
 # 8 "mainEsclavo2.c" 2
 
+# 1 "./SPI.h" 1
+# 17 "./SPI.h"
+typedef enum
+{
+    SPI_MASTER_OSC_DIV4 = 0b00100000,
+    SPI_MASTER_OSC_DIV16 = 0b00100001,
+    SPI_MASTER_OSC_DIV64 = 0b00100010,
+    SPI_MASTER_TMR2 = 0b00100011,
+    SPI_SLAVE_SS_EN = 0b00100100,
+    SPI_SLAVE_SS_DIS = 0b00100101
+}Spi_Type;
+
+typedef enum
+{
+    SPI_DATA_SAMPLE_MIDDLE = 0b00000000,
+    SPI_DATA_SAMPLE_END = 0b10000000
+}Spi_Data_Sample;
+
+typedef enum
+{
+    SPI_CLOCK_IDLE_HIGH = 0b00010000,
+    SPI_CLOCK_IDLE_LOW = 0b00000000
+}Spi_Clock_Idle;
+
+typedef enum
+{
+    SPI_IDLE_2_ACTIVE = 0b00000000,
+    SPI_ACTIVE_2_IDLE = 0b01000000
+}Spi_Transmit_Edge;
+
+
+void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
+void spiWrite(char);
+unsigned spiDataReady();
+char spiRead();
+# 9 "mainEsclavo2.c" 2
+
 
 
 #pragma config FOSC = INTRC_NOCLKOUT
@@ -2674,7 +2711,7 @@ void __attribute__((picinterrupt(("")))) ISR(void) {
             debounce2++;
             if (debounce2 > 1) {
                 debounce2 = 0;
-                PORTA--;
+                PORTD--;
                 contador--;
 
             }
@@ -2684,7 +2721,7 @@ void __attribute__((picinterrupt(("")))) ISR(void) {
             debounce1++;
             if (debounce1 > 1) {
                 debounce1 = 0;
-                PORTA++;
+                PORTD++;
                 contador++;
             }
         }
@@ -2693,7 +2730,7 @@ void __attribute__((picinterrupt(("")))) ISR(void) {
 
 void main(void) {
     Setup();
-
+    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
     while (1) {
 
     }
@@ -2706,10 +2743,11 @@ void Setup(void) {
     ANSEL = 0;
     ANSELH = 0;
 
-    TRISA = 0;
+    TRISD = 0;
     PORTA = 0;
     TRISB = 255;
     PORTB = 0;
+    PORTD = 0;
 
     IOCBbits.IOCB0 = 1;
     IOCBbits.IOCB1 = 1;

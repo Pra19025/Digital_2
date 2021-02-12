@@ -2742,7 +2742,7 @@ void main(void) {
     Setup();
     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 
-    while(1){
+    while (1) {
         PORTCbits.RC2 = 0;
 
         PORTD = spiRead();
@@ -2752,13 +2752,23 @@ void main(void) {
     return;
 }
 
-
 void Setup(void) {
 
 
+    TRISA = 0;
+    TRISC = 0;
+    TRISB = 0;
+    TRISD = 0;
     TRISCbits.TRISC5 = 0;
-            TRISCbits.TRISC3 = 0;
-            TRISAbits.TRISA5 = 1;
-            SSPCONbits.SSPEN = 1;
+    TRISCbits.TRISC3 = 0;
+    TRISAbits.TRISA5 = 1;
+    SSPCONbits.SSPEN = 1;
+
+    PORTA = 0;
+    PORTB = 0;
+    PORTC = 0;
+    PORTD = 0;
+
+
 
 }

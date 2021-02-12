@@ -1,3 +1,4 @@
 build/default/production/mainEsclavo1.p1:  \
 mainEsclavo1.c  \
-ADC.h 
+ADC.h  \
+SPI.h 

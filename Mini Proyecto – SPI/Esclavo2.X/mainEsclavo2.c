@@ -6,6 +6,7 @@
  */
 #include <xc.h>
 #include <stdint.h>
+#include "SPI.h"
 
 // CONFIG1
 #pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN)
@@ -50,7 +51,7 @@ void __interrupt() ISR(void) {
             debounce2++;
             if (debounce2 > 1) { //algoritmo del antirrebote, se usa valor de 1 debido a que la simulación no funciona bien con otros valores
                 debounce2 = 0;
-                PORTA--;
+                PORTD--;
                 contador--;
 
             }
@@ -60,7 +61,7 @@ void __interrupt() ISR(void) {
             debounce1++;
             if (debounce1 > 1) {
                 debounce1 = 0;
-                PORTA++;
+                PORTD++;
                 contador++;
             }
         }
@@ -69,7 +70,7 @@ void __interrupt() ISR(void) {
 
 void main(void) {
     Setup();
-
+    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
     while (1) {
 
     }
@@ -82,10 +83,11 @@ void Setup(void) { //configuracion
     ANSEL = 0;
     ANSELH = 0;
 
-    TRISA = 0;
+    TRISD = 0;
     PORTA = 0;
     TRISB = 255;
     PORTB = 0;
+    PORTD = 0;
 
     IOCBbits.IOCB0 = 1;
     IOCBbits.IOCB1 = 1;

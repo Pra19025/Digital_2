@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.31\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\Maestro.X.production.sym \
   --cmf=dist/default/production\Maestro.X.production.cmf -z -Q16F887 \
-  -oC:\Users\noelp\AppData\Local\Temp\senk.3 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\noelp\AppData\Local\Temp\sd44.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/Maestro.X.production.map -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\noelp\AppData\Local\Temp\senk.o \
+  -pfunctab=ENTRY -k C:\Users\noelp\AppData\Local\Temp\sd44.o \
   dist/default/production\Maestro.X.production.o 
 
 Object code version is 3.11
@@ -28,7 +28,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\noelp\AppData\Local\Temp\senk.o
+C:\Users\noelp\AppData\Local\Temp\sd44.o
                 end_init                              C        C        3        8       0
                 reset_vec                             0        0        3        0       0
                 config                             2007     2007        2        0       4
@@ -36,11 +36,11 @@ dist/default/production\Maestro.X.production.o
                 cinit                                 F        F        4        8       0
                 intentry                              4        4        8        8       0
                 config                             2007     2007        2        0       4
-                text5                                5F       5F        7        8       0
-                text4                                4F       4F        9        8       0
+                text5                                67       67        7        8       0
+                text4                                46       46       11        8       0
                 text3                                30       30       16        8       0
-                text2                                58       58        7        8       0
-                text1                                46       46        9        8       0
+                text2                                60       60        7        8       0
+                text1                                57       57        9        8       0
                 maintext                             13       13       1D        8       0
                 cstackCOMMON                         70       70        6       70       1
 
@@ -52,11 +52,11 @@ TOTAL           Name                               Link     Load   Length     Sp
                 cinit                                 F        F        4         0
                 intentry                              4        4        8         0
                 reset_vec                             0        0        3         0
-                text5                                5F       5F        7         0
-                text4                                4F       4F        9         0
+                text5                                67       67        7         0
+                text4                                46       46       11         0
                 text3                                30       30       16         0
-                text2                                58       58        7         0
-                text1                                46       46        9         0
+                text2                                60       60        7         0
+                text1                                57       57        9         0
                 maintext                             13       13       1D         0
 
         CLASS   STRCODE        
@@ -103,7 +103,7 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000003  000003         0       0  CODE        2
-                intentry                       000004  000062  000066         8       0  CODE        2
+                intentry                       000004  00006A  00006E         8       0  CODE        2
                 cstackCOMMON                   000070  000006  000076        70       1  COMMON      1
 
 
@@ -115,13 +115,13 @@ UNUSED ADDRESS RANGES
         BANK2            0110-016F             60           1
         BANK3            0190-01EF             60           1
         CODE             0003-0003              1           2
-                         0066-1FFF            800
+                         006E-1FFF            800
         COMMON           0076-007D              8           1
         CONST            0003-0003              1           2
-                         0066-1FFF            100
+                         006E-1FFF            100
         EEDATA           2100-21FF            100           2
         ENTRY            0003-0003              1           2
-                         0066-1FFF            100
+                         006E-1FFF            100
         IDLOC            2000-2003              4           2
         RAM              0020-006F             50           1
                          00A0-00EF             50
@@ -133,14 +133,17 @@ UNUSED ADDRESS RANGES
         SFR3             0180-018F             10           1
         STACK            0110-016F             60           1
         STRCODE          0003-0003              1           2
-                         0066-1FFF           1F9A
+                         006E-1FFF           1F92
         STRING           0003-0003              1           2
-                         0066-1FFF            100
+                         006E-1FFF            100
 
                                   Symbol Table
 
-_ISR                     text5        005F
+_ISR                     text5        0067
 _PIR1bits                (abs)        000C
+_PORTA                   (abs)        0005
+_PORTB                   (abs)        0006
+_PORTC                   (abs)        0007
 _PORTCbits               (abs)        0007
 _PORTD                   (abs)        0008
 _RCREG                   (abs)        001A
@@ -151,11 +154,15 @@ _SSPCON                  (abs)        0014
 _SSPCONbits              (abs)        0014
 _SSPSTAT                 (abs)        0094
 _SSPSTATbits             (abs)        0094
-_Setup                   text4        004F
+_Setup                   text4        0046
+_TRISA                   (abs)        0085
 _TRISAbits               (abs)        0085
+_TRISB                   (abs)        0086
+_TRISC                   (abs)        0087
 _TRISC3                  (abs)        043B
 _TRISC5                  (abs)        043D
 _TRISCbits               (abs)        0087
+_TRISD                   (abs)        0088
 _TXREG                   (abs)        0019
 _TXSTAbits               (abs)        0098
 __Habs1                  abs1         0000
@@ -182,7 +189,7 @@ __Hsfr0                  sfr0         0000
 __Hsfr1                  sfr1         0000
 __Hsfr2                  sfr2         0000
 __Hsfr3                  sfr3         0000
-__Hspace_0               (abs)        0066
+__Hspace_0               (abs)        006E
 __Hspace_1               (abs)        0076
 __Hspace_2               (abs)        0000
 __Hspace_3               (abs)        0000
@@ -222,7 +229,7 @@ __Lspace_4               (abs)        0000
 __Lstack                 stack        0000
 __Lstrings               strings      0000
 __Ltext                  text         0000
-__S0                     (abs)        0066
+__S0                     (abs)        006E
 __S1                     (abs)        0076
 __S2                     (abs)        0000
 __S3                     (abs)        0000
@@ -231,22 +238,22 @@ ___latbits               (abs)        0002
 ___sp                    stack        0000
 ___stackhi               (abs)        0000
 ___stacklo               (abs)        0000
-__end_of_ISR             text5        0066
-__end_of_Setup           text4        0058
+__end_of_ISR             text5        006E
+__end_of_Setup           text4        0057
 __end_of__initialization cinit        000F
 __end_of_main            maintext     0030
 __end_of_spiInit         text3        0046
-__end_of_spiRead         text1        004F
-__end_of_spiReceiveWait  text2        005F
+__end_of_spiRead         text1        0060
+__end_of_spiReceiveWait  text2        0067
 __initialization         cinit        000F
 __pcstackCOMMON          cstackCOMMON 0070
 __pintentry              intentry     0004
 __pmaintext              maintext     0013
-__ptext1                 text1        0046
-__ptext2                 text2        0058
+__ptext1                 text1        0057
+__ptext2                 text2        0060
 __ptext3                 text3        0030
-__ptext4                 text4        004F
-__ptext5                 text5        005F
+__ptext4                 text4        0046
+__ptext5                 text5        0067
 __size_of_ISR            (abs)        0000
 __size_of_Setup          (abs)        0000
 __size_of_main           (abs)        0000
@@ -255,8 +262,8 @@ __size_of_spiRead        (abs)        0000
 __size_of_spiReceiveWait (abs)        0000
 _main                    maintext     0013
 _spiInit                 text3        0030
-_spiRead                 text1        0046
-_spiReceiveWait          text2        0058
+_spiRead                 text1        0057
+_spiReceiveWait          text2        0060
 btemp                    (abs)        007E
 end_of_initialization    cinit        000F
 interrupt_function       intentry     0004
@@ -405,7 +412,7 @@ Total ram usage:        4 bytes
 
  *************** function _Setup *****************
  Defined at:
-		line 66 in file "mainMaestro.c"
+		line 65 in file "mainMaestro.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -413,7 +420,7 @@ Total ram usage:        4 bytes
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		None
+		status,2
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -467,11 +474,11 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 mainMaestro.c
-		_ISR           		CODE           	005F	0000	7
+		_ISR           		CODE           	0067	0000	7
 		_main          		CODE           	0013	0000	29
-		_Setup         		CODE           	004F	0000	9
+		_Setup         		CODE           	0046	0000	17
 
-mainMaestro.c estimated size: 45
+mainMaestro.c estimated size: 53
 
 shared
 		__initialization		CODE           	000F	0000	1
@@ -480,8 +487,8 @@ shared estimated size: 1
 
 SPI.c
 		_spiInit       		CODE           	0030	0000	22
-		_spiReceiveWait		CODE           	0058	0000	7
-		_spiRead       		CODE           	0046	0000	9
+		_spiReceiveWait		CODE           	0060	0000	7
+		_spiRead       		CODE           	0057	0000	9
 
 SPI.c estimated size: 38
 

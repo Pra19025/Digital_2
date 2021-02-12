@@ -9,6 +9,7 @@
 #include <xc.h>
 #include <stdint.h>
 #include "ADC.h"
+#include "SPI.h"
 
 
 // CONFIG1
@@ -26,7 +27,7 @@
 // CONFIG2
 #pragma config BOR4V = BOR40V   // Brown-out Reset Selection bit (Brown-out Reset set to 4.0V)
 #pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
-
+#define _XTAL_FREQ 4000000
 //**********************************************************************************************************************************************
 // Variables 
 //**********************************************************************************************************************************************
@@ -44,12 +45,12 @@ void Setup(void);
 
 void __interrupt() ISR(void) {
     if (ADIF == 1) {
-
+        __delay_us(15);
         varADC = ADRESH; //guardar valor de la lectura del adc en variable para comparacion y para 7 segmentos
 
         ADIF = 0;
         ADCON0bits.GO = 1;
-
+;
     }
 
 }
@@ -58,6 +59,8 @@ void main(void) {
     Setup();
     configADC();
     canalADC(0);
+    
+    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 
     while (1) {
         //el rango del LM35 es de -55 a 150 por lo que hay 205 posible valores 
