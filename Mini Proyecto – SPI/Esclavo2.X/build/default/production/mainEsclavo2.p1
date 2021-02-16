@@ -46,7 +46,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "46 ./SPI.h
 [; ;./SPI.h: 46: void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
 [v _spiInit `(v ~T0 @X0 0 ef4`E1292`E1300`E1304`E1308 ]
-"3387 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+"172 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 172:     struct {
+[s S6 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S6 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
+"171
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 171: typedef union {
+[u S5 `S6 1 ]
+[n S5 . . ]
+"183
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 183: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x005)));
+[v _PORTAbits `VS5 ~T0 @X0 0 e@5 ]
+"3387
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
 [v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
 "3449
@@ -373,7 +384,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! == -> . . _INTCONbits 0 0 `i -> 1 `i 139  ]
 {
 "48
-[; ;mainEsclavo2.c: 48: 
+[; ;mainEsclavo2.c: 48:         PORTAbits.RA5 = 1;
 [e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
 "50
 [; ;mainEsclavo2.c: 50: 
@@ -454,6 +465,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "74
 [e :U 146 ]
 {
+"75
+[e = . . _PORTAbits 0 5 -> -> 1 `i `uc ]
 "76
 }
 [e :U 145 ]

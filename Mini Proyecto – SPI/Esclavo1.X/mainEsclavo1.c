@@ -55,12 +55,11 @@ void __interrupt() ISR(void) {
         ADCON0bits.GO = 1;
 
     }
-    
-    if(SSPIF == 1){
-        PORTD = spiRead();
+
+    if (SSPIF == 1) {
         spiWrite(PORTB);
         SSPIF = 0;
-        
+
     }
 
 
@@ -71,28 +70,34 @@ void main(void) {
     configADC();
     canalADC(0);
     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-    while(1){
-        
+
+    while (1) {
+        PORTAbits.RA5 = 1;
         PORTB = varADC;
+
     }
-    
+
     return;
 }
 
+void Setup(void) {
 
-void Setup(void){
-    
     ANSEL = 0;
     ANSELH = 0;
     ANSELbits.ANS0 = 1;
-    
+    TRISAbits.TRISA5 = 1;
     TRISA = 1;
     TRISB = 0;
-    
+
     PORTB = 0;
-    
+
     PORTA = 0;
     
-    
-    
+    INTCONbits.GIE = 1; // Habilitamos interrupciones
+    INTCONbits.PEIE = 1; // Habilitamos interrupciones PEIE
+    PIR1bits.SSPIF = 0; // Borramos bandera interrupción MSSP
+    PIE1bits.SSPIE = 1; // Habilitamos interrupción MSSP
+    TRISAbits.TRISA5 = 1; // Slave Select
+
+
 }

@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"73 C:\Users\noelp\Documents\GitHub\Digital_2\Mini Proyecto – SPI\Esclavo1.X\mainEsclavo1.c
+"72 C:\Users\noelp\Documents\GitHub\Digital_2\Mini Proyecto – SPI\Esclavo1.X\mainEsclavo1.c
 [e E1295 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -59,7 +59,7 @@ SPI_ACTIVE_2_IDLE 64
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "48 C:\Users\noelp\Documents\GitHub\Digital_2\Mini Proyecto – SPI\Esclavo1.X\mainEsclavo1.c
 [v _ISR ISR `II(v  1 e 1 0 ]
-"69
+"68
 [v _main main `(v  1 e 1 0 ]
 "83
 [v _Setup Setup `(v  1 e 1 0 ]
@@ -69,15 +69,23 @@ SPI_ACTIVE_2_IDLE 64
 [v _spiReceiveWait spiReceiveWait `(v  1 s 1 spiReceiveWait ]
 "34
 [v _spiWrite spiWrite `(v  1 e 1 0 ]
-"47
-[v _spiRead spiRead `(uc  1 e 1 0 ]
 "166 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
+[s S120 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+"183
+[u S129 . 1 `S120 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES129  1 e 1 @5 ]
 "228
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
-"352
-[v _PORTD PORTD `VEuc  1 e 1 @8 ]
-[s S258 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S188 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -87,13 +95,13 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 GIE 1 0 :1:7 
 ]
 "482
-[s S267 . 1 `uc 1 . 1 0 :2:0 
+[s S197 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 TMR0IE 1 0 :1:5 
 ]
-[u S272 . 1 `S258 1 . 1 0 `S267 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES272  1 e 1 @11 ]
+[u S202 . 1 `S188 1 . 1 0 `S197 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES202  1 e 1 @11 ]
 [s S220 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -136,6 +144,18 @@ SPI_ACTIVE_2_IDLE 64
 [v _ADCON0bits ADCON0bits `VES50  1 e 1 @31 ]
 "1416
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
+[s S164 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+`uc 1 TRISA6 1 0 :1:6 
+`uc 1 TRISA7 1 0 :1:7 
+]
+"1433
+[u S173 . 1 `S164 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES173  1 e 1 @133 ]
 "1478
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
 [s S239 . 1 `uc 1 TMR1IE 1 0 :1:0 
@@ -151,7 +171,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _PIE1bits PIE1bits `VES247  1 e 1 @140 ]
 "2177
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
-[s S344 . 1 `uc 1 BF 1 0 :1:0 
+[s S437 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -161,51 +181,51 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 SMP 1 0 :1:7 
 ]
 "2231
-[s S353 . 1 `uc 1 . 1 0 :2:0 
+[s S446 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S358 . 1 `uc 1 . 1 0 :2:0 
+[s S451 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DATA 1 0 :1:5 
 ]
-[s S364 . 1 `uc 1 . 1 0 :2:0 
+[s S457 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S369 . 1 `uc 1 . 1 0 :2:0 
+[s S462 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S374 . 1 `uc 1 . 1 0 :2:0 
+[s S467 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S379 . 1 `uc 1 . 1 0 :2:0 
+[s S472 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[u S384 . 1 `S344 1 . 1 0 `S353 1 . 1 0 `S358 1 . 1 0 `S364 1 . 1 0 `S369 1 . 1 0 `S374 1 . 1 0 `S379 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES384  1 e 1 @148 ]
-[s S205 . 1 `uc 1 . 1 0 :4:0 
+[u S477 . 1 `S437 1 . 1 0 `S446 1 . 1 0 `S451 1 . 1 0 `S457 1 . 1 0 `S462 1 . 1 0 `S467 1 . 1 0 `S472 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES477  1 e 1 @148 ]
+[s S350 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "2991
-[u S211 . 1 `S205 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES211  1 e 1 @159 ]
+[u S356 . 1 `S350 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES356  1 e 1 @159 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
-[s S127 . 1 `uc 1 ANS0 1 0 :1:0 
+[s S143 . 1 `uc 1 ANS0 1 0 :1:0 
 `uc 1 ANS1 1 0 :1:1 
 `uc 1 ANS2 1 0 :1:2 
 `uc 1 ANS3 1 0 :1:3 
@@ -215,8 +235,8 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ANS7 1 0 :1:7 
 ]
 "3404
-[u S136 . 1 `S127 1 . 1 0 ]
-[v _ANSELbits ANSELbits `VES136  1 e 1 @392 ]
+[u S152 . 1 `S143 1 . 1 0 ]
+[v _ANSELbits ANSELbits `VES152  1 e 1 @392 ]
 "3449
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
 "3587
@@ -229,10 +249,10 @@ SPI_ACTIVE_2_IDLE 64
 [v _TRISC5 TRISC5 `VEb  1 e 0 @1085 ]
 "35 C:\Users\noelp\Documents\GitHub\Digital_2\Mini Proyecto – SPI\Esclavo1.X\mainEsclavo1.c
 [v _varADC varADC `uc  1 e 1 0 ]
-"69
+"68
 [v _main main `(v  1 e 1 0 ]
 {
-"80
+"81
 } 0
 "12 C:\Users\noelp\Documents\GitHub\Digital_2\Mini Proyecto – SPI\Esclavo1.X\SPI.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
@@ -263,12 +283,12 @@ SPI_ACTIVE_2_IDLE 64
 "83 C:\Users\noelp\Documents\GitHub\Digital_2\Mini Proyecto – SPI\Esclavo1.X\mainEsclavo1.c
 [v _Setup Setup `(v  1 e 1 0 ]
 {
-"98
+"103
 } 0
 "48
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"67
+"66
 } 0
 "34 C:\Users\noelp\Documents\GitHub\Digital_2\Mini Proyecto – SPI\Esclavo1.X\SPI.c
 [v _spiWrite spiWrite `(v  1 e 1 0 ]
@@ -278,14 +298,4 @@ SPI_ACTIVE_2_IDLE 64
 "36
 [v spiWrite@dat dat `uc  1 a 1 0 ]
 "37
-} 0
-"47
-[v _spiRead spiRead `(uc  1 e 1 0 ]
-{
-"51
-} 0
-"29
-[v _spiReceiveWait spiReceiveWait `(v  1 s 1 spiReceiveWait ]
-{
-"32
 } 0

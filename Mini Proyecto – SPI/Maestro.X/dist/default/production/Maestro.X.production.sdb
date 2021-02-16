@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"53 C:\Users\noelp\Documents\GitHub\Digital_2\Mini Proyecto – SPI\Maestro.X\mainMaestro.c
+"58 C:\Users\noelp\Documents\GitHub\Digital_2\Mini Proyecto – SPI\Maestro.X\mainMaestro.c
 [e E1292 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -47,24 +47,42 @@ SPI_ACTIVE_2_IDLE 64
 ]
 "5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"43 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
+"242
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 "6 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\pic\__eeprom.c
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"46 C:\Users\noelp\Documents\GitHub\Digital_2\Mini Proyecto – SPI\Maestro.X\mainMaestro.c
+"7 C:\Users\noelp\Documents\GitHub\Digital_2\Mini Proyecto – SPI\Maestro.X\LCD.c
+[v _Lcd_Port Lcd_Port `(v  1 e 1 0 ]
+"11
+[v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
+"50
+[v _Lcd_Write_Char Lcd_Write_Char `(v  1 e 1 0 ]
+"50 C:\Users\noelp\Documents\GitHub\Digital_2\Mini Proyecto – SPI\Maestro.X\mainMaestro.c
 [v _ISR ISR `II(v  1 e 1 0 ]
-"51
+"55
 [v _main main `(v  1 e 1 0 ]
-"65
+"111
 [v _Setup Setup `(v  1 e 1 0 ]
 "12 C:\Users\noelp\Documents\GitHub\Digital_2\Mini Proyecto – SPI\Maestro.X\SPI.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
 "29
 [v _spiReceiveWait spiReceiveWait `(v  1 s 1 spiReceiveWait ]
+"34
+[v _spiWrite spiWrite `(v  1 e 1 0 ]
 "47
 [v _spiRead spiRead `(uc  1 e 1 0 ]
 "40 C:\Users\noelp\Documents\GitHub\Digital_2\Mini Proyecto – SPI\Maestro.X\UART.c
@@ -75,11 +93,23 @@ SPI_ACTIVE_2_IDLE 64
 [v _UARTReadChar UARTReadChar `(uc  1 e 1 0 ]
 "166 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
+[s S56 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+"183
+[u S65 . 1 `S56 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES65  1 e 1 @5 ]
 "228
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
 "290
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
-[s S50 . 1 `uc 1 RC0 1 0 :1:0 
+[s S429 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -89,11 +119,11 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 RC7 1 0 :1:7 
 ]
 "307
-[u S59 . 1 `S50 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES59  1 e 1 @7 ]
+[u S438 . 1 `S429 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES438  1 e 1 @7 ]
 "352
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
-[s S415 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S358 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -102,27 +132,13 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ADIF 1 0 :1:6 
 ]
 "553
-[u S423 . 1 `S415 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES423  1 e 1 @12 ]
+[u S366 . 1 `S358 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES366  1 e 1 @12 ]
 "843
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "850
 [v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
-[s S122 . 1 `uc 1 SSPM 1 0 :4:0 
-`uc 1 CKP 1 0 :1:4 
-`uc 1 SSPEN 1 0 :1:5 
-`uc 1 SSPOV 1 0 :1:6 
-`uc 1 WCOL 1 0 :1:7 
-]
-"870
-[s S128 . 1 `uc 1 SSPM0 1 0 :1:0 
-`uc 1 SSPM1 1 0 :1:1 
-`uc 1 SSPM2 1 0 :1:2 
-`uc 1 SSPM3 1 0 :1:3 
-]
-[u S133 . 1 `S122 1 . 1 0 `S128 1 . 1 0 ]
-[v _SSPCONbits SSPCONbits `VES133  1 e 1 @20 ]
-[s S358 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S292 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -132,41 +148,29 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 SPEN 1 0 :1:7 
 ]
 "1068
-[s S367 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S301 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S371 . 1 `uc 1 . 1 0 :6:0 
+[s S305 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nRC8 1 0 :1:6 
 ]
-[s S374 . 1 `uc 1 . 1 0 :6:0 
+[s S308 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[u S377 . 1 `S358 1 . 1 0 `S367 1 . 1 0 `S371 1 . 1 0 `S374 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES377  1 e 1 @24 ]
+[u S311 . 1 `S292 1 . 1 0 `S301 1 . 1 0 `S305 1 . 1 0 `S308 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES311  1 e 1 @24 ]
 "1133
 [v _TXREG TXREG `VEuc  1 e 1 @25 ]
 "1140
 [v _RCREG RCREG `VEuc  1 e 1 @26 ]
 "1416
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
-[s S101 . 1 `uc 1 TRISA0 1 0 :1:0 
-`uc 1 TRISA1 1 0 :1:1 
-`uc 1 TRISA2 1 0 :1:2 
-`uc 1 TRISA3 1 0 :1:3 
-`uc 1 TRISA4 1 0 :1:4 
-`uc 1 TRISA5 1 0 :1:5 
-`uc 1 TRISA6 1 0 :1:6 
-`uc 1 TRISA7 1 0 :1:7 
-]
-"1433
-[u S110 . 1 `S101 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES110  1 e 1 @133 ]
 "1478
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
 "1540
 [v _TRISC TRISC `VEuc  1 e 1 @135 ]
-[s S80 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S336 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -176,13 +180,13 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1557
-[u S89 . 1 `S80 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES89  1 e 1 @135 ]
+[u S345 . 1 `S336 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES345  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "2177
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
-[s S211 . 1 `uc 1 BF 1 0 :1:0 
+[s S145 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -192,40 +196,40 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 SMP 1 0 :1:7 
 ]
 "2231
-[s S220 . 1 `uc 1 . 1 0 :2:0 
+[s S154 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S225 . 1 `uc 1 . 1 0 :2:0 
+[s S159 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DATA 1 0 :1:5 
 ]
-[s S231 . 1 `uc 1 . 1 0 :2:0 
+[s S165 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S236 . 1 `uc 1 . 1 0 :2:0 
+[s S170 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S241 . 1 `uc 1 . 1 0 :2:0 
+[s S175 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S246 . 1 `uc 1 . 1 0 :2:0 
+[s S180 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[u S251 . 1 `S211 1 . 1 0 `S220 1 . 1 0 `S225 1 . 1 0 `S231 1 . 1 0 `S236 1 . 1 0 `S241 1 . 1 0 `S246 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES251  1 e 1 @148 ]
-[s S321 . 1 `uc 1 TX9D 1 0 :1:0 
+[u S185 . 1 `S145 1 . 1 0 `S154 1 . 1 0 `S159 1 . 1 0 `S165 1 . 1 0 `S170 1 . 1 0 `S175 1 . 1 0 `S180 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES185  1 e 1 @148 ]
+[s S255 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -235,27 +239,40 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 CSRC 1 0 :1:7 
 ]
 "2582
-[s S330 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S264 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 nTX8 1 0 :1:6 
 ]
-[s S334 . 1 `uc 1 . 1 0 :6:0 
+[s S268 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[u S337 . 1 `S321 1 . 1 0 `S330 1 . 1 0 `S334 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES337  1 e 1 @152 ]
+[u S271 . 1 `S255 1 . 1 0 `S264 1 . 1 0 `S268 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES271  1 e 1 @152 ]
 "2642
 [v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
+"3387
+[v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
+"3449
+[v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
 "4457
 [v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
 "4463
 [v _TRISC5 TRISC5 `VEb  1 e 0 @1085 ]
-"51 C:\Users\noelp\Documents\GitHub\Digital_2\Mini Proyecto – SPI\Maestro.X\mainMaestro.c
+"55 C:\Users\noelp\Documents\GitHub\Digital_2\Mini Proyecto – SPI\Maestro.X\mainMaestro.c
 [v _main main `(v  1 e 1 0 ]
 {
-"63
+"109
 } 0
-"47 C:\Users\noelp\Documents\GitHub\Digital_2\Mini Proyecto – SPI\Maestro.X\SPI.c
+"34 C:\Users\noelp\Documents\GitHub\Digital_2\Mini Proyecto – SPI\Maestro.X\SPI.c
+[v _spiWrite spiWrite `(v  1 e 1 0 ]
+{
+[v spiWrite@dat dat `uc  1 a 1 wreg ]
+[v spiWrite@dat dat `uc  1 a 1 wreg ]
+"36
+[v spiWrite@dat dat `uc  1 a 1 2 ]
+"37
+} 0
+"47
 [v _spiRead spiRead `(uc  1 e 1 0 ]
 {
 "51
@@ -277,13 +294,13 @@ SPI_ACTIVE_2_IDLE 64
 [v spiInit@sType sType `E1264  1 a 1 5 ]
 "27
 } 0
-"65 C:\Users\noelp\Documents\GitHub\Digital_2\Mini Proyecto – SPI\Maestro.X\mainMaestro.c
+"111 C:\Users\noelp\Documents\GitHub\Digital_2\Mini Proyecto – SPI\Maestro.X\mainMaestro.c
 [v _Setup Setup `(v  1 e 1 0 ]
 {
-"84
+"124
 } 0
-"46
+"50
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"49
+"53
 } 0

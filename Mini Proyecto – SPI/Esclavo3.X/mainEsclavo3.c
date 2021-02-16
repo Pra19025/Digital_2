@@ -50,7 +50,7 @@ void __interrupt() ISR(void) {
 
         ADIF = 0;
         ADCON0bits.GO = 1;
-;
+        ;
     }
 
 }
@@ -59,7 +59,7 @@ void main(void) {
     Setup();
     configADC();
     canalADC(0);
-    
+
     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 
     while (1) {
@@ -67,6 +67,7 @@ void main(void) {
         //realmente varADC vale 0 en el 0 grados. 
         //Cada 2 grados equivalen a 1 bit. 
         // con los 150 grados varADC vale 77
+        PORTAbits.RA5 = 1;
         PORTC = varADC;
         if (varADC <= 12) {
             PORTB = 0;

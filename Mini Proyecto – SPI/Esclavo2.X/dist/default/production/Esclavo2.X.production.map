@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.31\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\Esclavo2.X.production.sym \
   --cmf=dist/default/production\Esclavo2.X.production.cmf -z -Q16F887 \
-  -oC:\Users\noelp\AppData\Local\Temp\sg20.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\noelp\AppData\Local\Temp\s3g.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/Esclavo2.X.production.map -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\noelp\AppData\Local\Temp\sg20.o \
+  -pfunctab=ENTRY -k C:\Users\noelp\AppData\Local\Temp\s3g.o \
   dist/default/production\Esclavo2.X.production.o 
 
 Object code version is 3.11
@@ -28,7 +28,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\noelp\AppData\Local\Temp\sg20.o
+C:\Users\noelp\AppData\Local\Temp\s3g.o
                 end_init                              C        C        3        8       0
                 reset_vec                             0        0        3        0       0
                 config                             2007     2007        2        0       4
@@ -39,7 +39,7 @@ dist/default/production\Esclavo2.X.production.o
                 text3                                16       16       38        8       0
                 text2                                4E       4E       1B        8       0
                 text1                                69       69       16        8       0
-                maintext                             7F       7F       12        8       0
+                maintext                             7F       7F       15        8       0
                 cstackCOMMON                         70       70        7       70       1
                 bssCOMMON                            77       77        3       70       1
 
@@ -54,7 +54,7 @@ TOTAL           Name                               Link     Load   Length     Sp
                 text3                                16       16       38         0
                 text2                                4E       4E       1B         0
                 text1                                69       69       16         0
-                maintext                             7F       7F       12         0
+                maintext                             7F       7F       15         0
 
         CLASS   STRCODE        
 
@@ -101,7 +101,7 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000003  000003         0       0  CODE        2
-                intentry                       000004  00008D  000091         8       0  CODE        2
+                intentry                       000004  000090  000094         8       0  CODE        2
                 cstackCOMMON                   000070  00000A  00007A        70       1  COMMON      1
 
 
@@ -113,13 +113,13 @@ UNUSED ADDRESS RANGES
         BANK2            0110-016F             60           1
         BANK3            0190-01EF             60           1
         CODE             0003-0003              1           2
-                         0091-1FFF            800
+                         0094-1FFF            800
         COMMON           007A-007D              4           1
         CONST            0003-0003              1           2
-                         0091-1FFF            100
+                         0094-1FFF            100
         EEDATA           2100-21FF            100           2
         ENTRY            0003-0003              1           2
-                         0091-1FFF            100
+                         0094-1FFF            100
         IDLOC            2000-2003              4           2
         RAM              0020-006F             50           1
                          00A0-00EF             50
@@ -131,9 +131,9 @@ UNUSED ADDRESS RANGES
         SFR3             0180-018F             10           1
         STACK            0110-016F             60           1
         STRCODE          0003-0003              1           2
-                         0091-1FFF           1F6F
+                         0094-1FFF           1F6C
         STRING           0003-0003              1           2
-                         0091-1FFF            100
+                         0094-1FFF            100
 
                                   Symbol Table
 
@@ -143,6 +143,7 @@ _INTCONbits              (abs)        000B
 _IOCBbits                (abs)        0096
 _ISR                     text3        0016
 _PORTA                   (abs)        0005
+_PORTAbits               (abs)        0005
 _PORTB                   (abs)        0006
 _PORTBbits               (abs)        0006
 _PORTD                   (abs)        0008
@@ -180,7 +181,7 @@ __Hsfr0                  sfr0         0000
 __Hsfr1                  sfr1         0000
 __Hsfr2                  sfr2         0000
 __Hsfr3                  sfr3         0000
-__Hspace_0               (abs)        0091
+__Hspace_0               (abs)        0094
 __Hspace_1               (abs)        007A
 __Hspace_2               (abs)        0000
 __Hspace_3               (abs)        0000
@@ -221,7 +222,7 @@ __Lspace_4               (abs)        0000
 __Lstack                 stack        0000
 __Lstrings               strings      0000
 __Ltext                  text         0000
-__S0                     (abs)        0091
+__S0                     (abs)        0094
 __S1                     (abs)        007A
 __S2                     (abs)        0000
 __S3                     (abs)        0000
@@ -233,7 +234,7 @@ ___stacklo               (abs)        0000
 __end_of_ISR             text3        004E
 __end_of_Setup           text2        0069
 __end_of__initialization cinit        0012
-__end_of_main            maintext     0091
+__end_of_main            maintext     0094
 __end_of_spiInit         text1        007F
 __initialization         cinit        000F
 __pbssCOMMON             bssCOMMON    0077
@@ -402,10 +403,10 @@ MODULE INFORMATION
 Module		Function		Class		Link	Load	Size
 mainEsclavo2.c
 		_ISR           		CODE           	0016	0000	56
-		_main          		CODE           	007F	0000	18
+		_main          		CODE           	007F	0000	21
 		_Setup         		CODE           	004E	0000	27
 
-mainEsclavo2.c estimated size: 101
+mainEsclavo2.c estimated size: 104
 
 shared
 		__initialization		CODE           	000F	0000	3

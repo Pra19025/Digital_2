@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.31\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\Esclavo3.X.production.sym \
   --cmf=dist/default/production\Esclavo3.X.production.cmf -z -Q16F887 \
-  -oC:\Users\noelp\AppData\Local\Temp\sh5o.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\noelp\AppData\Local\Temp\s4f0.3 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/Esclavo3.X.production.map -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\noelp\AppData\Local\Temp\sh5o.o \
+  -pfunctab=ENTRY -k C:\Users\noelp\AppData\Local\Temp\s4f0.o \
   dist/default/production\Esclavo3.X.production.o 
 
 Object code version is 3.11
@@ -28,7 +28,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\noelp\AppData\Local\Temp\sh5o.o
+C:\Users\noelp\AppData\Local\Temp\s4f0.o
                 end_init                              C        C        3        8       0
                 reset_vec                             0        0        3        0       0
                 config                             2007     2007        2        0       4
@@ -36,12 +36,12 @@ dist/default/production\Esclavo3.X.production.o
                 cinit                                 F        F        5        8       0
                 intentry                              4        4        8        8       0
                 config                             2007     2007        2        0       4
-                text5                                FE       FE       1A        8       0
-                text4                               143      143       10        8       0
+                text5                                FF       FF       1A        8       0
+                text4                               144      144       10        8       0
                 text3                                14       14       AB        8       0
-                text2                               12E      12E       15        8       0
-                text1                               118      118       16        8       0
-                maintext                             BF       BF       3F        8       0
+                text2                               12F      12F       15        8       0
+                text1                               119      119       16        8       0
+                maintext                             BF       BF       40        8       0
                 cstackCOMMON                         70       70        7       70       1
                 bssCOMMON                            77       77        1       70       1
 
@@ -53,12 +53,12 @@ TOTAL           Name                               Link     Load   Length     Sp
                 cinit                                 F        F        5         0
                 intentry                              4        4        8         0
                 reset_vec                             0        0        3         0
-                text5                                FE       FE       1A         0
-                text4                               143      143       10         0
+                text5                                FF       FF       1A         0
+                text4                               144      144       10         0
                 text3                                14       14       AB         0
-                text2                               12E      12E       15         0
-                text1                               118      118       16         0
-                maintext                             BF       BF       3F         0
+                text2                               12F      12F       15         0
+                text1                               119      119       16         0
+                maintext                             BF       BF       40         0
 
         CLASS   STRCODE        
 
@@ -105,7 +105,7 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000003  000003         0       0  CODE        2
-                intentry                       000004  00014F  000153         8       0  CODE        2
+                intentry                       000004  000150  000154         8       0  CODE        2
                 cstackCOMMON                   000070  000008  000078        70       1  COMMON      1
 
 
@@ -117,13 +117,13 @@ UNUSED ADDRESS RANGES
         BANK2            0110-016F             60           1
         BANK3            0190-01EF             60           1
         CODE             0003-0003              1           2
-                         0153-1FFF            800
+                         0154-1FFF            800
         COMMON           0078-007D              6           1
         CONST            0003-0003              1           2
-                         0153-1FFF            100
+                         0154-1FFF            100
         EEDATA           2100-21FF            100           2
         ENTRY            0003-0003              1           2
-                         0153-1FFF            100
+                         0154-1FFF            100
         IDLOC            2000-2003              4           2
         RAM              0020-006F             50           1
                          00A0-00EF             50
@@ -135,9 +135,9 @@ UNUSED ADDRESS RANGES
         SFR3             0180-018F             10           1
         STACK            0110-016F             60           1
         STRCODE          0003-0003              1           2
-                         0153-1FFF           1EAD
+                         0154-1FFF           1EAC
         STRING           0003-0003              1           2
-                         0153-1FFF            100
+                         0154-1FFF            100
 
                                   Symbol Table
 
@@ -149,10 +149,11 @@ _ANSEL                   (abs)        0188
 _ANSELH                  (abs)        0189
 _ANSELbits               (abs)        0188
 _INTCONbits              (abs)        000B
-_ISR                     text5        00FE
+_ISR                     text5        00FF
 _PIE1bits                (abs)        008C
 _PIR1bits                (abs)        000C
 _PORTA                   (abs)        0005
+_PORTAbits               (abs)        0005
 _PORTB                   (abs)        0006
 _PORTBbits               (abs)        0006
 _PORTC                   (abs)        0007
@@ -160,7 +161,7 @@ _SSPBUF                  (abs)        0013
 _SSPCON                  (abs)        0014
 _SSPSTAT                 (abs)        0094
 _SSPSTATbits             (abs)        0094
-_Setup                   text4        0143
+_Setup                   text4        0144
 _TRISA                   (abs)        0085
 _TRISB                   (abs)        0086
 _TRISC                   (abs)        0087
@@ -191,7 +192,7 @@ __Hsfr0                  sfr0         0000
 __Hsfr1                  sfr1         0000
 __Hsfr2                  sfr2         0000
 __Hsfr3                  sfr3         0000
-__Hspace_0               (abs)        0153
+__Hspace_0               (abs)        0154
 __Hspace_1               (abs)        0078
 __Hspace_2               (abs)        0000
 __Hspace_3               (abs)        0000
@@ -232,7 +233,7 @@ __Lspace_4               (abs)        0000
 __Lstack                 stack        0000
 __Lstrings               strings      0000
 __Ltext                  text         0000
-__S0                     (abs)        0153
+__S0                     (abs)        0154
 __S1                     (abs)        0078
 __S2                     (abs)        0000
 __S3                     (abs)        0000
@@ -241,23 +242,23 @@ ___latbits               (abs)        0002
 ___sp                    stack        0000
 ___stackhi               (abs)        0000
 ___stacklo               (abs)        0000
-__end_of_ISR             text5        0118
-__end_of_Setup           text4        0153
+__end_of_ISR             text5        0119
+__end_of_Setup           text4        0154
 __end_of__initialization cinit        0010
 __end_of_canalADC        text3        00BF
-__end_of_configADC       text2        0143
-__end_of_main            maintext     00FE
-__end_of_spiInit         text1        012E
+__end_of_configADC       text2        0144
+__end_of_main            maintext     00FF
+__end_of_spiInit         text1        012F
 __initialization         cinit        000F
 __pbssCOMMON             bssCOMMON    0077
 __pcstackCOMMON          cstackCOMMON 0070
 __pintentry              intentry     0004
 __pmaintext              maintext     00BF
-__ptext1                 text1        0118
-__ptext2                 text2        012E
+__ptext1                 text1        0119
+__ptext2                 text2        012F
 __ptext3                 text3        0014
-__ptext4                 text4        0143
-__ptext5                 text5        00FE
+__ptext4                 text4        0144
+__ptext5                 text5        00FF
 __size_of_ISR            (abs)        0000
 __size_of_Setup          (abs)        0000
 __size_of_canalADC       (abs)        0000
@@ -265,9 +266,9 @@ __size_of_configADC      (abs)        0000
 __size_of_main           (abs)        0000
 __size_of_spiInit        (abs)        0000
 _canalADC                text3        0014
-_configADC               text2        012E
+_configADC               text2        012F
 _main                    maintext     00BF
-_spiInit                 text1        0118
+_spiInit                 text1        0119
 _varADC                  bssCOMMON    0077
 btemp                    (abs)        007E
 canalADC@canal           cstackCOMMON 0073
@@ -419,7 +420,7 @@ Total ram usage:        1 bytes
 
  *************** function _Setup *****************
  Defined at:
-		line 90 in file "mainEsclavo3.c"
+		line 91 in file "mainEsclavo3.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -481,11 +482,11 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 mainEsclavo3.c
-		_ISR           		CODE           	00FE	0000	26
-		_main          		CODE           	00BF	0000	63
-		_Setup         		CODE           	0143	0000	16
+		_ISR           		CODE           	00FF	0000	26
+		_main          		CODE           	00BF	0000	64
+		_Setup         		CODE           	0144	0000	16
 
-mainEsclavo3.c estimated size: 105
+mainEsclavo3.c estimated size: 106
 
 shared
 		__initialization		CODE           	000F	0000	1
@@ -494,12 +495,12 @@ shared estimated size: 1
 
 ADC.c
 		_canalADC      		CODE           	0014	0000	171
-		_configADC     		CODE           	012E	0000	21
+		_configADC     		CODE           	012F	0000	21
 
 ADC.c estimated size: 192
 
 SPI.c
-		_spiInit       		CODE           	0118	0000	22
+		_spiInit       		CODE           	0119	0000	22
 
 SPI.c estimated size: 22
 

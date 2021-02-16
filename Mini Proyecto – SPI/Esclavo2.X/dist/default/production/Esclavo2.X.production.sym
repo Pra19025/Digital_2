@@ -1,4 +1,4 @@
-__S0 91 0 ABS 0
+__S0 94 0 ABS 0
 __S1 7A 0 ABS 0
 __S2 0 0 ABS 0
 __S3 0 0 ABS 0
@@ -57,13 +57,14 @@ __Lcode 0 0 ABS 0
 saved_w 7E 0 ABS 0
 __Hinit C 0 CODE 0
 __Linit C 0 CODE 0
-__end_of_main 91 0 CODE 0
+__end_of_main 94 0 CODE 0
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
 end_of_initialization 12 0 CODE 0
 __size_of_ISR 0 0 ABS 0
 ___stacklo 0 0 ABS 0
 __end_of_spiInit 7F 0 CODE 0
+_PORTAbits 5 0 ABS 0
 _PORTBbits 6 0 ABS 0
 __Hstrings 0 0 ABS 0
 __Lstrings 0 0 ABS 0
@@ -89,7 +90,7 @@ __end_of__initialization 12 0 CODE 0
 _SSPSTATbits 94 0 ABS 0
 __Hstack 0 0 STACK 2
 __Lstack 0 0 STACK 2
-__Hspace_0 91 0 ABS 0
+__Hspace_0 94 0 ABS 0
 __Lspace_0 0 0 ABS 0
 __Hspace_1 7A 0 ABS 0
 __Lspace_1 0 0 ABS 0
@@ -133,25 +134,24 @@ __pmaintext 7F 0 CODE 0
 __initialization F 0 CODE 0
 %segments
 reset_vec 0 5 CODE 0 0
-intentry 8 121 CODE 8 0
+intentry 8 127 CODE 8 0
 cstackCOMMON 70 79 COMMON 70 1
 %locals
 dist/default/production\Esclavo2.X.production.o
-C:\Users\noelp\AppData\Local\Temp\sg20.s
-619 F 0 CODE 0
-622 F 0 CODE 0
-639 F 0 CODE 0
-640 10 0 CODE 0
-641 11 0 CODE 0
-647 12 0 CODE 0
+C:\Users\noelp\AppData\Local\Temp\s3g.s
+621 F 0 CODE 0
+624 F 0 CODE 0
+641 F 0 CODE 0
+642 10 0 CODE 0
+643 11 0 CODE 0
 649 12 0 CODE 0
-650 13 0 CODE 0
+651 12 0 CODE 0
+652 13 0 CODE 0
 mainEsclavo2.c
 71 7F 0 CODE 0
 72 7F 0 CODE 0
 73 84 0 CODE 0
-74 8D 0 CODE 0
-76 8D 0 CODE 0
+75 8D 0 CODE 0
 SPI.c
 13 69 0 CODE 0
 15 6A 0 CODE 0

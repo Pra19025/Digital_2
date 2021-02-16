@@ -2710,6 +2710,24 @@ char UARTReadChar();
 uint8_t UARTReadString(char *buf, uint8_t max_length);
 # 12 "mainMaestro.c" 2
 
+# 1 "./LCD.h" 1
+# 50 "./LCD.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
+# 50 "./LCD.h" 2
+
+void Lcd_Init(void);
+void Lcd_Port(char a);
+void Lcd_Cmd(char a);
+void Lcd_Clear(void);
+void Lcd_Set_Cursor(char a, char b);
+void Lcd_Write_Char(char a);
+void Lcd_Write_String(char *a);
+void Lcd_Shift_Right(void);
+void Lcd_Shift_Left(void);
+
+void convert(char *data,float a, int place);
+# 13 "mainMaestro.c" 2
+
 
 
 #pragma config FOSC = INTRC_NOCLKOUT
@@ -2726,9 +2744,22 @@ uint8_t UARTReadString(char *buf, uint8_t max_length);
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
-# 40 "mainMaestro.c"
-void Setup(void);
 
+
+
+
+
+
+uint8_t valorADC;
+uint8_t ADCenvio;
+
+
+
+
+
+
+void Setup(void);
+char *decimalASCII(uint8_t lectura);
 
 
 
@@ -2740,12 +2771,25 @@ void __attribute__((picinterrupt(("")))) ISR(void) {
 
 void main(void) {
     Setup();
+
     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-
+        _delay((unsigned long)((5)*(40000000/4000.0)));
+# 72 "mainMaestro.c"
     while (1) {
-        PORTCbits.RC2 = 0;
 
+        PORTAbits.RA0 = 0;
+
+        spiWrite(PORTB);
         PORTD = spiRead();
+
+       _delay((unsigned long)((15)*(40000000/4000.0)));
+
+
+
+
+
+        PORTAbits.RA0 = 1;
+# 105 "mainMaestro.c"
     }
 
 
@@ -2753,22 +2797,39 @@ void main(void) {
 }
 
 void Setup(void) {
-
-
     TRISA = 0;
+    ANSEL = 0;
+    ANSELH = 0;
     TRISC = 0;
     TRISB = 0;
     TRISD = 0;
-    TRISCbits.TRISC5 = 0;
-    TRISCbits.TRISC3 = 0;
-    TRISAbits.TRISA5 = 1;
-    SSPCONbits.SSPEN = 1;
-
-    PORTA = 0;
-    PORTB = 0;
     PORTC = 0;
+    PORTB = 0;
     PORTD = 0;
 
+    PORTA = 255;
+
+}
 
 
+char* decimalASCII(uint8_t lectura) {
+    float convertir3 = (lectura / (float) 51);
+    char cadena[5];
+    uint8_t entero = convertir3;
+
+    cadena[0] = entero + 48;
+    cadena[1] = '.';
+
+    convertir3 = (convertir3 - entero);
+    convertir3 *= 10;
+    entero = convertir3;
+    cadena[2] = entero + 48;
+
+    convertir3 -= entero;
+    convertir3 *= 10;
+
+    entero = convertir3;
+    cadena[3] = entero + 48;
+    cadena[4] = '\0';
+    return cadena;
 }

@@ -72,7 +72,7 @@ void main(void) {
     Setup();
     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
     while (1) {
-
+        PORTAbits.RA5 = 1;
     }
 
     return;

@@ -2719,7 +2719,7 @@ void __attribute__((picinterrupt(("")))) ISR(void) {
 
         ADIF = 0;
         ADCON0bits.GO = 1;
-;
+        ;
     }
 
 }
@@ -2736,6 +2736,7 @@ void main(void) {
 
 
 
+        PORTAbits.RA5 = 1;
         PORTC = varADC;
         if (varADC <= 12) {
             PORTB = 0;
