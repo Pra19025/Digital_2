@@ -42,7 +42,13 @@ void Setup(void);
 //**************************************************************
 
 void __interrupt() ISR(void) {
-    
+
+    if (SSPIF == 1) {
+        spiWrite(contador);
+        SSPIF = 0;
+
+    }
+
     if (INTCONbits.RBIF == 1) {
 
         INTCONbits.RBIF = 0;
@@ -51,7 +57,7 @@ void __interrupt() ISR(void) {
             debounce2++;
             if (debounce2 > 1) { //algoritmo del antirrebote, se usa valor de 1 debido a que la simulación no funciona bien con otros valores
                 debounce2 = 0;
-                PORTD--;
+
                 contador--;
 
             }
@@ -61,7 +67,7 @@ void __interrupt() ISR(void) {
             debounce1++;
             if (debounce1 > 1) {
                 debounce1 = 0;
-                PORTD++;
+
                 contador++;
             }
         }
@@ -71,8 +77,10 @@ void __interrupt() ISR(void) {
 void main(void) {
     Setup();
     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+
     while (1) {
-        PORTAbits.RA5 = 1;
+   
+        PORTD = contador;
     }
 
     return;
@@ -89,6 +97,8 @@ void Setup(void) { //configuracion
     PORTB = 0;
     PORTD = 0;
 
+    TRISCbits.TRISC5 = 1; //SDIN del esclavo
+
     IOCBbits.IOCB0 = 1;
     IOCBbits.IOCB1 = 1;
 
@@ -96,4 +106,7 @@ void Setup(void) { //configuracion
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
     INTCONbits.RBIF = 0;
+    PIR1bits.SSPIF = 0; // Borramos bandera interrupción MSSP
+    PIE1bits.SSPIE = 1; // Habilitamos interrupción MSSP
+    TRISAbits.TRISA5 = 1; // Slave Select
 }

@@ -2703,6 +2703,12 @@ void Setup(void);
 
 void __attribute__((picinterrupt(("")))) ISR(void) {
 
+    if (SSPIF == 1) {
+        spiWrite(contador);
+        SSPIF = 0;
+
+    }
+
     if (INTCONbits.RBIF == 1) {
 
         INTCONbits.RBIF = 0;
@@ -2711,7 +2717,7 @@ void __attribute__((picinterrupt(("")))) ISR(void) {
             debounce2++;
             if (debounce2 > 1) {
                 debounce2 = 0;
-                PORTD--;
+
                 contador--;
 
             }
@@ -2721,7 +2727,7 @@ void __attribute__((picinterrupt(("")))) ISR(void) {
             debounce1++;
             if (debounce1 > 1) {
                 debounce1 = 0;
-                PORTD++;
+
                 contador++;
             }
         }
@@ -2731,8 +2737,10 @@ void __attribute__((picinterrupt(("")))) ISR(void) {
 void main(void) {
     Setup();
     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+
     while (1) {
-        PORTAbits.RA5 = 1;
+
+        PORTD = contador;
     }
 
     return;
@@ -2749,6 +2757,8 @@ void Setup(void) {
     PORTB = 0;
     PORTD = 0;
 
+    TRISCbits.TRISC5 = 1;
+
     IOCBbits.IOCB0 = 1;
     IOCBbits.IOCB1 = 1;
 
@@ -2756,4 +2766,7 @@ void Setup(void) {
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
     INTCONbits.RBIF = 0;
+    PIR1bits.SSPIF = 0;
+    PIE1bits.SSPIE = 1;
+    TRISAbits.TRISA5 = 1;
 }

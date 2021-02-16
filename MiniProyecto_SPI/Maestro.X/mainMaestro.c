@@ -35,14 +35,17 @@
 
 uint8_t valorADC;
 char * ADCenvio;
-
-    
+uint8_t contador = 0;
+char* contadorenvio;
+uint8_t temperatura = 0;
+char * temperaturaenvio; 
 //***********************************************************************************************************************************************
 // Prototipos de funciones 
 //**********************************************************************************************************************************************
 
 void Setup(void);
 char *decimalASCII(uint8_t lectura);
+char *intToString(uint8_t value);
 //**************************************************************
 // Vector de interrupción
 //**************************************************************
@@ -56,7 +59,7 @@ void main(void) {
     Setup();
 
     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-        __delay_ms(5);
+    __delay_ms(5);
     UARTInit(9600, 1); //se van a usar 9600 baudios
     Lcd_Init();
     Lcd_Clear();
@@ -73,33 +76,54 @@ void main(void) {
         // Primer PIC (ADC)
         PORTAbits.RA0 = 0; //selección del esclavo
 
-        spiWrite(PORTB);    
+        spiWrite(PORTB);
 
-        valorADC = spiRead();   //se lee lo que envia el esclavo, que en este caso es el pic que tiene el ADC
-       __delay_ms(15);
-        ADCenvio = decimalASCII(valorADC);  //la señal que se va aenviar a la LCD, se convierte a ASCII
-        Lcd_Set_Cursor(2, 1);   //se coloca el cursor en posicion
+        valorADC = spiRead(); //se lee lo que envia el esclavo, que en este caso es el pic que tiene el ADC
+        __delay_ms(5);
+        ADCenvio = decimalASCII(valorADC); //la señal que se va aenviar a la LCD, se convierte a ASCII
+        Lcd_Set_Cursor(2, 1); //se coloca el cursor en posicion
         Lcd_Write_String(ADCenvio); // Se escribe en la LCD la variable del ADC
-        
+
+        UARTSendString("ADC ", 6);
         UARTSendString(ADCenvio, 6);
         UARTSendString("V ", 6);
-        
-      
+
         PORTAbits.RA0 = 1; //deselecciono el esclavo
+        __delay_ms(10);
 
 
+        //Segundo PIC (contador)
+        PORTAbits.RA1 = 0;
+        spiWrite(PORTB);
+        contador = spiRead();
+        __delay_ms(5);
+        contadorenvio = intToString(contador);
+        Lcd_Set_Cursor(2, 8); //se coloca el cursor en posicion
+        Lcd_Write_String(contadorenvio); // Se escribe en la LCD la variable del ADC
 
-//        __delay_ms(10);
-//        //Segundo PIC (contador)
-//        PORTAbits.RA1 = 0;
-//
-//        PORTAbits.RA1 = 1;
-//
-//
-//        //Tercer PIC (Sensor de temperatura)
-//        PORTAbits.RA2 = 0;
-//
-//        PORTAbits.RA2 = 1;
+        UARTSendString("Contador ", 9);
+        UARTSendString(contadorenvio, 6);
+        UARTSendString(" ", 6);
+
+
+        PORTAbits.RA1 = 1;
+
+        __delay_ms(10);
+        //        //Tercer PIC (Sensor de temperatura)
+        PORTAbits.RA2 = 0;
+        
+        spiWrite(PORTB);
+        temperatura = spiRead();
+        __delay_ms(5);
+        temperaturaenvio = intToString(temperatura);
+        Lcd_Set_Cursor(2, 14); //se coloca el cursor en posicion
+        Lcd_Write_String(temperaturaenvio); // Se escribe en la LCD la variable del ADC
+
+        UARTSendString("Temperatura ", 13);
+        UARTSendString(temperaturaenvio, 6);
+        UARTSendString(" ", 6);
+
+        PORTAbits.RA2 = 1;
 
 
 
@@ -121,13 +145,12 @@ void Setup(void) {
     PORTC = 0;
     PORTB = 0;
     PORTD = 0;
-     
+
     PORTA = 255;
-    
-    TRISCbits.TRISC4  = 1;  //es el SDIN del maestro 
+
+    TRISCbits.TRISC4 = 1; //es el SDIN del maestro 
     //configuracion para la comunicacion serial sincrona
 }
-
 
 char* decimalASCII(uint8_t lectura) {
     float convertir3 = (lectura / (float) 51); //debido a que se leen 8 bits, 255 es el máximo
@@ -150,4 +173,22 @@ char* decimalASCII(uint8_t lectura) {
     cadena[4] = '\0';
     return cadena;
 }
+
+char* intToString(uint8_t value) {
+    char valor[4];
+
+    uint8_t entero = value / 100; // centenas
+    valor[0] = entero + 48;
+
+    value = value - (100 * entero); // ya no hay decenas
+
+    valor[1] = value / 10 + 48; // decenas
+    valor[2] = value % 10 + 48; // el resto
+    valor[3] = '\0'; //caracter final
+
+    return valor;
+
+
+}
+
 

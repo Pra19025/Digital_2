@@ -2752,14 +2752,17 @@ void convert(char *data,float a, int place);
 
 uint8_t valorADC;
 char * ADCenvio;
-
-
+uint8_t contador = 0;
+char* contadorenvio;
+uint8_t temperatura = 0;
+char * temperaturaenvio;
 
 
 
 
 void Setup(void);
 char *decimalASCII(uint8_t lectura);
+char *intToString(uint8_t value);
 
 
 
@@ -2773,7 +2776,7 @@ void main(void) {
     Setup();
 
     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-        _delay((unsigned long)((5)*(40000000/4000.0)));
+    _delay((unsigned long)((5)*(40000000/4000.0)));
     UARTInit(9600, 1);
     Lcd_Init();
     Lcd_Clear();
@@ -2793,17 +2796,56 @@ void main(void) {
         spiWrite(PORTB);
 
         valorADC = spiRead();
-       _delay((unsigned long)((15)*(40000000/4000.0)));
+        _delay((unsigned long)((5)*(40000000/4000.0)));
         ADCenvio = decimalASCII(valorADC);
         Lcd_Set_Cursor(2, 1);
         Lcd_Write_String(ADCenvio);
 
+        UARTSendString("ADC ", 6);
         UARTSendString(ADCenvio, 6);
         UARTSendString("V ", 6);
 
-
         PORTAbits.RA0 = 1;
-# 108 "mainMaestro.c"
+        _delay((unsigned long)((10)*(40000000/4000.0)));
+
+
+
+        PORTAbits.RA1 = 0;
+        spiWrite(PORTB);
+        contador = spiRead();
+        _delay((unsigned long)((5)*(40000000/4000.0)));
+        contadorenvio = intToString(contador);
+        Lcd_Set_Cursor(2, 8);
+        Lcd_Write_String(contadorenvio);
+
+        UARTSendString("Contador ", 9);
+        UARTSendString(contadorenvio, 6);
+        UARTSendString(" ", 6);
+
+
+        PORTAbits.RA1 = 1;
+
+        _delay((unsigned long)((10)*(40000000/4000.0)));
+
+        PORTAbits.RA2 = 0;
+
+        spiWrite(PORTB);
+        temperatura = spiRead();
+        _delay((unsigned long)((5)*(40000000/4000.0)));
+        temperaturaenvio = intToString(temperatura);
+        Lcd_Set_Cursor(2, 14);
+        Lcd_Write_String(temperaturaenvio);
+
+        UARTSendString("Temperatura ", 13);
+        UARTSendString(temperaturaenvio, 6);
+        UARTSendString(" ", 6);
+
+        PORTAbits.RA2 = 1;
+
+
+
+
+
     }
 
 
@@ -2827,7 +2869,6 @@ void Setup(void) {
 
 }
 
-
 char* decimalASCII(uint8_t lectura) {
     float convertir3 = (lectura / (float) 51);
     char cadena[5];
@@ -2848,4 +2889,21 @@ char* decimalASCII(uint8_t lectura) {
     cadena[3] = entero + 48;
     cadena[4] = '\0';
     return cadena;
+}
+
+char* intToString(uint8_t value) {
+    char valor[4];
+
+    uint8_t entero = value / 100;
+    valor[0] = entero + 48;
+
+    value = value - (100 * entero);
+
+    valor[1] = value / 10 + 48;
+    valor[2] = value % 10 + 48;
+    valor[3] = '\0';
+
+    return valor;
+
+
 }

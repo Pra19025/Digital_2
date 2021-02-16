@@ -2701,6 +2701,7 @@ char spiRead();
 
 
 volatile uint8_t varADC;
+uint8_t temperatura;
 
 
 
@@ -2713,6 +2714,13 @@ void Setup(void);
 
 
 void __attribute__((picinterrupt(("")))) ISR(void) {
+
+    if (SSPIF == 1) {
+        spiWrite(temperatura);
+        SSPIF = 0;
+
+    }
+
     if (ADIF == 1) {
         _delay((unsigned long)((15)*(4000000/4000000.0)));
         varADC = ADRESH;
@@ -2735,6 +2743,8 @@ void main(void) {
 
 
 
+
+        temperatura = varADC *2;
 
         PORTAbits.RA5 = 1;
         PORTC = varADC;
@@ -2770,6 +2780,9 @@ void Setup(void) {
 
     PORTA = 0;
     PORTB = 0;
-
-
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+    PIR1bits.SSPIF = 0;
+    PIE1bits.SSPIE = 1;
+    TRISAbits.TRISA5 = 1;
 }

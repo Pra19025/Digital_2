@@ -32,6 +32,7 @@
 // Variables 
 //**********************************************************************************************************************************************
 volatile uint8_t varADC;
+uint8_t temperatura;
 
 //**********************************************************************************************************************************************
 // Prototipos de funciones 
@@ -44,6 +45,13 @@ void Setup(void);
 //**************************************************************
 
 void __interrupt() ISR(void) {
+
+    if (SSPIF == 1) {
+        spiWrite(temperatura);
+        SSPIF = 0;
+
+    }
+
     if (ADIF == 1) {
         __delay_us(15);
         varADC = ADRESH; //guardar valor de la lectura del adc en variable para comparacion y para 7 segmentos
@@ -67,6 +75,8 @@ void main(void) {
         //realmente varADC vale 0 en el 0 grados. 
         //Cada 2 grados equivalen a 1 bit. 
         // con los 150 grados varADC vale 77
+        temperatura = varADC *2;
+        
         PORTAbits.RA5 = 1;
         PORTC = varADC;
         if (varADC <= 12) {
@@ -101,6 +111,9 @@ void Setup(void) {
 
     PORTA = 0;
     PORTB = 0;
-
-
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+    PIR1bits.SSPIF = 0; // Borramos bandera interrupción MSSP
+    PIE1bits.SSPIE = 1; // Habilitamos interrupción MSSP
+    TRISAbits.TRISA5 = 1; // Slave Select
 }

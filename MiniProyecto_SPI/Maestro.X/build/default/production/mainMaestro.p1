@@ -2,10 +2,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [t ~ __interrupt . k ]
 [t T1 __interrupt ]
 [p mainexit ]
-"44 mainMaestro.c
-[; ;mainMaestro.c: 44: 
+"46 mainMaestro.c
+[; ;mainMaestro.c: 46:         PORTAbits.RA0 = 0;
 [v _Setup `(v ~T0 @X0 0 ef ]
-"58
+"61
+[; ;mainMaestro.c: 61:         _delay((unsigned long)((10)*(40000000/4000.0)));
 [c E1292 32 33 34 35 36 37 .. ]
 [n E1292 . SPI_MASTER_OSC_DIV4 SPI_MASTER_OSC_DIV16 SPI_MASTER_OSC_DIV64 SPI_MASTER_TMR2 SPI_SLAVE_SS_EN SPI_SLAVE_SS_DIS  ]
 [c E1300 0 128 .. ]
@@ -56,12 +57,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "49 ./SPI.h
 [; ;./SPI.h: 49: char spiRead();
 [v _spiRead `(uc ~T0 @X0 0 e? ]
-"45 mainMaestro.c
-[; ;mainMaestro.c: 45:         spiWrite(PORTB);
+"47 mainMaestro.c
+[; ;mainMaestro.c: 47: 
 [v _decimalASCII `(*uc ~T0 @X0 0 ef1`uc ]
 "45 ./UART.h
 [; ;./UART.h: 45: void UARTSendString(const char* str, const uint8_t max_length);
 [v _UARTSendString `(v ~T0 @X0 0 ef2`*Cuc`Cuc ]
+"48 mainMaestro.c
+[; ;mainMaestro.c: 48:         spiWrite(PORTB);
+[v _intToString `(*uc ~T0 @X0 0 ef1`uc ]
 "1416 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1416: extern volatile unsigned char TRISA __attribute__((address(0x085)));
 [v _TRISA `Vuc ~T0 @X0 0 e@133 ]
@@ -335,16 +339,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
 "16 mainMaestro.c
-[; ;mainMaestro.c: 16: 
+[; ;mainMaestro.c: 16: char *decimalASCII(uint8_t lectura);
 [p x FOSC  =  INTRC_NOCLKOUT ]
 "17
-[; ;mainMaestro.c: 17: 
+[; ;mainMaestro.c: 17: char *intToString(uint8_t value);
 [p x WDTE  =  OFF        ]
 "18
 [; ;mainMaestro.c: 18: 
 [p x PWRTE  =  OFF       ]
 "19
-[; ;mainMaestro.c: 19: void __attribute__((picinterrupt(("")))) ISR(void) {
+[; ;mainMaestro.c: 19: 
 [p x MCLRE  =  OFF       ]
 "20
 [; ;mainMaestro.c: 20: 
@@ -353,213 +357,350 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mainMaestro.c: 21: 
 [p x CPD  =  OFF         ]
 "22
-[; ;mainMaestro.c: 22: }
+[; ;mainMaestro.c: 22: void __attribute__((picinterrupt(("")))) ISR(void) {
 [p x BOREN  =  OFF       ]
 "23
 [; ;mainMaestro.c: 23: 
 [p x IESO  =  OFF        ]
 "24
-[; ;mainMaestro.c: 24: void main(void) {
+[; ;mainMaestro.c: 24: 
 [p x FCMEN  =  OFF       ]
 "25
-[; ;mainMaestro.c: 25:     Setup();
+[; ;mainMaestro.c: 25: }
 [p x LVP  =  OFF         ]
 "28
-[; ;mainMaestro.c: 28:         _delay((unsigned long)((5)*(40000000/4000.0)));
+[; ;mainMaestro.c: 28:     Setup();
 [p x BOR4V  =  BOR40V    ]
 "29
-[; ;mainMaestro.c: 29:     UARTInit(9600, 1);
+[; ;mainMaestro.c: 29: 
 [p x WRT  =  OFF         ]
 "36
-[; ;mainMaestro.c: 36:     Lcd_Write_String("S2");
+[; ;mainMaestro.c: 36:     Lcd_Set_Cursor(1, 1);
 [v _valorADC `uc ~T0 @X0 1 e ]
 "37
-[; ;mainMaestro.c: 37:     Lcd_Set_Cursor(1, 15);
+[; ;mainMaestro.c: 37:     Lcd_Write_String("S1");
 [v _ADCenvio `*uc ~T0 @X0 1 e ]
+"38
+[; ;mainMaestro.c: 38:     Lcd_Set_Cursor(1, 8);
+[v _contador `uc ~T0 @X0 1 e ]
+[i _contador
+-> -> 0 `i `uc
+]
+"39
+[; ;mainMaestro.c: 39:     Lcd_Write_String("S2");
+[v _contadorenvio `*uc ~T0 @X0 1 e ]
+"40
+[; ;mainMaestro.c: 40:     Lcd_Set_Cursor(1, 15);
+[v _temperatura `uc ~T0 @X0 1 e ]
+[i _temperatura
+-> -> 0 `i `uc
+]
+"41
+[; ;mainMaestro.c: 41:     Lcd_Write_String("S3");
+[v _temperaturaenvio `*uc ~T0 @X0 1 e ]
 [v $root$_ISR `(v ~T0 @X0 0 e ]
-"50
-[; ;mainMaestro.c: 50:         Lcd_Set_Cursor(2, 1);
+"53
+[; ;mainMaestro.c: 53:         Lcd_Set_Cursor(2, 1);
 [v _ISR `(v ~T1 @X0 1 ef ]
 {
 [e :U _ISR ]
 [f ]
-"53
-[; ;mainMaestro.c: 53:         UARTSendString(ADCenvio, 6);
+"56
+[; ;mainMaestro.c: 56:         UARTSendString("ADC ", 6);
 [e :UE 138 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"55
-[; ;mainMaestro.c: 55: 
+"58
+[; ;mainMaestro.c: 58:         UARTSendString("V ", 6);
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"56
-[; ;mainMaestro.c: 56: 
-[e ( _Setup ..  ]
-"58
-[e ( _spiInit (4 , , , . `E1292 0 . `E1300 0 . `E1304 1 . `E1308 0 ]
 "59
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 40000000 `l `d .4000.0 `ul ]
-"60
-[e ( _UARTInit (2 , -> -> -> 9600 `i `l `ul -> -> 1 `i `uc ]
+[; ;mainMaestro.c: 59: 
+[e ( _Setup ..  ]
 "61
-[e ( _Lcd_Init ..  ]
+[; ;mainMaestro.c: 61:         _delay((unsigned long)((10)*(40000000/4000.0)));
+[e ( _spiInit (4 , , , . `E1292 0 . `E1300 0 . `E1304 1 . `E1308 0 ]
 "62
-[e ( _Lcd_Clear ..  ]
-"63
+[; ;mainMaestro.c: 62: 
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 40000000 `l `d .4000.0 `ul ]
+"63
+[; ;mainMaestro.c: 63: 
+[e ( _UARTInit (2 , -> -> -> 9600 `i `l `ul -> -> 1 `i `uc ]
 "64
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;mainMaestro.c: 64: 
+[e ( _Lcd_Init ..  ]
 "65
-[e ( _Lcd_Write_String (1 :s 1C ]
+[; ;mainMaestro.c: 65:         PORTAbits.RA1 = 0;
+[e ( _Lcd_Clear ..  ]
 "66
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 8 `i `uc ]
+[; ;mainMaestro.c: 66:         spiWrite(PORTB);
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 40000000 `l `d .4000.0 `ul ]
 "67
-[e ( _Lcd_Write_String (1 :s 2C ]
+[; ;mainMaestro.c: 67:         contador = spiRead();
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
 "68
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 15 `i `uc ]
+[; ;mainMaestro.c: 68:         _delay((unsigned long)((5)*(40000000/4000.0)));
+[e ( _Lcd_Write_String (1 :s 1C ]
 "69
-[e ( _Lcd_Write_String (1 :s 3C ]
+[; ;mainMaestro.c: 69:         contadorenvio = intToString(contador);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 8 `i `uc ]
+"70
+[; ;mainMaestro.c: 70:         Lcd_Set_Cursor(2, 8);
+[e ( _Lcd_Write_String (1 :s 2C ]
+"71
+[; ;mainMaestro.c: 71:         Lcd_Write_String(contadorenvio);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 15 `i `uc ]
 "72
+[; ;mainMaestro.c: 72: 
+[e ( _Lcd_Write_String (1 :s 3C ]
+"75
+[; ;mainMaestro.c: 75:         UARTSendString(" ", 6);
 [e :U 141 ]
 {
-"74
+"77
+[; ;mainMaestro.c: 77: 
 [e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
-"76
-[e ( _spiWrite (1 -> _PORTB `uc ]
-"78
-[e = _valorADC -> ( _spiRead ..  `uc ]
 "79
-[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 40000000 `l `d .4000.0 `ul ]
-"80
-[e = _ADCenvio ( _decimalASCII (1 _valorADC ]
+[; ;mainMaestro.c: 79: 
+[e ( _spiWrite (1 -> _PORTB `uc ]
 "81
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+[; ;mainMaestro.c: 81: 
+[e = _valorADC -> ( _spiRead ..  `uc ]
 "82
-[e ( _Lcd_Write_String (1 _ADCenvio ]
+[; ;mainMaestro.c: 82:         PORTAbits.RA2 = 0;
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 40000000 `l `d .4000.0 `ul ]
+"83
+[; ;mainMaestro.c: 83: 
+[e = _ADCenvio ( _decimalASCII (1 _valorADC ]
 "84
-[e ( _UARTSendString (2 , -> _ADCenvio `*Cuc -> -> 6 `i `uc ]
+[; ;mainMaestro.c: 84:         spiWrite(PORTB);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
 "85
+[; ;mainMaestro.c: 85:         temperatura = spiRead();
+[e ( _Lcd_Write_String (1 _ADCenvio ]
+"87
+[; ;mainMaestro.c: 87:         temperaturaenvio = intToString(temperatura);
 [e ( _UARTSendString (2 , :s 4C -> -> 6 `i `uc ]
 "88
+[; ;mainMaestro.c: 88:         Lcd_Set_Cursor(2, 14);
+[e ( _UARTSendString (2 , -> _ADCenvio `*Cuc -> -> 6 `i `uc ]
+"89
+[; ;mainMaestro.c: 89:         Lcd_Write_String(temperaturaenvio);
+[e ( _UARTSendString (2 , :s 5C -> -> 6 `i `uc ]
+"91
+[; ;mainMaestro.c: 91:         UARTSendString("Temperatura ", 13);
 [e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
-"108
-[; ;mainMaestro.c: 108:     }
+"92
+[; ;mainMaestro.c: 92:         UARTSendString(temperaturaenvio, 6);
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 40000000 `l `d .4000.0 `ul ]
+"96
+[; ;mainMaestro.c: 96: 
+[e = . . _PORTAbits 0 1 -> -> 0 `i `uc ]
+"97
+[; ;mainMaestro.c: 97: 
+[e ( _spiWrite (1 -> _PORTB `uc ]
+"98
+[; ;mainMaestro.c: 98: 
+[e = _contador -> ( _spiRead ..  `uc ]
+"99
+[; ;mainMaestro.c: 99: 
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 40000000 `l `d .4000.0 `ul ]
+"100
+[; ;mainMaestro.c: 100: 
+[e = _contadorenvio ( _intToString (1 _contador ]
+"101
+[; ;mainMaestro.c: 101:     }
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 8 `i `uc ]
+"102
+[; ;mainMaestro.c: 102: 
+[e ( _Lcd_Write_String (1 _contadorenvio ]
+"104
+[; ;mainMaestro.c: 104:     return;
+[e ( _UARTSendString (2 , :s 6C -> -> 9 `i `uc ]
+"105
+[; ;mainMaestro.c: 105: }
+[e ( _UARTSendString (2 , -> _contadorenvio `*Cuc -> -> 6 `i `uc ]
+"106
+[; ;mainMaestro.c: 106: 
+[e ( _UARTSendString (2 , :s 7C -> -> 6 `i `uc ]
+"109
+[; ;mainMaestro.c: 109:     ANSEL = 0;
+[e = . . _PORTAbits 0 1 -> -> 1 `i `uc ]
+"111
+[; ;mainMaestro.c: 111:     TRISC = 0;
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 40000000 `l `d .4000.0 `ul ]
+"113
+[; ;mainMaestro.c: 113:     TRISD = 0;
+[e = . . _PORTAbits 0 2 -> -> 0 `i `uc ]
+"115
+[; ;mainMaestro.c: 115:     PORTB = 0;
+[e ( _spiWrite (1 -> _PORTB `uc ]
+"116
+[; ;mainMaestro.c: 116:     PORTD = 0;
+[e = _temperatura -> ( _spiRead ..  `uc ]
+"117
+[; ;mainMaestro.c: 117: 
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 40000000 `l `d .4000.0 `ul ]
+"118
+[; ;mainMaestro.c: 118:     PORTA = 255;
+[e = _temperaturaenvio ( _intToString (1 _temperatura ]
+"119
+[; ;mainMaestro.c: 119: 
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 14 `i `uc ]
+"120
+[; ;mainMaestro.c: 120:     TRISCbits.TRISC4 = 1;
+[e ( _Lcd_Write_String (1 _temperaturaenvio ]
+"122
+[; ;mainMaestro.c: 122: }
+[e ( _UARTSendString (2 , :s 8C -> -> 13 `i `uc ]
+"123
+[; ;mainMaestro.c: 123: 
+[e ( _UARTSendString (2 , -> _temperaturaenvio `*Cuc -> -> 6 `i `uc ]
+"124
+[; ;mainMaestro.c: 124: char* decimalASCII(uint8_t lectura) {
+[e ( _UARTSendString (2 , :s 9C -> -> 6 `i `uc ]
+"126
+[; ;mainMaestro.c: 126:     char cadena[5];
+[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
+"132
+[; ;mainMaestro.c: 132:     convertir3 = (convertir3 - entero);
 }
 [e :U 140 ]
 [e $U 141  ]
 [e :U 142 ]
-"111
-[; ;mainMaestro.c: 111:     return;
+"135
+[; ;mainMaestro.c: 135:     cadena[2] = entero + 48;
 [e $UE 139  ]
-"112
-[; ;mainMaestro.c: 112: }
+"136
+[; ;mainMaestro.c: 136: 
 [e :UE 139 ]
 }
-"114
-[; ;mainMaestro.c: 114: void Setup(void) {
+"138
+[; ;mainMaestro.c: 138:     convertir3 *= 10;
 [v _Setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _Setup ]
 [f ]
-"115
-[; ;mainMaestro.c: 115:     TRISA = 0;
+"139
+[; ;mainMaestro.c: 139: 
 [e = _TRISA -> -> 0 `i `uc ]
-"116
-[; ;mainMaestro.c: 116:     ANSEL = 0;
+"140
+[; ;mainMaestro.c: 140:     entero = convertir3;
 [e = _ANSEL -> -> 0 `i `uc ]
-"117
-[; ;mainMaestro.c: 117:     ANSELH = 0;
+"141
+[; ;mainMaestro.c: 141:     cadena[3] = entero + 48;
 [e = _ANSELH -> -> 0 `i `uc ]
-"118
-[; ;mainMaestro.c: 118:     TRISC = 0;
+"142
+[; ;mainMaestro.c: 142:     cadena[4] = '\0';
 [e = _TRISC -> -> 0 `i `uc ]
-"119
-[; ;mainMaestro.c: 119:     TRISB = 0;
+"143
+[; ;mainMaestro.c: 143:     return cadena;
 [e = _TRISB -> -> 0 `i `uc ]
-"120
-[; ;mainMaestro.c: 120:     TRISD = 0;
+"144
+[; ;mainMaestro.c: 144: }
 [e = _TRISD -> -> 0 `i `uc ]
-"121
-[; ;mainMaestro.c: 121:     PORTC = 0;
+"145
+[; ;mainMaestro.c: 145: 
 [e = _PORTC -> -> 0 `i `uc ]
-"122
-[; ;mainMaestro.c: 122:     PORTB = 0;
+"146
+[; ;mainMaestro.c: 146: char* intToString(uint8_t value) {
 [e = _PORTB -> -> 0 `i `uc ]
-"123
-[; ;mainMaestro.c: 123:     PORTD = 0;
+"147
+[; ;mainMaestro.c: 147:     char valor[4];
 [e = _PORTD -> -> 0 `i `uc ]
-"125
-[; ;mainMaestro.c: 125:     PORTA = 255;
+"149
+[; ;mainMaestro.c: 149:     uint8_t entero = value / 100;
 [e = _PORTA -> -> 255 `i `uc ]
-"127
-[; ;mainMaestro.c: 127:     TRISCbits.TRISC4 = 1;
+"151
+[; ;mainMaestro.c: 151: 
 [e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
-"129
-[; ;mainMaestro.c: 129: }
+"153
+[; ;mainMaestro.c: 153: 
 [e :UE 143 ]
 }
-"132
-[; ;mainMaestro.c: 132: char* decimalASCII(uint8_t lectura) {
+"155
+[; ;mainMaestro.c: 155:     valor[2] = value % 10 + 48;
 [v _decimalASCII `(*uc ~T0 @X0 1 ef1`uc ]
 {
 [e :U _decimalASCII ]
 [v _lectura `uc ~T0 @X0 1 r1 ]
 [f ]
-"133
-[; ;mainMaestro.c: 133:     float convertir3 = (lectura / (float) 51);
+"156
+[; ;mainMaestro.c: 156:     valor[3] = '\0';
 [v _convertir3 `f ~T0 @X0 1 a ]
 [e = _convertir3 / -> -> _lectura `i `f -> -> 51 `i `f ]
-"134
-[; ;mainMaestro.c: 134:     char cadena[5];
+"157
+[; ;mainMaestro.c: 157: 
 [v _cadena `uc ~T0 @X0 -> 5 `i a ]
-"135
-[; ;mainMaestro.c: 135:     uint8_t entero = convertir3;
+"158
+[; ;mainMaestro.c: 158:     return valor;
 [v _entero `uc ~T0 @X0 1 a ]
 [e = _entero -> _convertir3 `uc ]
-"137
-[; ;mainMaestro.c: 137:     cadena[0] = entero + 48;
+"160
+[; ;mainMaestro.c: 160: 
 [e = *U + &U _cadena * -> -> -> 0 `i `ui `ux -> -> # *U &U _cadena `ui `ux -> + -> _entero `i -> 48 `i `uc ]
-"138
-[; ;mainMaestro.c: 138:     cadena[1] = '.';
+"161
+[; ;mainMaestro.c: 161: }
 [e = *U + &U _cadena * -> -> -> 1 `i `ui `ux -> -> # *U &U _cadena `ui `ux -> -> 46 `ui `uc ]
-"140
-[; ;mainMaestro.c: 140:     convertir3 = (convertir3 - entero);
+"163
 [e = _convertir3 - _convertir3 -> -> _entero `i `f ]
-"141
-[; ;mainMaestro.c: 141:     convertir3 *= 10;
+"164
 [e =* _convertir3 -> -> 10 `i `f ]
-"142
-[; ;mainMaestro.c: 142:     entero = convertir3;
+"165
 [e = _entero -> _convertir3 `uc ]
-"143
-[; ;mainMaestro.c: 143:     cadena[2] = entero + 48;
+"166
 [e = *U + &U _cadena * -> -> -> 2 `i `ui `ux -> -> # *U &U _cadena `ui `ux -> + -> _entero `i -> 48 `i `uc ]
-"145
-[; ;mainMaestro.c: 145:     convertir3 -= entero;
+"168
 [e =- _convertir3 -> -> _entero `i `f ]
-"146
-[; ;mainMaestro.c: 146:     convertir3 *= 10;
+"169
 [e =* _convertir3 -> -> 10 `i `f ]
-"148
-[; ;mainMaestro.c: 148:     entero = convertir3;
+"171
 [e = _entero -> _convertir3 `uc ]
-"149
-[; ;mainMaestro.c: 149:     cadena[3] = entero + 48;
+"172
 [e = *U + &U _cadena * -> -> -> 3 `i `ui `ux -> -> # *U &U _cadena `ui `ux -> + -> _entero `i -> 48 `i `uc ]
-"150
-[; ;mainMaestro.c: 150:     cadena[4] = '\0';
+"173
 [e = *U + &U _cadena * -> -> -> 4 `i `ui `ux -> -> # *U &U _cadena `ui `ux -> -> 0 `ui `uc ]
-"151
-[; ;mainMaestro.c: 151:     return cadena;
+"174
 [e ) &U _cadena ]
 [e $UE 144  ]
-"152
-[; ;mainMaestro.c: 152: }
+"175
 [e :UE 144 ]
+}
+"177
+[v _intToString `(*uc ~T0 @X0 1 ef1`uc ]
+{
+[e :U _intToString ]
+[v _value `uc ~T0 @X0 1 r1 ]
+[f ]
+"178
+[v _valor `uc ~T0 @X0 -> 4 `i a ]
+"180
+[v _entero `uc ~T0 @X0 1 a ]
+[e = _entero -> / -> _value `i -> 100 `i `uc ]
+"181
+[e = *U + &U _valor * -> -> -> 0 `i `ui `ux -> -> # *U &U _valor `ui `ux -> + -> _entero `i -> 48 `i `uc ]
+"183
+[e = _value -> - -> _value `i * -> 100 `i -> _entero `i `uc ]
+"185
+[e = *U + &U _valor * -> -> -> 1 `i `ui `ux -> -> # *U &U _valor `ui `ux -> + / -> _value `i -> 10 `i -> 48 `i `uc ]
+"186
+[e = *U + &U _valor * -> -> -> 2 `i `ui `ux -> -> # *U &U _valor `ui `ux -> + % -> _value `i -> 10 `i -> 48 `i `uc ]
+"187
+[e = *U + &U _valor * -> -> -> 3 `i `ui `ux -> -> # *U &U _valor `ui `ux -> -> 0 `ui `uc ]
+"189
+[e ) &U _valor ]
+[e $UE 145  ]
+"192
+[e :UE 145 ]
 }
 [a 3C 83 51 0 ]
 [a 2C 83 50 0 ]
 [a 1C 83 49 0 ]
-[a 4C 86 32 0 ]
+[a 6C 67 111 110 116 97 100 111 114 32 0 ]
+[a 8C 84 101 109 112 101 114 97 116 117 114 97 32 0 ]
+[a 5C 86 32 0 ]
+[a 4C 65 68 67 32 0 ]
+[a 7C 32 0 ]
+[a 9C 32 0 ]
