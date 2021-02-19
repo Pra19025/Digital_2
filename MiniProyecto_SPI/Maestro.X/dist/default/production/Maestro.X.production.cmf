@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\noelp\AppData\Local\Temp\se9k.o
+$C:\Users\noelp\AppData\Local\Temp\s7jo.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 4 2007 2007 2 2
@@ -110,19 +110,19 @@ STRING 1800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Maestro.X.production.o
-F cinit CODE >1074:C:\Users\noelp\AppData\Local\Temp\se9k.s
-F cinit CODE >1077:C:\Users\noelp\AppData\Local\Temp\se9k.s
-F cinit CODE >1106:C:\Users\noelp\AppData\Local\Temp\se9k.s
-10 cinit CODE >1107:C:\Users\noelp\AppData\Local\Temp\se9k.s
-11 cinit CODE >1110:C:\Users\noelp\AppData\Local\Temp\se9k.s
-12 cinit CODE >1111:C:\Users\noelp\AppData\Local\Temp\se9k.s
-13 cinit CODE >1112:C:\Users\noelp\AppData\Local\Temp\se9k.s
-14 cinit CODE >1113:C:\Users\noelp\AppData\Local\Temp\se9k.s
-15 cinit CODE >1114:C:\Users\noelp\AppData\Local\Temp\se9k.s
-16 cinit CODE >1115:C:\Users\noelp\AppData\Local\Temp\se9k.s
-17 cinit CODE >1121:C:\Users\noelp\AppData\Local\Temp\se9k.s
-17 cinit CODE >1123:C:\Users\noelp\AppData\Local\Temp\se9k.s
-18 cinit CODE >1124:C:\Users\noelp\AppData\Local\Temp\se9k.s
+F cinit CODE >1074:C:\Users\noelp\AppData\Local\Temp\s7jo.s
+F cinit CODE >1077:C:\Users\noelp\AppData\Local\Temp\s7jo.s
+F cinit CODE >1106:C:\Users\noelp\AppData\Local\Temp\s7jo.s
+10 cinit CODE >1107:C:\Users\noelp\AppData\Local\Temp\s7jo.s
+11 cinit CODE >1110:C:\Users\noelp\AppData\Local\Temp\s7jo.s
+12 cinit CODE >1111:C:\Users\noelp\AppData\Local\Temp\s7jo.s
+13 cinit CODE >1112:C:\Users\noelp\AppData\Local\Temp\s7jo.s
+14 cinit CODE >1113:C:\Users\noelp\AppData\Local\Temp\s7jo.s
+15 cinit CODE >1114:C:\Users\noelp\AppData\Local\Temp\s7jo.s
+16 cinit CODE >1115:C:\Users\noelp\AppData\Local\Temp\s7jo.s
+17 cinit CODE >1121:C:\Users\noelp\AppData\Local\Temp\s7jo.s
+17 cinit CODE >1123:C:\Users\noelp\AppData\Local\Temp\s7jo.s
+18 cinit CODE >1124:C:\Users\noelp\AppData\Local\Temp\s7jo.s
 4 intentry CODE >53:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Maestro.X\mainMaestro.c
 17BA text29 CODE >53:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Maestro.X\mainMaestro.c
 17BA text29 CODE >56:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Maestro.X\mainMaestro.c
@@ -761,11 +761,11 @@ __end_of_Lcd_Init 1256 0 CODE 0 text25 dist/default/production\Maestro.X.product
 __end_of_Lcd_Port 2F68 0 CODE 0 text28 dist/default/production\Maestro.X.production.o
 _temperaturaenvio 51 0 BANK0 1 bssBANK0 dist/default/production\Maestro.X.production.o
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\noelp\AppData\Local\Temp\se9k.o
+___sp 0 0 STACK 2 stack C:\Users\noelp\AppData\Local\Temp\s7jo.o
 _main 1C48 0 CODE 0 maintext dist/default/production\Maestro.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Maestro.X.production.o
 _Lcd_Write_Char 2FAC 0 CODE 0 text23 dist/default/production\Maestro.X.production.o
-start 18 0 CODE 0 init C:\Users\noelp\AppData\Local\Temp\se9k.o
+start 18 0 CODE 0 init C:\Users\noelp\AppData\Local\Temp\s7jo.o
 ___flmul@aexp 33 0 BANK0 1 cstackBANK0 dist/default/production\Maestro.X.production.o
 ___flmul@bexp 38 0 BANK0 1 cstackBANK0 dist/default/production\Maestro.X.production.o
 ___flmul@prod 39 0 BANK0 1 cstackBANK0 dist/default/production\Maestro.X.production.o
@@ -786,12 +786,12 @@ __size_of_intToString 0 0 ABS 0 - dist/default/production\Maestro.X.production.o
 _UARTSendString 12E2 0 CODE 0 text17 dist/default/production\Maestro.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
 ___awmod@sign 78 0 COMMON 1 cstackCOMMON dist/default/production\Maestro.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\se9k.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\se9k.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\se9k.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\se9k.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\se9k.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\se9k.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s7jo.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s7jo.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s7jo.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s7jo.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s7jo.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s7jo.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 ___bmul@multiplicand 72 0 COMMON 1 cstackCOMMON dist/default/production\Maestro.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Maestro.X.production.o
@@ -827,8 +827,8 @@ __end_of___fltol 1878 0 CODE 0 text11 dist/default/production\Maestro.X.producti
 _valorADC 54 0 BANK0 1 bssBANK0 dist/default/production\Maestro.X.production.o
 __end_of___lldiv 15D0 0 CODE 0 text20 dist/default/production\Maestro.X.production.o
 __Umul8_16@multiplicand 72 0 COMMON 1 cstackCOMMON dist/default/production\Maestro.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\noelp\AppData\Local\Temp\se9k.o
-___stacklo 0 0 ABS 0 - C:\Users\noelp\AppData\Local\Temp\se9k.o
+___stackhi 0 0 ABS 0 - C:\Users\noelp\AppData\Local\Temp\s7jo.o
+___stacklo 0 0 ABS 0 - C:\Users\noelp\AppData\Local\Temp\s7jo.o
 __size_of_Setup 0 0 ABS 0 - dist/default/production\Maestro.X.production.o
 ___fladd@a 76 0 COMMON 1 cstackCOMMON dist/default/production\Maestro.X.production.o
 ___fladd@b 72 0 COMMON 1 cstackCOMMON dist/default/production\Maestro.X.production.o
@@ -852,7 +852,7 @@ _SSPCON 14 0 ABS 0 - dist/default/production\Maestro.X.production.o
 _TRISC3 43B 0 ABS 0 - dist/default/production\Maestro.X.production.o
 _TRISC5 43D 0 ABS 0 - dist/default/production\Maestro.X.production.o
 __size_of_Lcd_Cmd 0 0 ABS 0 - dist/default/production\Maestro.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\noelp\AppData\Local\Temp\se9k.o
+___int_sp 0 0 STACK 2 stack C:\Users\noelp\AppData\Local\Temp\s7jo.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -918,7 +918,7 @@ __size_of_Lcd_Write_String 0 0 ABS 0 - dist/default/production\Maestro.X.product
 __stringtab 1000 0 STRING 0 strings dist/default/production\Maestro.X.production.o
 Lcd_Write_String@a 75 0 COMMON 1 cstackCOMMON dist/default/production\Maestro.X.production.o
 Lcd_Write_String@i 20 0 BANK0 1 cstackBANK0 dist/default/production\Maestro.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\noelp\AppData\Local\Temp\se9k.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\noelp\AppData\Local\Temp\s7jo.o
 __size_of_Lcd_Clear 0 0 ABS 0 - dist/default/production\Maestro.X.production.o
 __end_of___xxtofl 19F0 0 CODE 0 text10 dist/default/production\Maestro.X.production.o
 __end_of_Lcd_Cmd FF2 0 CODE 0 text27 dist/default/production\Maestro.X.production.o

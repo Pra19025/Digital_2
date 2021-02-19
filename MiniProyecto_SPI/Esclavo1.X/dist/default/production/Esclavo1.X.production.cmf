@@ -13,18 +13,18 @@
 %PSECTS
 $dist/default/production\Esclavo1.X.production.o
 cinit CODE 0 F F 5 2
-text1 CODE 0 126 126 16 2
-text2 CODE 0 13C 13C 15 2
+text1 CODE 0 124 124 16 2
+text2 CODE 0 13A 13A 15 2
 text3 CODE 0 14 14 AB 2
-text4 CODE 0 10A 10A 1C 2
+text4 CODE 0 108 108 1C 2
 text5 CODE 0 BF BF 29 2
-text6 CODE 0 151 151 6 2
-maintext CODE 0 E8 E8 22 2
+text6 CODE 0 14F 14F 6 2
+maintext CODE 0 E8 E8 20 2
 cstackCOMMON COMMON 1 70 70 8 1
 intentry CODE 0 4 4 8 2
 bssCOMMON COMMON 1 78 78 1 1
 config CONFIG 4 2007 2007 2 2
-$C:\Users\noelp\AppData\Local\Temp\sgi8.o
+$C:\Users\noelp\AppData\Local\Temp\s2t4.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 4 2007 2007 2 2
@@ -43,13 +43,13 @@ BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 3-3 2
-CONST 157-1FFF 2
+CONST 155-1FFF 2
 ENTRY 3-3 2
-ENTRY 157-1FFF 2
+ENTRY 155-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
 CODE 3-3 2
-CODE 157-1FFF 2
+CODE 155-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
@@ -57,9 +57,9 @@ SFR3 180-18F 1
 COMMON 79-7D 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE 157-1FFF 2
+STRCODE 155-1FFF 2
 STRING 3-3 2
-STRING 157-1FFF 2
+STRING 155-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -74,16 +74,16 @@ STRING 157-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Esclavo1.X.production.o
-F cinit CODE >792:C:\Users\noelp\AppData\Local\Temp\sgi8.s
-F cinit CODE >795:C:\Users\noelp\AppData\Local\Temp\sgi8.s
-F cinit CODE >806:C:\Users\noelp\AppData\Local\Temp\sgi8.s
-10 cinit CODE >812:C:\Users\noelp\AppData\Local\Temp\sgi8.s
-10 cinit CODE >814:C:\Users\noelp\AppData\Local\Temp\sgi8.s
-11 cinit CODE >815:C:\Users\noelp\AppData\Local\Temp\sgi8.s
+F cinit CODE >792:C:\Users\noelp\AppData\Local\Temp\s2t4.s
+F cinit CODE >795:C:\Users\noelp\AppData\Local\Temp\s2t4.s
+F cinit CODE >806:C:\Users\noelp\AppData\Local\Temp\s2t4.s
+10 cinit CODE >812:C:\Users\noelp\AppData\Local\Temp\s2t4.s
+10 cinit CODE >814:C:\Users\noelp\AppData\Local\Temp\s2t4.s
+11 cinit CODE >815:C:\Users\noelp\AppData\Local\Temp\s2t4.s
 4 intentry CODE >48:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
-151 text6 CODE >34:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\SPI.c
-152 text6 CODE >36:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\SPI.c
-156 text6 CODE >37:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\SPI.c
+14F text6 CODE >34:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\SPI.c
+150 text6 CODE >36:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\SPI.c
+154 text6 CODE >37:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\SPI.c
 BF text5 CODE >48:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
 BF text5 CODE >50:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
 C5 text5 CODE >51:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
@@ -94,22 +94,22 @@ D4 text5 CODE >59:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esc
 D8 text5 CODE >60:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
 DE text5 CODE >61:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
 E1 text5 CODE >66:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
-10A text4 CODE >83:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
-10A text4 CODE >85:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
-10D text4 CODE >86:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
-10E text4 CODE >87:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
-10F text4 CODE >88:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
-112 text4 CODE >89:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
-114 text4 CODE >90:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
-115 text4 CODE >92:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
-118 text4 CODE >94:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
-119 text4 CODE >95:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
-11C text4 CODE >97:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
-11D text4 CODE >98:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
-11E text4 CODE >99:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
-121 text4 CODE >100:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
-124 text4 CODE >101:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
-125 text4 CODE >104:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
+108 text4 CODE >83:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
+108 text4 CODE >85:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
+10B text4 CODE >86:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
+10C text4 CODE >87:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
+10D text4 CODE >88:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
+110 text4 CODE >89:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
+112 text4 CODE >90:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
+113 text4 CODE >92:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
+116 text4 CODE >94:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
+117 text4 CODE >95:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
+11A text4 CODE >97:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
+11B text4 CODE >98:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
+11C text4 CODE >99:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
+11F text4 CODE >100:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
+122 text4 CODE >101:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
+123 text4 CODE >104:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
 14 text3 CODE >13:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\ADC.c
 15 text3 CODE >15:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\ADC.c
 1A text3 CODE >16:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\ADC.c
@@ -184,36 +184,35 @@ BA text3 CODE >133:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Es
 BB text3 CODE >135:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\ADC.c
 BB text3 CODE >137:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\ADC.c
 BE text3 CODE >138:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\ADC.c
-13C text2 CODE >140:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\ADC.c
-13C text2 CODE >142:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\ADC.c
-13F text2 CODE >143:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\ADC.c
-140 text2 CODE >145:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\ADC.c
-143 text2 CODE >146:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\ADC.c
-144 text2 CODE >148:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\ADC.c
-145 text2 CODE >150:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\ADC.c
-148 text2 CODE >151:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\ADC.c
-14B text2 CODE >152:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\ADC.c
-14C text2 CODE >153:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\ADC.c
-14D text2 CODE >155:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\ADC.c
-150 text2 CODE >156:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\ADC.c
-126 text1 CODE >12:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\SPI.c
-127 text1 CODE >14:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\SPI.c
-12A text1 CODE >15:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\SPI.c
-12E text1 CODE >17:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\SPI.c
-130 text1 CODE >18:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\SPI.c
-131 text1 CODE >19:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\SPI.c
-132 text1 CODE >22:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\SPI.c
-135 text1 CODE >23:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\SPI.c
-136 text1 CODE >24:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\SPI.c
-136 text1 CODE >26:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\SPI.c
-13B text1 CODE >27:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\SPI.c
+13A text2 CODE >140:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\ADC.c
+13A text2 CODE >142:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\ADC.c
+13D text2 CODE >143:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\ADC.c
+13E text2 CODE >145:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\ADC.c
+141 text2 CODE >146:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\ADC.c
+142 text2 CODE >148:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\ADC.c
+143 text2 CODE >150:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\ADC.c
+146 text2 CODE >151:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\ADC.c
+149 text2 CODE >152:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\ADC.c
+14A text2 CODE >153:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\ADC.c
+14B text2 CODE >155:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\ADC.c
+14E text2 CODE >156:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\ADC.c
+124 text1 CODE >12:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\SPI.c
+125 text1 CODE >14:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\SPI.c
+128 text1 CODE >15:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\SPI.c
+12C text1 CODE >17:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\SPI.c
+12E text1 CODE >18:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\SPI.c
+12F text1 CODE >19:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\SPI.c
+130 text1 CODE >22:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\SPI.c
+133 text1 CODE >23:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\SPI.c
+134 text1 CODE >24:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\SPI.c
+134 text1 CODE >26:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\SPI.c
+139 text1 CODE >27:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\SPI.c
 E8 maintext CODE >68:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
 E8 maintext CODE >69:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
 ED maintext CODE >70:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
 F2 maintext CODE >71:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
 F8 maintext CODE >72:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
 101 maintext CODE >75:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
-104 maintext CODE >76:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo1.X\mainEsclavo1.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -227,7 +226,7 @@ F8 maintext CODE >72:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production\Esclavo1.X.production.o
-__Hspace_0 157 0 ABS 0 - -
+__Hspace_0 155 0 ABS 0 - -
 __Hspace_1 79 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
@@ -236,32 +235,32 @@ spiInit@sTransmitEdge 76 0 COMMON 1 cstackCOMMON dist/default/production\Esclavo
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
 _ADIF 66 0 ABS 0 - dist/default/production\Esclavo1.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\noelp\AppData\Local\Temp\sgi8.o
+___sp 0 0 STACK 2 stack C:\Users\noelp\AppData\Local\Temp\s2t4.o
 _main 1D0 0 CODE 0 maintext dist/default/production\Esclavo1.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Esclavo1.X.production.o
-start 18 0 CODE 0 init C:\Users\noelp\AppData\Local\Temp\sgi8.o
+start 18 0 CODE 0 init C:\Users\noelp\AppData\Local\Temp\s2t4.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Esclavo1.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\sgi8.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\sgi8.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\sgi8.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\sgi8.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\sgi8.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\sgi8.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s2t4.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s2t4.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s2t4.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s2t4.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s2t4.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s2t4.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production\Esclavo1.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
-__end_of_configADC 2A2 0 CODE 0 text2 dist/default/production\Esclavo1.X.production.o
+__end_of_configADC 29E 0 CODE 0 text2 dist/default/production\Esclavo1.X.production.o
 __size_of_configADC 0 0 ABS 0 - dist/default/production\Esclavo1.X.production.o
 _ADRESH 1E 0 ABS 0 - dist/default/production\Esclavo1.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\Esclavo1.X.production.o
-_configADC 278 0 CODE 0 text2 dist/default/production\Esclavo1.X.production.o
+_configADC 274 0 CODE 0 text2 dist/default/production\Esclavo1.X.production.o
 __size_of_spiInit 0 0 ABS 0 - dist/default/production\Esclavo1.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\noelp\AppData\Local\Temp\sgi8.o
-___stacklo 0 0 ABS 0 - C:\Users\noelp\AppData\Local\Temp\sgi8.o
+___stackhi 0 0 ABS 0 - C:\Users\noelp\AppData\Local\Temp\s2t4.o
+___stacklo 0 0 ABS 0 - C:\Users\noelp\AppData\Local\Temp\s2t4.o
 __size_of_Setup 0 0 ABS 0 - dist/default/production\Esclavo1.X.production.o
 spiInit@sDataSample 74 0 COMMON 1 cstackCOMMON dist/default/production\Esclavo1.X.production.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production\Esclavo1.X.production.o
@@ -272,7 +271,7 @@ _SSPCON 14 0 ABS 0 - dist/default/production\Esclavo1.X.production.o
 _TRISC3 43B 0 ABS 0 - dist/default/production\Esclavo1.X.production.o
 _TRISC5 43D 0 ABS 0 - dist/default/production\Esclavo1.X.production.o
 canalADC@canal 74 0 COMMON 1 cstackCOMMON dist/default/production\Esclavo1.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\noelp\AppData\Local\Temp\sgi8.o
+___int_sp 0 0 STACK 2 stack C:\Users\noelp\AppData\Local\Temp\s2t4.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -280,7 +279,7 @@ __Hbank3 0 0 ABS 0 bank3 -
 __Hcinit 28 0 CODE 0 cinit -
 __Hstack 0 0 STACK 2 stack -
 __Hmaintext 0 0 ABS 0 maintext -
-__end_of_spiInit 278 0 CODE 0 text1 dist/default/production\Esclavo1.X.production.o
+__end_of_spiInit 274 0 CODE 0 text1 dist/default/production\Esclavo1.X.production.o
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 4012 0 CONFIG 4 config -
 __Lbank0 0 0 ABS 0 bank0 -
@@ -309,14 +308,14 @@ __Lsfr3 0 0 ABS 0 sfr3 -
 __Ltext 0 0 ABS 0 text -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 _ISR 17E 0 CODE 0 text5 dist/default/production\Esclavo1.X.production.o
-__S0 157 0 ABS 0 - -
+__S0 155 0 ABS 0 - -
 __S1 79 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 saved_w 7E 0 ABS 0 - dist/default/production\Esclavo1.X.production.o
 __end_of_ISR 1D0 0 CODE 0 text5 dist/default/production\Esclavo1.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\noelp\AppData\Local\Temp\sgi8.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\noelp\AppData\Local\Temp\s2t4.o
 _PIE1bits 8C 0 ABS 0 - dist/default/production\Esclavo1.X.production.o
 __size_of_canalADC 0 0 ABS 0 - dist/default/production\Esclavo1.X.production.o
 __pmaintext 1D0 0 CODE 0 maintext dist/default/production\Esclavo1.X.production.o
@@ -340,13 +339,13 @@ _canalADC 28 0 CODE 0 text3 dist/default/production\Esclavo1.X.production.o
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 6 0 CODE 0 reset_vec -
 __end_of_canalADC 17E 0 CODE 0 text3 dist/default/production\Esclavo1.X.production.o
-__ptext1 24C 0 CODE 0 text1 dist/default/production\Esclavo1.X.production.o
-__ptext2 278 0 CODE 0 text2 dist/default/production\Esclavo1.X.production.o
+__ptext1 248 0 CODE 0 text1 dist/default/production\Esclavo1.X.production.o
+__ptext2 274 0 CODE 0 text2 dist/default/production\Esclavo1.X.production.o
 __ptext3 28 0 CODE 0 text3 dist/default/production\Esclavo1.X.production.o
-__ptext4 214 0 CODE 0 text4 dist/default/production\Esclavo1.X.production.o
+__ptext4 210 0 CODE 0 text4 dist/default/production\Esclavo1.X.production.o
 __ptext5 17E 0 CODE 0 text5 dist/default/production\Esclavo1.X.production.o
-__ptext6 2A2 0 CODE 0 text6 dist/default/production\Esclavo1.X.production.o
-_spiInit 24C 0 CODE 0 text1 dist/default/production\Esclavo1.X.production.o
+__ptext6 29E 0 CODE 0 text6 dist/default/production\Esclavo1.X.production.o
+_spiInit 248 0 CODE 0 text1 dist/default/production\Esclavo1.X.production.o
 spiWrite@dat 70 0 COMMON 1 cstackCOMMON dist/default/production\Esclavo1.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 spiInit@sType 77 0 COMMON 1 cstackCOMMON dist/default/production\Esclavo1.X.production.o
@@ -360,13 +359,13 @@ _ANSELbits 188 0 ABS 0 - dist/default/production\Esclavo1.X.production.o
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\Esclavo1.X.production.o
 _SSPSTAT 94 0 ABS 0 - dist/default/production\Esclavo1.X.production.o
 __Hend_init 1E 0 CODE 0 end_init -
-__end_of_main 214 0 CODE 0 maintext dist/default/production\Esclavo1.X.production.o
-__end_of_Setup 24C 0 CODE 0 text4 dist/default/production\Esclavo1.X.production.o
+__end_of_main 210 0 CODE 0 maintext dist/default/production\Esclavo1.X.production.o
+__end_of_Setup 248 0 CODE 0 text4 dist/default/production\Esclavo1.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\Esclavo1.X.production.o
 _PORTA 5 0 ABS 0 - dist/default/production\Esclavo1.X.production.o
 _PORTB 6 0 ABS 0 - dist/default/production\Esclavo1.X.production.o
 _SSPIF 63 0 ABS 0 - dist/default/production\Esclavo1.X.production.o
-_Setup 214 0 CODE 0 text4 dist/default/production\Esclavo1.X.production.o
+_Setup 210 0 CODE 0 text4 dist/default/production\Esclavo1.X.production.o
 _TRISA 85 0 ABS 0 - dist/default/production\Esclavo1.X.production.o
 _TRISB 86 0 ABS 0 - dist/default/production\Esclavo1.X.production.o
 __Hram 0 0 ABS 0 ram -
@@ -377,8 +376,8 @@ __pintentry 8 0 CODE 0 intentry dist/default/production\Esclavo1.X.production.o
 __size_of_ISR 0 0 ABS 0 - dist/default/production\Esclavo1.X.production.o
 spiInit@sClockIdle 75 0 COMMON 1 cstackCOMMON dist/default/production\Esclavo1.X.production.o
 __initialization 1E 0 CODE 0 cinit dist/default/production\Esclavo1.X.production.o
-_spiWrite 2A2 0 CODE 0 text6 dist/default/production\Esclavo1.X.production.o
-__end_of_spiWrite 2AE 0 CODE 0 text6 dist/default/production\Esclavo1.X.production.o
+_spiWrite 29E 0 CODE 0 text6 dist/default/production\Esclavo1.X.production.o
+__end_of_spiWrite 2AA 0 CODE 0 text6 dist/default/production\Esclavo1.X.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -405,7 +404,7 @@ __end_of_spiWrite 2AE 0 CODE 0 text6 dist/default/production\Esclavo1.X.producti
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cstackCOMMON 1 70 70 9 1
-intentry 0 4 8 153 2
+intentry 0 4 8 151 2
 reset_vec 0 0 0 3 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section

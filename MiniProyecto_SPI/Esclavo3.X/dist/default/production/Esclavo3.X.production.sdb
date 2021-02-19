@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"71 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo3.X\mainEsclavo3.c
+"70 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo3.X\mainEsclavo3.c
 [e E1295 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -59,7 +59,7 @@ SPI_ACTIVE_2_IDLE 64
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "47 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo3.X\mainEsclavo3.c
 [v _ISR ISR `II(v  1 e 1 0 ]
-"66
+"65
 [v _main main `(v  1 e 1 0 ]
 "101
 [v _Setup Setup `(v  1 e 1 0 ]
@@ -267,7 +267,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _varADC varADC `VEuc  1 e 1 0 ]
 "35
 [v _temperatura temperatura `uc  1 e 1 0 ]
-"66
+"65
 [v _main main `(v  1 e 1 0 ]
 {
 "99
@@ -306,7 +306,7 @@ SPI_ACTIVE_2_IDLE 64
 "47
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"64
+"63
 } 0
 "35 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_SPI\Esclavo3.X\SPI.c
 [v _spiWrite spiWrite `(v  1 e 1 0 ]

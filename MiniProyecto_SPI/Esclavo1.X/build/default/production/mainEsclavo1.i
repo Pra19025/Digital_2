@@ -2726,7 +2726,7 @@ void __attribute__((picinterrupt(("")))) ISR(void) {
     }
 
     if (SSPIF == 1) {
-        spiWrite(PORTB);
+        spiWrite(varADC);
         SSPIF = 0;
 
     }
@@ -2742,7 +2742,7 @@ void main(void) {
 
     while (1) {
         PORTAbits.RA5 = 1;
-        PORTB = varADC;
+
 
     }
 

@@ -40,9 +40,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "47 ./SPI.h
 [; ;./SPI.h: 47: void spiWrite(char);
 [v _spiWrite `(v ~T0 @X0 0 ef1`uc ]
-"228 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
-[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
 [p mainexit ]
 "42 mainEsclavo1.c
 [; ;mainEsclavo1.c: 42: 
@@ -111,6 +108,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1478
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1478: extern volatile unsigned char TRISB __attribute__((address(0x086)));
 [v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"228
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
 "166
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
 [v _PORTA `Vuc ~T0 @X0 0 e@5 ]
@@ -430,7 +430,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mainEsclavo1.c: 28:     if (SSPIF == 1) {
 [p x BOR4V  =  BOR40V    ]
 "29
-[; ;mainEsclavo1.c: 29:         spiWrite(PORTB);
+[; ;mainEsclavo1.c: 29:         spiWrite(varADC);
 [p x WRT  =  OFF         ]
 "35
 [; ;mainEsclavo1.c: 35: }
@@ -468,7 +468,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "60
 [; ;mainEsclavo1.c: 60: 
-[e ( _spiWrite (1 -> _PORTB `uc ]
+[e ( _spiWrite (1 -> _varADC `uc ]
 "61
 [; ;mainEsclavo1.c: 61:     PORTB = 0;
 [e = _SSPIF -> -> 0 `i `b ]
@@ -504,8 +504,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "75
 [e = . . _PORTAbits 0 5 -> -> 1 `i `uc ]
-"76
-[e = _PORTB _varADC ]
 "78
 }
 [e :U 142 ]

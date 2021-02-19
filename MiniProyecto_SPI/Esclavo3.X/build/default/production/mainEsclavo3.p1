@@ -42,7 +42,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _ADCON0bits `VS44 ~T0 @X0 0 e@31 ]
 [p mainexit ]
 "41 mainEsclavo3.c
-[; ;mainEsclavo3.c: 41: 
+[; ;mainEsclavo3.c: 41:     while (1) {
 [v _Setup `(v ~T0 @X0 0 ef ]
 "38 ./ADC.h
 [; ;./ADC.h: 38: void configADC(void);
@@ -50,8 +50,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "37
 [; ;./ADC.h: 37: void canalADC(uint8_t canal);
 [v _canalADC `(v ~T0 @X0 0 ef1`uc ]
-"71 mainEsclavo3.c
-[; ;mainEsclavo3.c: 71: 
+"70 mainEsclavo3.c
+[; ;mainEsclavo3.c: 70: void Setup(void) {
 [c E1295 32 33 34 35 36 37 .. ]
 [n E1295 . SPI_MASTER_OSC_DIV4 SPI_MASTER_OSC_DIV16 SPI_MASTER_OSC_DIV64 SPI_MASTER_TMR2 SPI_SLAVE_SS_EN SPI_SLAVE_SS_DIS  ]
 [c E1303 0 128 .. ]
@@ -433,30 +433,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mainEsclavo3.c: 25:         _delay((unsigned long)((15)*(4000000/4000000.0)));
 [p x LVP  =  OFF         ]
 "28
-[; ;mainEsclavo3.c: 28:         ADIF = 0;
+[; ;mainEsclavo3.c: 28:         ADCON0bits.GO = 1;
 [p x BOR4V  =  BOR40V    ]
 "29
-[; ;mainEsclavo3.c: 29:         ADCON0bits.GO = 1;
+[; ;mainEsclavo3.c: 29:         ;
 [p x WRT  =  OFF         ]
 "34
-[; ;mainEsclavo3.c: 34: 
+[; ;mainEsclavo3.c: 34: void main(void) {
 [v _varADC `Vuc ~T0 @X0 1 e ]
 "35
-[; ;mainEsclavo3.c: 35: void main(void) {
+[; ;mainEsclavo3.c: 35:     Setup();
 [v _temperatura `uc ~T0 @X0 1 e ]
 [v $root$_ISR `(v ~T0 @X0 0 e ]
 "47
-[; ;mainEsclavo3.c: 47:         temperatura = varADC *2;
+[; ;mainEsclavo3.c: 47: 
 [v _ISR `(v ~T1 @X0 1 ef ]
 {
 [e :U _ISR ]
 [f ]
 "49
-[; ;mainEsclavo3.c: 49:         PORTAbits.RA5 = 1;
+[; ;mainEsclavo3.c: 49:         PORTC = varADC;
 [e $ ! == -> _SSPIF `i -> 1 `i 139  ]
 {
 "50
-[; ;mainEsclavo3.c: 50:         PORTC = varADC;
+[; ;mainEsclavo3.c: 50: 
 [e ( _spiWrite (1 -> _temperatura `uc ]
 "51
 [; ;mainEsclavo3.c: 51:         if (varADC <= 12) {
@@ -475,51 +475,51 @@ Version 4.0 HI-TECH Software Intermediate Code
 "57
 [; ;mainEsclavo3.c: 57:         if ((varADC <= 18) & (varADC >= 13)) {
 [e = _varADC _ADRESH ]
+"58
+[; ;mainEsclavo3.c: 58:             PORTB = 0;
+[e = _ADIF -> -> 0 `i `b ]
 "59
 [; ;mainEsclavo3.c: 59:             PORTBbits.RB1 = 1;
-[e = _ADIF -> -> 0 `i `b ]
-"60
-[; ;mainEsclavo3.c: 60:         }
 [e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
-"62
-[; ;mainEsclavo3.c: 62:         if (varADC >= 19) {
+"61
+[; ;mainEsclavo3.c: 61: 
 }
 [e :U 140 ]
-"64
-[; ;mainEsclavo3.c: 64:             PORTBbits.RB0 = 1;
+"63
+[; ;mainEsclavo3.c: 63:             PORTB = 0;
 [e :UE 138 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"66
-[; ;mainEsclavo3.c: 66:     }
+"65
+[; ;mainEsclavo3.c: 65:         }
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
+"66
+[; ;mainEsclavo3.c: 66:     }
+[e ( _Setup ..  ]
 "67
 [; ;mainEsclavo3.c: 67:     return;
-[e ( _Setup ..  ]
+[e ( _configADC ..  ]
 "68
 [; ;mainEsclavo3.c: 68: }
-[e ( _configADC ..  ]
-"69
-[; ;mainEsclavo3.c: 69: 
 [e ( _canalADC (1 -> -> 0 `i `uc ]
-"71
-[; ;mainEsclavo3.c: 71: 
+"70
+[; ;mainEsclavo3.c: 70: void Setup(void) {
 [e ( _spiInit (4 , , , . `E1295 4 . `E1303 0 . `E1307 1 . `E1311 0 ]
-"73
-[; ;mainEsclavo3.c: 73:     ANSELH = 0;
+"72
+[; ;mainEsclavo3.c: 72:     ANSEL = 0;
 [e :U 143 ]
 {
-"78
-[; ;mainEsclavo3.c: 78:     TRISB = 0;
+"77
+[; ;mainEsclavo3.c: 77:     TRISA = 1;
 [e = _temperatura -> * -> _varADC `i -> 2 `i `uc ]
+"79
+[; ;mainEsclavo3.c: 79:     TRISC = 0;
+[e = . . _PORTAbits 0 5 -> -> 1 `i `uc ]
 "80
 [; ;mainEsclavo3.c: 80: 
-[e = . . _PORTAbits 0 5 -> -> 1 `i `uc ]
-"81
-[; ;mainEsclavo3.c: 81:     PORTA = 0;
 [e = _PORTC _varADC ]
 "82
 [; ;mainEsclavo3.c: 82:     PORTB = 0;

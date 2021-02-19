@@ -49,15 +49,15 @@ void __interrupt() ISR(void) {
 
     if (ADIF == 1) {
         __delay_ms(1);
-        varADC = ADRESH; //guardar valor de la lectura del adc en variable para comparacion y para 7 segmentos
+        varADC = ADRESH; //guardar valor de la lectura del adc en variable para enviarlo
 
-        ADIF = 0;
-        ADCON0bits.GO = 1;
+        ADIF = 0;   //limpiar interrupción
+        ADCON0bits.GO = 1;  // iniciar adc de nuevo
 
     }
 
     if (SSPIF == 1) {
-        spiWrite(PORTB);
+        spiWrite(varADC);    //enviar dato leído al pic maestro
         SSPIF = 0;
 
     }
@@ -73,7 +73,7 @@ void main(void) {
 
     while (1) {
         PORTAbits.RA5 = 1;
-        PORTB = varADC;
+        //PORTB = varADC; //mostar el valor leído en el puerto B
 
     }
 

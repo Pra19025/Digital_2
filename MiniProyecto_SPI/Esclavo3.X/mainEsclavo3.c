@@ -47,17 +47,16 @@ void Setup(void);
 void __interrupt() ISR(void) {
 
     if (SSPIF == 1) {
-        spiWrite(temperatura);
+        spiWrite(temperatura);  //se envia el equivalente en temperatura al maestro
         SSPIF = 0;
 
     }
 
     if (ADIF == 1) {
         __delay_us(15);
-        varADC = ADRESH; //guardar valor de la lectura del adc en variable para comparacion y para 7 segmentos
-
-        ADIF = 0;
-        ADCON0bits.GO = 1;
+        varADC = ADRESH; //guardar valor de la lectura del adc en variable
+        ADIF = 0;   //limpiar la bandera
+        ADCON0bits.GO = 1;//iniciar adc 
         ;
     }
 
@@ -79,6 +78,7 @@ void main(void) {
         
         PORTAbits.RA5 = 1;
         PORTC = varADC;
+        //comparaciones correspondientes para prender leds del semáforo
         if (varADC <= 12) {
             PORTB = 0;
             PORTBbits.RB2 = 1;

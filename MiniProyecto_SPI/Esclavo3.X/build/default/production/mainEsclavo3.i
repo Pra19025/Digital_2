@@ -2724,7 +2724,6 @@ void __attribute__((picinterrupt(("")))) ISR(void) {
     if (ADIF == 1) {
         _delay((unsigned long)((15)*(4000000/4000000.0)));
         varADC = ADRESH;
-
         ADIF = 0;
         ADCON0bits.GO = 1;
         ;
@@ -2748,6 +2747,7 @@ void main(void) {
 
         PORTAbits.RA5 = 1;
         PORTC = varADC;
+
         if (varADC <= 12) {
             PORTB = 0;
             PORTBbits.RB2 = 1;

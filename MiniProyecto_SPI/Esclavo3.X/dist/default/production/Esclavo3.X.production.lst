@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Tue Feb 16 10:44:00 2021
+                                                                                               Fri Feb 19 09:15:01 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	16F887
@@ -506,7 +506,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    492 ;;
    493 ;; *************** function _main *****************
    494 ;; Defined at:
-   495 ;;		line 66 in file "mainEsclavo3.c"
+   495 ;;		line 65 in file "mainEsclavo3.c"
    496 ;; Parameters:    Size  Location     Type
    497 ;;		None
    498 ;; Auto vars:     Size  Location     Type
@@ -544,20 +544,20 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    530                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
    531                           
    532                           
-   533                           ;mainEsclavo3.c: 67:     return;
+   533                           ;mainEsclavo3.c: 66:     }
    534  00C0  120A  118A  212D  120A  118A  	fcall	_Setup
    535  00C5                     l933:
    536                           
-   537                           ;mainEsclavo3.c: 68: }
+   537                           ;mainEsclavo3.c: 67:     return;
    538  00C5  120A  118A  215A  120A  118A  	fcall	_configADC
    539  00CA                     l935:
    540                           
-   541                           ;mainEsclavo3.c: 69: 
+   541                           ;mainEsclavo3.c: 68: }
    542  00CA  3000               	movlw	0
    543  00CB  120A  118A  2015  120A  118A  	fcall	_canalADC
    544  00D0                     l937:
    545                           
-   546                           ;mainEsclavo3.c: 71: 
+   546                           ;mainEsclavo3.c: 70: void Setup(void) {
    547  00D0  01F4               	clrf	spiInit@sDataSample
    548  00D1  01F5               	clrf	spiInit@sClockIdle
    549  00D2  01F6               	clrf	spiInit@sTransmitEdge
@@ -565,7 +565,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    551  00D4  120A  118A  2144  120A  118A  	fcall	_spiInit
    552  00D9                     l939:
    553                           
-   554                           ;mainEsclavo3.c: 78:     TRISB = 0;
+   554                           ;mainEsclavo3.c: 77:     TRISA = 1;
    555  00D9  0879               	movf	_varADC,w	;volatile
    556  00DA  1283               	bcf	3,5	;RP0=0, select bank0
    557  00DB  1303               	bcf	3,6	;RP1=0, select bank0
@@ -576,11 +576,11 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    562  00E0  00F8               	movwf	_temperatura
    563  00E1                     l941:
    564                           
-   565                           ;mainEsclavo3.c: 80: 
+   565                           ;mainEsclavo3.c: 79:     TRISC = 0;
    566  00E1  1685               	bsf	5,5	;volatile
    567  00E2                     l943:
    568                           
-   569                           ;mainEsclavo3.c: 81:     PORTA = 0;
+   569                           ;mainEsclavo3.c: 80: 
    570  00E2  0879               	movf	_varADC,w	;volatile
    571  00E3  0087               	movwf	7	;volatile
    572  00E4                     l945:
@@ -1347,7 +1347,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1332  0106                     _ISR:
   1333  0106                     i1l827:
   1334                           
-  1335                           ;mainEsclavo3.c: 49:         PORTAbits.RA5 = 1;
+  1335                           ;mainEsclavo3.c: 49:         PORTC = varADC;
   1336  0106  1283               	bcf	3,5	;RP0=0, select bank0
   1337  0107  1303               	bcf	3,6	;RP1=0, select bank0
   1338  0108  1D8C               	btfss	12,3	;volatile
@@ -1358,7 +1358,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1343  010C                     u17_20:
   1344  010C                     i1l829:
   1345                           
-  1346                           ;mainEsclavo3.c: 50:         PORTC = varADC;
+  1346                           ;mainEsclavo3.c: 50: 
   1347  010C  0878               	movf	_temperatura,w
   1348  010D  120A  118A  216F  120A  118A  	fcall	_spiWrite
   1349  0112                     i1l831:
@@ -1395,11 +1395,11 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1380  0123  00F9               	movwf	_varADC	;volatile
   1381  0124                     i1l837:
   1382                           
-  1383                           ;mainEsclavo3.c: 59:             PORTBbits.RB1 = 1;
+  1383                           ;mainEsclavo3.c: 58:             PORTB = 0;
   1384  0124  130C               	bcf	12,6	;volatile
   1385  0125                     i1l839:
   1386                           
-  1387                           ;mainEsclavo3.c: 60:         }
+  1387                           ;mainEsclavo3.c: 59:             PORTBbits.RB1 = 1;
   1388  0125  149F               	bsf	31,1	;volatile
   1389  0126                     i1l61:
   1390  0126  0873               	movf	??_ISR+2,w
@@ -1650,7 +1650,7 @@ DATA                 0      0       C      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Tue Feb 16 10:44:00 2021
+Symbol Table                                                                                   Fri Feb 19 09:15:01 2021
 
             _SSPSTATbits 0094                       l75 0143                       u10 001B  
                      u11 001A                       u20 0026                       u21 0025  

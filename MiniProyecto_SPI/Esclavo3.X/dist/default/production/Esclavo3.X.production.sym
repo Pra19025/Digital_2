@@ -164,7 +164,7 @@ cstackCOMMON 70 79 COMMON 70 1
 cstackBANK0 20 21 BANK0 20 1
 %locals
 dist/default/production\Esclavo3.X.production.o
-C:\Users\noelp\AppData\Local\Temp\scc4.s
+C:\Users\noelp\AppData\Local\Temp\si7s.s
 797 F 0 CODE 0
 800 F 0 CODE 0
 814 F 0 CODE 0
@@ -173,14 +173,14 @@ C:\Users\noelp\AppData\Local\Temp\scc4.s
 823 11 0 CODE 0
 824 12 0 CODE 0
 mainEsclavo3.c
+65 C0 0 CODE 0
 66 C0 0 CODE 0
-67 C0 0 CODE 0
-68 C5 0 CODE 0
-69 CA 0 CODE 0
-71 D0 0 CODE 0
-78 D9 0 CODE 0
-80 E1 0 CODE 0
-81 E2 0 CODE 0
+67 C5 0 CODE 0
+68 CA 0 CODE 0
+70 D0 0 CODE 0
+77 D9 0 CODE 0
+79 E1 0 CODE 0
+80 E2 0 CODE 0
 82 E4 0 CODE 0
 83 EA 0 CODE 0
 84 EB 0 CODE 0
@@ -312,9 +312,9 @@ mainEsclavo3.c
 55 115 0 CODE 0
 56 119 0 CODE 0
 57 11E 0 CODE 0
-59 124 0 CODE 0
-60 125 0 CODE 0
-64 126 0 CODE 0
+58 124 0 CODE 0
+59 125 0 CODE 0
+63 126 0 CODE 0
 47 4 0 CODE 0
 SPI.c
 35 16F 0 CODE 0

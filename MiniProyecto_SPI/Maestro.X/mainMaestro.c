@@ -61,10 +61,10 @@ void main(void) {
     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
     __delay_ms(5);
     UARTInit(9600, 1); //se van a usar 9600 baudios
-    Lcd_Init();
-    Lcd_Clear();
+    Lcd_Init(); // se inicia la LCD
+    Lcd_Clear();    //se borra la LCD
     __delay_ms(5);
-    Lcd_Set_Cursor(1, 1);
+    Lcd_Set_Cursor(1, 1);   //se colocan los nombres de los sensores
     Lcd_Write_String("S1");
     Lcd_Set_Cursor(1, 8);
     Lcd_Write_String("S2");
@@ -84,7 +84,7 @@ void main(void) {
         Lcd_Set_Cursor(2, 1); //se coloca el cursor en posicion
         Lcd_Write_String(ADCenvio); // Se escribe en la LCD la variable del ADC
 
-        UARTSendString("ADC ", 6);
+        UARTSendString("ADC ", 6);  //Se envian valores a través de UART a la terminal virtual
         UARTSendString(ADCenvio, 6);
         UARTSendString("V ", 6);
 
@@ -151,17 +151,17 @@ void Setup(void) {
     TRISCbits.TRISC4 = 1; //es el SDIN del maestro 
     //configuracion para la comunicacion serial sincrona
 }
-
+//esta función fue utilizada en el laboratorio 3, se extrajo de ahí igual que la siguiente función
 char* decimalASCII(uint8_t lectura) {
     float convertir3 = (lectura / (float) 51); //debido a que se leen 8 bits, 255 es el máximo
     char cadena[5];
     uint8_t entero = convertir3;
 
     cadena[0] = entero + 48; //48 es la posicion 0 en ascii
-    cadena[1] = '.';
+    cadena[1] = '.';    //el punto decimal debido a que se estan convirtiendo decimales
 
     convertir3 = (convertir3 - entero); //debido a que convertir es float, y entero es entero, solo van a quedar los decimales después de esta operación en valor
-    convertir3 *= 10;
+    convertir3 *= 10;   
     entero = convertir3;
     cadena[2] = entero + 48;
 
@@ -177,16 +177,16 @@ char* decimalASCII(uint8_t lectura) {
 char* intToString(uint8_t value) {
     char valor[4];
 
-    uint8_t entero = value / 100; // centenas
+    uint8_t entero = value / 100; // solo se dejan las centenas
     valor[0] = entero + 48;
 
-    value = value - (100 * entero); // ya no hay decenas
+    value = value - (100 * entero); // se quitan las centenas
 
-    valor[1] = value / 10 + 48; // decenas
-    valor[2] = value % 10 + 48; // el resto
-    valor[3] = '\0'; //caracter final
+    valor[1] = value / 10 + 48; // se dejan las decenas
+    valor[2] = value % 10 + 48; // quedan solo las unidades 
+    valor[3] = '\0'; // final
 
-    return valor;
+    return valor;   //se regresa la cadena, es decir un string
 
 
 }

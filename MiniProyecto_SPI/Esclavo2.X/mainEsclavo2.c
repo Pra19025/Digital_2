@@ -3,6 +3,7 @@
  * Author: Noel Prado
  *
  * Created on 11 de febrero de 2021, 09:11 AM
+ * //Parte de este código es extraída del laboratorio 2, debido a que se utilizaba un contador similar. 
  */
 #include <xc.h>
 #include <stdint.h>
@@ -43,7 +44,7 @@ void Setup(void);
 
 void __interrupt() ISR(void) {
 
-    if (SSPIF == 1) {
+    if (SSPIF == 1) {   //se envia el valor del contador al maestro
         spiWrite(contador);
         SSPIF = 0;
 
@@ -80,7 +81,7 @@ void main(void) {
 
     while (1) {
    
-        PORTD = contador;
+        PORTD = contador;   //se muestra el valor del contador en el puerto d
     }
 
     return;

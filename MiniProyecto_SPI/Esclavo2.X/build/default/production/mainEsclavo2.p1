@@ -34,11 +34,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 245: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x006)));
 [v _PORTBbits `VS7 ~T0 @X0 0 e@6 ]
 [p mainexit ]
-"38 mainEsclavo2.c
-[; ;mainEsclavo2.c: 38: 
+"39 mainEsclavo2.c
+[; ;mainEsclavo2.c: 39:         if (PORTBbits.RB0 == 1) {
 [v _Setup `(v ~T0 @X0 0 ef ]
-"79
-[; ;mainEsclavo2.c: 79:     INTCONbits.GIE = 1;
+"80
+[; ;mainEsclavo2.c: 80:     INTCONbits.PEIE = 1;
 [c E1292 32 33 34 35 36 37 .. ]
 [n E1292 . SPI_MASTER_OSC_DIV4 SPI_MASTER_OSC_DIV16 SPI_MASTER_OSC_DIV64 SPI_MASTER_TMR2 SPI_SLAVE_SS_EN SPI_SLAVE_SS_DIS  ]
 [c E1300 0 128 .. ]
@@ -364,210 +364,210 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"12 mainEsclavo2.c
-[; ;mainEsclavo2.c: 12: 
-[p x FOSC  =  INTRC_NOCLKOUT ]
-"13
+"13 mainEsclavo2.c
 [; ;mainEsclavo2.c: 13: 
-[p x WDTE  =  OFF        ]
+[p x FOSC  =  INTRC_NOCLKOUT ]
 "14
 [; ;mainEsclavo2.c: 14: 
-[p x PWRTE  =  OFF       ]
+[p x WDTE  =  OFF        ]
 "15
 [; ;mainEsclavo2.c: 15: 
-[p x MCLRE  =  OFF       ]
+[p x PWRTE  =  OFF       ]
 "16
 [; ;mainEsclavo2.c: 16: 
-[p x CP  =  OFF          ]
+[p x MCLRE  =  OFF       ]
 "17
 [; ;mainEsclavo2.c: 17: void __attribute__((picinterrupt(("")))) ISR(void) {
-[p x CPD  =  OFF         ]
+[p x CP  =  OFF          ]
 "18
 [; ;mainEsclavo2.c: 18: 
-[p x BOREN  =  OFF       ]
+[p x CPD  =  OFF         ]
 "19
 [; ;mainEsclavo2.c: 19:     if (SSPIF == 1) {
-[p x IESO  =  OFF        ]
+[p x BOREN  =  OFF       ]
 "20
 [; ;mainEsclavo2.c: 20:         spiWrite(contador);
-[p x FCMEN  =  OFF       ]
+[p x IESO  =  OFF        ]
 "21
 [; ;mainEsclavo2.c: 21:         SSPIF = 0;
+[p x FCMEN  =  OFF       ]
+"22
+[; ;mainEsclavo2.c: 22: 
 [p x LVP  =  OFF         ]
-"24
-[; ;mainEsclavo2.c: 24: 
-[p x BOR4V  =  BOR40V    ]
 "25
 [; ;mainEsclavo2.c: 25:     if (INTCONbits.RBIF == 1) {
+[p x BOR4V  =  BOR40V    ]
+"26
+[; ;mainEsclavo2.c: 26: 
 [p x WRT  =  OFF         ]
-"30
-[; ;mainEsclavo2.c: 30:             debounce2++;
+"31
+[; ;mainEsclavo2.c: 31:             if (debounce2 > 1) {
 [v _contador `Vuc ~T0 @X0 1 e ]
 [i _contador
 -> -> 0 `i `uc
 ]
-"31
-[; ;mainEsclavo2.c: 31:             if (debounce2 > 1) {
-[v _debounce1 `uc ~T0 @X0 1 e ]
 "32
 [; ;mainEsclavo2.c: 32:                 debounce2 = 0;
+[v _debounce1 `uc ~T0 @X0 1 e ]
+"33
+[; ;mainEsclavo2.c: 33: 
 [v _debounce2 `uc ~T0 @X0 1 e ]
 [v $root$_ISR `(v ~T0 @X0 0 e ]
-"44
-[; ;mainEsclavo2.c: 44:                 contador++;
+"45
+[; ;mainEsclavo2.c: 45:             }
 [v _ISR `(v ~T1 @X0 1 ef ]
 {
 [e :U _ISR ]
 [f ]
-"46
-[; ;mainEsclavo2.c: 46:         }
-[e $ ! == -> _SSPIF `i -> 1 `i 139  ]
-{
 "47
 [; ;mainEsclavo2.c: 47:     }
-[e ( _spiWrite (1 -> _contador `uc ]
+[e $ ! == -> _SSPIF `i -> 1 `i 139  ]
+{
 "48
 [; ;mainEsclavo2.c: 48: }
+[e ( _spiWrite (1 -> _contador `uc ]
+"49
+[; ;mainEsclavo2.c: 49: 
 [e = _SSPIF -> -> 0 `i `b ]
-"50
-[; ;mainEsclavo2.c: 50: void main(void) {
+"51
+[; ;mainEsclavo2.c: 51:     Setup();
 }
 [e :U 139 ]
-"52
-[; ;mainEsclavo2.c: 52:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+"53
+[; ;mainEsclavo2.c: 53: 
 [e $ ! == -> . . _INTCONbits 0 0 `i -> 1 `i 140  ]
 {
-"54
-[; ;mainEsclavo2.c: 54:     while (1) {
+"55
+[; ;mainEsclavo2.c: 55: 
 [e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
-"56
-[; ;mainEsclavo2.c: 56:         PORTD = contador;
-[e $ ! == -> . . _PORTBbits 0 1 `i -> 1 `i 141  ]
-{
 "57
 [; ;mainEsclavo2.c: 57:     }
-[e ++ _debounce2 -> -> 1 `i `uc ]
+[e $ ! == -> . . _PORTBbits 0 1 `i -> 1 `i 141  ]
+{
 "58
 [; ;mainEsclavo2.c: 58: 
-[e $ ! > -> _debounce2 `i -> 1 `i 142  ]
-{
+[e ++ _debounce2 -> -> 1 `i `uc ]
 "59
 [; ;mainEsclavo2.c: 59:     return;
+[e $ ! > -> _debounce2 `i -> 1 `i 142  ]
+{
+"60
+[; ;mainEsclavo2.c: 60: }
 [e = _debounce2 -> -> 0 `i `uc ]
-"61
-[; ;mainEsclavo2.c: 61: 
+"62
+[; ;mainEsclavo2.c: 62: void Setup(void) {
 [e -- _contador -> -> 1 `i `Vuc ]
-"63
-[; ;mainEsclavo2.c: 63: 
-}
-[e :U 142 ]
 "64
 [; ;mainEsclavo2.c: 64:     ANSEL = 0;
 }
+[e :U 142 ]
+"65
+[; ;mainEsclavo2.c: 65:     ANSELH = 0;
+}
 [e :U 141 ]
-"66
-[; ;mainEsclavo2.c: 66: 
-[e $ ! == -> . . _PORTBbits 0 0 `i -> 1 `i 143  ]
-{
 "67
 [; ;mainEsclavo2.c: 67:     TRISD = 0;
-[e ++ _debounce1 -> -> 1 `i `uc ]
+[e $ ! == -> . . _PORTBbits 0 0 `i -> 1 `i 143  ]
+{
 "68
 [; ;mainEsclavo2.c: 68:     PORTA = 0;
-[e $ ! > -> _debounce1 `i -> 1 `i 144  ]
-{
+[e ++ _debounce1 -> -> 1 `i `uc ]
 "69
 [; ;mainEsclavo2.c: 69:     TRISB = 255;
+[e $ ! > -> _debounce1 `i -> 1 `i 144  ]
+{
+"70
+[; ;mainEsclavo2.c: 70:     PORTB = 0;
 [e = _debounce1 -> -> 0 `i `uc ]
-"71
-[; ;mainEsclavo2.c: 71:     PORTD = 0;
-[e ++ _contador -> -> 1 `i `Vuc ]
 "72
 [; ;mainEsclavo2.c: 72: 
-}
-[e :U 144 ]
+[e ++ _contador -> -> 1 `i `Vuc ]
 "73
 [; ;mainEsclavo2.c: 73:     TRISCbits.TRISC5 = 1;
 }
-[e :U 143 ]
+[e :U 144 ]
 "74
 [; ;mainEsclavo2.c: 74: 
 }
-[e :U 140 ]
+[e :U 143 ]
 "75
 [; ;mainEsclavo2.c: 75:     IOCBbits.IOCB0 = 1;
+}
+[e :U 140 ]
+"76
+[; ;mainEsclavo2.c: 76:     IOCBbits.IOCB1 = 1;
 [e :UE 138 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"77
-[; ;mainEsclavo2.c: 77: 
+"78
+[; ;mainEsclavo2.c: 78:     INTCONbits.RBIE = 1;
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"78
-[; ;mainEsclavo2.c: 78:     INTCONbits.RBIE = 1;
-[e ( _Setup ..  ]
 "79
 [; ;mainEsclavo2.c: 79:     INTCONbits.GIE = 1;
+[e ( _Setup ..  ]
+"80
+[; ;mainEsclavo2.c: 80:     INTCONbits.PEIE = 1;
 [e ( _spiInit (4 , , , . `E1292 4 . `E1300 0 . `E1304 1 . `E1308 0 ]
-"81
-[; ;mainEsclavo2.c: 81:     INTCONbits.RBIF = 0;
+"82
+[; ;mainEsclavo2.c: 82:     PIR1bits.SSPIF = 0;
 [e :U 147 ]
 {
-"83
-[; ;mainEsclavo2.c: 83:     PIE1bits.SSPIE = 1;
-[e = _PORTD _contador ]
 "84
 [; ;mainEsclavo2.c: 84:     TRISAbits.TRISA5 = 1;
+[e = _PORTD _contador ]
+"85
+[; ;mainEsclavo2.c: 85: }
 }
 [e :U 146 ]
 [e $U 147  ]
 [e :U 148 ]
-"86
-[e $UE 145  ]
 "87
+[e $UE 145  ]
+"88
 [e :UE 145 ]
 }
-"89
+"90
 [v _Setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _Setup ]
 [f ]
-"91
-[e = _ANSEL -> -> 0 `i `uc ]
 "92
+[e = _ANSEL -> -> 0 `i `uc ]
+"93
 [e = _ANSELH -> -> 0 `i `uc ]
-"94
-[e = _TRISD -> -> 0 `i `uc ]
 "95
-[e = _PORTA -> -> 0 `i `uc ]
+[e = _TRISD -> -> 0 `i `uc ]
 "96
-[e = _TRISB -> -> 255 `i `uc ]
+[e = _PORTA -> -> 0 `i `uc ]
 "97
-[e = _PORTB -> -> 0 `i `uc ]
+[e = _TRISB -> -> 255 `i `uc ]
 "98
+[e = _PORTB -> -> 0 `i `uc ]
+"99
 [e = _PORTD -> -> 0 `i `uc ]
-"100
+"101
 [e = . . _TRISCbits 0 5 -> -> 1 `i `uc ]
-"102
-[e = . . _IOCBbits 1 0 -> -> 1 `i `uc ]
 "103
+[e = . . _IOCBbits 1 0 -> -> 1 `i `uc ]
+"104
 [e = . . _IOCBbits 1 1 -> -> 1 `i `uc ]
-"105
-[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
 "106
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
 "107
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "108
-[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
 "109
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
 "110
-[e = . . _PIE1bits 0 3 -> -> 1 `i `uc ]
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
 "111
-[e = . . _TRISAbits 0 5 -> -> 1 `i `uc ]
+[e = . . _PIE1bits 0 3 -> -> 1 `i `uc ]
 "112
+[e = . . _TRISAbits 0 5 -> -> 1 `i `uc ]
+"113
 [e :UE 149 ]
 }
