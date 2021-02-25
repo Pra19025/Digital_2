@@ -19,7 +19,7 @@ void I2C_Master_Init(const unsigned long c)
     SSPCON2 = 0;
     SSPADD = (_XTAL_FREQ/(4*c))-1;
     SSPSTAT = 0;
-    TRISCbits.TRISC3 = 1;   //se ponen como inputs. SDA y SCL
+    TRISCbits.TRISC3 = 1;
     TRISCbits.TRISC4 = 1;
 }
 //*****************************************************************************
@@ -104,10 +104,3 @@ void I2C_Slave_Init(uint8_t address)
     SSPIE = 1;
 }
 //*****************************************************************************
-
-void I2C_Start(char add)
-{
-    I2C_Master_Wait();
-    SEN = 1;
-    I2C_Master_Write(add);
-}

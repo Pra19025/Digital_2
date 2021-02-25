@@ -70,24 +70,5 @@ void MPU6050_Read()
   Gz = ((int)I2C_Master_Read(0)<<8) | (int)I2C_Master_Read(1);
   I2C_Master_Stop();
  
-  sprintf(buffer,"Ax = %d    ",Ax);
-  UARTSendString(buffer);
- 
-  sprintf(buffer," Ay = %d    ",Ay);
-  UARTSendString(buffer);
- 
-  sprintf(buffer," Az = %d    ",Az);
-  UARTSendString(buffer);
- 
-  sprintf(buffer," T = %d  ",T);
-  UARTSendString(buffer);
- 
-  sprintf(buffer," Gx = %d    ",Gx);
-  UARTSendString(buffer);
- 
-  sprintf(buffer," Gy = %d    ",Gy);
-  UARTSendString(buffer);
- 
-  sprintf(buffer," Gz = %d\r\n",Gz);
-  UARTSendString(buffer);
+
 }

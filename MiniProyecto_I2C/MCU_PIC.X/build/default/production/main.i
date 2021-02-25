@@ -2677,12 +2677,6 @@ void I2C_Slave_Init(uint8_t address);
 void I2C_Start(char add);
 # 11 "main.c" 2
 
-# 1 "./MPU6050.h" 1
-# 117 "./MPU6050.h"
-void MPU6050_Init();
-void MPU6050_Read();
-# 12 "main.c" 2
-
 # 1 "./UART.h" 1
 # 17 "./UART.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
@@ -2722,7 +2716,7 @@ char UARTReadChar();
 
 
 uint8_t UARTReadString(char *buf, uint8_t max_length);
-# 13 "main.c" 2
+# 12 "main.c" 2
 
 
 
@@ -2768,11 +2762,10 @@ void main(void) {
     while (1) {
 
 
-       PORTAbits.RA0 = ~PORTAbits.RA0;
+        PORTAbits.RA0 = ~PORTAbits.RA0;
 
 
 
-        MPU6050_Read();
         _delay((unsigned long)((50)*(4000000/4000.0)));
 
 
@@ -2785,14 +2778,12 @@ void main(void) {
 
 void Setup(void) {
 
+
     UARTInit(9600, 1);
-    MPU6050_Init();
     TRISA = 0;
     PORTA = 0;
     ANSEL = 0;
     ANSELH = 0;
 
-    I2C_Master_Init(100000);
-
-
+    return;
 }

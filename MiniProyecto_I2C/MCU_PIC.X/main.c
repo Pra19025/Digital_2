@@ -9,7 +9,6 @@
 #include <xc.h>
 #include <stdint.h>
 #include "I2C.h"
-#include "MPU6050.h"
 #include "UART.h"
 
 // CONFIG1
@@ -53,13 +52,12 @@ void main(void) {
 
 
     while (1) {
-        
 
-       PORTAbits.RA0 =  ~PORTAbits.RA0; // Blink LED
 
-         
-        
-        MPU6050_Read();
+        PORTAbits.RA0 = ~PORTAbits.RA0; // Blink LED
+
+
+
         __delay_ms(50);
 
 
@@ -72,14 +70,12 @@ void main(void) {
 
 void Setup(void) {
 
+
     UARTInit(9600, 1);
-    MPU6050_Init();
     TRISA = 0;
-    PORTA = 0; 
+    PORTA = 0;
     ANSEL = 0;
     ANSELH = 0;
 
-    I2C_Master_Init(100000); //100kHZ
-
-
+    return;
 }

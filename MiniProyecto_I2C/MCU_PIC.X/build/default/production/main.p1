@@ -2,8 +2,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [t ~ __interrupt . k ]
 [t T1 __interrupt ]
 [p mainexit ]
-"40 main.c
-[; ;main.c: 40: }
+"39 main.c
+[; ;main.c: 39: }
 [v _Setup `(v ~T0 @X0 0 ef ]
 "172 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 172:     struct {
@@ -16,9 +16,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "183
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 183: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x005)));
 [v _PORTAbits `VS5 ~T0 @X0 0 e@5 ]
-"118 ./MPU6050.h
-[; ;./MPU6050.h: 118: void MPU6050_Read();
-[v _MPU6050_Read `(v ~T0 @X0 0 e? ]
 [v F1256 `(v ~T0 @X0 1 tf1`ul ]
 "92 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
 [v __delay `JF1256 ~T0 @X0 0 e ]
@@ -26,9 +23,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32 ./UART.h
 [; ;./UART.h: 32: void UARTInit(const uint32_t baud_rate, const uint8_t BRGH);
 [v _UARTInit `(v ~T0 @X0 0 ef2`Cul`Cuc ]
-"117 ./MPU6050.h
-[; ;./MPU6050.h: 117: void MPU6050_Init();
-[v _MPU6050_Init `(v ~T0 @X0 0 e? ]
 "1416 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1416: extern volatile unsigned char TRISA __attribute__((address(0x085)));
 [v _TRISA `Vuc ~T0 @X0 0 e@133 ]
@@ -41,9 +35,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3449
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3449: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
 [v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
-"29 ./I2C.h
-[; ;./I2C.h: 29: void I2C_Master_Init(const unsigned long c);
-[v _I2C_Master_Init `(v ~T0 @X0 0 ef1`Cul ]
 "54 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -278,107 +269,103 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"16 main.c
-[; ;main.c: 16: 
+"15 main.c
+[; ;main.c: 15: 
 [p x FOSC  =  INTRC_NOCLKOUT ]
+"16
+[; ;main.c: 16: 
+[p x WDTE  =  OFF        ]
 "17
 [; ;main.c: 17: }
-[p x WDTE  =  OFF        ]
+[p x PWRTE  =  OFF       ]
 "18
 [; ;main.c: 18: 
-[p x PWRTE  =  OFF       ]
+[p x MCLRE  =  OFF       ]
 "19
 [; ;main.c: 19: void main(void) {
-[p x MCLRE  =  OFF       ]
+[p x CP  =  OFF          ]
 "20
 [; ;main.c: 20:     Setup();
-[p x CP  =  OFF          ]
+[p x CPD  =  OFF         ]
 "21
 [; ;main.c: 21: 
-[p x CPD  =  OFF         ]
+[p x BOREN  =  OFF       ]
 "22
 [; ;main.c: 22: 
-[p x BOREN  =  OFF       ]
+[p x IESO  =  OFF        ]
 "23
 [; ;main.c: 23: 
-[p x IESO  =  OFF        ]
+[p x FCMEN  =  OFF       ]
 "24
 [; ;main.c: 24:     while (1) {
-[p x FCMEN  =  OFF       ]
-"25
-[; ;main.c: 25: 
 [p x LVP  =  OFF         ]
+"27
+[; ;main.c: 27:         PORTAbits.RA0 = ~PORTAbits.RA0;
+[p x BOR4V  =  BOR40V    ]
 "28
 [; ;main.c: 28: 
-[p x BOR4V  =  BOR40V    ]
-"29
-[; ;main.c: 29: 
 [p x WRT  =  OFF         ]
-"35
-[; ;main.c: 35: 
+"34
+[; ;main.c: 34: 
 [v _bandera `uc ~T0 @X0 1 e ]
 [i _bandera
 -> -> 0 `i `uc
 ]
 [v $root$_ISR `(v ~T0 @X0 0 e ]
-"45
-[; ;main.c: 45:     MPU6050_Init();
+"44
+[; ;main.c: 44:     UARTInit(9600, 1);
 [v _ISR `(v ~T1 @X0 1 ef ]
 {
 [e :U _ISR ]
 [f ]
-"48
-[; ;main.c: 48:     ANSEL = 0;
+"47
+[; ;main.c: 47:     ANSEL = 0;
 [e :UE 138 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"50
-[; ;main.c: 50: 
+"49
+[; ;main.c: 49: 
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"51
-[; ;main.c: 51:     I2C_Master_Init(100000);
+"50
+[; ;main.c: 50:     return;
 [e ( _Setup ..  ]
-"55
+"54
 [e :U 141 ]
 {
-"58
+"57
 [e = . . _PORTAbits 0 0 -> ~ -> . . _PORTAbits 0 0 `i `uc ]
-"62
-[e ( _MPU6050_Read ..  ]
-"63
+"61
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"67
+"65
 }
 [e :U 140 ]
 [e $U 141  ]
 [e :U 142 ]
-"70
+"68
 [e $UE 139  ]
-"71
+"69
 [e :UE 139 ]
 }
-"73
+"71
 [v _Setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _Setup ]
 [f ]
-"75
+"74
 [e ( _UARTInit (2 , -> -> -> 9600 `i `l `ul -> -> 1 `i `uc ]
-"76
-[e ( _MPU6050_Init ..  ]
-"77
+"75
 [e = _TRISA -> -> 0 `i `uc ]
-"78
+"76
 [e = _PORTA -> -> 0 `i `uc ]
-"79
+"77
 [e = _ANSEL -> -> 0 `i `uc ]
-"80
+"78
 [e = _ANSELH -> -> 0 `i `uc ]
-"82
-[e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
-"85
+"80
+[e $UE 143  ]
+"81
 [e :UE 143 ]
 }
