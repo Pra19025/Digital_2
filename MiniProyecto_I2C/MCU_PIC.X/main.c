@@ -2,13 +2,15 @@
  * File:   mainMaestro.c
  * Author: Noel Prado
  *
- * Created on 11 de febrero de 2021, 10:18 AM
+ * Created on 23 de febrero de 2021, 10:18 AM
  */
 
 
 #include <xc.h>
 #include <stdint.h>
 #include "I2C.h"
+#include "MPU6050.h"
+#include "UART.h"
 
 // CONFIG1
 #pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN)
@@ -26,14 +28,14 @@
 #pragma config BOR4V = BOR40V   // Brown-out Reset Selection bit (Brown-out Reset set to 4.0V)
 #pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
 
-#define _XTAL_FREQ 40000000
+#define _XTAL_FREQ 4000000
 //**********************************************************************************************************************************************
-// Variables 
+// Variables
 //***********************************************************************************************************************************************
-
+uint8_t bandera = 0;
 
 //***********************************************************************************************************************************************
-// Prototipos de funciones 
+// Prototipos de funciones
 //**********************************************************************************************************************************************
 void Setup(void);
 //**************************************************************
@@ -48,10 +50,17 @@ void __interrupt() ISR(void) {
 void main(void) {
     Setup();
 
-  
+
 
     while (1) {
         
+
+       PORTAbits.RA0 =  ~PORTAbits.RA0; // Blink LED
+
+         
+        
+        MPU6050_Read();
+        __delay_ms(50);
 
 
 
@@ -62,10 +71,15 @@ void main(void) {
 }
 
 void Setup(void) {
+
+    UARTInit(9600, 1);
+    MPU6050_Init();
+    TRISA = 0;
+    PORTA = 0; 
     ANSEL = 0;
     ANSELH = 0;
-    
-    I2C_Master_Init(100000);    //100kHZ
-    
-    
+
+    I2C_Master_Init(100000); //100kHZ
+
+
 }

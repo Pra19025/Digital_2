@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "UART.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,15 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-
-
-
-
-
-
-
-
+# 1 "UART.c" 2
+# 1 "./UART.h" 1
+# 16 "./UART.h"
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2495,7 +2489,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 9 "main.c" 2
+# 16 "./UART.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
@@ -2630,62 +2624,6 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 10 "main.c" 2
-
-# 1 "./I2C.h" 1
-# 20 "./I2C.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
-# 20 "./I2C.h" 2
-# 29 "./I2C.h"
-void I2C_Master_Init(const unsigned long c);
-
-
-
-
-
-
-
-void I2C_Master_Wait(void);
-
-
-
-void I2C_Master_Start(void);
-
-
-
-void I2C_Master_RepeatedStart(void);
-
-
-
-void I2C_Master_Stop(void);
-
-
-
-
-
-void I2C_Master_Write(unsigned d);
-
-
-
-
-unsigned short I2C_Master_Read(unsigned short a);
-
-
-
-void I2C_Slave_Init(uint8_t address);
-
-void I2C_Start(char add);
-# 11 "main.c" 2
-
-# 1 "./MPU6050.h" 1
-# 117 "./MPU6050.h"
-void MPU6050_Init();
-void MPU6050_Read();
-# 12 "main.c" 2
-
-# 1 "./UART.h" 1
-# 17 "./UART.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 17 "./UART.h" 2
 # 32 "./UART.h"
 void UARTInit(const uint32_t baud_rate, const uint8_t BRGH);
@@ -2722,77 +2660,98 @@ char UARTReadChar();
 
 
 uint8_t UARTReadString(char *buf, uint8_t max_length);
-# 13 "main.c" 2
+# 1 "UART.c" 2
 
-
-
-#pragma config FOSC = INTRC_NOCLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
+# 2 "UART.c" 2
 
 
 
 
 
-uint8_t bandera = 0;
 
 
+void UARTInit(const uint32_t baud_rate, const uint8_t BRGH) {
 
-
-void Setup(void);
-
-
-
-
-void __attribute__((picinterrupt(("")))) ISR(void) {
-
-
-}
-
-void main(void) {
-    Setup();
-
-
-
-    while (1) {
-
-
-       PORTAbits.RA0 = ~PORTAbits.RA0;
-
-
-
-        MPU6050_Read();
-        _delay((unsigned long)((50)*(4000000/4000.0)));
-
-
-
+    if (BRGH == 0) {
+        SPBRG = 4000000/(64*baud_rate) - 1;
+        TXSTAbits.BRGH = 0;
+    } else {
+        SPBRG = 4000000/(16*baud_rate) - 1;
+        TXSTAbits.BRGH = 1;
     }
 
 
-    return;
+    TXSTAbits.TX9 = 0;
+    TXSTAbits.TXEN = 1;
+    TXSTAbits.SYNC = 0;
+
+
+    RCSTAbits.SPEN = 1;
+    RCSTAbits.RX9 = 0;
+    RCSTAbits.CREN = 1;
+    RCSTAbits.FERR = 0;
+    RCSTAbits.OERR = 0;
+
+
+    TRISCbits.TRISC7 = 1;
+    TRISCbits.TRISC6 = 0;
 }
 
-void Setup(void) {
-
-    UARTInit(9600, 1);
-    MPU6050_Init();
-    TRISA = 0;
-    PORTA = 0;
-    ANSEL = 0;
-    ANSELH = 0;
-
-    I2C_Master_Init(100000);
 
 
+
+
+void UARTSendChar(const char c) {
+    while (TXSTAbits.TRMT == 0);
+    TXREG = c;
+}
+
+
+
+
+
+
+void UARTSendString(const char* str){
+    int i = 0;
+
+
+
+        while(str[i] != '\0'){
+        UARTSendChar(str[i++]);
+    }
+}
+
+
+
+
+
+uint8_t UARTDataReady() {
+    return PIR1bits.RCIF;
+}
+
+
+
+
+
+char UARTReadChar() {
+    while (!UARTDataReady());
+    return RCREG;
+}
+# 84 "UART.c"
+uint8_t UARTReadString(char *buf, uint8_t max_length) {
+    uint8_t i = 0;
+    char tmp = 1;
+    for (i=0 ; i<max_length-1 ; i++) {
+        tmp = UARTReadChar();
+
+        if (tmp == '\0' || tmp == '\n' || tmp == '\r') {
+            break;
+        }
+        buf[i] = tmp;
+    }
+
+    buf[i+1] = '\0';
+
+    return i;
 }

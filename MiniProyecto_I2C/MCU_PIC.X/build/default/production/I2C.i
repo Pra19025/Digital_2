@@ -2664,6 +2664,8 @@ unsigned short I2C_Master_Read(unsigned short a);
 
 
 void I2C_Slave_Init(uint8_t address);
+
+void I2C_Start(char add);
 # 12 "I2C.c" 2
 
 
@@ -2673,7 +2675,7 @@ void I2C_Master_Init(const unsigned long c)
 {
     SSPCON = 0b00101000;
     SSPCON2 = 0;
-    SSPADD = (8000000/(4*c))-1;
+    SSPADD = (4000000/(4*c))-1;
     SSPSTAT = 0;
     TRISCbits.TRISC3 = 1;
     TRISCbits.TRISC4 = 1;
@@ -2758,4 +2760,12 @@ void I2C_Slave_Init(uint8_t address)
     PEIE = 1;
     SSPIF = 0;
     SSPIE = 1;
+}
+
+
+void I2C_Start(char add)
+{
+    I2C_Master_Wait();
+    SEN = 1;
+    I2C_Master_Write(add);
 }
