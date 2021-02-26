@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "GY-521.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,15 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-
-
-
-
-
-
-
-
+# 1 "GY-521.c" 2
+# 10 "GY-521.c"
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2495,7 +2488,13 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 9 "main.c" 2
+# 10 "GY-521.c" 2
+
+# 1 "./GY-521.h" 1
+
+
+
+
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
@@ -2630,7 +2629,11 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 10 "main.c" 2
+# 6 "./GY-521.h" 2
+
+void GY_init(void);
+void GY_Read(void);
+# 11 "GY-521.c" 2
 
 # 1 "./I2C.h" 1
 # 20 "./I2C.h"
@@ -2675,7 +2678,10 @@ unsigned short I2C_Master_Read(unsigned short a);
 void I2C_Slave_Init(uint8_t address);
 
 void I2C_Start(char add);
-# 11 "main.c" 2
+# 12 "GY-521.c" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
+# 13 "GY-521.c" 2
 
 # 1 "./UART.h" 1
 # 17 "./UART.h"
@@ -2716,62 +2722,10 @@ char UARTReadChar();
 
 
 uint8_t UARTReadString(char *buf, uint8_t max_length);
-# 12 "main.c" 2
-
-# 1 "./GY-521.h" 1
+# 14 "GY-521.c" 2
 
 
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
-# 6 "./GY-521.h" 2
-
-void GY_init(void);
-void GY_Read(void);
-# 13 "main.c" 2
-
-
-
-#pragma config FOSC = INTRC_NOCLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
-
-
-
-
-
-uint8_t bandera = 0;
-int Ax= 0;
-
-int Axenvio, Ayenvio, Azenvio, Gxenvio, Gyenvio, Gzenvio, Tenvio;
-
-
-
-void Setup(void);
-char *intToString(uint8_t value);
-
-
-
-
-void __attribute__((picinterrupt(("")))) ISR(void) {
-
-
-}
-
-void main(void) {
-    Setup();
+void GY_init(void) {
 
 
 
@@ -2807,71 +2761,33 @@ void main(void) {
     I2C_Master_Stop();
 
 
-    while (1) {
-
-        PORTAbits.RA0 = ~PORTAbits.RA0;
-
-        _delay((unsigned long)((50)*(4000000/4000.0)));
-
-
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x3C);
-        I2C_Master_Stop();
-        I2C_Master_Start();
-
-        I2C_Master_Write(0xD1);
-        I2C_Master_Write(0x3B);
-        Ax = I2C_Master_Read(0);
-
-
-        Axenvio = intToString(Ax);
-
-
-
-
-
-
-
-        UARTSendString(Axenvio);
-# 126 "main.c"
-    }
-
-
     return;
 }
 
-void Setup(void) {
+void GY_Read(void) {
+    int Ax, Ay, Az, Gx, Gy, Gz, T;
+    int Axenvio, Ayenvio, Azenvio, Gxenvio, Gyenvio, Gzenvio, Tenvio;
+
+    I2C_Master_Start();
+    I2C_Master_Write(0x3C);
+    I2C_Master_Stop();
+    I2C_Master_Start();
+
+    I2C_Master_Write(0xD1);
+    I2C_Master_Write(0x3B);
+    Ax = (int) I2C_Master_Read(0) << 8;
+
+    I2C_Master_Write(0x3C);
+    Ax |= (int) I2C_Master_Read(0);
 
 
-    UARTInit(9600, 1);
-    TRISA = 0;
-    PORTA = 0;
-    ANSEL = 0;
-    ANSELH = 0;
-
-    _delay((unsigned long)((100)*(4000000/4000.0)));
-    I2C_Master_Init(100000);
 
 
 
 
+
+    I2C_Master_Stop();
+# 96 "GY-521.c"
     return;
-}
-
-char* intToString(uint8_t value) {
-    char valor[4];
-
-    uint8_t entero = value / 100;
-    valor[0] = entero + 48;
-
-    value = value - (100 * entero);
-
-    valor[1] = value / 10 + 48;
-    valor[2] = value % 10 + 48;
-    valor[3] = '\0';
-
-    return valor;
-
 
 }
