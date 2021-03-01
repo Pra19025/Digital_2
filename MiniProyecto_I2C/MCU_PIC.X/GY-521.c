@@ -19,54 +19,54 @@ void GY_init(void) {
     //0xD0 para escribir
 
     // frecuencia de revision de datos (sample rate)
-    I2C_Master_Start();
-    I2C_Master_Write(0x19); //SMPLRT_DIV
-    I2C_Master_Write(0x07);
-    I2C_Master_Stop();
-
-    // fuente del reloj
-    I2C_Master_Start();
-    I2C_Master_Write(0x6B); //PWR_MGMT
-    I2C_Master_Write(0x01);
-    I2C_Master_Stop();
-
-    // Configuracion como tal
-    I2C_Master_Start();
-    I2C_Master_Write(0x1A); // direccion del CONFIG
-    I2C_Master_Write(0x00);
-    I2C_Master_Stop();
-
-    // Configuracion del acelerómetro
-    I2C_Master_Start();
-    I2C_Master_Write(0x1C);
-    I2C_Master_Write(0x00); //+-2g
-    I2C_Master_Stop();
-
-    // Configuración del  giroscopio 
-    I2C_Master_Start();
-    I2C_Master_Write(0x1B); //direccion de gyro_config
-    I2C_Master_Write(0x18); // +-2000
-    I2C_Master_Stop();
-
-
-    return;
-}
-
-void GY_Read(void) {
-    int Ax, Ay, Az, Gx, Gy, Gz, T;
-    int Axenvio, Ayenvio, Azenvio, Gxenvio, Gyenvio, Gzenvio, Tenvio; 
-    
-    I2C_Master_Start();
-    I2C_Master_Write(0x3C);
-    I2C_Master_Stop();
-    I2C_Master_Start(); //para leer
-    
-    I2C_Master_Write(0xD1);
-    I2C_Master_Write(0x3B);
-    Ax = (int) I2C_Master_Read(0) << 8;
-    
-    I2C_Master_Write(0x3C);
-    Ax |= (int) I2C_Master_Read(0);
+//    I2C_Master_Start();
+//    I2C_Master_Write(0x19); //SMPLRT_DIV
+//    I2C_Master_Write(0x07);
+//    I2C_Master_Stop();
+//
+//    // fuente del reloj
+//    I2C_Master_Start();
+//    I2C_Master_Write(0x6B); //PWR_MGMT
+//    I2C_Master_Write(0x01);
+//    I2C_Master_Stop();
+//
+//    // Configuracion como tal
+//    I2C_Master_Start();
+//    I2C_Master_Write(0x1A); // direccion del CONFIG
+//    I2C_Master_Write(0x00);
+//    I2C_Master_Stop();
+//
+//    // Configuracion del acelerómetro
+//    I2C_Master_Start();
+//    I2C_Master_Write(0x1C);
+//    I2C_Master_Write(0x00); //+-2g
+//    I2C_Master_Stop();
+//
+//    // Configuración del  giroscopio 
+//    I2C_Master_Start();
+//    I2C_Master_Write(0x1B); //direccion de gyro_config
+//    I2C_Master_Write(0x18); // +-2000
+//    I2C_Master_Stop();
+//
+//
+//    return;
+//}
+//
+//void GY_Read(void) {
+//    int Ax, Ay, Az, Gx, Gy, Gz, T;
+//    int Axenvio, Ayenvio, Azenvio, Gxenvio, Gyenvio, Gzenvio, Tenvio; 
+//    
+//    I2C_Master_Start();
+//    I2C_Master_Write(0x3C);
+//    I2C_Master_Stop();
+//    I2C_Master_Start(); //para leer
+//    
+//    I2C_Master_Write(0xD1);
+//    I2C_Master_Write(0x3B);
+//    Ax = (int) I2C_Master_Read(0) << 8;
+//    
+//    I2C_Master_Write(0x3C);
+//    Ax |= (int) I2C_Master_Read(0);
 //    
 //    Ay = ((int) I2C_Master_Read(0) << 8) | (int) I2C_Master_Read(0);
 //    Az = ((int) I2C_Master_Read(0) << 8) | (int) I2C_Master_Read(0);
@@ -74,7 +74,7 @@ void GY_Read(void) {
 //    Gx = ((int) I2C_Master_Read(0) << 8) | (int) I2C_Master_Read(0);
 //    Gy = ((int) I2C_Master_Read(0) << 8) | (int) I2C_Master_Read(0);
 //    Gz = ((int) I2C_Master_Read(0) << 8) | (int) I2C_Master_Read(0);
-    I2C_Master_Stop();
+//    I2C_Master_Stop();
     
 //    Axenvio = intToString(Ax);
 //    Ayenvio = intToString(Ax);

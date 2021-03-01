@@ -2753,7 +2753,7 @@ void GY_Read(void);
 
 
 uint8_t bandera = 0;
-int Ax= 0;
+int Ax = 0;
 
 int Axenvio, Ayenvio, Azenvio, Gxenvio, Gyenvio, Gzenvio, Tenvio;
 
@@ -2777,31 +2777,32 @@ void main(void) {
 
 
 
-    I2C_Master_Start();
+
+    I2C_Start(0xD0);
     I2C_Master_Write(0x19);
     I2C_Master_Write(0x07);
     I2C_Master_Stop();
 
 
-    I2C_Master_Start();
+    I2C_Start(0xD0);
     I2C_Master_Write(0x6B);
     I2C_Master_Write(0x01);
     I2C_Master_Stop();
 
 
-    I2C_Master_Start();
+    I2C_Start(0xD0);
     I2C_Master_Write(0x1A);
     I2C_Master_Write(0x00);
     I2C_Master_Stop();
 
 
-    I2C_Master_Start();
+    I2C_Start(0xD0);
     I2C_Master_Write(0x1C);
     I2C_Master_Write(0x00);
     I2C_Master_Stop();
 
 
-    I2C_Master_Start();
+    I2C_Start(0xD0);
     I2C_Master_Write(0x1B);
     I2C_Master_Write(0x18);
     I2C_Master_Stop();
@@ -2812,20 +2813,8 @@ void main(void) {
         PORTAbits.RA0 = ~PORTAbits.RA0;
 
         _delay((unsigned long)((50)*(4000000/4000.0)));
-
-
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x3C);
-        I2C_Master_Stop();
-        I2C_Master_Start();
-
-        I2C_Master_Write(0xD1);
-        I2C_Master_Write(0x3B);
-        Ax = I2C_Master_Read(0);
-
-
-        Axenvio = intToString(Ax);
+# 118 "main.c"
+       UARTSendString("hola");
 
 
 
@@ -2833,8 +2822,6 @@ void main(void) {
 
 
 
-        UARTSendString(Axenvio);
-# 126 "main.c"
     }
 
 
@@ -2843,15 +2830,15 @@ void main(void) {
 
 void Setup(void) {
 
-
+    I2C_Master_Init(100000);
     UARTInit(9600, 1);
     TRISA = 0;
     PORTA = 0;
     ANSEL = 0;
     ANSELH = 0;
 
-    _delay((unsigned long)((100)*(4000000/4000.0)));
-    I2C_Master_Init(100000);
+
+
 
 
 

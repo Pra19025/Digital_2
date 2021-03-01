@@ -2726,67 +2726,6 @@ uint8_t UARTReadString(char *buf, uint8_t max_length);
 
 
 void GY_init(void) {
-
-
-
-
-
-    I2C_Master_Start();
-    I2C_Master_Write(0x19);
-    I2C_Master_Write(0x07);
-    I2C_Master_Stop();
-
-
-    I2C_Master_Start();
-    I2C_Master_Write(0x6B);
-    I2C_Master_Write(0x01);
-    I2C_Master_Stop();
-
-
-    I2C_Master_Start();
-    I2C_Master_Write(0x1A);
-    I2C_Master_Write(0x00);
-    I2C_Master_Stop();
-
-
-    I2C_Master_Start();
-    I2C_Master_Write(0x1C);
-    I2C_Master_Write(0x00);
-    I2C_Master_Stop();
-
-
-    I2C_Master_Start();
-    I2C_Master_Write(0x1B);
-    I2C_Master_Write(0x18);
-    I2C_Master_Stop();
-
-
-    return;
-}
-
-void GY_Read(void) {
-    int Ax, Ay, Az, Gx, Gy, Gz, T;
-    int Axenvio, Ayenvio, Azenvio, Gxenvio, Gyenvio, Gzenvio, Tenvio;
-
-    I2C_Master_Start();
-    I2C_Master_Write(0x3C);
-    I2C_Master_Stop();
-    I2C_Master_Start();
-
-    I2C_Master_Write(0xD1);
-    I2C_Master_Write(0x3B);
-    Ax = (int) I2C_Master_Read(0) << 8;
-
-    I2C_Master_Write(0x3C);
-    Ax |= (int) I2C_Master_Read(0);
-
-
-
-
-
-
-
-    I2C_Master_Stop();
 # 96 "GY-521.c"
     return;
 
