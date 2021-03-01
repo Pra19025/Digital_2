@@ -2675,6 +2675,9 @@ unsigned short I2C_Master_Read(unsigned short a);
 void I2C_Slave_Init(uint8_t address);
 
 void I2C_Start(char add);
+unsigned char I2C_Read(unsigned char ACK_NACK);
+void I2C_ACK(void);
+void I2C_NACK(void);
 # 11 "main.c" 2
 
 # 1 "./UART.h" 1
@@ -2753,8 +2756,7 @@ void GY_Read(void);
 
 
 
-int Ax = 0;
-
+int Ax, Ay, Az, Gx, Gy, Gz, T;
 int Axenvio, Ayenvio, Azenvio, Gxenvio, Gyenvio, Gzenvio, Tenvio;
 
 
@@ -2776,7 +2778,8 @@ void main(void) {
 
 
 
-
+    _delay((unsigned long)((100)*(4000000/4000.0)));
+    I2C_Master_Init(100000);
 
     I2C_Start(0xD0);
     I2C_Master_Write(0x19);
@@ -2810,29 +2813,54 @@ void main(void) {
 
     while (1) {
 
+
+
+
+
+
+
         PORTAbits.RA0 = ~PORTAbits.RA0;
 
         _delay((unsigned long)((50)*(4000000/4000.0)));
-
-
 
         I2C_Start(0xD0);
         I2C_Master_Write(0x3B);
         I2C_Master_Stop();
         I2C_Start(0xD1);
 
-
-        Ax = I2C_Master_Read(0);
+        Ax = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
+        Ay = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
+        Az = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
+        T = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
+        Gx = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
+        Gy = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
+        Gz = ((int) I2C_Read(0) << 8) | (int) I2C_Read(1);
 
         I2C_Master_Stop();
-# 118 "main.c"
-        UARTSendString("hola");
 
+        Axenvio = intToString(Ax);
+        Ayenvio = intToString(Ay);
+        Azenvio = intToString(Az);
+        Gxenvio = intToString(Gx);
+        Gyenvio = intToString(Gy);
+        Gzenvio = intToString(Gz);
+        Tenvio = intToString(T);
 
-
-
-
-
+        UARTSendString("Ax ");
+        UARTSendString(Axenvio);
+        UARTSendString(" Ay ");
+        UARTSendString(Ayenvio);
+        UARTSendString(" Az ");
+        UARTSendString(Azenvio);
+        UARTSendString(" Gx ");
+        UARTSendString(Gxenvio);
+        UARTSendString(" Gy ");
+        UARTSendString(Gyenvio);
+        UARTSendString(" Gz ");
+        UARTSendString(Gzenvio);
+        UARTSendString(" T ");
+        UARTSendString(Tenvio);
+        UARTSendString("\n");
 
     }
 
@@ -2843,8 +2871,8 @@ void main(void) {
 void Setup(void) {
 
     UARTInit(9600, 1);
-    _delay((unsigned long)((50)*(4000000/4000.0)));
-    I2C_Master_Init(100000);
+
+
     TRISA = 0;
     PORTA = 0;
     TRISC = 0;

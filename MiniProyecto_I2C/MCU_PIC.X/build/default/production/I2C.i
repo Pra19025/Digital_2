@@ -2666,52 +2666,48 @@ unsigned short I2C_Master_Read(unsigned short a);
 void I2C_Slave_Init(uint8_t address);
 
 void I2C_Start(char add);
+unsigned char I2C_Read(unsigned char ACK_NACK);
+void I2C_ACK(void);
+void I2C_NACK(void);
 # 12 "I2C.c" 2
 
 
 
 
-void I2C_Master_Init(const unsigned long c)
-{
+
+void I2C_Master_Init(const unsigned long c) {
     SSPCON = 0b00101000;
     SSPCON2 = 0;
-    SSPADD = (4000000/(4*c))-1;
+    SSPADD = (4000000 / (4 * c)) - 1;
     SSPSTAT = 0;
     TRISCbits.TRISC3 = 1;
     TRISCbits.TRISC4 = 1;
 }
-
-
-
-
-
-
-
-void I2C_Master_Wait()
-{
+# 33 "I2C.c"
+void I2C_Master_Wait() {
     while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F));
 }
 
 
 
-void I2C_Master_Start()
-{
+
+void I2C_Master_Start() {
     I2C_Master_Wait();
     SSPCON2bits.SEN = 1;
 }
 
 
 
-void I2C_Master_RepeatedStart()
-{
+
+void I2C_Master_RepeatedStart() {
     I2C_Master_Wait();
     SSPCON2bits.RSEN = 1;
 }
 
 
 
-void I2C_Master_Stop()
-{
+
+void I2C_Master_Stop() {
     I2C_Master_Wait();
     SSPCON2bits.PEN = 1;
 }
@@ -2720,8 +2716,8 @@ void I2C_Master_Stop()
 
 
 
-void I2C_Master_Write(unsigned d)
-{
+
+void I2C_Master_Write(unsigned d) {
     I2C_Master_Wait();
     SSPBUF = d;
 }
@@ -2729,17 +2725,17 @@ void I2C_Master_Write(unsigned d)
 
 
 
-unsigned short I2C_Master_Read(unsigned short a)
-{
+
+unsigned short I2C_Master_Read(unsigned short a) {
     unsigned short temp;
     I2C_Master_Wait();
     SSPCON2bits.RCEN = 1;
     I2C_Master_Wait();
     temp = SSPBUF;
     I2C_Master_Wait();
-    if(a == 1){
+    if (a == 1) {
         SSPCON2bits.ACKDT = 0;
-    }else{
+    } else {
         SSPCON2bits.ACKDT = 1;
     }
     SSPCON2bits.ACKEN = 1;
@@ -2748,8 +2744,8 @@ unsigned short I2C_Master_Read(unsigned short a)
 
 
 
-void I2C_Slave_Init(uint8_t address)
-{
+
+void I2C_Slave_Init(uint8_t address) {
     SSPADD = address;
     SSPCON = 0x36;
     SSPSTAT = 0x80;
@@ -2762,9 +2758,36 @@ void I2C_Slave_Init(uint8_t address)
     SSPIE = 1;
 }
 
-void I2C_Start(char add)
-{
+
+void I2C_Start(char add) {
     I2C_Master_Wait();
     SEN = 1;
     I2C_Master_Write(add);
+}
+
+unsigned char I2C_Read(unsigned char ACK_NACK) {
+
+    unsigned char Data;
+    RCEN = 1;
+    while (!BF);
+    Data = SSPBUF;
+    if (ACK_NACK == 0)
+        I2C_ACK();
+    else
+        I2C_NACK();
+    while (!SSPIF);
+    SSPIF = 0;
+    return Data;
+}
+
+void I2C_ACK(void) {
+    ACKDT = 0;
+    ACKEN = 1;
+    while (ACKEN);
+}
+
+void I2C_NACK(void) {
+    ACKDT = 1;
+    ACKEN = 1;
+    while (ACKEN);
 }

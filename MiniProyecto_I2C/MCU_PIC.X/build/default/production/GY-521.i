@@ -2678,6 +2678,9 @@ unsigned short I2C_Master_Read(unsigned short a);
 void I2C_Slave_Init(uint8_t address);
 
 void I2C_Start(char add);
+unsigned char I2C_Read(unsigned char ACK_NACK);
+void I2C_ACK(void);
+void I2C_NACK(void);
 # 12 "GY-521.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3

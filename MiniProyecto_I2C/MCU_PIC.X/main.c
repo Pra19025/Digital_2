@@ -33,8 +33,7 @@
 // Variables
 //***********************************************************************************************************************************************
 
-int Ax = 0;
-//      Ay, Az, Gx, Gy, Gz, T;
+int Ax, Ay, Az, Gx, Gy, Gz, T;
 int Axenvio, Ayenvio, Azenvio, Gxenvio, Gyenvio, Gzenvio, Tenvio;
 //***********************************************************************************************************************************************
 // Prototipos de funciones
@@ -56,7 +55,8 @@ void main(void) {
     //la mera direccion es 0xD0
     //0xD1 para leer 
     //0xD0 para escribir
-
+    __delay_ms(100);
+    I2C_Master_Init(100000); // 100kHz
     // frecuencia de revision de datos (sample rate)
     I2C_Start(0xD0);
     I2C_Master_Write(0x19); //SMPLRT_DIV
@@ -66,13 +66,13 @@ void main(void) {
     // fuente del reloj
     I2C_Start(0xD0);
     I2C_Master_Write(0x6B); //PWR_MGMT
-    I2C_Master_Write(0x01);
+    I2C_Master_Write(0x01); //se escoge el reloj del giroscopio 8MHz
     I2C_Master_Stop();
 
-    // Configuracion como tal
+    // digital low pass filterx
     I2C_Start(0xD0);
     I2C_Master_Write(0x1A); // direccion del CONFIG
-    I2C_Master_Write(0x00);
+    I2C_Master_Write(0x00); //no es necesario sincronizar
     I2C_Master_Stop();
 
     // Configuracion del acelerómetro
@@ -89,39 +89,55 @@ void main(void) {
 
 
     while (1) {
-
+//        Axenvio = 0;
+//        Ayenvio = 0;
+//        Azenvio = 0;
+//        Gxenvio = 0;
+//        Gyenvio = 0;
+//        Gzenvio = 0;
+//        Tenvio = 0;
         PORTAbits.RA0 = ~PORTAbits.RA0; // Blink LED     
         //GY_Read();
         __delay_ms(50);
-
-
 
         I2C_Start(0xD0);
         I2C_Master_Write(0x3B); //es la direccion del ax out H
         I2C_Master_Stop();
         I2C_Start(0xD1); //para leer
 
-
-        Ax = I2C_Master_Read(0);
+        Ax = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
+        Ay = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
+        Az = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
+        T = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
+        Gx = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
+        Gy = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
+        Gz = ((int) I2C_Read(0) << 8) | (int) I2C_Read(1);
 
         I2C_Master_Stop();
-        //
-        //Axenvio = intToString(Ax);
-        //                Ayenvio = intToString(Ax);
-        //                Azenvio = intToString(Ax);
-        //                Gxenvio = intToString(Ax);
-        //                Gyenvio = intToString(Ax);
-        //                Gzenvio = intToString(Ax);
-        //                Tenvio = intToString(Ax);
-        //
-        //UARTSendString(Axenvio);
-        UARTSendString("hola");
-        //        //        UARTSendString(Ayenvio);
-        //        //        UARTSendString(Azenvio);
-        //        //        UARTSendString(Gxenvio);
-        //        //        UARTSendString(Gyenvio);
-        //        //        UARTSendString(Gzenvio);
-        //        //        UARTSendString(Tenvio);
+
+        Axenvio = intToString(Ax);
+        Ayenvio = intToString(Ay);
+        Azenvio = intToString(Az);
+        Gxenvio = intToString(Gx);
+        Gyenvio = intToString(Gy);
+        Gzenvio = intToString(Gz);
+        Tenvio = intToString(T);
+
+        UARTSendString("Ax ");
+        UARTSendString(Axenvio);
+        UARTSendString(" Ay ");
+        UARTSendString(Ayenvio);
+        UARTSendString(" Az ");
+        UARTSendString(Azenvio);
+        UARTSendString(" Gx ");
+        UARTSendString(Gxenvio);
+        UARTSendString(" Gy ");
+        UARTSendString(Gyenvio);
+        UARTSendString(" Gz ");
+        UARTSendString(Gzenvio);
+        UARTSendString(" T ");
+        UARTSendString(Tenvio);
+        UARTSendString("\n");
 
     }
 
@@ -132,8 +148,8 @@ void main(void) {
 void Setup(void) {
 
     UARTInit(9600, 1);
-    __delay_ms(50);
-    I2C_Master_Init(100000); // 100kHz
+
+
     TRISA = 0;
     PORTA = 0;
     TRISC = 0;
