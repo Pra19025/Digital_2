@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\noelp\AppData\Local\Temp\sfjs.o
+$C:\Users\noelp\AppData\Local\Temp\s2qc.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 4 2007 2007 2 2
@@ -82,30 +82,30 @@ STRING 297-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\MCU_PIC.X.production.o
-F cinit CODE >985:C:\Users\noelp\AppData\Local\Temp\sfjs.s
-F cinit CODE >988:C:\Users\noelp\AppData\Local\Temp\sfjs.s
-F cinit CODE >1026:C:\Users\noelp\AppData\Local\Temp\sfjs.s
-10 cinit CODE >1027:C:\Users\noelp\AppData\Local\Temp\sfjs.s
-11 cinit CODE >1028:C:\Users\noelp\AppData\Local\Temp\sfjs.s
-12 cinit CODE >1031:C:\Users\noelp\AppData\Local\Temp\sfjs.s
-13 cinit CODE >1032:C:\Users\noelp\AppData\Local\Temp\sfjs.s
-14 cinit CODE >1033:C:\Users\noelp\AppData\Local\Temp\sfjs.s
-15 cinit CODE >1034:C:\Users\noelp\AppData\Local\Temp\sfjs.s
-16 cinit CODE >1035:C:\Users\noelp\AppData\Local\Temp\sfjs.s
-17 cinit CODE >1036:C:\Users\noelp\AppData\Local\Temp\sfjs.s
-18 cinit CODE >1037:C:\Users\noelp\AppData\Local\Temp\sfjs.s
-19 cinit CODE >1038:C:\Users\noelp\AppData\Local\Temp\sfjs.s
-1A cinit CODE >1039:C:\Users\noelp\AppData\Local\Temp\sfjs.s
-1B cinit CODE >1040:C:\Users\noelp\AppData\Local\Temp\sfjs.s
-1C cinit CODE >1041:C:\Users\noelp\AppData\Local\Temp\sfjs.s
-1D cinit CODE >1042:C:\Users\noelp\AppData\Local\Temp\sfjs.s
-1E cinit CODE >1043:C:\Users\noelp\AppData\Local\Temp\sfjs.s
-1F cinit CODE >1044:C:\Users\noelp\AppData\Local\Temp\sfjs.s
-20 cinit CODE >1045:C:\Users\noelp\AppData\Local\Temp\sfjs.s
-21 cinit CODE >1046:C:\Users\noelp\AppData\Local\Temp\sfjs.s
-22 cinit CODE >1052:C:\Users\noelp\AppData\Local\Temp\sfjs.s
-22 cinit CODE >1054:C:\Users\noelp\AppData\Local\Temp\sfjs.s
-23 cinit CODE >1055:C:\Users\noelp\AppData\Local\Temp\sfjs.s
+F cinit CODE >985:C:\Users\noelp\AppData\Local\Temp\s2qc.s
+F cinit CODE >988:C:\Users\noelp\AppData\Local\Temp\s2qc.s
+F cinit CODE >1026:C:\Users\noelp\AppData\Local\Temp\s2qc.s
+10 cinit CODE >1027:C:\Users\noelp\AppData\Local\Temp\s2qc.s
+11 cinit CODE >1028:C:\Users\noelp\AppData\Local\Temp\s2qc.s
+12 cinit CODE >1031:C:\Users\noelp\AppData\Local\Temp\s2qc.s
+13 cinit CODE >1032:C:\Users\noelp\AppData\Local\Temp\s2qc.s
+14 cinit CODE >1033:C:\Users\noelp\AppData\Local\Temp\s2qc.s
+15 cinit CODE >1034:C:\Users\noelp\AppData\Local\Temp\s2qc.s
+16 cinit CODE >1035:C:\Users\noelp\AppData\Local\Temp\s2qc.s
+17 cinit CODE >1036:C:\Users\noelp\AppData\Local\Temp\s2qc.s
+18 cinit CODE >1037:C:\Users\noelp\AppData\Local\Temp\s2qc.s
+19 cinit CODE >1038:C:\Users\noelp\AppData\Local\Temp\s2qc.s
+1A cinit CODE >1039:C:\Users\noelp\AppData\Local\Temp\s2qc.s
+1B cinit CODE >1040:C:\Users\noelp\AppData\Local\Temp\s2qc.s
+1C cinit CODE >1041:C:\Users\noelp\AppData\Local\Temp\s2qc.s
+1D cinit CODE >1042:C:\Users\noelp\AppData\Local\Temp\s2qc.s
+1E cinit CODE >1043:C:\Users\noelp\AppData\Local\Temp\s2qc.s
+1F cinit CODE >1044:C:\Users\noelp\AppData\Local\Temp\s2qc.s
+20 cinit CODE >1045:C:\Users\noelp\AppData\Local\Temp\s2qc.s
+21 cinit CODE >1046:C:\Users\noelp\AppData\Local\Temp\s2qc.s
+22 cinit CODE >1052:C:\Users\noelp\AppData\Local\Temp\s2qc.s
+22 cinit CODE >1054:C:\Users\noelp\AppData\Local\Temp\s2qc.s
+23 cinit CODE >1055:C:\Users\noelp\AppData\Local\Temp\s2qc.s
 4 intentry CODE >48:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
 290 text11 CODE >48:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
 290 text11 CODE >51:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
@@ -233,11 +233,11 @@ __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __end_of_I2C_Start 4B2 0 CODE 0 text7 dist/default/production\MCU_PIC.X.production.o
 __Hstrings 0 0 ABS 0 strings -
 _PEIE 5E 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\noelp\AppData\Local\Temp\sfjs.o
+___sp 0 0 STACK 2 stack C:\Users\noelp\AppData\Local\Temp\s2qc.o
 _main 4C 0 CODE 0 maintext dist/default/production\MCU_PIC.X.production.o
 __size_of_I2C_Start 0 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
-start 18 0 CODE 0 init C:\Users\noelp\AppData\Local\Temp\sfjs.o
+start 18 0 CODE 0 init C:\Users\noelp\AppData\Local\Temp\s2qc.o
 __size_of_main 0 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 __size_of___lldiv 0 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
@@ -245,12 +245,12 @@ I2C_Start@add 76 0 COMMON 1 cstackCOMMON dist/default/production\MCU_PIC.X.produ
 _UARTSendString 43C 0 CODE 0 text1 dist/default/production\MCU_PIC.X.production.o
 _I2C_Start 486 0 CODE 0 text7 dist/default/production\MCU_PIC.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\sfjs.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\sfjs.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\sfjs.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\sfjs.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\sfjs.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\sfjs.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s2qc.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s2qc.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s2qc.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s2qc.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s2qc.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\s2qc.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
@@ -259,8 +259,8 @@ _ANSELH 189 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 __end_of_UARTSendString 486 0 CODE 0 text1 dist/default/production\MCU_PIC.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 __end_of___lldiv 372 0 CODE 0 text6 dist/default/production\MCU_PIC.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\noelp\AppData\Local\Temp\sfjs.o
-___stacklo 0 0 ABS 0 - C:\Users\noelp\AppData\Local\Temp\sfjs.o
+___stackhi 0 0 ABS 0 - C:\Users\noelp\AppData\Local\Temp\s2qc.o
+___stacklo 0 0 ABS 0 - C:\Users\noelp\AppData\Local\Temp\s2qc.o
 __size_of_Setup 0 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 ___lldiv@counter 77 0 COMMON 1 cstackCOMMON dist/default/production\MCU_PIC.X.production.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production\MCU_PIC.X.production.o
@@ -272,7 +272,7 @@ _SSPBUF 13 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 _SSPCON 14 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 _TRISC3 43B 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 _TRISC4 43C 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\noelp\AppData\Local\Temp\sfjs.o
+___int_sp 0 0 STACK 2 stack C:\Users\noelp\AppData\Local\Temp\s2qc.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -324,7 +324,7 @@ UARTSendString@i 73 0 COMMON 1 cstackCOMMON dist/default/production\MCU_PIC.X.pr
 __Lintentry 8 0 CODE 0 intentry -
 ___lldiv@divisor 20 0 BANK0 1 cstackBANK0 dist/default/production\MCU_PIC.X.production.o
 __stringtab 4E4 0 STRING 0 strings dist/default/production\MCU_PIC.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\noelp\AppData\Local\Temp\sfjs.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\noelp\AppData\Local\Temp\s2qc.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 _RCSTAbits 18 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 __size_of_UARTSendChar 0 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
