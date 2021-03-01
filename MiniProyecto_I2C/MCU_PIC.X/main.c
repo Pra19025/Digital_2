@@ -27,12 +27,12 @@
 // CONFIG2
 #pragma config BOR4V = BOR40V   // Brown-out Reset Selection bit (Brown-out Reset set to 4.0V)
 #pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
-    
+
 #define _XTAL_FREQ 4000000
 //**********************************************************************************************************************************************
 // Variables
 //***********************************************************************************************************************************************
-uint8_t bandera = 0;
+
 int Ax = 0;
 //      Ay, Az, Gx, Gy, Gz, T;
 int Axenvio, Ayenvio, Azenvio, Gxenvio, Gyenvio, Gzenvio, Tenvio;
@@ -94,34 +94,34 @@ void main(void) {
         //GY_Read();
         __delay_ms(50);
 
-//
-//
-//        I2C_Start(0xD0);
-//        I2C_Master_Write(0x3B); //es la direccion del ax out H
-//        I2C_Master_Stop();
-//        I2C_Start(0xD1); //para leer
-//
-//
-//        Ax = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
-//
-//        I2C_Master_Stop();
-//
-//        Axenvio = intToString(Ax);
-//                Ayenvio = intToString(Ax);
-//                Azenvio = intToString(Ax);
-//                Gxenvio = intToString(Ax);
-//                Gyenvio = intToString(Ax);
-//                Gzenvio = intToString(Ax);
-//                Tenvio = intToString(Ax);
-//
-//        UARTSendString(Axenvio);
-       UARTSendString("hola");
-//        //        UARTSendString(Ayenvio);
-//        //        UARTSendString(Azenvio);
-//        //        UARTSendString(Gxenvio);
-//        //        UARTSendString(Gyenvio);
-//        //        UARTSendString(Gzenvio);
-//        //        UARTSendString(Tenvio);
+
+
+        I2C_Start(0xD0);
+        I2C_Master_Write(0x3B); //es la direccion del ax out H
+        I2C_Master_Stop();
+        I2C_Start(0xD1); //para leer
+
+
+        Ax = I2C_Master_Read(0);
+
+        I2C_Master_Stop();
+        //
+        //Axenvio = intToString(Ax);
+        //                Ayenvio = intToString(Ax);
+        //                Azenvio = intToString(Ax);
+        //                Gxenvio = intToString(Ax);
+        //                Gyenvio = intToString(Ax);
+        //                Gzenvio = intToString(Ax);
+        //                Tenvio = intToString(Ax);
+        //
+        //UARTSendString(Axenvio);
+        UARTSendString("hola");
+        //        //        UARTSendString(Ayenvio);
+        //        //        UARTSendString(Azenvio);
+        //        //        UARTSendString(Gxenvio);
+        //        //        UARTSendString(Gyenvio);
+        //        //        UARTSendString(Gzenvio);
+        //        //        UARTSendString(Tenvio);
 
     }
 
@@ -131,10 +131,13 @@ void main(void) {
 
 void Setup(void) {
 
-    I2C_Master_Init(100000); // 100kHz
     UARTInit(9600, 1);
+    __delay_ms(50);
+    I2C_Master_Init(100000); // 100kHz
     TRISA = 0;
     PORTA = 0;
+    TRISC = 0;
+    PORTC = 0;
     ANSEL = 0;
     ANSELH = 0;
 

@@ -29,21 +29,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 "92 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
 [v __delay `JF1256 ~T0 @X0 0 e ]
 [p i __delay ]
+"60 ./I2C.h
+[; ;./I2C.h: 60: unsigned short I2C_Master_Read(unsigned short a);
+[v _I2C_Master_Read `(us ~T0 @X0 0 ef1`us ]
 "45 ./UART.h
 [; ;./UART.h: 45: void UARTSendString(const char* str);
 [v _UARTSendString `(v ~T0 @X0 0 ef1`*Cuc ]
+"32
+[; ;./UART.h: 32: void UARTInit(const uint32_t baud_rate, const uint8_t BRGH);
+[v _UARTInit `(v ~T0 @X0 0 ef2`Cul`Cuc ]
 "29 ./I2C.h
 [; ;./I2C.h: 29: void I2C_Master_Init(const unsigned long c);
 [v _I2C_Master_Init `(v ~T0 @X0 0 ef1`Cul ]
-"32 ./UART.h
-[; ;./UART.h: 32: void UARTInit(const uint32_t baud_rate, const uint8_t BRGH);
-[v _UARTInit `(v ~T0 @X0 0 ef2`Cul`Cuc ]
 "1416 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1416: extern volatile unsigned char TRISA __attribute__((address(0x085)));
 [v _TRISA `Vuc ~T0 @X0 0 e@133 ]
 "166
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
 [v _PORTA `Vuc ~T0 @X0 0 e@5 ]
+"1540
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1540: extern volatile unsigned char TRISC __attribute__((address(0x087)));
+[v _TRISC `Vuc ~T0 @X0 0 e@135 ]
+"290
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 290: extern volatile unsigned char PORTC __attribute__((address(0x007)));
+[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
 "3387
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
 [v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
@@ -320,12 +329,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "29
 [; ;main.c: 29: 
 [p x WRT  =  OFF         ]
-"35
-[; ;main.c: 35: 
-[v _bandera `uc ~T0 @X0 1 e ]
-[i _bandera
--> -> 0 `i `uc
-]
 "36
 [; ;main.c: 36:     I2C_Start(0xD0);
 [v _Ax `i ~T0 @X0 1 e ]
@@ -375,20 +378,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 64:         _delay((unsigned long)((50)*(4000000/4000.0)));
 [e ( _I2C_Master_Stop ..  ]
 "67
+[; ;main.c: 67: 
 [e ( _I2C_Start (1 -> -> 208 `i `uc ]
 "68
+[; ;main.c: 68:         I2C_Start(0xD0);
 [e ( _I2C_Master_Write (1 -> -> 107 `i `ui ]
 "69
+[; ;main.c: 69:         I2C_Master_Write(0x3B);
 [e ( _I2C_Master_Write (1 -> -> 1 `i `ui ]
 "70
+[; ;main.c: 70:         I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
 "73
+[; ;main.c: 73: 
 [e ( _I2C_Start (1 -> -> 208 `i `uc ]
 "74
+[; ;main.c: 74:         Ax = I2C_Master_Read(0);
 [e ( _I2C_Master_Write (1 -> -> 26 `i `ui ]
 "75
+[; ;main.c: 75: 
 [e ( _I2C_Master_Write (1 -> -> 0 `i `ui ]
 "76
+[; ;main.c: 76:         I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
 "79
 [e ( _I2C_Start (1 -> -> 208 `i `uc ]
@@ -413,8 +424,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _PORTAbits 0 0 -> ~ -> . . _PORTAbits 0 0 `i `uc ]
 "95
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"99
+[e ( _I2C_Start (1 -> -> 208 `i `uc ]
+"100
+[e ( _I2C_Master_Write (1 -> -> 59 `i `ui ]
+"101
+[e ( _I2C_Master_Stop ..  ]
+"102
+[e ( _I2C_Start (1 -> -> 209 `i `uc ]
+"105
+[e = _Ax -> ( _I2C_Master_Read (1 -> -> 0 `i `us `i ]
+"107
+[e ( _I2C_Master_Stop ..  ]
 "118
-[; ;main.c: 118:        UARTSendString("hola");
+[; ;main.c: 118:         UARTSendString("hola");
 [e ( _UARTSendString (1 :s 1C ]
 "126
 [; ;main.c: 126:     }
@@ -436,65 +459,74 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _Setup ]
 [f ]
 "134
-[; ;main.c: 134:     I2C_Master_Init(100000);
-[e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
-"135
-[; ;main.c: 135:     UARTInit(9600, 1);
+[; ;main.c: 134:     UARTInit(9600, 1);
 [e ( _UARTInit (2 , -> -> -> 9600 `i `l `ul -> -> 1 `i `uc ]
+"135
+[; ;main.c: 135:     _delay((unsigned long)((50)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "136
-[; ;main.c: 136:     TRISA = 0;
-[e = _TRISA -> -> 0 `i `uc ]
+[; ;main.c: 136:     I2C_Master_Init(100000);
+[e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
 "137
-[; ;main.c: 137:     PORTA = 0;
-[e = _PORTA -> -> 0 `i `uc ]
+[; ;main.c: 137:     TRISA = 0;
+[e = _TRISA -> -> 0 `i `uc ]
 "138
-[; ;main.c: 138:     ANSEL = 0;
-[e = _ANSEL -> -> 0 `i `uc ]
+[; ;main.c: 138:     PORTA = 0;
+[e = _PORTA -> -> 0 `i `uc ]
 "139
-[; ;main.c: 139:     ANSELH = 0;
+[; ;main.c: 139:     TRISC = 0;
+[e = _TRISC -> -> 0 `i `uc ]
+"140
+[; ;main.c: 140:     PORTC = 0;
+[e = _PORTC -> -> 0 `i `uc ]
+"141
+[; ;main.c: 141:     ANSEL = 0;
+[e = _ANSEL -> -> 0 `i `uc ]
+"142
+[; ;main.c: 142:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"147
-[; ;main.c: 147:     return;
+"150
+[; ;main.c: 150:     return;
 [e $UE 143  ]
-"148
-[; ;main.c: 148: }
+"151
+[; ;main.c: 151: }
 [e :UE 143 ]
 }
-"150
-[; ;main.c: 150: char* intToString(uint8_t value) {
+"153
+[; ;main.c: 153: char* intToString(uint8_t value) {
 [v _intToString `(*uc ~T0 @X0 1 ef1`uc ]
 {
 [e :U _intToString ]
 [v _value `uc ~T0 @X0 1 r1 ]
 [f ]
-"151
-[; ;main.c: 151:     char valor[4];
+"154
+[; ;main.c: 154:     char valor[4];
 [v _valor `uc ~T0 @X0 -> 4 `i a ]
-"153
-[; ;main.c: 153:     uint8_t entero = value / 100;
+"156
+[; ;main.c: 156:     uint8_t entero = value / 100;
 [v _entero `uc ~T0 @X0 1 a ]
 [e = _entero -> / -> _value `i -> 100 `i `uc ]
-"154
-[; ;main.c: 154:     valor[0] = entero + 48;
+"157
+[; ;main.c: 157:     valor[0] = entero + 48;
 [e = *U + &U _valor * -> -> -> 0 `i `ui `ux -> -> # *U &U _valor `ui `ux -> + -> _entero `i -> 48 `i `uc ]
-"156
-[; ;main.c: 156:     value = value - (100 * entero);
-[e = _value -> - -> _value `i * -> 100 `i -> _entero `i `uc ]
-"158
-[; ;main.c: 158:     valor[1] = value / 10 + 48;
-[e = *U + &U _valor * -> -> -> 1 `i `ui `ux -> -> # *U &U _valor `ui `ux -> + / -> _value `i -> 10 `i -> 48 `i `uc ]
 "159
-[; ;main.c: 159:     valor[2] = value % 10 + 48;
-[e = *U + &U _valor * -> -> -> 2 `i `ui `ux -> -> # *U &U _valor `ui `ux -> + % -> _value `i -> 10 `i -> 48 `i `uc ]
-"160
-[; ;main.c: 160:     valor[3] = '\0';
-[e = *U + &U _valor * -> -> -> 3 `i `ui `ux -> -> # *U &U _valor `ui `ux -> -> 0 `ui `uc ]
+[; ;main.c: 159:     value = value - (100 * entero);
+[e = _value -> - -> _value `i * -> 100 `i -> _entero `i `uc ]
+"161
+[; ;main.c: 161:     valor[1] = value / 10 + 48;
+[e = *U + &U _valor * -> -> -> 1 `i `ui `ux -> -> # *U &U _valor `ui `ux -> + / -> _value `i -> 10 `i -> 48 `i `uc ]
 "162
-[; ;main.c: 162:     return valor;
+[; ;main.c: 162:     valor[2] = value % 10 + 48;
+[e = *U + &U _valor * -> -> -> 2 `i `ui `ux -> -> # *U &U _valor `ui `ux -> + % -> _value `i -> 10 `i -> 48 `i `uc ]
+"163
+[; ;main.c: 163:     valor[3] = '\0';
+[e = *U + &U _valor * -> -> -> 3 `i `ui `ux -> -> # *U &U _valor `ui `ux -> -> 0 `ui `uc ]
+"165
+[; ;main.c: 165:     return valor;
 [e ) &U _valor ]
 [e $UE 144  ]
-"165
-[; ;main.c: 165: }
+"168
+[; ;main.c: 168: }
 [e :UE 144 ]
 }
 [a 1C 104 111 108 97 0 ]

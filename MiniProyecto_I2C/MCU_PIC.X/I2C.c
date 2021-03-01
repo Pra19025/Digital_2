@@ -75,7 +75,7 @@ unsigned short I2C_Master_Read(unsigned short a)
 {
     unsigned short temp;
     I2C_Master_Wait();      //espera que se cumplan las condiciones adecuadas
-    SSPCON2bits.RCEN = 1;
+    SSPCON2bits.RCEN = 1;   //permite que se reciban datos en I2C
     I2C_Master_Wait();      //espera que se cumplan las condiciones adecuadas
     temp = SSPBUF;
     I2C_Master_Wait();      //espera que se cumplan las condiciones adecuadas
