@@ -11,6 +11,7 @@
 #include "I2C.h"
 #include "UART.h"
 #include "GY-521.h"
+#include <stdio.h>
 
 // CONFIG1
 #pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN)
@@ -34,7 +35,8 @@
 //***********************************************************************************************************************************************
 
 int Ax, Ay, Az, Gx, Gy, Gz, T;
-int Axenvio, Ayenvio, Azenvio, Gxenvio, Gyenvio, Gzenvio, Tenvio;
+
+char buf[40];
 //***********************************************************************************************************************************************
 // Prototipos de funciones
 //**********************************************************************************************************************************************
@@ -87,13 +89,7 @@ void main(void) {
     I2C_Master_Write(0x18); // +-2000
     I2C_Master_Stop();
 
-        Axenvio = 0;
-        Ayenvio = 0;
-        Azenvio = 0;
-        Gxenvio = 0;
-        Gyenvio = 0;
-        Gzenvio = 0;
-        Tenvio = 0;
+    
     while (1) {
 
         PORTAbits.RA0 = ~PORTAbits.RA0; // Blink LED     
@@ -106,6 +102,7 @@ void main(void) {
         I2C_Start(0xD1); //para leer
 
         Ax = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
+        I2C_Master_Wait();
         Ay = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
         Az = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
         T = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
@@ -114,30 +111,27 @@ void main(void) {
         Gz = ((int) I2C_Read(0) << 8) | (int) I2C_Read(1);
 
         I2C_Master_Stop();
+        sprintf(buf, "Ax = %d    ", Ax);    // lo del porcentaje indica que se debe imprimir como decimal 
+        UARTSendString(buf);
 
-        Axenvio = intToString(Ax);
-        Ayenvio = intToString(Ay);
-        Azenvio = intToString(Az);
-        Gxenvio = intToString(Gx);
-        Gyenvio = intToString(Gy);
-        Gzenvio = intToString(Gz);
-        Tenvio = intToString(T);
+        sprintf(buf, " Ay = %d    ", Ay);
+        UARTSendString(buf);
 
-        UARTSendString("Ax ");
-        UARTSendString(Axenvio);
-        UARTSendString(" Ay ");
-        UARTSendString(Ayenvio);
-        UARTSendString(" Az ");
-        UARTSendString(Azenvio);
-        UARTSendString(" Gx ");
-        UARTSendString(Gxenvio);
-        UARTSendString(" Gy ");
-        UARTSendString(Gyenvio);
-        UARTSendString(" Gz ");
-        UARTSendString(Gzenvio);
-        UARTSendString(" T ");
-        UARTSendString(Tenvio);
-        UARTSendString("\n");
+        sprintf(buf, " Az = %d    ", Az);
+        UARTSendString(buf);
+
+        sprintf(buf, " T = %d  ", T);
+        UARTSendString(buf);
+
+        sprintf(buf, " Gx = %d    ", Gx);
+        UARTSendString(buf);
+
+        sprintf(buf, " Gy = %d    ", Gy);
+        UARTSendString(buf);
+
+        sprintf(buf, " Gz = %d\r\n", Gz);
+        UARTSendString(buf);
+
 
     }
 
