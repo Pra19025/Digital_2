@@ -2810,14 +2810,14 @@ void main(void) {
     I2C_Master_Write(0x18);
     I2C_Master_Stop();
 
-
+        Axenvio = 0;
+        Ayenvio = 0;
+        Azenvio = 0;
+        Gxenvio = 0;
+        Gyenvio = 0;
+        Gzenvio = 0;
+        Tenvio = 0;
     while (1) {
-
-
-
-
-
-
 
         PORTAbits.RA0 = ~PORTAbits.RA0;
 

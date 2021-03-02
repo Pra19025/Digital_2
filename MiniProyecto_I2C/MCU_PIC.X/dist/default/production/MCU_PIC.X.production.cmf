@@ -11,37 +11,37 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\noelp\AppData\Local\Temp\sj08.o
+$C:\Users\noelp\AppData\Local\Temp\smmo.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 4 2007 2007 2 2
 $dist/default/production\MCU_PIC.X.production.o
 cinit CODE 0 F F D 2
-text1 CODE 0 3C6 3C6 5F 2
-text2 CODE 0 563 563 15 2
-text3 CODE 0 425 425 59 2
-text4 CODE 0 35F 35F 67 2
-text5 CODE 0 506 506 25 2
-text6 CODE 0 585 585 C 2
-text7 CODE 0 52B 52B 22 2
-text8 CODE 0 288 288 6F 2
-text9 CODE 0 54D 54D 16 2
-text10 CODE 0 591 591 A 2
-text11 CODE 0 4DF 4DF 27 2
-text12 CODE 0 59B 59B 9 2
-text13 CODE 0 5A4 5A4 9 2
-text14 CODE 0 5AD 5AD 9 2
-text15 CODE 0 578 578 D 2
-text16 CODE 0 47E 47E 38 2
-text17 CODE 0 2F7 2F7 68 2
-text18 CODE 0 5BE 5BE 7 2
-maintext CODE 0 1C 1C 26C 2
+text1 CODE 0 3D6 3D6 5F 2
+text2 CODE 0 573 573 15 2
+text3 CODE 0 435 435 59 2
+text4 CODE 0 36F 36F 67 2
+text5 CODE 0 516 516 25 2
+text6 CODE 0 595 595 C 2
+text7 CODE 0 53B 53B 22 2
+text8 CODE 0 298 298 6F 2
+text9 CODE 0 55D 55D 16 2
+text10 CODE 0 5A1 5A1 A 2
+text11 CODE 0 4EF 4EF 27 2
+text12 CODE 0 5AB 5AB 9 2
+text13 CODE 0 5B4 5B4 9 2
+text14 CODE 0 5BD 5BD 9 2
+text15 CODE 0 588 588 D 2
+text16 CODE 0 48E 48E 38 2
+text17 CODE 0 307 307 68 2
+text18 CODE 0 5CE 5CE 7 2
+maintext CODE 0 1C 1C 27C 2
 cstackCOMMON COMMON 1 70 70 B 1
 cstackBANK0 BANK0 1 3C 3C 12 1
 intentry CODE 0 4 4 8 2
 bssBANK0 BANK0 1 20 20 1C 1
-strings STRING 0 4B6 4B6 29 2
-clrtext CODE 0 5B6 5B6 8 2
+strings STRING 0 4C6 4C6 29 2
+clrtext CODE 0 5C6 5C6 8 2
 config CONFIG 4 2007 2007 2 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -58,13 +58,13 @@ BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 3-3 2
-CONST 5C5-1FFF 2
+CONST 5D5-1FFF 2
 ENTRY 3-3 2
-ENTRY 5C5-1FFF 2
+ENTRY 5D5-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
 CODE 3-3 2
-CODE 5C5-1FFF 2
+CODE 5D5-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
@@ -72,9 +72,9 @@ SFR3 180-18F 1
 COMMON 7B-7D 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE 5C5-1FFF 2
+STRCODE 5D5-1FFF 2
 STRING 3-3 2
-STRING 5C5-1FFF 2
+STRING 5D5-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -89,181 +89,181 @@ STRING 5C5-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\MCU_PIC.X.production.o
-F cinit CODE >1069:C:\Users\noelp\AppData\Local\Temp\sj08.s
-F cinit CODE >1072:C:\Users\noelp\AppData\Local\Temp\sj08.s
-F cinit CODE >1137:C:\Users\noelp\AppData\Local\Temp\sj08.s
-10 cinit CODE >1138:C:\Users\noelp\AppData\Local\Temp\sj08.s
-11 cinit CODE >1139:C:\Users\noelp\AppData\Local\Temp\sj08.s
-12 cinit CODE >1140:C:\Users\noelp\AppData\Local\Temp\sj08.s
-13 cinit CODE >1141:C:\Users\noelp\AppData\Local\Temp\sj08.s
-18 cinit CODE >1147:C:\Users\noelp\AppData\Local\Temp\sj08.s
-18 cinit CODE >1149:C:\Users\noelp\AppData\Local\Temp\sj08.s
-19 cinit CODE >1150:C:\Users\noelp\AppData\Local\Temp\sj08.s
+F cinit CODE >1069:C:\Users\noelp\AppData\Local\Temp\smmo.s
+F cinit CODE >1072:C:\Users\noelp\AppData\Local\Temp\smmo.s
+F cinit CODE >1137:C:\Users\noelp\AppData\Local\Temp\smmo.s
+10 cinit CODE >1138:C:\Users\noelp\AppData\Local\Temp\smmo.s
+11 cinit CODE >1139:C:\Users\noelp\AppData\Local\Temp\smmo.s
+12 cinit CODE >1140:C:\Users\noelp\AppData\Local\Temp\smmo.s
+13 cinit CODE >1141:C:\Users\noelp\AppData\Local\Temp\smmo.s
+18 cinit CODE >1147:C:\Users\noelp\AppData\Local\Temp\smmo.s
+18 cinit CODE >1149:C:\Users\noelp\AppData\Local\Temp\smmo.s
+19 cinit CODE >1150:C:\Users\noelp\AppData\Local\Temp\smmo.s
 4 intentry CODE >47:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-5BE text18 CODE >47:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-5BE text18 CODE >50:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-2F7 text17 CODE >5:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-2F7 text17 CODE >13:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-301 text17 CODE >14:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-309 text17 CODE >15:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-30B text17 CODE >16:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-30C text17 CODE >17:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-315 text17 CODE >18:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-319 text17 CODE >16:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-31D text17 CODE >21:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-326 text17 CODE >22:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-338 text17 CODE >23:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-346 text17 CODE >24:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-347 text17 CODE >26:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-350 text17 CODE >27:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-356 text17 CODE >29:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-35E text17 CODE >30:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-47E text16 CODE >17:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-47E text16 CODE >18:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-482 text16 CODE >19:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-485 text16 CODE >20:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-4B2 text16 CODE >21:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-4B3 text16 CODE >22:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-4B4 text16 CODE >23:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-4B5 text16 CODE >24:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-578 text15 CODE >33:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-578 text15 CODE >34:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-584 text15 CODE >35:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-5AD text14 CODE >56:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-5AD text14 CODE >57:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-5B2 text14 CODE >58:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-5B5 text14 CODE >59:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-5A4 text13 CODE >129:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-5A4 text13 CODE >130:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-5A7 text13 CODE >131:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-5A8 text13 CODE >132:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-5AC text13 CODE >133:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-59B text12 CODE >135:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-59B text12 CODE >136:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-59E text12 CODE >137:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-59F text12 CODE >138:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-5A3 text12 CODE >139:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-4DF text11 CODE >114:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-4E0 text11 CODE >117:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-4E3 text11 CODE >118:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-4E7 text11 CODE >119:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-4ED text11 CODE >120:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-4F2 text11 CODE >121:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-4F8 text11 CODE >123:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-4FD text11 CODE >124:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-503 text11 CODE >125:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-504 text11 CODE >126:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-505 text11 CODE >127:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-591 text10 CODE >66:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-591 text10 CODE >67:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-596 text10 CODE >68:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-59A text10 CODE >69:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-54D text9 CODE >108:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-54E text9 CODE >109:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-553 text9 CODE >110:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-556 text9 CODE >111:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-562 text9 CODE >112:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-288 text8 CODE >9:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
-288 text8 CODE >11:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
-28F text8 CODE >12:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
-2BA text8 CODE >13:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
-2BB text8 CODE >14:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
-2BC text8 CODE >15:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
-2E7 text8 CODE >16:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
-2E8 text8 CODE >20:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
-2E9 text8 CODE >21:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
-2EA text8 CODE >22:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
-2EB text8 CODE >25:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
-2EE text8 CODE >26:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
-2EF text8 CODE >27:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
-2F0 text8 CODE >28:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
-2F1 text8 CODE >29:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
-2F2 text8 CODE >32:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
-2F5 text8 CODE >33:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
-2F6 text8 CODE >34:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
-52B text7 CODE >148:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-52B text7 CODE >150:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-53C text7 CODE >153:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-53F text7 CODE >154:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-542 text7 CODE >155:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-545 text7 CODE >156:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-548 text7 CODE >157:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-54B text7 CODE >158:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-54C text7 CODE >167:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-585 text6 CODE >40:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
-586 text6 CODE >41:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
-58C text6 CODE >42:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
-590 text6 CODE >43:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
-506 text5 CODE >50:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
-507 text5 CODE >51:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
-509 text5 CODE >55:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
-50A text5 CODE >56:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
-51D text5 CODE >55:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
-52A text5 CODE >58:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
-35F text4 CODE >5:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-35F text4 CODE >13:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-360 text4 CODE >14:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-364 text4 CODE >15:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-369 text4 CODE >16:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-36B text4 CODE >18:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-36F text4 CODE >19:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-374 text4 CODE >20:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-378 text4 CODE >22:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-37A text4 CODE >23:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-380 text4 CODE >24:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-382 text4 CODE >25:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-383 text4 CODE >26:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-38A text4 CODE >27:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-38E text4 CODE >25:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-392 text4 CODE >30:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-399 text4 CODE >31:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-3A3 text4 CODE >32:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-3A9 text4 CODE >33:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-3AA text4 CODE >35:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-3B1 text4 CODE >36:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-3B7 text4 CODE >38:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-3BC text4 CODE >39:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-3C1 text4 CODE >40:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-3C5 text4 CODE >41:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-425 text3 CODE >5:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
-425 text3 CODE >12:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
-426 text3 CODE >13:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
-42A text3 CODE >14:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
-42F text3 CODE >15:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
-431 text3 CODE >17:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
-435 text3 CODE >18:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
-43A text3 CODE >19:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
-440 text3 CODE >20:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
-442 text3 CODE >21:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
-443 text3 CODE >22:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
-44A text3 CODE >23:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
-44E text3 CODE >21:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
-452 text3 CODE >26:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
-45C text3 CODE >27:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
-462 text3 CODE >28:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
-469 text3 CODE >29:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
-46F text3 CODE >31:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
-474 text3 CODE >32:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
-479 text3 CODE >33:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
-47D text3 CODE >34:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
-563 text2 CODE >4:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
-564 text2 CODE >6:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
-565 text2 CODE >43:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
-569 text2 CODE >44:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
-56D text2 CODE >45:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
-56F text2 CODE >46:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
-571 text2 CODE >47:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
-576 text2 CODE >50:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
-577 text2 CODE >51:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
-3C6 text1 CODE >169:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-3C9 text1 CODE >172:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-3DF text1 CODE >173:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-3E4 text1 CODE >175:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-3F4 text1 CODE >177:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-40B text1 CODE >178:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-422 text1 CODE >179:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-423 text1 CODE >181:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-424 text1 CODE >184:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+5CE text18 CODE >47:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+5CE text18 CODE >50:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+307 text17 CODE >5:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+307 text17 CODE >13:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+311 text17 CODE >14:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+319 text17 CODE >15:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+31B text17 CODE >16:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+31C text17 CODE >17:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+325 text17 CODE >18:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+329 text17 CODE >16:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+32D text17 CODE >21:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+336 text17 CODE >22:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+348 text17 CODE >23:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+356 text17 CODE >24:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+357 text17 CODE >26:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+360 text17 CODE >27:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+366 text17 CODE >29:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+36E text17 CODE >30:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+48E text16 CODE >17:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+48E text16 CODE >18:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+492 text16 CODE >19:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+495 text16 CODE >20:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+4C2 text16 CODE >21:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+4C3 text16 CODE >22:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+4C4 text16 CODE >23:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+4C5 text16 CODE >24:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+588 text15 CODE >33:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+588 text15 CODE >34:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+594 text15 CODE >35:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+5BD text14 CODE >56:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+5BD text14 CODE >57:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+5C2 text14 CODE >58:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+5C5 text14 CODE >59:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+5B4 text13 CODE >129:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+5B4 text13 CODE >130:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+5B7 text13 CODE >131:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+5B8 text13 CODE >132:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+5BC text13 CODE >133:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+5AB text12 CODE >135:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+5AB text12 CODE >136:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+5AE text12 CODE >137:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+5AF text12 CODE >138:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+5B3 text12 CODE >139:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+4EF text11 CODE >114:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+4F0 text11 CODE >117:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+4F3 text11 CODE >118:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+4F7 text11 CODE >119:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+4FD text11 CODE >120:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+502 text11 CODE >121:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+508 text11 CODE >123:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+50D text11 CODE >124:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+513 text11 CODE >125:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+514 text11 CODE >126:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+515 text11 CODE >127:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+5A1 text10 CODE >66:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+5A1 text10 CODE >67:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+5A6 text10 CODE >68:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+5AA text10 CODE >69:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+55D text9 CODE >108:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+55E text9 CODE >109:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+563 text9 CODE >110:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+566 text9 CODE >111:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+572 text9 CODE >112:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+298 text8 CODE >9:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
+298 text8 CODE >11:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
+29F text8 CODE >12:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
+2CA text8 CODE >13:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
+2CB text8 CODE >14:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
+2CC text8 CODE >15:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
+2F7 text8 CODE >16:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
+2F8 text8 CODE >20:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
+2F9 text8 CODE >21:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
+2FA text8 CODE >22:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
+2FB text8 CODE >25:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
+2FE text8 CODE >26:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
+2FF text8 CODE >27:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
+300 text8 CODE >28:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
+301 text8 CODE >29:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
+302 text8 CODE >32:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
+305 text8 CODE >33:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
+306 text8 CODE >34:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
+53B text7 CODE >148:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+53B text7 CODE >150:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+54C text7 CODE >153:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+54F text7 CODE >154:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+552 text7 CODE >155:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+555 text7 CODE >156:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+558 text7 CODE >157:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+55B text7 CODE >158:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+55C text7 CODE >167:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+595 text6 CODE >40:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
+596 text6 CODE >41:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
+59C text6 CODE >42:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
+5A0 text6 CODE >43:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
+516 text5 CODE >50:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
+517 text5 CODE >51:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
+519 text5 CODE >55:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
+51A text5 CODE >56:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
+52D text5 CODE >55:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
+53A text5 CODE >58:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
+36F text4 CODE >5:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+36F text4 CODE >13:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+370 text4 CODE >14:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+374 text4 CODE >15:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+379 text4 CODE >16:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+37B text4 CODE >18:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+37F text4 CODE >19:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+384 text4 CODE >20:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+388 text4 CODE >22:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+38A text4 CODE >23:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+390 text4 CODE >24:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+392 text4 CODE >25:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+393 text4 CODE >26:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+39A text4 CODE >27:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+39E text4 CODE >25:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+3A2 text4 CODE >30:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+3A9 text4 CODE >31:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+3B3 text4 CODE >32:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+3B9 text4 CODE >33:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+3BA text4 CODE >35:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+3C1 text4 CODE >36:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+3C7 text4 CODE >38:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+3CC text4 CODE >39:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+3D1 text4 CODE >40:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+3D5 text4 CODE >41:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+435 text3 CODE >5:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
+435 text3 CODE >12:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
+436 text3 CODE >13:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
+43A text3 CODE >14:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
+43F text3 CODE >15:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
+441 text3 CODE >17:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
+445 text3 CODE >18:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
+44A text3 CODE >19:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
+450 text3 CODE >20:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
+452 text3 CODE >21:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
+453 text3 CODE >22:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
+45A text3 CODE >23:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
+45E text3 CODE >21:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
+462 text3 CODE >26:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
+46C text3 CODE >27:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
+472 text3 CODE >28:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
+479 text3 CODE >29:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
+47F text3 CODE >31:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
+484 text3 CODE >32:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
+489 text3 CODE >33:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
+48D text3 CODE >34:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
+573 text2 CODE >4:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
+574 text2 CODE >6:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
+575 text2 CODE >43:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
+579 text2 CODE >44:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
+57D text2 CODE >45:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
+57F text2 CODE >46:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
+581 text2 CODE >47:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
+586 text2 CODE >50:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
+587 text2 CODE >51:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
+3D6 text1 CODE >169:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+3D9 text1 CODE >172:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+3EF text1 CODE >173:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+3F4 text1 CODE >175:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+404 text1 CODE >177:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+41B text1 CODE >178:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+432 text1 CODE >179:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+433 text1 CODE >181:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+434 text1 CODE >184:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
 1C maintext CODE >52:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
 1C maintext CODE >53:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
 21 maintext CODE >58:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
@@ -288,52 +288,59 @@ AC maintext CODE >85:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\
 B2 maintext CODE >86:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
 BB maintext CODE >87:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
 C4 maintext CODE >88:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-C9 maintext CODE >99:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-D8 maintext CODE >101:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-E3 maintext CODE >103:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-E9 maintext CODE >104:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-F2 maintext CODE >105:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-F7 maintext CODE >106:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-FD maintext CODE >108:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-11A maintext CODE >109:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-137 maintext CODE >110:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-154 maintext CODE >111:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-171 maintext CODE >112:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-18E maintext CODE >113:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-1AB maintext CODE >114:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-1C8 maintext CODE >116:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-1CD maintext CODE >118:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-1DA maintext CODE >119:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-1E5 maintext CODE >120:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-1F0 maintext CODE >121:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-1FB maintext CODE >122:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-206 maintext CODE >123:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-211 maintext CODE >124:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-21C maintext CODE >126:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-222 maintext CODE >127:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-22A maintext CODE >128:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-230 maintext CODE >129:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-238 maintext CODE >130:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-23E maintext CODE >131:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-246 maintext CODE >132:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-24C maintext CODE >133:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-254 maintext CODE >134:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-25A maintext CODE >135:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-262 maintext CODE >136:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-268 maintext CODE >137:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-270 maintext CODE >138:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-276 maintext CODE >139:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-27E maintext CODE >140:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
-5B6 clrtext CODE >1124:C:\Users\noelp\AppData\Local\Temp\sj08.s
-5B6 clrtext CODE >1125:C:\Users\noelp\AppData\Local\Temp\sj08.s
-5B7 clrtext CODE >1126:C:\Users\noelp\AppData\Local\Temp\sj08.s
-5B7 clrtext CODE >1127:C:\Users\noelp\AppData\Local\Temp\sj08.s
-5B8 clrtext CODE >1128:C:\Users\noelp\AppData\Local\Temp\sj08.s
-5B9 clrtext CODE >1129:C:\Users\noelp\AppData\Local\Temp\sj08.s
-5BA clrtext CODE >1130:C:\Users\noelp\AppData\Local\Temp\sj08.s
-5BB clrtext CODE >1131:C:\Users\noelp\AppData\Local\Temp\sj08.s
-5BC clrtext CODE >1132:C:\Users\noelp\AppData\Local\Temp\sj08.s
-5BD clrtext CODE >1133:C:\Users\noelp\AppData\Local\Temp\sj08.s
+C9 maintext CODE >90:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+CD maintext CODE >91:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+CF maintext CODE >92:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+D1 maintext CODE >93:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+D3 maintext CODE >94:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+D5 maintext CODE >95:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+D7 maintext CODE >96:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+D9 maintext CODE >99:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+E8 maintext CODE >101:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+F3 maintext CODE >103:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+F9 maintext CODE >104:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+102 maintext CODE >105:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+107 maintext CODE >106:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+10D maintext CODE >108:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+12A maintext CODE >109:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+147 maintext CODE >110:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+164 maintext CODE >111:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+181 maintext CODE >112:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+19E maintext CODE >113:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+1BB maintext CODE >114:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+1D8 maintext CODE >116:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+1DD maintext CODE >118:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+1EA maintext CODE >119:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+1F5 maintext CODE >120:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+200 maintext CODE >121:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+20B maintext CODE >122:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+216 maintext CODE >123:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+221 maintext CODE >124:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+22C maintext CODE >126:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+232 maintext CODE >127:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+23A maintext CODE >128:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+240 maintext CODE >129:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+248 maintext CODE >130:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+24E maintext CODE >131:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+256 maintext CODE >132:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+25C maintext CODE >133:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+264 maintext CODE >134:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+26A maintext CODE >135:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+272 maintext CODE >136:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+278 maintext CODE >137:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+280 maintext CODE >138:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+286 maintext CODE >139:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+28E maintext CODE >140:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+5C6 clrtext CODE >1124:C:\Users\noelp\AppData\Local\Temp\smmo.s
+5C6 clrtext CODE >1125:C:\Users\noelp\AppData\Local\Temp\smmo.s
+5C7 clrtext CODE >1126:C:\Users\noelp\AppData\Local\Temp\smmo.s
+5C7 clrtext CODE >1127:C:\Users\noelp\AppData\Local\Temp\smmo.s
+5C8 clrtext CODE >1128:C:\Users\noelp\AppData\Local\Temp\smmo.s
+5C9 clrtext CODE >1129:C:\Users\noelp\AppData\Local\Temp\smmo.s
+5CA clrtext CODE >1130:C:\Users\noelp\AppData\Local\Temp\smmo.s
+5CB clrtext CODE >1131:C:\Users\noelp\AppData\Local\Temp\smmo.s
+5CC clrtext CODE >1132:C:\Users\noelp\AppData\Local\Temp\smmo.s
+5CD clrtext CODE >1133:C:\Users\noelp\AppData\Local\Temp\smmo.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -349,7 +356,7 @@ FD maintext CODE >108:C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C
 _T 2E 0 BANK0 1 bssBANK0 dist/default/production\MCU_PIC.X.production.o
 ___latbits 2 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 ___awdiv@counter 77 0 COMMON 1 cstackCOMMON dist/default/production\MCU_PIC.X.production.o
-__Hspace_0 5C5 0 ABS 0 - -
+__Hspace_0 5D5 0 ABS 0 - -
 __Hspace_1 7B 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
@@ -364,15 +371,15 @@ _Az 36 0 BANK0 1 bssBANK0 dist/default/production\MCU_PIC.X.production.o
 _Gx 34 0 BANK0 1 bssBANK0 dist/default/production\MCU_PIC.X.production.o
 _Gy 32 0 BANK0 1 bssBANK0 dist/default/production\MCU_PIC.X.production.o
 _Gz 30 0 BANK0 1 bssBANK0 dist/default/production\MCU_PIC.X.production.o
-__end_of_I2C_Start AC6 0 CODE 0 text9 dist/default/production\MCU_PIC.X.production.o
+__end_of_I2C_Start AE6 0 CODE 0 text9 dist/default/production\MCU_PIC.X.production.o
 __Hstrings 0 0 ABS 0 strings -
 _PEIE 5E 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 _RCEN 48B 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\noelp\AppData\Local\Temp\sj08.o
+___sp 0 0 STACK 2 stack C:\Users\noelp\AppData\Local\Temp\smmo.o
 _main 38 0 CODE 0 maintext dist/default/production\MCU_PIC.X.production.o
 __size_of_I2C_Start 0 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
-start 18 0 CODE 0 init C:\Users\noelp\AppData\Local\Temp\sj08.o
+start 18 0 CODE 0 init C:\Users\noelp\AppData\Local\Temp\smmo.o
 __size_of___awdiv 0 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 __size_of___awmod 0 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
@@ -381,16 +388,16 @@ I2C_Start@add 76 0 COMMON 1 cstackCOMMON dist/default/production\MCU_PIC.X.produ
 __size_of_intToString 0 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 __size_of_I2C_NACK 0 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 __size_of_I2C_Read 0 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
-_UARTSendString A0C 0 CODE 0 text5 dist/default/production\MCU_PIC.X.production.o
-_I2C_Start A9A 0 CODE 0 text9 dist/default/production\MCU_PIC.X.production.o
+_UARTSendString A2C 0 CODE 0 text5 dist/default/production\MCU_PIC.X.production.o
+_I2C_Start ABA 0 CODE 0 text9 dist/default/production\MCU_PIC.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
 ___awmod@sign 78 0 COMMON 1 cstackCOMMON dist/default/production\MCU_PIC.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\sj08.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\sj08.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\sj08.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\sj08.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\sj08.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\sj08.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\smmo.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\smmo.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\smmo.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\smmo.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\smmo.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\noelp\AppData\Local\Temp\smmo.o
 ___bmul@multiplicand 72 0 COMMON 1 cstackCOMMON dist/default/production\MCU_PIC.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
@@ -399,28 +406,28 @@ __Hclrtext 0 0 ABS 0 clrtext -
 intToString@entero 43 0 BANK0 1 cstackBANK0 dist/default/production\MCU_PIC.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 ___awdiv@dividend 74 0 COMMON 1 cstackCOMMON dist/default/production\MCU_PIC.X.production.o
-_I2C_NACK B36 0 CODE 0 text12 dist/default/production\MCU_PIC.X.production.o
-_I2C_Read 9BE 0 CODE 0 text11 dist/default/production\MCU_PIC.X.production.o
-__end_of_UARTSendString A56 0 CODE 0 text5 dist/default/production\MCU_PIC.X.production.o
-__end_of_I2C_ACK B5A 0 CODE 0 text13 dist/default/production\MCU_PIC.X.production.o
-__end_of___bmul AF0 0 CODE 0 text2 dist/default/production\MCU_PIC.X.production.o
+_I2C_NACK B56 0 CODE 0 text12 dist/default/production\MCU_PIC.X.production.o
+_I2C_Read 9DE 0 CODE 0 text11 dist/default/production\MCU_PIC.X.production.o
+__end_of_UARTSendString A76 0 CODE 0 text5 dist/default/production\MCU_PIC.X.production.o
+__end_of_I2C_ACK B7A 0 CODE 0 text13 dist/default/production\MCU_PIC.X.production.o
+__end_of___bmul B10 0 CODE 0 text2 dist/default/production\MCU_PIC.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-__end_of_I2C_NACK B48 0 CODE 0 text12 dist/default/production\MCU_PIC.X.production.o
-__end_of_I2C_Read A0C 0 CODE 0 text11 dist/default/production\MCU_PIC.X.production.o
+__end_of_I2C_NACK B68 0 CODE 0 text12 dist/default/production\MCU_PIC.X.production.o
+__end_of_I2C_Read A2C 0 CODE 0 text11 dist/default/production\MCU_PIC.X.production.o
 ___bmul@multiplier 75 0 COMMON 1 cstackCOMMON dist/default/production\MCU_PIC.X.production.o
 ___awdiv@divisor 72 0 COMMON 1 cstackCOMMON dist/default/production\MCU_PIC.X.production.o
-__end_of___awdiv 78C 0 CODE 0 text4 dist/default/production\MCU_PIC.X.production.o
-__end_of___awmod 8FC 0 CODE 0 text3 dist/default/production\MCU_PIC.X.production.o
-__end_of___lldiv 6BE 0 CODE 0 text17 dist/default/production\MCU_PIC.X.production.o
+__end_of___awdiv 7AC 0 CODE 0 text4 dist/default/production\MCU_PIC.X.production.o
+__end_of___awmod 91C 0 CODE 0 text3 dist/default/production\MCU_PIC.X.production.o
+__end_of___lldiv 6DE 0 CODE 0 text17 dist/default/production\MCU_PIC.X.production.o
 I2C_Read@ACK_NACK 73 0 COMMON 1 cstackCOMMON dist/default/production\MCU_PIC.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\noelp\AppData\Local\Temp\sj08.o
-___stacklo 0 0 ABS 0 - C:\Users\noelp\AppData\Local\Temp\sj08.o
+___stackhi 0 0 ABS 0 - C:\Users\noelp\AppData\Local\Temp\smmo.o
+___stacklo 0 0 ABS 0 - C:\Users\noelp\AppData\Local\Temp\smmo.o
 __size_of_Setup 0 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 ___lldiv@counter 40 0 BANK0 1 cstackBANK0 dist/default/production\MCU_PIC.X.production.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production\MCU_PIC.X.production.o
 _TRISCbits 87 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 ___lldiv@dividend 76 0 COMMON 1 cstackCOMMON dist/default/production\MCU_PIC.X.production.o
-clear_ram0 B6C 0 CODE 0 clrtext dist/default/production\MCU_PIC.X.production.o
+clear_ram0 B8C 0 CODE 0 clrtext dist/default/production\MCU_PIC.X.production.o
 __pcstackBANK0 3C 0 BANK0 1 cstackBANK0 dist/default/production\MCU_PIC.X.production.o
 _SSPADD 93 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 _SSPBUF 13 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
@@ -428,16 +435,16 @@ _SSPCON 14 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 _TRISC3 43B 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 _TRISC4 43C 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 _Tenvio 20 0 BANK0 1 bssBANK0 dist/default/production\MCU_PIC.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\noelp\AppData\Local\Temp\sj08.o
+___int_sp 0 0 STACK 2 stack C:\Users\noelp\AppData\Local\Temp\smmo.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
 __Hbank3 0 0 ABS 0 bank3 -
 __Hcinit 38 0 CODE 0 cinit -
 __Hstack 0 0 STACK 2 stack -
-__stringbase 976 0 STRING 0 strings dist/default/production\MCU_PIC.X.production.o
+__stringbase 996 0 STRING 0 strings dist/default/production\MCU_PIC.X.production.o
 I2C_Master_Write@d 72 0 COMMON 1 cstackCOMMON dist/default/production\MCU_PIC.X.production.o
-_intToString 78C 0 CODE 0 text1 dist/default/production\MCU_PIC.X.production.o
+_intToString 7AC 0 CODE 0 text1 dist/default/production\MCU_PIC.X.production.o
 __Hmaintext 0 0 ABS 0 maintext -
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 4012 0 CONFIG 4 config -
@@ -464,43 +471,43 @@ __Lsfr1 0 0 ABS 0 sfr1 -
 __Lsfr2 0 0 ABS 0 sfr2 -
 __Lsfr3 0 0 ABS 0 sfr3 -
 __Ltext 0 0 ABS 0 text -
-___bmul AC6 0 CODE 0 text2 dist/default/production\MCU_PIC.X.production.o
+___bmul AE6 0 CODE 0 text2 dist/default/production\MCU_PIC.X.production.o
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 _GIE 5F 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
-_ISR B7C 0 CODE 0 text18 dist/default/production\MCU_PIC.X.production.o
+_ISR B9C 0 CODE 0 text18 dist/default/production\MCU_PIC.X.production.o
 _SEN 488 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
-__S0 5C5 0 ABS 0 - -
+__S0 5D5 0 ABS 0 - -
 __S1 7B 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_UARTSendChar B0A 0 CODE 0 text6 dist/default/production\MCU_PIC.X.production.o
+_UARTSendChar B2A 0 CODE 0 text6 dist/default/production\MCU_PIC.X.production.o
 saved_w 7E 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
-_I2C_Master_Write B22 0 CODE 0 text10 dist/default/production\MCU_PIC.X.production.o
-__end_of_ISR B8A 0 CODE 0 text18 dist/default/production\MCU_PIC.X.production.o
+_I2C_Master_Write B42 0 CODE 0 text10 dist/default/production\MCU_PIC.X.production.o
+__end_of_ISR BAA 0 CODE 0 text18 dist/default/production\MCU_PIC.X.production.o
 UARTSendString@i 73 0 COMMON 1 cstackCOMMON dist/default/production\MCU_PIC.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
 ___lldiv@divisor 72 0 COMMON 1 cstackCOMMON dist/default/production\MCU_PIC.X.production.o
-__stringtab 96C 0 STRING 0 strings dist/default/production\MCU_PIC.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\noelp\AppData\Local\Temp\sj08.o
+__stringtab 98C 0 STRING 0 strings dist/default/production\MCU_PIC.X.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\noelp\AppData\Local\Temp\smmo.o
 __size_of___bmul 0 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
-_I2C_ACK B48 0 CODE 0 text13 dist/default/production\MCU_PIC.X.production.o
+_I2C_ACK B68 0 CODE 0 text13 dist/default/production\MCU_PIC.X.production.o
 ___awmod@counter 77 0 COMMON 1 cstackCOMMON dist/default/production\MCU_PIC.X.production.o
 _RCSTAbits 18 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 __size_of_UARTSendChar 0 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
-__ptext10 B22 0 CODE 0 text10 dist/default/production\MCU_PIC.X.production.o
-__ptext11 9BE 0 CODE 0 text11 dist/default/production\MCU_PIC.X.production.o
-__ptext12 B36 0 CODE 0 text12 dist/default/production\MCU_PIC.X.production.o
-__ptext13 B48 0 CODE 0 text13 dist/default/production\MCU_PIC.X.production.o
-__ptext14 B5A 0 CODE 0 text14 dist/default/production\MCU_PIC.X.production.o
-__ptext15 AF0 0 CODE 0 text15 dist/default/production\MCU_PIC.X.production.o
-__ptext16 8FC 0 CODE 0 text16 dist/default/production\MCU_PIC.X.production.o
-__ptext17 5EE 0 CODE 0 text17 dist/default/production\MCU_PIC.X.production.o
-__ptext18 B7C 0 CODE 0 text18 dist/default/production\MCU_PIC.X.production.o
-___awdiv 6BE 0 CODE 0 text4 dist/default/production\MCU_PIC.X.production.o
-___awmod 84A 0 CODE 0 text3 dist/default/production\MCU_PIC.X.production.o
-___lldiv 5EE 0 CODE 0 text17 dist/default/production\MCU_PIC.X.production.o
+__ptext10 B42 0 CODE 0 text10 dist/default/production\MCU_PIC.X.production.o
+__ptext11 9DE 0 CODE 0 text11 dist/default/production\MCU_PIC.X.production.o
+__ptext12 B56 0 CODE 0 text12 dist/default/production\MCU_PIC.X.production.o
+__ptext13 B68 0 CODE 0 text13 dist/default/production\MCU_PIC.X.production.o
+__ptext14 B7A 0 CODE 0 text14 dist/default/production\MCU_PIC.X.production.o
+__ptext15 B10 0 CODE 0 text15 dist/default/production\MCU_PIC.X.production.o
+__ptext16 91C 0 CODE 0 text16 dist/default/production\MCU_PIC.X.production.o
+__ptext17 60E 0 CODE 0 text17 dist/default/production\MCU_PIC.X.production.o
+__ptext18 B9C 0 CODE 0 text18 dist/default/production\MCU_PIC.X.production.o
+___awdiv 6DE 0 CODE 0 text4 dist/default/production\MCU_PIC.X.production.o
+___awmod 86A 0 CODE 0 text3 dist/default/production\MCU_PIC.X.production.o
+___lldiv 60E 0 CODE 0 text17 dist/default/production\MCU_PIC.X.production.o
 __pmaintext 38 0 CODE 0 maintext dist/default/production\MCU_PIC.X.production.o
 _Gxenvio 26 0 BANK0 1 bssBANK0 dist/default/production\MCU_PIC.X.production.o
 __Lcommon 0 0 ABS 0 common -
@@ -510,17 +517,17 @@ _Gyenvio 24 0 BANK0 1 bssBANK0 dist/default/production\MCU_PIC.X.production.o
 I2C_Read@Data 74 0 COMMON 1 cstackCOMMON dist/default/production\MCU_PIC.X.production.o
 _Gzenvio 22 0 BANK0 1 bssBANK0 dist/default/production\MCU_PIC.X.production.o
 __size_of_UARTSendString 0 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
-__end_of_UARTSendChar B22 0 CODE 0 text6 dist/default/production\MCU_PIC.X.production.o
-__end_of_I2C_Master_Init 96C 0 CODE 0 text16 dist/default/production\MCU_PIC.X.production.o
-__end_of_I2C_Master_Stop B6C 0 CODE 0 text14 dist/default/production\MCU_PIC.X.production.o
-__end_of_I2C_Master_Wait B0A 0 CODE 0 text15 dist/default/production\MCU_PIC.X.production.o
-__end_of__stringtab 978 0 STRING 0 strings dist/default/production\MCU_PIC.X.production.o
+__end_of_UARTSendChar B42 0 CODE 0 text6 dist/default/production\MCU_PIC.X.production.o
+__end_of_I2C_Master_Init 98C 0 CODE 0 text16 dist/default/production\MCU_PIC.X.production.o
+__end_of_I2C_Master_Stop B8C 0 CODE 0 text14 dist/default/production\MCU_PIC.X.production.o
+__end_of_I2C_Master_Wait B2A 0 CODE 0 text15 dist/default/production\MCU_PIC.X.production.o
+__end_of__stringtab 998 0 STRING 0 strings dist/default/production\MCU_PIC.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
-__end_of_I2C_Master_Write B36 0 CODE 0 text10 dist/default/production\MCU_PIC.X.production.o
+__end_of_I2C_Master_Write B56 0 CODE 0 text10 dist/default/production\MCU_PIC.X.production.o
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 _PIR1bits C 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 __Lend_init 18 0 CODE 0 end_init -
@@ -540,23 +547,23 @@ ___awmod@dividend 74 0 COMMON 1 cstackCOMMON dist/default/production\MCU_PIC.X.p
 intToString@valor 3F 0 BANK0 1 cstackBANK0 dist/default/production\MCU_PIC.X.production.o
 intToString@value 44 0 BANK0 1 cstackBANK0 dist/default/production\MCU_PIC.X.production.o
 _SSPCON2bits 91 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
-__ptext1 78C 0 CODE 0 text1 dist/default/production\MCU_PIC.X.production.o
-__ptext2 AC6 0 CODE 0 text2 dist/default/production\MCU_PIC.X.production.o
-__ptext3 84A 0 CODE 0 text3 dist/default/production\MCU_PIC.X.production.o
-__ptext4 6BE 0 CODE 0 text4 dist/default/production\MCU_PIC.X.production.o
-__ptext5 A0C 0 CODE 0 text5 dist/default/production\MCU_PIC.X.production.o
-__ptext6 B0A 0 CODE 0 text6 dist/default/production\MCU_PIC.X.production.o
-__ptext7 A56 0 CODE 0 text7 dist/default/production\MCU_PIC.X.production.o
-__ptext8 510 0 CODE 0 text8 dist/default/production\MCU_PIC.X.production.o
-__ptext9 A9A 0 CODE 0 text9 dist/default/production\MCU_PIC.X.production.o
+__ptext1 7AC 0 CODE 0 text1 dist/default/production\MCU_PIC.X.production.o
+__ptext2 AE6 0 CODE 0 text2 dist/default/production\MCU_PIC.X.production.o
+__ptext3 86A 0 CODE 0 text3 dist/default/production\MCU_PIC.X.production.o
+__ptext4 6DE 0 CODE 0 text4 dist/default/production\MCU_PIC.X.production.o
+__ptext5 A2C 0 CODE 0 text5 dist/default/production\MCU_PIC.X.production.o
+__ptext6 B2A 0 CODE 0 text6 dist/default/production\MCU_PIC.X.production.o
+__ptext7 A76 0 CODE 0 text7 dist/default/production\MCU_PIC.X.production.o
+__ptext8 530 0 CODE 0 text8 dist/default/production\MCU_PIC.X.production.o
+__ptext9 ABA 0 CODE 0 text9 dist/default/production\MCU_PIC.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
-_I2C_Master_Init 8FC 0 CODE 0 text16 dist/default/production\MCU_PIC.X.production.o
-_I2C_Master_Stop B5A 0 CODE 0 text14 dist/default/production\MCU_PIC.X.production.o
-_I2C_Master_Wait AF0 0 CODE 0 text15 dist/default/production\MCU_PIC.X.production.o
+_I2C_Master_Init 91C 0 CODE 0 text16 dist/default/production\MCU_PIC.X.production.o
+_I2C_Master_Stop B7A 0 CODE 0 text14 dist/default/production\MCU_PIC.X.production.o
+_I2C_Master_Wait B10 0 CODE 0 text15 dist/default/production\MCU_PIC.X.production.o
 UARTSendChar@c 72 0 COMMON 1 cstackCOMMON dist/default/production\MCU_PIC.X.production.o
 __size_of_UARTInit 0 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
-__end_of_intToString 84A 0 CODE 0 text1 dist/default/production\MCU_PIC.X.production.o
+__end_of_intToString 86A 0 CODE 0 text1 dist/default/production\MCU_PIC.X.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec -
 _Axenvio 2C 0 BANK0 1 bssBANK0 dist/default/production\MCU_PIC.X.production.o
 _Ayenvio 2A 0 BANK0 1 bssBANK0 dist/default/production\MCU_PIC.X.production.o
@@ -571,8 +578,8 @@ _TXSTAbits 98 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 _SSPCON2 91 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 _SSPSTAT 94 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 __Hend_init 1E 0 CODE 0 end_init -
-__end_of_main 510 0 CODE 0 maintext dist/default/production\MCU_PIC.X.production.o
-__end_of_Setup A9A 0 CODE 0 text7 dist/default/production\MCU_PIC.X.production.o
+__end_of_main 530 0 CODE 0 maintext dist/default/production\MCU_PIC.X.production.o
+__end_of_Setup ABA 0 CODE 0 text7 dist/default/production\MCU_PIC.X.production.o
 _ACKDT 48D 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 _ACKEN 48C 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
@@ -582,22 +589,22 @@ _RCREG 1A 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 _SPBRG 99 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 _SSPIE 463 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 _SSPIF 63 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
-_Setup A56 0 CODE 0 text7 dist/default/production\MCU_PIC.X.production.o
+_Setup A76 0 CODE 0 text7 dist/default/production\MCU_PIC.X.production.o
 _TRISA 85 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 _TRISC 87 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 _TXREG 19 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 interrupt_function 8 0 CODE 0 intentry dist/default/production\MCU_PIC.X.production.o
-_UARTInit 510 0 CODE 0 text8 dist/default/production\MCU_PIC.X.production.o
+_UARTInit 530 0 CODE 0 text8 dist/default/production\MCU_PIC.X.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production\MCU_PIC.X.production.o
 __size_of_ISR 0 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 UARTInit@baud_rate 41 0 BANK0 1 cstackBANK0 dist/default/production\MCU_PIC.X.production.o
 __initialization 1E 0 CODE 0 cinit dist/default/production\MCU_PIC.X.production.o
 ___bmul@product 74 0 COMMON 1 cstackCOMMON dist/default/production\MCU_PIC.X.production.o
 __pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/production\MCU_PIC.X.production.o
-__end_of_UARTInit 5EE 0 CODE 0 text8 dist/default/production\MCU_PIC.X.production.o
-__pstrings 96C 0 STRING 0 strings dist/default/production\MCU_PIC.X.production.o
+__end_of_UARTInit 60E 0 CODE 0 text8 dist/default/production\MCU_PIC.X.production.o
+__pstrings 98C 0 STRING 0 strings dist/default/production\MCU_PIC.X.production.o
 __size_of_I2C_Master_Init 0 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 __size_of_I2C_Master_Stop 0 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
 __size_of_I2C_Master_Wait 0 0 ABS 0 - dist/default/production\MCU_PIC.X.production.o
@@ -626,12 +633,12 @@ __size_of_I2C_Master_Wait 0 0 ABS 0 - dist/default/production\MCU_PIC.X.producti
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-text11 0 4DF 9BE E6 2
+text11 0 4EF 9DE E6 2
 cstackCOMMON 1 70 70 B 1
-intentry 0 4 8 4B2 2
+intentry 0 4 8 4C2 2
 reset_vec 0 0 0 3 2
 bssBANK0 1 20 20 2E 1
-strings 0 4B6 96C 29 2
+strings 0 4C6 98C 29 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal

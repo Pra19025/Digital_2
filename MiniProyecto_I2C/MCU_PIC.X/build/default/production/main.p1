@@ -375,19 +375,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 58: 
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "59
-[; ;main.c: 59: 
+[; ;main.c: 59:         Axenvio = 0;
 [e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
 "61
-[; ;main.c: 61: 
+[; ;main.c: 61:         Azenvio = 0;
 [e ( _I2C_Start (1 -> -> 208 `i `uc ]
 "62
-[; ;main.c: 62: 
+[; ;main.c: 62:         Gxenvio = 0;
 [e ( _I2C_Master_Write (1 -> -> 25 `i `ui ]
 "63
-[; ;main.c: 63: 
+[; ;main.c: 63:         Gyenvio = 0;
 [e ( _I2C_Master_Write (1 -> -> 7 `i `ui ]
 "64
-[; ;main.c: 64: 
+[; ;main.c: 64:         Gzenvio = 0;
 [e ( _I2C_Master_Stop ..  ]
 "67
 [; ;main.c: 67: 
@@ -437,8 +437,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 "88
 [; ;main.c: 88:         Ayenvio = intToString(Ay);
 [e ( _I2C_Master_Stop ..  ]
+"90
+[; ;main.c: 90:         Gxenvio = intToString(Gx);
+[e = _Axenvio -> 0 `i ]
 "91
 [; ;main.c: 91:         Gyenvio = intToString(Gy);
+[e = _Ayenvio -> 0 `i ]
+"92
+[; ;main.c: 92:         Gzenvio = intToString(Gz);
+[e = _Azenvio -> 0 `i ]
+"93
+[; ;main.c: 93:         Tenvio = intToString(T);
+[e = _Gxenvio -> 0 `i ]
+"94
+[; ;main.c: 94: 
+[e = _Gyenvio -> 0 `i ]
+"95
+[; ;main.c: 95:         UARTSendString("Ax ");
+[e = _Gzenvio -> 0 `i ]
+"96
+[; ;main.c: 96:         UARTSendString(Axenvio);
+[e = _Tenvio -> 0 `i ]
+"97
+[; ;main.c: 97:         UARTSendString(" Ay ");
 [e :U 141 ]
 {
 "99
