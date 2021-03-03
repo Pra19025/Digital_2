@@ -12,6 +12,7 @@
 #include "UART.h"
 #include "GY-521.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 // CONFIG1
 #pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN)
@@ -36,12 +37,14 @@
 
 int Ax, Ay, Az, Gx, Gy, Gz, T;
 
-char buf[40];
+char buf[50];
+char valores[14];
+
+
 //***********************************************************************************************************************************************
 // Prototipos de funciones
 //**********************************************************************************************************************************************
 void Setup(void);
-char *intToString(uint8_t value);
 //**************************************************************
 // Vector de interrupción
 //**************************************************************
@@ -60,15 +63,16 @@ void main(void) {
     __delay_ms(100);
     I2C_Master_Init(100000); // 100kHz
     // frecuencia de revision de datos (sample rate)
-    I2C_Start(0xD0);
-    I2C_Master_Write(0x19); //SMPLRT_DIV
-    I2C_Master_Write(0x07);
-    I2C_Master_Stop();
 
     // fuente del reloj
     I2C_Start(0xD0);
-    I2C_Master_Write(0x6B); //PWR_MGMT
+    I2C_Master_Write(0x6B); //PWR_MGMT  
     I2C_Master_Write(0x01); //se escoge el reloj del giroscopio 8MHz
+    I2C_Master_Stop();
+
+    I2C_Start(0xD0);
+    I2C_Master_Write(0x19); //SMPLRT_DIV
+    I2C_Master_Write(0x08);
     I2C_Master_Stop();
 
     // digital low pass filterx
@@ -77,41 +81,59 @@ void main(void) {
     I2C_Master_Write(0x00); //no es necesario sincronizar
     I2C_Master_Stop();
 
-    // Configuracion del acelerómetro
-    I2C_Start(0xD0);
-    I2C_Master_Write(0x1C);
-    I2C_Master_Write(0x00); //+-2g
-    I2C_Master_Stop();
-
     // Configuración del  giroscopio 
     I2C_Start(0xD0);
     I2C_Master_Write(0x1B); //direccion de gyro_config
     I2C_Master_Write(0x18); // +-2000
     I2C_Master_Stop();
 
-    
+    // Configuracion del acelerómetro
+    I2C_Start(0xD0);
+    I2C_Master_Write(0x1C);
+    I2C_Master_Write(0x00); //+-2g
+    I2C_Master_Stop();
+
+    //deshabilitar interrupciones 
+    I2C_Start(0xD0);
+    I2C_Master_Write(0x38);
+    I2C_Master_Write(0x00);
+    I2C_Master_Stop();
+
     while (1) {
 
         PORTAbits.RA0 = ~PORTAbits.RA0; // Blink LED     
         //GY_Read();
-        __delay_ms(50);
+        __delay_ms(100);
 
         I2C_Start(0xD0);
         I2C_Master_Write(0x3B); //es la direccion del ax out H
-        I2C_Master_Stop();
-        I2C_Start(0xD1); //para leer
+        //I2C_Master_Stop();
+        I2C_Master_RepeatedStart();
+        // I2C_Start(0xD1); //para leer
+        I2C_Master_Write(0xD1);
+        //        Ax = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
+        //        Ay = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
+        //        Az = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
+        //        T = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
+        //        Gx = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
+        //        Gy = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
+        //        Gz = ((int) I2C_Read(0) << 8) | (int) I2C_Read(1);
 
-        Ax = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
-        I2C_Master_Wait();
-        Ay = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
-        Az = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
-        T = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
-        Gx = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
-        Gy = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
-        Gz = ((int) I2C_Read(0) << 8) | (int) I2C_Read(1);
-
+        for (int i = 0; i < 13; i++) valores[i] = I2C_Read(0);
+        valores[13] = I2C_Read(1);
         I2C_Master_Stop();
-        sprintf(buf, "Ax = %d    ", Ax);    // lo del porcentaje indica que se debe imprimir como decimal 
+
+        Ax = ((int) valores[0] << 8) | ((int) valores[1]);
+        Ay = ((int) valores[2] << 8) | ((int) valores[3]);
+        Az = ((int) valores[4] << 8) | ((int) valores[5]);
+        T = ((int) valores[6] << 8) | ((int) valores[7]);
+        Gx = ((int) valores[8] << 8) | ((int) valores[9]);
+        Gy = ((int) valores[10] << 8) | ((int) valores[11]);
+        Gz = ((int) valores[12] << 8) | ((int) valores[13]);
+
+
+
+        sprintf(buf, "Ax = %d    ", Ax); // lo del porcentaje indica que se debe imprimir como decimal 
         UARTSendString(buf);
 
         sprintf(buf, " Ay = %d    ", Ay);
@@ -131,6 +153,7 @@ void main(void) {
 
         sprintf(buf, " Gz = %d\r\n", Gz);
         UARTSendString(buf);
+
 
 
     }
@@ -158,21 +181,4 @@ void Setup(void) {
 
 
     return;
-}
-
-char* intToString(uint8_t value) {
-    char valor[4];
-
-    uint8_t entero = value / 100; // solo se dejan las centenas
-    valor[0] = entero + 48;
-
-    value = value - (100 * entero); // se quitan las centenas
-
-    valor[1] = value / 10 + 48; // se dejan las decenas
-    valor[2] = value % 10 + 48; // quedan solo las unidades 
-    valor[3] = '\0'; // final
-
-    return valor; //se regresa la cadena, es decir un string
-
-
 }

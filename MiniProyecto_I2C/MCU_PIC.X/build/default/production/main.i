@@ -2833,6 +2833,91 @@ extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 # 14 "main.c" 2
 
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdlib.h" 1 3
+
+
+
+
+
+
+typedef unsigned short wchar_t;
+
+
+
+
+
+
+
+typedef struct {
+ int rem;
+ int quot;
+} div_t;
+typedef struct {
+ unsigned rem;
+ unsigned quot;
+} udiv_t;
+typedef struct {
+ long quot;
+ long rem;
+} ldiv_t;
+typedef struct {
+ unsigned long quot;
+ unsigned long rem;
+} uldiv_t;
+# 65 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdlib.h" 3
+extern double atof(const char *);
+extern double strtod(const char *, const char **);
+extern int atoi(const char *);
+extern unsigned xtoi(const char *);
+extern long atol(const char *);
+
+
+
+extern long strtol(const char *, char **, int);
+
+extern int rand(void);
+extern void srand(unsigned int);
+extern void * calloc(size_t, size_t);
+extern div_t div(int numer, int denom);
+extern udiv_t udiv(unsigned numer, unsigned denom);
+extern ldiv_t ldiv(long numer, long denom);
+extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+
+
+
+extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+extern unsigned int _rotl(unsigned int value, unsigned int shift);
+extern unsigned int _rotr(unsigned int value, unsigned int shift);
+
+
+
+
+extern void * malloc(size_t);
+extern void free(void *);
+extern void * realloc(void *, size_t);
+# 104 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdlib.h" 3
+extern int atexit(void (*)(void));
+extern char * getenv(const char *);
+extern char ** environ;
+extern int system(char *);
+extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+extern int abs(int);
+extern long labs(long);
+
+extern char * itoa(char * buf, int val, int base);
+extern char * utoa(char * buf, unsigned val, int base);
+
+
+
+
+extern char * ltoa(char * buf, long val, int base);
+extern char * ultoa(char * buf, unsigned long val, int base);
+
+extern char * ftoa(float f, int * status);
+# 15 "main.c" 2
+
 
 
 #pragma config FOSC = INTRC_NOCLKOUT
@@ -2857,12 +2942,14 @@ extern int printf(const char *, ...);
 
 int Ax, Ay, Az, Gx, Gy, Gz, T;
 
-char buf[40];
+char buf[50];
+char valores[14];
+
+
 
 
 
 void Setup(void);
-char *intToString(uint8_t value);
 
 
 
@@ -2881,15 +2968,16 @@ void main(void) {
     _delay((unsigned long)((100)*(4000000/4000.0)));
     I2C_Master_Init(100000);
 
-    I2C_Start(0xD0);
-    I2C_Master_Write(0x19);
-    I2C_Master_Write(0x07);
-    I2C_Master_Stop();
 
 
     I2C_Start(0xD0);
     I2C_Master_Write(0x6B);
     I2C_Master_Write(0x01);
+    I2C_Master_Stop();
+
+    I2C_Start(0xD0);
+    I2C_Master_Write(0x19);
+    I2C_Master_Write(0x08);
     I2C_Master_Stop();
 
 
@@ -2900,38 +2988,49 @@ void main(void) {
 
 
     I2C_Start(0xD0);
+    I2C_Master_Write(0x1B);
+    I2C_Master_Write(0x18);
+    I2C_Master_Stop();
+
+
+    I2C_Start(0xD0);
     I2C_Master_Write(0x1C);
     I2C_Master_Write(0x00);
     I2C_Master_Stop();
 
 
     I2C_Start(0xD0);
-    I2C_Master_Write(0x1B);
-    I2C_Master_Write(0x18);
+    I2C_Master_Write(0x38);
+    I2C_Master_Write(0x00);
     I2C_Master_Stop();
-
 
     while (1) {
 
         PORTAbits.RA0 = ~PORTAbits.RA0;
 
-        _delay((unsigned long)((50)*(4000000/4000.0)));
+        _delay((unsigned long)((100)*(4000000/4000.0)));
 
         I2C_Start(0xD0);
         I2C_Master_Write(0x3B);
-        I2C_Master_Stop();
-        I2C_Start(0xD1);
 
-        Ax = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
-        I2C_Master_Wait();
-        Ay = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
-        Az = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
-        T = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
-        Gx = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
-        Gy = ((int) I2C_Read(0) << 8) | (int) I2C_Read(0);
-        Gz = ((int) I2C_Read(0) << 8) | (int) I2C_Read(1);
+        I2C_Master_RepeatedStart();
 
+        I2C_Master_Write(0xD1);
+# 122 "main.c"
+        for (int i = 0; i < 13; i++) valores[i] = I2C_Read(0);
+        valores[13] = I2C_Read(1);
         I2C_Master_Stop();
+
+        Ax = ((int) valores[0] << 8) | ((int) valores[1]);
+        Ay = ((int) valores[2] << 8) | ((int) valores[3]);
+        Az = ((int) valores[4] << 8) | ((int) valores[5]);
+        T = ((int) valores[6] << 8) | ((int) valores[7]);
+        Gx = ((int) valores[8] << 8) | ((int) valores[9]);
+        Gy = ((int) valores[10] << 8) | ((int) valores[11]);
+        Gz = ((int) valores[12] << 8) | ((int) valores[13]);
+
+
+
         sprintf(buf, "Ax = %d    ", Ax);
         UARTSendString(buf);
 
@@ -2952,6 +3051,7 @@ void main(void) {
 
         sprintf(buf, " Gz = %d\r\n", Gz);
         UARTSendString(buf);
+
 
 
     }
@@ -2979,21 +3079,4 @@ void Setup(void) {
 
 
     return;
-}
-
-char* intToString(uint8_t value) {
-    char valor[4];
-
-    uint8_t entero = value / 100;
-    valor[0] = entero + 48;
-
-    value = value - (100 * entero);
-
-    valor[1] = value / 10 + 48;
-    valor[2] = value % 10 + 48;
-    valor[3] = '\0';
-
-    return valor;
-
-
 }
