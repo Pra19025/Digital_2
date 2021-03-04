@@ -2727,9 +2727,200 @@ char UARTReadChar();
 uint8_t UARTReadString(char *buf, uint8_t max_length);
 # 14 "GY-521.c" 2
 
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 1 3
+
+
+
+# 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\__size_t.h" 1 3
+
+
+
+typedef unsigned size_t;
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 2 3
+
+# 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\__null.h" 1 3
+# 5 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 2 3
+
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdarg.h" 1 3
+
+
+
+
+
+
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+# 11 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 2 3
+# 43 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 3
+struct __prbuf
+{
+ char * ptr;
+ void (* func)(char);
+};
+# 85 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\conio.h" 1 3
+
+
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\errno.h" 1 3
+# 29 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\errno.h" 3
+extern int errno;
+# 8 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\conio.h" 2 3
+
+
+
+
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+
+
+extern char * cgets(char *);
+extern void cputs(const char *);
+# 85 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 2 3
+
+
+
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+# 180 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 3
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+# 15 "GY-521.c" 2
+
 
 void GY_init(void) {
-# 96 "GY-521.c"
+
+
+
+
+
+
+    I2C_Start(0xD0);
+    I2C_Master_Write(0x6B);
+    I2C_Master_Write(0x01);
+    I2C_Master_Stop();
+
+    I2C_Start(0xD0);
+    I2C_Master_Write(0x19);
+    I2C_Master_Write(0x08);
+    I2C_Master_Stop();
+
+
+    I2C_Start(0xD0);
+    I2C_Master_Write(0x1A);
+    I2C_Master_Write(0x00);
+    I2C_Master_Stop();
+
+
+    I2C_Start(0xD0);
+    I2C_Master_Write(0x1B);
+    I2C_Master_Write(0x18);
+    I2C_Master_Stop();
+
+
+    I2C_Start(0xD0);
+    I2C_Master_Write(0x1C);
+    I2C_Master_Write(0x00);
+    I2C_Master_Stop();
+
+
+    I2C_Start(0xD0);
+    I2C_Master_Write(0x38);
+    I2C_Master_Write(0x00);
+    I2C_Master_Stop();
+
+    return;
+}
+
+void GY_Read(void) {
+
+
+    int Ax, Ay, Az, Gx, Gy, Gz, T;
+    char buf[50];
+    char valores[14];
+
+    I2C_Start(0xD0);
+    I2C_Master_Write(0x3B);
+
+    I2C_Master_RepeatedStart();
+
+    I2C_Master_Write(0xD1);
+# 82 "GY-521.c"
+    for (int i = 0; i < 13; i++) valores[i] = I2C_Read(0);
+    valores[13] = I2C_Read(1);
+    I2C_Master_Stop();
+
+    Ax = ((int) valores[0] << 8) | ((int) valores[1]);
+    Ay = ((int) valores[2] << 8) | ((int) valores[3]);
+    Az = ((int) valores[4] << 8) | ((int) valores[5]);
+    T = ((int) valores[6] << 8) | ((int) valores[7]);
+    Gx = ((int) valores[8] << 8) | ((int) valores[9]);
+    Gy = ((int) valores[10] << 8) | ((int) valores[11]);
+    Gz = ((int) valores[12] << 8) | ((int) valores[13]);
+
+
+
+    sprintf(buf, "Ax = %d    ", Ax);
+    UARTSendString(buf);
+
+    sprintf(buf, " Ay = %d    ", Ay);
+    UARTSendString(buf);
+
+    sprintf(buf, " Az = %d    ", Az);
+    UARTSendString(buf);
+
+    sprintf(buf, " T = %d  ", T);
+    UARTSendString(buf);
+
+    sprintf(buf, " Gx = %d    ", Gx);
+    UARTSendString(buf);
+
+    sprintf(buf, " Gy = %d    ", Gy);
+    UARTSendString(buf);
+
+    sprintf(buf, " Gz = %d\r\n", Gz);
+    UARTSendString(buf);
+
+
     return;
 
 }

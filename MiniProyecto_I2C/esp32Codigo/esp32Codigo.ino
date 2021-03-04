@@ -1,37 +1,25 @@
-// Adafruit IO Publish Example
-//
-// Adafruit invests time and resources providing this open source code.
-// Please support Adafruit and open source hardware by purchasing
-// products from Adafruit!
-//
-// Written by Todd Treece for Adafruit Industries
-// Copyright (c) 2016 Adafruit Industries
-// Licensed under the MIT license.
-//
-// All text above must be included in any redistribution.
 
-/************************** Configuration ***********************************/
-
-// edit the config.h tab and enter your Adafruit IO credentials
-// and any additional configuration needed for WiFi, cellular,
-// or ethernet clients.
 #include "config.h"
 
-/************************ Example Starts Here *******************************/
+String variable = "";
+float ax, ay, az;
 
-// this int will hold the current count for our sketch
-String variable;
+#define IO_LOOP_DELAY 6000
+unsigned long lastUpdate = 0;
 
-// set up the 'counter' feed
-AdafruitIO_Feed *Miniproyecto = io.feed("Miniproyecto");
+AdafruitIO_Feed *Ax = io.feed("Ax");
+
+AdafruitIO_Feed *Ay = io.feed("Ay");
+
+AdafruitIO_Feed *Az = io.feed("Az");
+
+
 
 void setup() {
 
-  // start the serial connection
   Serial.begin(9600);
 
-  // wait for serial monitor to open
-  while(! Serial);
+  while (! Serial);
 
   Serial.print("Connecting to Adafruit IO");
 
@@ -39,7 +27,7 @@ void setup() {
   io.connect();
 
   // wait for a connection
-  while(io.status() < AIO_CONNECTED) {
+  while (io.status() < AIO_CONNECTED) {
     Serial.print(".");
     delay(500);
   }
@@ -51,28 +39,39 @@ void setup() {
 }
 
 void loop() {
-
-  // io.run(); is required for all sketches.
-  // it should always be present at the top of your loop
-  // function. it keeps the client connected to
-  // io.adafruit.com, and processes any incoming data.
   io.run();
-  
+
   Serial.println("1");
-  // save count to the 'counter' feed on Adafruit IO
-  variable = Serial.readString();
-  Miniproyecto->save(variable);
 
-  // increment the count by 1
-  
+  while (Serial.available()) {
+
+    char entrante = Serial2.read();
+    if ( entrante != '\n') variable.concat(entrante);
+    else {
+      Serial.println(variable);
+      ax = (variable.substring(0, 7)).toFloat();
+      ay = (variable.substring(7, 14)).toFloat();
+      Serial.println(variable.substring(14, 21));
+      az = (variable.substring(14, 21)).toFloat();
+      variable = "";
+
+      if (millis() > (lastUpdate + IO_LOOP_DELAY)) {
+
+        Serial.print("sending -> ");
+        Serial.println(ax);
+        Ax->save(ax);
+        Serial.print("sending -> ");
+        Serial.println(ay);
+        Ay->save(ay);
+        Serial.print("sending -> ");
+        Serial.println(az);
+        Az->save(az);
 
 
- 
-  
+        // after publishing, store the current time
+        lastUpdate = millis();
+      }
 
-  // Adafruit IO is rate limited for publishing, so a delay is required in
-  // between feed->save events. In this example, we will wait three seconds
-  // (1000 milliseconds == 1 second) during each loop.
-  delay(3000);
-
+    }
+  }
 }

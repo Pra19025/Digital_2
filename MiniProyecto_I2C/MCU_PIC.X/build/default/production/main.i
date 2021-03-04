@@ -2934,21 +2934,7 @@ extern char * ftoa(float f, int * status);
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
-
-
-
-
-
-
-int Ax, Ay, Az, Gx, Gy, Gz, T;
-
-char buf[50];
-char valores[14];
-
-
-
-
-
+# 42 "main.c"
 void Setup(void);
 
 
@@ -2969,88 +2955,15 @@ void main(void) {
     I2C_Master_Init(100000);
 
 
+    GY_init();
 
-    I2C_Start(0xD0);
-    I2C_Master_Write(0x6B);
-    I2C_Master_Write(0x01);
-    I2C_Master_Stop();
-
-    I2C_Start(0xD0);
-    I2C_Master_Write(0x19);
-    I2C_Master_Write(0x08);
-    I2C_Master_Stop();
-
-
-    I2C_Start(0xD0);
-    I2C_Master_Write(0x1A);
-    I2C_Master_Write(0x00);
-    I2C_Master_Stop();
-
-
-    I2C_Start(0xD0);
-    I2C_Master_Write(0x1B);
-    I2C_Master_Write(0x18);
-    I2C_Master_Stop();
-
-
-    I2C_Start(0xD0);
-    I2C_Master_Write(0x1C);
-    I2C_Master_Write(0x00);
-    I2C_Master_Stop();
-
-
-    I2C_Start(0xD0);
-    I2C_Master_Write(0x38);
-    I2C_Master_Write(0x00);
-    I2C_Master_Stop();
 
     while (1) {
 
         PORTAbits.RA0 = ~PORTAbits.RA0;
+        GY_Read();
+        _delay((unsigned long)((1000)*(4000000/4000.0)));
 
-        _delay((unsigned long)((100)*(4000000/4000.0)));
-
-        I2C_Start(0xD0);
-        I2C_Master_Write(0x3B);
-
-        I2C_Master_RepeatedStart();
-
-        I2C_Master_Write(0xD1);
-# 122 "main.c"
-        for (int i = 0; i < 13; i++) valores[i] = I2C_Read(0);
-        valores[13] = I2C_Read(1);
-        I2C_Master_Stop();
-
-        Ax = ((int) valores[0] << 8) | ((int) valores[1]);
-        Ay = ((int) valores[2] << 8) | ((int) valores[3]);
-        Az = ((int) valores[4] << 8) | ((int) valores[5]);
-        T = ((int) valores[6] << 8) | ((int) valores[7]);
-        Gx = ((int) valores[8] << 8) | ((int) valores[9]);
-        Gy = ((int) valores[10] << 8) | ((int) valores[11]);
-        Gz = ((int) valores[12] << 8) | ((int) valores[13]);
-
-
-
-        sprintf(buf, "Ax = %d    ", Ax);
-        UARTSendString(buf);
-
-        sprintf(buf, " Ay = %d    ", Ay);
-        UARTSendString(buf);
-
-        sprintf(buf, " Az = %d    ", Az);
-        UARTSendString(buf);
-
-        sprintf(buf, " T = %d  ", T);
-        UARTSendString(buf);
-
-        sprintf(buf, " Gx = %d    ", Gx);
-        UARTSendString(buf);
-
-        sprintf(buf, " Gy = %d    ", Gy);
-        UARTSendString(buf);
-
-        sprintf(buf, " Gz = %d\r\n", Gz);
-        UARTSendString(buf);
 
 
 
@@ -3071,7 +2984,6 @@ void Setup(void) {
     PORTC = 0;
     ANSEL = 0;
     ANSELH = 0;
-
 
 
 
