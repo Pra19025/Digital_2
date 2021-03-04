@@ -66,7 +66,7 @@ void main(void) {
 
         PORTAbits.RA0 = ~PORTAbits.RA0; // Blink LED     
         GY_Read();
-        __delay_ms(1000);
+        __delay_ms(500);
 
 
 
