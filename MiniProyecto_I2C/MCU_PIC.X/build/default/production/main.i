@@ -14,7 +14,6 @@
 
 
 
-
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2495,7 +2494,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 9 "main.c" 2
+# 8 "main.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
@@ -2630,76 +2629,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 10 "main.c" 2
-
-# 1 "./I2C.h" 1
-# 13 "./I2C.h"
-void I2C_Master_Init();
-void I2C_Master_Wait();
-void I2C_Master_Start();
-void I2C_Start(char add);
-void I2C_Master_RepeatedStart();
-void I2C_Master_Stop();
-void I2C_ACK();
-void I2C_NACK();
-unsigned char I2C_Master_Write(unsigned char data);
-unsigned char I2C_Read_Byte();
-unsigned char I2C_Read(unsigned char);
-# 11 "main.c" 2
-
-# 1 "./UART.h" 1
-# 16 "./UART.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
-# 16 "./UART.h" 2
-# 31 "./UART.h"
-void UARTInit(const uint32_t baud_rate, const uint8_t BRGH);
-
-
-
-
-
-void UARTSendChar(const char c);
-
-
-
-
-
-
-void UARTSendString(const char* str, const uint8_t max_length);
-
-
-
-
-
-uint8_t UARTDataReady();
-
-
-
-
-
-char UARTReadChar();
-
-
-
-
-
-
-
-uint8_t UARTReadString(char *buf, uint8_t max_length);
-# 12 "main.c" 2
-
-# 1 "./GY-521.h" 1
-
-
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
-# 6 "./GY-521.h" 2
-
-void GY_init(void);
-void GY_Read(float*);
-# 13 "main.c" 2
+# 9 "main.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 1 3
 
@@ -2798,7 +2728,7 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 14 "main.c" 2
+# 10 "main.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdlib.h" 1 3
 
@@ -2883,7 +2813,80 @@ extern char * ltoa(char * buf, long val, int base);
 extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
-# 15 "main.c" 2
+# 11 "main.c" 2
+
+# 1 "./I2C.h" 1
+# 17 "./I2C.h"
+void I2C_Master_Init();
+void I2C_Master_Wait();
+void I2C_Master_Start();
+void I2C_Start(char add);
+void I2C_Master_RepeatedStart();
+void I2C_Master_Stop();
+void I2C_ACK();
+void I2C_NACK();
+unsigned char I2C_Master_Write(unsigned char data);
+unsigned char I2C_Read_Byte();
+unsigned char I2C_Read(unsigned char);
+# 12 "main.c" 2
+
+# 1 "./UART.h" 1
+# 16 "./UART.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
+# 16 "./UART.h" 2
+# 31 "./UART.h"
+void UARTInit(const uint32_t baud_rate, const uint8_t BRGH);
+
+
+
+
+
+void UARTSendChar(const char c);
+
+
+
+
+
+
+void UARTSendString(const char* str, const uint8_t max_length);
+
+
+
+
+
+uint8_t UARTDataReady();
+
+
+
+
+
+char UARTReadChar();
+
+
+
+
+
+
+
+uint8_t UARTReadString(char *buf, uint8_t max_length);
+# 13 "main.c" 2
+
+# 1 "./GY-521.h" 1
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
+# 6 "./GY-521.h" 2
+
+
+
+
+
+void GY_init(void);
+void GY_read(float*);
+# 14 "main.c" 2
 
 
 
@@ -2906,9 +2909,10 @@ extern char * ftoa(float f, int * status);
 
 
 
+
+char* buffer;
 int status;
 float datos[7];
-char *buffer;
 
 
 
@@ -2917,24 +2921,42 @@ void Setup(void);
 
 
 
+
 void __attribute__((picinterrupt(("")))) ISR(void) {
+
+    if (PIR1bits.RCIF) {
+        char entrante = RCREG;
+        switch (entrante) {
+            case 'A':
+                PORTAbits.RA0 = 1;
+                break;
+            case 'B':
+                PORTAbits.RA0 = 0;
+                break;
+            case 'C':
+                PORTAbits.RA1 = 1;
+                break;
+            case 'D':
+                PORTAbits.RA1 = 0;
+            default:
+                break;
+        }
+    }
 
 
 }
 
 void main(void) {
-    Setup();
-
     _delay((unsigned long)((1000)*(4000000/4000.0)));
-    I2C_Master_Init(100000);
+    Setup();
+    I2C_Master_Init();
     UARTInit(9600, 1);
     GY_init();
 
 
+
     while (1) {
-
-         GY_Read(datos);
-
+        GY_read(datos);
 
 
         buffer = ftoa(datos[0], status);
@@ -2964,21 +2986,21 @@ void main(void) {
         UARTSendString(buffer, 6);
 
         UARTSendChar('\n');
-# 136 "main.c"
+
     }
-
-
     return;
 }
 
 void Setup(void) {
 
+    ANSEL = 0;
     TRISA = 0;
     PORTA = 0;
 
-    PORTC = 0;
-    ANSEL = 0;
-    ANSELH = 0;
 
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+    PIE1bits.RCIE = 1;
     return;
+
 }

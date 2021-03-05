@@ -1,18 +1,17 @@
 /*
- * File:   mainMaestro.c
+ * File:   main.c
  * Author: Noel Prado
  *
- * Created on 23 de febrero de 2021, 10:18 AM
+ * Created on 25 de febrero de 2021, 06:58 PM
  */
-
 
 #include <xc.h>
 #include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include "I2C.h"
 #include "UART.h"
 #include "GY-521.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 // CONFIG1
 #pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN)
@@ -31,40 +30,59 @@
 #pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
 
 #define _XTAL_FREQ 4000000
+
 //**********************************************************************************************************************************************
 // Variables
 //***********************************************************************************************************************************************
+char* buffer;
 int status;
 float datos[7];
-char *buffer;
 //***********************************************************************************************************************************************
 // Prototipos de funciones
 //**********************************************************************************************************************************************
 void Setup(void);
+
 //**************************************************************
 // Vector de interrupción
 //**************************************************************
 
 void __interrupt() ISR(void) {
 
+    if (PIR1bits.RCIF) {
+        char entrante = RCREG;
+        switch (entrante) {
+            case 'A':
+                PORTAbits.RA0 = 1;
+                break;
+            case 'B':
+                PORTAbits.RA0 = 0;
+                break;
+            case 'C':
+                PORTAbits.RA1 = 1;
+                break;
+            case 'D':
+                PORTAbits.RA1 = 0;
+            default:
+                break;
+        }
+    }
+
 
 }
 
 void main(void) {
-    Setup();
-
     __delay_ms(1000);
-    I2C_Master_Init(100000); // 100kHz
+    Setup();
+    I2C_Master_Init();
     UARTInit(9600, 1);
     GY_init();
 
 
+
     while (1) {
+        GY_read(datos);
 
-         GY_Read(datos);
 
-
-    
         buffer = ftoa(datos[0], status);
         UARTSendString(buffer, 6); //solo 5 cifras se envian
 
@@ -92,61 +110,22 @@ void main(void) {
         UARTSendString(buffer, 6);
 
         UARTSendChar('\n');
-        
-
-//        PORTAbits.RA0 = ~PORTAbits.RA0; // Blink LED     
-//        GY_Read(datos);
-//
-//        sprintf(buf, "Ax = %d    ", devolver[0]); // lo del porcentaje indica que se debe imprimir como decimal 
-//        UARTSendString(buf);
-//
-//        sprintf(buf, " Ay = %d    ", devolver[1]);
-//        UARTSendString(buf);
-//
-//        sprintf(buf, " Az = %d    ", devolver[2]);
-//        UARTSendString(buf);
-//
-//        sprintf(buf, " T = %d  ", devolver[3]);
-//        UARTSendString(buf);
-//
-//        sprintf(buf, " Gx = %d    ", devolver[4]);
-//        UARTSendString(buf);
-//
-//        sprintf(buf, " Gy = %d    ", devolver[5]);
-//        UARTSendString(buf);
-//
-//        sprintf(buf, " Gz = %d\r\n", devolver[6]);
-//        UARTSendString(buf);
-        
-//        I2C_Start(0xD0);
-//        I2C_Master_Write(0x6B);
-//        I2C_Master_Stop();
-//        I2C_Start(0xD1);
-        
-       
-//        prueba = I2C_Read(0);
-//        sprintf(buf, "prueba %d ", prueba);
-//        UARTSendString(buf);
-//        I2C_Master_Stop();
-//        __delay_ms(50);
-
-
-
 
     }
-
-
     return;
 }
 
 void Setup(void) {
 
+    ANSEL = 0;
     TRISA = 0;
     PORTA = 0;
-   // TRISC = 0;
-    PORTC = 0;
-    ANSEL = 0;
-    ANSELH = 0;
-
+    
+    // configuracion de la interrupcion 
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+    PIE1bits.RCIE = 1; // se activa
     return;
+
 }
+

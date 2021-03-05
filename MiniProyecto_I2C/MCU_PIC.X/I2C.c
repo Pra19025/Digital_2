@@ -81,7 +81,7 @@ unsigned char I2C_Read_Byte(void)
 }
 
 unsigned char I2C_Read(unsigned char ACK_NACK)
-{  
+{   I2C_Master_Wait();
     //---[ Receive & Return A Byte & Send ACK or NACK ]---
     unsigned char Data;
     RCEN = 1;              
@@ -95,6 +95,3 @@ unsigned char I2C_Read(unsigned char ACK_NACK)
     SSPIF=0;   
     return Data;
 }
-
-
-

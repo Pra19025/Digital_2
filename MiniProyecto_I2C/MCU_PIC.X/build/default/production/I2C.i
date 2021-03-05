@@ -2491,7 +2491,7 @@ extern __bank0 __bit __timeout;
 # 2 "I2C.c" 2
 
 # 1 "./I2C.h" 1
-# 13 "./I2C.h"
+# 17 "./I2C.h"
 void I2C_Master_Init();
 void I2C_Master_Wait();
 void I2C_Master_Start();
@@ -2585,7 +2585,7 @@ unsigned char I2C_Read_Byte(void)
 }
 
 unsigned char I2C_Read(unsigned char ACK_NACK)
-{
+{ I2C_Master_Wait();
 
     unsigned char Data;
     RCEN = 1;

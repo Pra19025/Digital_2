@@ -1,13 +1,14 @@
 
-#ifndef XC_HEADER_TEMPLATE_H
-#define	XC_HEADER_TEMPLATE_H
+#ifndef GY-521_H
+#define	GY-521_H
 
-#include <xc.h> // include processor files - each processor file is guarded.  
+#include <xc.h>
 #include <stdint.h>
+#include "I2C.h"
+/**
+ * configura el sensor para su correcto funcionamiento
+ */
 void GY_init(void);
-void GY_Read(float*);
-//char* intToString(uint8_t value);
+void GY_read(float*);
 
-
-#endif	/* XC_HEADER_TEMPLATE_H */
-
+#endif	/* MPU_6050_H */
