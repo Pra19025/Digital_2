@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.31\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\MCU_PIC.X.production.sym \
   --cmf=dist/default/production\MCU_PIC.X.production.cmf -z -Q16F887 \
-  -oC:\Users\noelp\AppData\Local\Temp\sd3k.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\noelp\AppData\Local\Temp\s1c0.3 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/MCU_PIC.X.production.map -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\noelp\AppData\Local\Temp\sd3k.o \
+  -pfunctab=ENTRY -k C:\Users\noelp\AppData\Local\Temp\s1c0.o \
   dist/default/production\MCU_PIC.X.production.o 
 
 Object code version is 3.11
@@ -28,7 +28,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\noelp\AppData\Local\Temp\sd3k.o
+C:\Users\noelp\AppData\Local\Temp\s1c0.o
                 end_init                              C        C        3        8       0
                 reset_vec                             0        0        3        0       0
                 config                             2007     2007        2        0       4
@@ -576,7 +576,7 @@ __size_of_main                     (abs)        0000
 __size_of_sprintf                  (abs)        0000
 __stringbase                       strings      100F
 __stringtab                        strings      1000
-_buffer                            bssBANK0     006F
+_buf                               bssBANK0     006F
 _datos                             bssBANK1     00A0
 _dpowers                           strings      1010
 _entrada                           bssCOMMON    007A
@@ -960,7 +960,7 @@ Total ram usage:       12 bytes
 
  *************** function _UARTSendString *****************
  Defined at:
-		line 49 in file "UART.c"
+		line 50 in file "UART.c"
  Parameters:    Size  Location     Type
   str             2    4[COMMON] PTR const unsigned char 
 		 -> NULL(0), ftoa@buf(17), STR_6(2), STR_5(2), 
@@ -993,7 +993,7 @@ Total ram usage:        8 bytes
 
  *************** function _UARTSendChar *****************
  Defined at:
-		line 39 in file "UART.c"
+		line 40 in file "UART.c"
  Parameters:    Size  Location     Type
   c               1    wreg     const unsigned char 
  Auto vars:     Size  Location     Type
@@ -1024,7 +1024,7 @@ Total ram usage:        1 bytes
 
  *************** function _UARTInit *****************
  Defined at:
-		line 8 in file "UART.c"
+		line 9 in file "UART.c"
  Parameters:    Size  Location     Type
   baud_rate       4   13[BANK0 ] const unsigned long 
   BRGH            1   17[BANK0 ] const unsigned char 
@@ -1118,7 +1118,7 @@ Total ram usage:        0 bytes
 
  *************** function _I2C_Master_Init *****************
  Defined at:
-		line 9 in file "I2C.c"
+		line 10 in file "I2C.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1366,7 +1366,7 @@ Total ram usage:       20 bytes
 
  *************** function _I2C_Start *****************
  Defined at:
-		line 30 in file "I2C.c"
+		line 31 in file "I2C.c"
  Parameters:    Size  Location     Type
   add             1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1397,7 +1397,7 @@ Total ram usage:        1 bytes
 
  *************** function _I2C_Read *****************
  Defined at:
-		line 83 in file "I2C.c"
+		line 84 in file "I2C.c"
  Parameters:    Size  Location     Type
   ACK_NACK        1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1430,7 +1430,7 @@ Total ram usage:        3 bytes
 
  *************** function _I2C_NACK *****************
  Defined at:
-		line 56 in file "I2C.c"
+		line 57 in file "I2C.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1460,7 +1460,7 @@ Total ram usage:        0 bytes
 
  *************** function _I2C_ACK *****************
  Defined at:
-		line 49 in file "I2C.c"
+		line 50 in file "I2C.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1490,7 +1490,7 @@ Total ram usage:        0 bytes
 
  *************** function _I2C_Master_RepeatedStart *****************
  Defined at:
-		line 37 in file "I2C.c"
+		line 38 in file "I2C.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1552,7 +1552,7 @@ Total ram usage:        0 bytes
 
  *************** function _I2C_Master_Write *****************
  Defined at:
-		line 63 in file "I2C.c"
+		line 64 in file "I2C.c"
  Parameters:    Size  Location     Type
   data            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1584,7 +1584,7 @@ Total ram usage:        1 bytes
 
  *************** function _I2C_Master_Stop *****************
  Defined at:
-		line 43 in file "I2C.c"
+		line 44 in file "I2C.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1615,7 +1615,7 @@ Total ram usage:        0 bytes
 
  *************** function _I2C_Master_Start *****************
  Defined at:
-		line 24 in file "I2C.c"
+		line 25 in file "I2C.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1645,7 +1645,7 @@ Total ram usage:        0 bytes
 
  *************** function _I2C_Master_Wait *****************
  Defined at:
-		line 19 in file "I2C.c"
+		line 20 in file "I2C.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type

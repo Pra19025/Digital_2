@@ -2910,8 +2910,8 @@ void GY_read(float*);
 
 
 
-char* buffer;
-int status;
+char* buf;
+int entero;
 float datos[7];
 char entrada;
 
@@ -2955,31 +2955,31 @@ void main(void) {
         GY_read(datos);
 
 
-        buffer = ftoa(datos[0], status);
-        UARTSendString(buffer, 6);
+        buf = ftoa(datos[0], entero);
+        UARTSendString(buf, 6);
 
-        buffer = ftoa(datos[1], status);
+        buf = ftoa(datos[1], entero);
         UARTSendString(" ", 10);
-        UARTSendString(buffer, 6);
+        UARTSendString(buf, 6);
 
-        buffer = ftoa(datos[2], status);
+        buf = ftoa(datos[2], entero);
         UARTSendString(" ", 10);
-        UARTSendString(buffer, 6);
+        UARTSendString(buf, 6);
 
-        buffer = ftoa(datos[3], status);
+        buf = ftoa(datos[3], entero);
         UARTSendString(" ", 10);
-        UARTSendString(buffer, 6);
+        UARTSendString(buf, 6);
 
-        buffer = ftoa(datos[4], status);
+        buf = ftoa(datos[4], entero);
         UARTSendString(" ", 10);
-        UARTSendString(buffer, 6);
-        buffer = ftoa(datos[5], status);
+        UARTSendString(buf, 6);
+        buf = ftoa(datos[5], entero);
         UARTSendString(" ", 10);
-        UARTSendString(buffer, 6);
+        UARTSendString(buf, 6);
 
-        buffer = ftoa(datos[6], status);
+        buf = ftoa(datos[6], entero);
         UARTSendString(" ", 10);
-        UARTSendString(buffer, 6);
+        UARTSendString(buf, 6);
 
         UARTSendChar('\n');
 
@@ -2997,6 +2997,7 @@ void Setup(void) {
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
     PIE1bits.RCIE = 1;
+
     return;
 
 }

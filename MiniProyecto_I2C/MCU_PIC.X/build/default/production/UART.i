@@ -7,6 +7,7 @@
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "UART.c" 2
+
 # 1 "./UART.h" 1
 # 15 "./UART.h"
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
@@ -2660,7 +2661,7 @@ char UARTReadChar();
 
 
 uint8_t UARTReadString(char *buf, uint8_t max_length);
-# 1 "UART.c" 2
+# 2 "UART.c" 2
 
 
 
@@ -2732,7 +2733,7 @@ char UARTReadChar() {
     while (!UARTDataReady());
     return RCREG;
 }
-# 80 "UART.c"
+# 81 "UART.c"
 uint8_t UARTReadString(char *buf, uint8_t max_length) {
     uint8_t i = 0;
     char tmp = 1;

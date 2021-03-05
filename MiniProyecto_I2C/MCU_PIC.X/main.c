@@ -34,8 +34,8 @@
 //**********************************************************************************************************************************************
 // Variables
 //***********************************************************************************************************************************************
-char* buffer;
-int status;
+char* buf;
+int entero;
 float datos[7];
 char entrada;
 //***********************************************************************************************************************************************
@@ -48,7 +48,7 @@ void Setup(void);
 //**************************************************************
 
 void __interrupt() ISR(void) {
-
+//se utiliza la interrupción para las luces piloto, según la entrada se prende o apagan leds 
     if (PIR1bits.RCIF) {
         entrada = RCREG;
         if (entrada == 'A') {
@@ -68,42 +68,42 @@ void __interrupt() ISR(void) {
 
 void main(void) {
     __delay_ms(1000);
-    Setup();
-    I2C_Master_Init();
-    UARTInit(9600, 1);
-    GY_init();
+    Setup();    //se colocan condiciones iniciales
+    I2C_Master_Init();  //se inicia el i2c
+    UARTInit(9600, 1);//se inicia comunicación UART
+    GY_init();  //se mandan las direcciones para comunicarse y configurar el sensor
 
 
 
     while (1) {
-        GY_read(datos);
+        GY_read(datos); //esta función permite leer los datos qeu el sensor i2c manda
 
-
-        buffer = ftoa(datos[0], status);
-        UARTSendString(buffer, 6);
-
-        buffer = ftoa(datos[1], status);
+        //ftoa permite convertir un número a texto, se usa para poder mandarlo por uart
+        buf = ftoa(datos[0], entero);   //se guarda en un char con cantidad indefinida de datos el float 
+        UARTSendString(buf, 6); //se manda el valor de la aceleración en x por uart, el valor ya fue convertido a decimal por ftoa
+        // en las siguientes lineas se hace lo mismo pero para las diferentes cosas que lee el sensor
+        buf = ftoa(datos[1], entero);
         UARTSendString(" ", 10);
-        UARTSendString(buffer, 6);
+        UARTSendString(buf, 6);
 
-        buffer = ftoa(datos[2], status);
+        buf = ftoa(datos[2], entero);
         UARTSendString(" ", 10);
-        UARTSendString(buffer, 6);
+        UARTSendString(buf, 6);
 
-        buffer = ftoa(datos[3], status);
+        buf = ftoa(datos[3], entero);
         UARTSendString(" ", 10);
-        UARTSendString(buffer, 6);
+        UARTSendString(buf, 6);
 
-        buffer = ftoa(datos[4], status);
+        buf = ftoa(datos[4], entero);
         UARTSendString(" ", 10);
-        UARTSendString(buffer, 6);
-        buffer = ftoa(datos[5], status);
+        UARTSendString(buf, 6);
+        buf = ftoa(datos[5], entero);
         UARTSendString(" ", 10);
-        UARTSendString(buffer, 6);
+        UARTSendString(buf, 6);
 
-        buffer = ftoa(datos[6], status);
+        buf = ftoa(datos[6], entero);
         UARTSendString(" ", 10);
-        UARTSendString(buffer, 6);
+        UARTSendString(buf, 6);
 
         UARTSendChar('\n');
 
@@ -120,7 +120,8 @@ void Setup(void) {
     // configuracion de la interrupcion 
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
-    PIE1bits.RCIE = 1; // se activa
+    PIE1bits.RCIE = 1; // se activa la de recibir 
+    //se usan interrupciones para las luces piloto
     return;
 
 }
