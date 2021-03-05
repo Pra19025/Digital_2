@@ -1,24 +1,33 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"66 ./I2C.h
-[; ;./I2C.h: 66: void I2C_Start(char add);
+"15 ./I2C.h
+[; ;./I2C.h: 15: void I2C_Master_Start();
+[v _I2C_Master_Start `(v ~T0 @X0 0 e? ]
+"21
+[; ;./I2C.h: 21: unsigned char I2C_Master_Write(unsigned char data);
+[v _I2C_Master_Write `(uc ~T0 @X0 0 ef1`uc ]
+"18
+[; ;./I2C.h: 18: void I2C_Master_Stop();
+[v _I2C_Master_Stop `(v ~T0 @X0 0 e? ]
+"16
+[; ;./I2C.h: 16: void I2C_Start(char add);
 [v _I2C_Start `(v ~T0 @X0 0 ef1`uc ]
-"55
-[; ;./I2C.h: 55: void I2C_Master_Write(unsigned d);
-[v _I2C_Master_Write `(v ~T0 @X0 0 ef1`ui ]
-"49
-[; ;./I2C.h: 49: void I2C_Master_Stop(void);
-[v _I2C_Master_Stop `(v ~T0 @X0 0 ef ]
-"45
-[; ;./I2C.h: 45: void I2C_Master_RepeatedStart(void);
-[v _I2C_Master_RepeatedStart `(v ~T0 @X0 0 ef ]
-"67
-[; ;./I2C.h: 67: unsigned char I2C_Read(unsigned char ACK_NACK);
+"1985 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1985:     struct {
+[s S76 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S76 . SEN RSEN PEN RCEN ACKEN ACKDT ACKSTAT GCEN ]
+"1984
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1984: typedef union {
+[u S75 `S76 1 ]
+[n S75 . . ]
+"1996
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1996: extern volatile SSPCON2bits_t SSPCON2bits __attribute__((address(0x091)));
+[v _SSPCON2bits `VS75 ~T0 @X0 0 e@145 ]
+"17 ./I2C.h
+[; ;./I2C.h: 17: void I2C_Master_RepeatedStart();
+[v _I2C_Master_RepeatedStart `(v ~T0 @X0 0 e? ]
+"23
+[; ;./I2C.h: 23: unsigned char I2C_Read(unsigned char);
 [v _I2C_Read `(uc ~T0 @X0 0 ef1`uc ]
-"194 C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdio.h
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"45 ./UART.h
-[; ;./UART.h: 45: void UARTSendString(const char* str);
-[v _UARTSendString `(v ~T0 @X0 0 ef1`*Cuc ]
 "54 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -259,212 +268,219 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _GY_init ]
 [f ]
+"21
+[; ;GY-521.c: 21:     I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"22
+[; ;GY-521.c: 22:     I2C_Master_Write(0xD0);
+[e ( _I2C_Master_Write (1 -> -> 208 `i `uc ]
+"23
+[; ;GY-521.c: 23:     I2C_Master_Write(0x6B);
+[e ( _I2C_Master_Write (1 -> -> 107 `i `uc ]
 "24
-[; ;GY-521.c: 24:     I2C_Start(0xD0);
-[e ( _I2C_Start (1 -> -> 208 `i `uc ]
+[; ;GY-521.c: 24:     I2C_Master_Write(0x01);
+[e ( _I2C_Master_Write (1 -> -> 1 `i `uc ]
 "25
-[; ;GY-521.c: 25:     I2C_Master_Write(0x6B);
-[e ( _I2C_Master_Write (1 -> -> 107 `i `ui ]
-"26
-[; ;GY-521.c: 26:     I2C_Master_Write(0x01);
-[e ( _I2C_Master_Write (1 -> -> 1 `i `ui ]
+[; ;GY-521.c: 25:     I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
 "27
-[; ;GY-521.c: 27:     I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
+[; ;GY-521.c: 27:     I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"28
+[; ;GY-521.c: 28:     I2C_Master_Write(0xD0);
+[e ( _I2C_Master_Write (1 -> -> 208 `i `uc ]
 "29
-[; ;GY-521.c: 29:     I2C_Start(0xD0);
-[e ( _I2C_Start (1 -> -> 208 `i `uc ]
+[; ;GY-521.c: 29:     I2C_Master_Write(0x00);
+[e ( _I2C_Master_Write (1 -> -> 0 `i `uc ]
 "30
-[; ;GY-521.c: 30:     I2C_Master_Write(0x19);
-[e ( _I2C_Master_Write (1 -> -> 25 `i `ui ]
-"31
-[; ;GY-521.c: 31:     I2C_Master_Write(0x08);
-[e ( _I2C_Master_Write (1 -> -> 8 `i `ui ]
-"32
-[; ;GY-521.c: 32:     I2C_Master_Stop();
+[; ;GY-521.c: 30:     I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
+"33
+[; ;GY-521.c: 33:     I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"34
+[; ;GY-521.c: 34:     I2C_Master_Write(0xD0);
+[e ( _I2C_Master_Write (1 -> -> 208 `i `uc ]
 "35
-[; ;GY-521.c: 35:     I2C_Start(0xD0);
-[e ( _I2C_Start (1 -> -> 208 `i `uc ]
+[; ;GY-521.c: 35:     I2C_Master_Write(0x19);
+[e ( _I2C_Master_Write (1 -> -> 25 `i `uc ]
 "36
-[; ;GY-521.c: 36:     I2C_Master_Write(0x1A);
-[e ( _I2C_Master_Write (1 -> -> 26 `i `ui ]
+[; ;GY-521.c: 36:     I2C_Master_Write(0x08);
+[e ( _I2C_Master_Write (1 -> -> 8 `i `uc ]
 "37
-[; ;GY-521.c: 37:     I2C_Master_Write(0x00);
-[e ( _I2C_Master_Write (1 -> -> 0 `i `ui ]
-"38
-[; ;GY-521.c: 38:     I2C_Master_Stop();
+[; ;GY-521.c: 37:     I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
+"39
+[; ;GY-521.c: 39:     I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"40
+[; ;GY-521.c: 40:     I2C_Master_Write(0xD0);
+[e ( _I2C_Master_Write (1 -> -> 208 `i `uc ]
 "41
-[; ;GY-521.c: 41:     I2C_Start(0xD0);
-[e ( _I2C_Start (1 -> -> 208 `i `uc ]
+[; ;GY-521.c: 41:     I2C_Master_Write(0x1A);
+[e ( _I2C_Master_Write (1 -> -> 26 `i `uc ]
 "42
-[; ;GY-521.c: 42:     I2C_Master_Write(0x1B);
-[e ( _I2C_Master_Write (1 -> -> 27 `i `ui ]
+[; ;GY-521.c: 42:     I2C_Master_Write(0x00);
+[e ( _I2C_Master_Write (1 -> -> 0 `i `uc ]
 "43
-[; ;GY-521.c: 43:     I2C_Master_Write(0x18);
-[e ( _I2C_Master_Write (1 -> -> 24 `i `ui ]
-"44
-[; ;GY-521.c: 44:     I2C_Master_Stop();
+[; ;GY-521.c: 43:     I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
+"45
+[; ;GY-521.c: 45:     I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"46
+[; ;GY-521.c: 46:     I2C_Master_Write(0xD0);
+[e ( _I2C_Master_Write (1 -> -> 208 `i `uc ]
 "47
-[; ;GY-521.c: 47:     I2C_Start(0xD0);
-[e ( _I2C_Start (1 -> -> 208 `i `uc ]
+[; ;GY-521.c: 47:     I2C_Master_Write(0x1B);
+[e ( _I2C_Master_Write (1 -> -> 27 `i `uc ]
 "48
-[; ;GY-521.c: 48:     I2C_Master_Write(0x1C);
-[e ( _I2C_Master_Write (1 -> -> 28 `i `ui ]
+[; ;GY-521.c: 48:     I2C_Master_Write(0x00);
+[e ( _I2C_Master_Write (1 -> -> 0 `i `uc ]
 "49
-[; ;GY-521.c: 49:     I2C_Master_Write(0x00);
-[e ( _I2C_Master_Write (1 -> -> 0 `i `ui ]
-"50
-[; ;GY-521.c: 50:     I2C_Master_Stop();
+[; ;GY-521.c: 49:     I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
+"51
+[; ;GY-521.c: 51:     I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"52
+[; ;GY-521.c: 52:     I2C_Master_Write(0xD0);
+[e ( _I2C_Master_Write (1 -> -> 208 `i `uc ]
 "53
-[; ;GY-521.c: 53:     I2C_Start(0xD0);
-[e ( _I2C_Start (1 -> -> 208 `i `uc ]
+[; ;GY-521.c: 53:     I2C_Master_Write(0x1C);
+[e ( _I2C_Master_Write (1 -> -> 28 `i `uc ]
 "54
-[; ;GY-521.c: 54:     I2C_Master_Write(0x38);
-[e ( _I2C_Master_Write (1 -> -> 56 `i `ui ]
+[; ;GY-521.c: 54:     I2C_Master_Write(0x00);
+[e ( _I2C_Master_Write (1 -> -> 0 `i `uc ]
 "55
-[; ;GY-521.c: 55:     I2C_Master_Write(0x00);
-[e ( _I2C_Master_Write (1 -> -> 0 `i `ui ]
-"56
-[; ;GY-521.c: 56:     I2C_Master_Stop();
+[; ;GY-521.c: 55:     I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
-"58
-[; ;GY-521.c: 58:     return;
-[e $UE 139  ]
 "59
-[; ;GY-521.c: 59: }
+[; ;GY-521.c: 59:     I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"60
+[; ;GY-521.c: 60:     I2C_Master_Write(0x68);
+[e ( _I2C_Master_Write (1 -> -> 104 `i `uc ]
+"61
+[; ;GY-521.c: 61:     I2C_Master_Write(0x6C);
+[e ( _I2C_Master_Write (1 -> -> 108 `i `uc ]
+"62
+[; ;GY-521.c: 62:     I2C_Master_Write(0x00);
+[e ( _I2C_Master_Write (1 -> -> 0 `i `uc ]
+"63
+[; ;GY-521.c: 63:     I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"111
+[; ;GY-521.c: 111:     return;
+[e $UE 139  ]
+"112
+[; ;GY-521.c: 112: }
 [e :UE 139 ]
 }
-"61
-[; ;GY-521.c: 61: void GY_Read(void) {
-[v _GY_Read `(v ~T0 @X0 1 ef ]
+"114
+[; ;GY-521.c: 114: void GY_Read(float* datos) {
+[v _GY_Read `(v ~T0 @X0 1 ef1`*f ]
 {
 [e :U _GY_Read ]
+[v _datos `*f ~T0 @X0 1 r1 ]
 [f ]
-"64
-[; ;GY-521.c: 64:     int Ax, Ay, Az, Gx, Gy, Gz, T;
-[v _Ax `i ~T0 @X0 1 a ]
-[v _Ay `i ~T0 @X0 1 a ]
-[v _Az `i ~T0 @X0 1 a ]
-[v _Gx `i ~T0 @X0 1 a ]
-[v _Gy `i ~T0 @X0 1 a ]
-[v _Gz `i ~T0 @X0 1 a ]
-[v _T `i ~T0 @X0 1 a ]
-"65
-[; ;GY-521.c: 65:     char buf[50];
-[v _buf `uc ~T0 @X0 -> 50 `i a ]
-"66
-[; ;GY-521.c: 66:     char valores[14];
+"152
+[; ;GY-521.c: 152:  char valores[14];
 [v _valores `uc ~T0 @X0 -> 14 `i a ]
-"68
-[; ;GY-521.c: 68:     I2C_Start(0xD0);
+"153
+[; ;GY-521.c: 153:     int guardar[7];
+[v _guardar `i ~T0 @X0 -> 7 `i a ]
+"154
+[; ;GY-521.c: 154:     I2C_Start(0xD0);
 [e ( _I2C_Start (1 -> -> 208 `i `uc ]
-"69
-[; ;GY-521.c: 69:     I2C_Master_Write(0x3B);
-[e ( _I2C_Master_Write (1 -> -> 59 `i `ui ]
-"71
-[; ;GY-521.c: 71:     I2C_Master_RepeatedStart();
+"155
+[; ;GY-521.c: 155:     while (SSPCON2bits.ACKSTAT);
+[e $U 141  ]
+[e :U 142 ]
+[e :U 141 ]
+[e $ != -> . . _SSPCON2bits 0 6 `i -> 0 `i 142  ]
+[e :U 143 ]
+"156
+[; ;GY-521.c: 156:     I2C_Master_Write(0x3B);
+[e ( _I2C_Master_Write (1 -> -> 59 `i `uc ]
+"157
+[; ;GY-521.c: 157:     while (SSPCON2bits.ACKSTAT);
+[e $U 144  ]
+[e :U 145 ]
+[e :U 144 ]
+[e $ != -> . . _SSPCON2bits 0 6 `i -> 0 `i 145  ]
+[e :U 146 ]
+"158
+[; ;GY-521.c: 158:     I2C_Master_RepeatedStart();
 [e ( _I2C_Master_RepeatedStart ..  ]
-"73
-[; ;GY-521.c: 73:     I2C_Master_Write(0xD1);
-[e ( _I2C_Master_Write (1 -> -> 209 `i `ui ]
-"82
-[; ;GY-521.c: 82:     for (int i = 0; i < 13; i++) valores[i] = I2C_Read(0);
+"159
+[; ;GY-521.c: 159:     I2C_Master_Write(0xD1);
+[e ( _I2C_Master_Write (1 -> -> 209 `i `uc ]
+"160
+[; ;GY-521.c: 160:     for (int i = 0; i < 13; i++) valores[i] = I2C_Read(0);
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 13 `i 141  ]
-[e $U 142  ]
-[e :U 141 ]
+[e $ < _i -> 13 `i 147  ]
+[e $U 148  ]
+[e :U 147 ]
 [e = *U + &U _valores * -> -> _i `ui `ux -> -> # *U &U _valores `ui `ux -> ( _I2C_Read (1 -> -> 0 `i `uc `uc ]
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 13 `i 141  ]
-[e :U 142 ]
+[e $ < _i -> 13 `i 147  ]
+[e :U 148 ]
 }
-"83
-[; ;GY-521.c: 83:     valores[13] = I2C_Read(1);
+"161
+[; ;GY-521.c: 161:     valores[13] = I2C_Read(1);
 [e = *U + &U _valores * -> -> -> 13 `i `ui `ux -> -> # *U &U _valores `ui `ux -> ( _I2C_Read (1 -> -> 1 `i `uc `uc ]
-"84
-[; ;GY-521.c: 84:     I2C_Master_Stop();
+"162
+[; ;GY-521.c: 162:     I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
-"86
-[; ;GY-521.c: 86:     Ax = ((int) valores[0] << 8) | ((int) valores[1]);
-[e = _Ax | << -> *U + &U _valores * -> -> -> 0 `i `ui `ux -> -> # *U &U _valores `ui `ux `i -> 8 `i -> *U + &U _valores * -> -> -> 1 `i `ui `ux -> -> # *U &U _valores `ui `ux `i ]
-"87
-[; ;GY-521.c: 87:     Ay = ((int) valores[2] << 8) | ((int) valores[3]);
-[e = _Ay | << -> *U + &U _valores * -> -> -> 2 `i `ui `ux -> -> # *U &U _valores `ui `ux `i -> 8 `i -> *U + &U _valores * -> -> -> 3 `i `ui `ux -> -> # *U &U _valores `ui `ux `i ]
-"88
-[; ;GY-521.c: 88:     Az = ((int) valores[4] << 8) | ((int) valores[5]);
-[e = _Az | << -> *U + &U _valores * -> -> -> 4 `i `ui `ux -> -> # *U &U _valores `ui `ux `i -> 8 `i -> *U + &U _valores * -> -> -> 5 `i `ui `ux -> -> # *U &U _valores `ui `ux `i ]
-"89
-[; ;GY-521.c: 89:     T = ((int) valores[6] << 8) | ((int) valores[7]);
-[e = _T | << -> *U + &U _valores * -> -> -> 6 `i `ui `ux -> -> # *U &U _valores `ui `ux `i -> 8 `i -> *U + &U _valores * -> -> -> 7 `i `ui `ux -> -> # *U &U _valores `ui `ux `i ]
-"90
-[; ;GY-521.c: 90:     Gx = ((int) valores[8] << 8) | ((int) valores[9]);
-[e = _Gx | << -> *U + &U _valores * -> -> -> 8 `i `ui `ux -> -> # *U &U _valores `ui `ux `i -> 8 `i -> *U + &U _valores * -> -> -> 9 `i `ui `ux -> -> # *U &U _valores `ui `ux `i ]
-"91
-[; ;GY-521.c: 91:     Gy = ((int) valores[10] << 8) | ((int) valores[11]);
-[e = _Gy | << -> *U + &U _valores * -> -> -> 10 `i `ui `ux -> -> # *U &U _valores `ui `ux `i -> 8 `i -> *U + &U _valores * -> -> -> 11 `i `ui `ux -> -> # *U &U _valores `ui `ux `i ]
-"92
-[; ;GY-521.c: 92:     Gz = ((int) valores[12] << 8) | ((int) valores[13]);
-[e = _Gz | << -> *U + &U _valores * -> -> -> 12 `i `ui `ux -> -> # *U &U _valores `ui `ux `i -> 8 `i -> *U + &U _valores * -> -> -> 13 `i `ui `ux -> -> # *U &U _valores `ui `ux `i ]
-"96
-[; ;GY-521.c: 96:     sprintf(buf, "Ax = %d    ", Ax);
-[e ( _sprintf (1 , (. , &U _buf :s 1C _Ax ]
-"97
-[; ;GY-521.c: 97:     UARTSendString(buf);
-[e ( _UARTSendString (1 -> &U _buf `*Cuc ]
-"99
-[; ;GY-521.c: 99:     sprintf(buf, " Ay = %d    ", Ay);
-[e ( _sprintf (1 , (. , &U _buf :s 2C _Ay ]
-"100
-[; ;GY-521.c: 100:     UARTSendString(buf);
-[e ( _UARTSendString (1 -> &U _buf `*Cuc ]
-"102
-[; ;GY-521.c: 102:     sprintf(buf, " Az = %d    ", Az);
-[e ( _sprintf (1 , (. , &U _buf :s 3C _Az ]
-"103
-[; ;GY-521.c: 103:     UARTSendString(buf);
-[e ( _UARTSendString (1 -> &U _buf `*Cuc ]
-"105
-[; ;GY-521.c: 105:     sprintf(buf, " T = %d  ", T);
-[e ( _sprintf (1 , (. , &U _buf :s 4C _T ]
-"106
-[; ;GY-521.c: 106:     UARTSendString(buf);
-[e ( _UARTSendString (1 -> &U _buf `*Cuc ]
-"108
-[; ;GY-521.c: 108:     sprintf(buf, " Gx = %d    ", Gx);
-[e ( _sprintf (1 , (. , &U _buf :s 5C _Gx ]
-"109
-[; ;GY-521.c: 109:     UARTSendString(buf);
-[e ( _UARTSendString (1 -> &U _buf `*Cuc ]
-"111
-[; ;GY-521.c: 111:     sprintf(buf, " Gy = %d    ", Gy);
-[e ( _sprintf (1 , (. , &U _buf :s 6C _Gy ]
-"112
-[; ;GY-521.c: 112:     UARTSendString(buf);
-[e ( _UARTSendString (1 -> &U _buf `*Cuc ]
-"114
-[; ;GY-521.c: 114:     sprintf(buf, " Gz = %d\r\n", Gz);
-[e ( _sprintf (1 , (. , &U _buf :s 7C _Gz ]
-"115
-[; ;GY-521.c: 115:     UARTSendString(buf);
-[e ( _UARTSendString (1 -> &U _buf `*Cuc ]
-"118
-[; ;GY-521.c: 118:     return;
+"165
+[; ;GY-521.c: 165:     guardar[0] = ((int) valores[0] << 8) | ((int) valores[1]);
+[e = *U + &U _guardar * -> -> -> 0 `i `ui `ux -> -> # *U &U _guardar `ui `ux | << -> *U + &U _valores * -> -> -> 0 `i `ui `ux -> -> # *U &U _valores `ui `ux `i -> 8 `i -> *U + &U _valores * -> -> -> 1 `i `ui `ux -> -> # *U &U _valores `ui `ux `i ]
+"166
+[; ;GY-521.c: 166:     guardar[1] = ((int) valores[2] << 8) | ((int) valores[3]);
+[e = *U + &U _guardar * -> -> -> 1 `i `ui `ux -> -> # *U &U _guardar `ui `ux | << -> *U + &U _valores * -> -> -> 2 `i `ui `ux -> -> # *U &U _valores `ui `ux `i -> 8 `i -> *U + &U _valores * -> -> -> 3 `i `ui `ux -> -> # *U &U _valores `ui `ux `i ]
+"167
+[; ;GY-521.c: 167:     guardar[2] = ((int) valores[4] << 8) | ((int) valores[5]);
+[e = *U + &U _guardar * -> -> -> 2 `i `ui `ux -> -> # *U &U _guardar `ui `ux | << -> *U + &U _valores * -> -> -> 4 `i `ui `ux -> -> # *U &U _valores `ui `ux `i -> 8 `i -> *U + &U _valores * -> -> -> 5 `i `ui `ux -> -> # *U &U _valores `ui `ux `i ]
+"168
+[; ;GY-521.c: 168:     guardar[3] = ((int) valores[6] << 8) | ((int) valores[7]);
+[e = *U + &U _guardar * -> -> -> 3 `i `ui `ux -> -> # *U &U _guardar `ui `ux | << -> *U + &U _valores * -> -> -> 6 `i `ui `ux -> -> # *U &U _valores `ui `ux `i -> 8 `i -> *U + &U _valores * -> -> -> 7 `i `ui `ux -> -> # *U &U _valores `ui `ux `i ]
+"169
+[; ;GY-521.c: 169:     guardar[4] = ((int) valores[8] << 8) | ((int) valores[9]);
+[e = *U + &U _guardar * -> -> -> 4 `i `ui `ux -> -> # *U &U _guardar `ui `ux | << -> *U + &U _valores * -> -> -> 8 `i `ui `ux -> -> # *U &U _valores `ui `ux `i -> 8 `i -> *U + &U _valores * -> -> -> 9 `i `ui `ux -> -> # *U &U _valores `ui `ux `i ]
+"170
+[; ;GY-521.c: 170:     guardar[5] = ((int) valores[10] << 8) | ((int) valores[11]);
+[e = *U + &U _guardar * -> -> -> 5 `i `ui `ux -> -> # *U &U _guardar `ui `ux | << -> *U + &U _valores * -> -> -> 10 `i `ui `ux -> -> # *U &U _valores `ui `ux `i -> 8 `i -> *U + &U _valores * -> -> -> 11 `i `ui `ux -> -> # *U &U _valores `ui `ux `i ]
+"171
+[; ;GY-521.c: 171:     guardar[6] = ((int) valores[12] << 8) | ((int) valores[13]);
+[e = *U + &U _guardar * -> -> -> 6 `i `ui `ux -> -> # *U &U _guardar `ui `ux | << -> *U + &U _valores * -> -> -> 12 `i `ui `ux -> -> # *U &U _valores `ui `ux `i -> 8 `i -> *U + &U _valores * -> -> -> 13 `i `ui `ux -> -> # *U &U _valores `ui `ux `i ]
+"173
+[; ;GY-521.c: 173:     datos[0] = ((float) guardar[0]) * 0.0005982;
+[e = *U + _datos * -> -> 0 `i `x -> -> # *U _datos `i `x -> * -> -> *U + &U _guardar * -> -> -> 0 `i `ui `ux -> -> # *U &U _guardar `ui `ux `f `d .0.0005982 `f ]
+"174
+[; ;GY-521.c: 174:     datos[1] = ((float) guardar[1]) * 0.0005982;
+[e = *U + _datos * -> -> 1 `i `x -> -> # *U _datos `i `x -> * -> -> *U + &U _guardar * -> -> -> 1 `i `ui `ux -> -> # *U &U _guardar `ui `ux `f `d .0.0005982 `f ]
+"175
+[; ;GY-521.c: 175:     datos[2] = ((float) guardar[2]) * 0.0005982;
+[e = *U + _datos * -> -> 2 `i `x -> -> # *U _datos `i `x -> * -> -> *U + &U _guardar * -> -> -> 2 `i `ui `ux -> -> # *U &U _guardar `ui `ux `f `d .0.0005982 `f ]
+"176
+[; ;GY-521.c: 176:     datos[3] = ((float) guardar[3])/340 + 36.53;
+[e = *U + _datos * -> -> 3 `i `x -> -> # *U _datos `i `x -> + -> / -> *U + &U _guardar * -> -> -> 3 `i `ui `ux -> -> # *U &U _guardar `ui `ux `f -> -> 340 `i `f `d .36.53 `f ]
+"177
+[; ;GY-521.c: 177:     datos[4] = ((float) guardar[4]) * 0.00763;
+[e = *U + _datos * -> -> 4 `i `x -> -> # *U _datos `i `x -> * -> -> *U + &U _guardar * -> -> -> 4 `i `ui `ux -> -> # *U &U _guardar `ui `ux `f `d .0.00763 `f ]
+"178
+[; ;GY-521.c: 178:     datos[5] = ((float) guardar[5]) * 0.00763;
+[e = *U + _datos * -> -> 5 `i `x -> -> # *U _datos `i `x -> * -> -> *U + &U _guardar * -> -> -> 5 `i `ui `ux -> -> # *U &U _guardar `ui `ux `f `d .0.00763 `f ]
+"179
+[; ;GY-521.c: 179:     datos[6] = ((float) guardar[6]) * 0.00763;
+[e = *U + _datos * -> -> 6 `i `x -> -> # *U _datos `i `x -> * -> -> *U + &U _guardar * -> -> -> 6 `i `ui `ux -> -> # *U &U _guardar `ui `ux `f `d .0.00763 `f ]
+"182
+[; ;GY-521.c: 182:     return;
 [e $UE 140  ]
-"120
-[; ;GY-521.c: 120: }
+"184
+[; ;GY-521.c: 184: }
 [e :UE 140 ]
 }
-[p f _sprintf 8388736 ]
-[a 4C 32 84 32 61 32 37 100 32 32 0 ]
-[a 3C 32 65 122 32 61 32 37 100 32 32 32 32 0 ]
-[a 6C 32 71 121 32 61 32 37 100 32 32 32 32 0 ]
-[a 2C 32 65 121 32 61 32 37 100 32 32 32 32 0 ]
-[a 5C 32 71 120 32 61 32 37 100 32 32 32 32 0 ]
-[a 1C 65 120 32 61 32 37 100 32 32 32 32 0 ]
-[a 7C 32 71 122 32 61 32 37 100 13 10 0 ]

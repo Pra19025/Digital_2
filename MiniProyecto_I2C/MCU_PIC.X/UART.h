@@ -1,12 +1,11 @@
 /* 
  * File:   UART.h
  * Author: Alex Saucet
- *
+ *https://github.com/asct20/PIC_UART_lib
  * Created on August 6, 2017, 10:33 AM
  * 
  * Library for UART communication with a 8-bit PIC microcontroller. 
  * Change the values below for the clock frequency and the UART pins used.
- * obtenido de: https://github.com/asct20/PIC_UART_lib/blob/master/UART.h
  * 
  */
 
@@ -42,19 +41,19 @@ void UARTSendChar(const char c);
  * @param str
  * @param max_length
  */
-void UARTSendString(const char* str);
+void UARTSendString(const char* str, const uint8_t max_length);
 
 /**
  * Determines whether a new data is available to read
  * @return 
  */
-uint8_t UARTDataReady(void);
+uint8_t UARTDataReady();
 
 /**
  * Read one character
  * @return  byte read
  */
-char UARTReadChar();    
+char UARTReadChar();
 
 /**
  * Read a string, until we read '\0', up to max_length characters.

@@ -7,73 +7,81 @@
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
 "505 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
-"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
-[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
-"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
-[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\flneg.c
+[v ___flneg __flneg `(d  1 e 4 0 ]
+"43 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\ftoa.c
+[v _ftoa ftoa `(*.4uc  1 e 1 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\isdigit.c
+[v _isdigit isdigit `(b  1 e 0 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
+"242
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 "6 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\pic\__eeprom.c
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "17 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\GY-521.c
 [v _GY_init GY_init `(v  1 e 1 0 ]
-"61
-[v _GY_Read GY_Read `(v  1 e 1 0 ]
-"17 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-[v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
-"33
-[v _I2C_Master_Wait I2C_Master_Wait `(v  1 e 1 0 ]
-"48
-[v _I2C_Master_RepeatedStart I2C_Master_RepeatedStart `(v  1 e 1 0 ]
-"56
-[v _I2C_Master_Stop I2C_Master_Stop `(v  1 e 1 0 ]
-"66
-[v _I2C_Master_Write I2C_Master_Write `(v  1 e 1 0 ]
-"108
-[v _I2C_Start I2C_Start `(v  1 e 1 0 ]
 "114
-[v _I2C_Read I2C_Read `(uc  1 e 1 0 ]
-"129
+[v _GY_Read GY_Read `(v  1 e 1 0 ]
+"9 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+[v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
+"19
+[v _I2C_Master_Wait I2C_Master_Wait `(v  1 e 1 0 ]
+"24
+[v _I2C_Master_Start I2C_Master_Start `(v  1 e 1 0 ]
+"30
+[v _I2C_Start I2C_Start `(v  1 e 1 0 ]
+"37
+[v _I2C_Master_RepeatedStart I2C_Master_RepeatedStart `(v  1 e 1 0 ]
+"43
+[v _I2C_Master_Stop I2C_Master_Stop `(v  1 e 1 0 ]
+"49
 [v _I2C_ACK I2C_ACK `(v  1 e 1 0 ]
-"135
+"56
 [v _I2C_NACK I2C_NACK `(v  1 e 1 0 ]
-"47 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+"63
+[v _I2C_Master_Write I2C_Master_Write `(uc  1 e 1 0 ]
+"83
+[v _I2C_Read I2C_Read `(uc  1 e 1 0 ]
+"48 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
 [v _ISR ISR `II(v  1 e 1 0 ]
-"52
+"53
 [v _main main `(v  1 e 1 0 ]
-"80
+"142
 [v _Setup Setup `(v  1 e 1 0 ]
-"9 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
+"8 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
 [v _UARTInit UARTInit `(v  1 e 1 0 ]
-"40
+"39
 [v _UARTSendChar UARTSendChar `(v  1 e 1 0 ]
-"50
+"49
 [v _UARTSendString UARTSendString `(v  1 e 1 0 ]
-"64
+"60
 [v _UARTDataReady UARTDataReady `(uc  1 e 1 0 ]
-"72
+"68
 [v _UARTReadChar UARTReadChar `(uc  1 e 1 0 ]
 "166 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
-[s S41 . 1 `uc 1 RA0 1 0 :1:0 
-`uc 1 RA1 1 0 :1:1 
-`uc 1 RA2 1 0 :1:2 
-`uc 1 RA3 1 0 :1:3 
-`uc 1 RA4 1 0 :1:4 
-`uc 1 RA5 1 0 :1:5 
-`uc 1 RA6 1 0 :1:6 
-`uc 1 RA7 1 0 :1:7 
-]
-"183
-[u S50 . 1 `S41 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES50  1 e 1 @5 ]
 "290
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
-[s S296 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S237 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -82,13 +90,13 @@
 `uc 1 ADIF 1 0 :1:6 
 ]
 "553
-[u S304 . 1 `S296 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES304  1 e 1 @12 ]
+[u S245 . 1 `S237 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES245  1 e 1 @12 ]
 "843
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "850
 [v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
-[s S239 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S171 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -98,27 +106,25 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "1068
-[s S248 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S180 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S252 . 1 `uc 1 . 1 0 :6:0 
+[s S184 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nRC8 1 0 :1:6 
 ]
-[s S255 . 1 `uc 1 . 1 0 :6:0 
+[s S187 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[u S258 . 1 `S239 1 . 1 0 `S248 1 . 1 0 `S252 1 . 1 0 `S255 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES258  1 e 1 @24 ]
+[u S190 . 1 `S171 1 . 1 0 `S180 1 . 1 0 `S184 1 . 1 0 `S187 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES190  1 e 1 @24 ]
 "1133
 [v _TXREG TXREG `VEuc  1 e 1 @25 ]
 "1140
 [v _RCREG RCREG `VEuc  1 e 1 @26 ]
 "1416
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
-"1540
-[v _TRISC TRISC `VEuc  1 e 1 @135 ]
-[s S101 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S215 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -128,11 +134,11 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1557
-[u S110 . 1 `S101 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES110  1 e 1 @135 ]
+[u S224 . 1 `S215 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES224  1 e 1 @135 ]
 "1979
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
-[s S122 . 1 `uc 1 SEN 1 0 :1:0 
+[s S310 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -142,13 +148,13 @@
 `uc 1 GCEN 1 0 :1:7 
 ]
 "1996
-[u S131 . 1 `S122 1 . 1 0 ]
-[v _SSPCON2bits SSPCON2bits `VES131  1 e 1 @145 ]
+[u S319 . 1 `S310 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES319  1 e 1 @145 ]
 "2048
 [v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
 "2177
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
-[s S202 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S134 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -158,15 +164,15 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "2582
-[s S211 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S143 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 nTX8 1 0 :1:6 
 ]
-[s S215 . 1 `uc 1 . 1 0 :6:0 
+[s S147 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[u S218 . 1 `S202 1 . 1 0 `S211 1 . 1 0 `S215 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES218  1 e 1 @152 ]
+[u S150 . 1 `S134 1 . 1 0 `S143 1 . 1 0 `S147 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES150  1 e 1 @152 ]
 "2642
 [v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
 "3387
@@ -177,18 +183,18 @@
 [v _ACKDT ACKDT `VEb  1 e 0 @1165 ]
 "3566
 [v _ACKEN ACKEN `VEb  1 e 0 @1164 ]
+"3569
+[v _ACKSTAT ACKSTAT `VEb  1 e 0 @1166 ]
 "3641
 [v _BF BF `VEb  1 e 0 @1184 ]
-"3896
-[v _GIE GIE `VEb  1 e 0 @95 ]
-"4040
-[v _PEIE PEIE `VEb  1 e 0 @94 ]
+"4043
+[v _PEN PEN `VEb  1 e 0 @1162 ]
 "4166
 [v _RCEN RCEN `VEb  1 e 0 @1163 ]
+"4226
+[v _RSEN RSEN `VEb  1 e 0 @1161 ]
 "4250
 [v _SEN SEN `VEb  1 e 0 @1160 ]
-"4274
-[v _SSPIE SSPIE `VEb  1 e 0 @1123 ]
 "4277
 [v _SSPIF SSPIF `VEb  1 e 0 @99 ]
 "4457
@@ -196,181 +202,333 @@
 "4460
 [v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
 "358 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-[v _dpowers dpowers `DC[5]ui  1 s 10 dpowers ]
-"52 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+[v _dpowers dpowers `DC[10]ul  1 s 40 dpowers ]
+"38 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+[v _datos datos `[7]f  1 e 28 0 ]
+"39
+[v _buffer buffer `*.4uc  1 e 1 0 ]
+"53
 [v _main main `(v  1 e 1 0 ]
 {
-"78
+"140
 } 0
-"80
-[v _Setup Setup `(v  1 e 1 0 ]
-{
-"98
-} 0
-"9 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
-[v _UARTInit UARTInit `(v  1 e 1 0 ]
-{
-[v UARTInit@baud_rate baud_rate `DCul  1 p 4 5 ]
-[v UARTInit@BRGH BRGH `DCuc  1 p 1 9 ]
-"34
-} 0
-"17 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
-[v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
-{
-[v I2C_Master_Init@c c `DCul  1 p 4 5 ]
-"24
-} 0
-"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\ftoa.c
+[v _ftoa ftoa `(*.4uc  1 e 1 0 ]
 {
 "10
-[v ___lldiv@quotient quotient `ul  1 a 4 0 ]
-"11
-[v ___lldiv@counter counter `uc  1 a 1 4 ]
-"5
-[v ___lldiv@divisor divisor `ul  1 p 4 2 ]
-[v ___lldiv@dividend dividend `ul  1 p 4 6 ]
-"30
-} 0
-"17 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\GY-521.c
-[v _GY_init GY_init `(v  1 e 1 0 ]
-{
-"59
-} 0
-"61
-[v _GY_Read GY_Read `(v  1 e 1 0 ]
-{
-"82
-[v GY_Read@i i `i  1 a 2 78 ]
-"65
-[v GY_Read@buf buf `[50]uc  1 a 50 0 ]
-"66
-[v GY_Read@valores valores `[14]uc  1 a 14 50 ]
-"64
-[v GY_Read@T T `i  1 a 2 76 ]
-[v GY_Read@Gz Gz `i  1 a 2 74 ]
-[v GY_Read@Gy Gy `i  1 a 2 72 ]
-[v GY_Read@Gx Gx `i  1 a 2 70 ]
-[v GY_Read@Az Az `i  1 a 2 68 ]
-[v GY_Read@Ay Ay `i  1 a 2 66 ]
-[v GY_Read@Ax Ax `i  1 a 2 64 ]
-"120
+[v ftoa@l l `ul  1 a 4 71 ]
+[v ftoa@rem rem `ul  1 a 4 67 ]
+"9
+[v ftoa@cp cp `*.4uc  1 a 1 75 ]
+"6
+[v ftoa@f f `f  1 p 4 60 ]
+[v ftoa@status status `*.39i  1 p 2 64 ]
+"8
+[v ftoa@buf buf `[17]uc  1 s 17 buf ]
+"21
 } 0
 "505 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
 [v sprintf@sp sp `*.4uc  1 a 1 wreg ]
 "545
-[v sprintf@val val `ui  1 a 2 13 ]
+[v sprintf@val val `ul  1 a 4 32 ]
+"517
+[v sprintf@prec prec `i  1 a 2 39 ]
+"514
+[v sprintf@width width `i  1 a 2 37 ]
 "512
-[v sprintf@c c `uc  1 a 1 16 ]
-"521
-[v sprintf@prec prec `c  1 a 1 12 ]
-"525
-[v sprintf@flag flag `uc  1 a 1 11 ]
+[v sprintf@c c `uc  1 a 1 41 ]
 "507
-[v sprintf@ap ap `[1]*.4v  1 a 1 10 ]
+[v sprintf@ap ap `[1]*.4v  1 a 1 31 ]
+"525
+[v sprintf@flag flag `uc  1 a 1 30 ]
 "505
 [v sprintf@sp sp `*.4uc  1 a 1 wreg ]
-[v sprintf@f f `*.24DCuc  1 p 1 4 ]
+[v sprintf@f f `*.24DCuc  1 p 1 16 ]
 "550
-[v sprintf@sp sp `*.4uc  1 a 1 15 ]
+[v sprintf@sp sp `*.4uc  1 a 1 36 ]
 "1567
 } 0
-"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
-[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\isdigit.c
+[v _isdigit isdigit `(b  1 e 0 0 ]
+{
+[v isdigit@c c `uc  1 a 1 wreg ]
+[v isdigit@c c `uc  1 a 1 wreg ]
+"14
+[v isdigit@c c `uc  1 a 1 3 ]
+"15
+} 0
+"15 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 6 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 2 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 4 ]
+"53
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
 {
 "10
-[v ___lwmod@counter counter `uc  1 a 1 11 ]
+[v ___llmod@counter counter `uc  1 a 1 15 ]
 "5
-[v ___lwmod@divisor divisor `ui  1 p 2 0 ]
-[v ___lwmod@dividend dividend `ui  1 p 2 2 ]
+[v ___llmod@divisor divisor `ul  1 p 4 6 ]
+[v ___llmod@dividend dividend `ul  1 p 4 10 ]
 "25
 } 0
-"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
-[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"43 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
 {
-"10
-[v ___lwdiv@quotient quotient `ui  1 a 2 7 ]
-"11
-[v ___lwdiv@counter counter `uc  1 a 1 9 ]
-"5
-[v ___lwdiv@divisor divisor `ui  1 p 2 2 ]
-[v ___lwdiv@dividend dividend `ui  1 p 2 4 ]
-"30
+"45
+[v ___fltol@exp1 exp1 `uc  1 a 1 42 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 41 ]
+"43
+[v ___fltol@f1 f1 `d  1 p 4 32 ]
+"70
 } 0
-"50 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
+"242 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcadd.c
+[v ___flsub __flsub `(d  1 e 4 0 ]
+{
+[v ___flsub@a a `d  1 p 4 52 ]
+[v ___flsub@b b `d  1 p 4 56 ]
+"250
+} 0
+"15 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\flneg.c
+[v ___flneg __flneg `(d  1 e 4 0 ]
+{
+[v ___flneg@f1 f1 `d  1 p 4 2 ]
+"20
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+{
+[v ___flge@ff1 ff1 `d  1 p 4 2 ]
+[v ___flge@ff2 ff2 `d  1 p 4 6 ]
+"19
+} 0
+"49 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
 [v _UARTSendString UARTSendString `(v  1 e 1 0 ]
 {
-[v UARTSendString@str str `*.4DCuc  1 a 1 wreg ]
-"51
-[v UARTSendString@i i `i  1 a 2 4 ]
 "50
-[v UARTSendString@str str `*.4DCuc  1 a 1 wreg ]
-[v UARTSendString@str str `*.4DCuc  1 a 1 6 ]
-"58
+[v UARTSendString@i i `i  1 a 2 0 ]
+"49
+[v UARTSendString@str str `*.26DCuc  1 p 2 3 ]
+[v UARTSendString@max_length max_length `DCuc  1 p 1 5 ]
+"54
 } 0
-"40
+"39
 [v _UARTSendChar UARTSendChar `(v  1 e 1 0 ]
 {
 [v UARTSendChar@c c `DCuc  1 a 1 wreg ]
 [v UARTSendChar@c c `DCuc  1 a 1 wreg ]
 [v UARTSendChar@c c `DCuc  1 a 1 2 ]
-"43
+"42
 } 0
-"108 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+"8
+[v _UARTInit UARTInit `(v  1 e 1 0 ]
+{
+[v UARTInit@baud_rate baud_rate `DCul  1 p 4 6 ]
+[v UARTInit@BRGH BRGH `DCuc  1 p 1 10 ]
+"33
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+{
+"10
+[v ___lldiv@quotient quotient `ul  1 a 4 1 ]
+"11
+[v ___lldiv@counter counter `uc  1 a 1 5 ]
+"5
+[v ___lldiv@divisor divisor `ul  1 p 4 2 ]
+[v ___lldiv@dividend dividend `ul  1 p 4 6 ]
+"30
+} 0
+"142 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+[v _Setup Setup `(v  1 e 1 0 ]
+{
+"152
+} 0
+"9 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+[v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
+{
+"17
+} 0
+"17 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\GY-521.c
+[v _GY_init GY_init `(v  1 e 1 0 ]
+{
+"112
+} 0
+"24 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
+[v _I2C_Master_Start I2C_Master_Start `(v  1 e 1 0 ]
+{
+"28
+} 0
+"114 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\GY-521.c
+[v _GY_Read GY_Read `(v  1 e 1 0 ]
+{
+[v GY_Read@datos datos `*.4f  1 a 1 wreg ]
+"160
+[v GY_Read@i i `i  1 a 2 28 ]
+"152
+[v GY_Read@valores valores `[14]uc  1 a 14 0 ]
+"153
+[v GY_Read@guardar guardar `[7]i  1 a 14 14 ]
+"114
+[v GY_Read@datos datos `*.4f  1 a 1 wreg ]
+"154
+[v GY_Read@datos datos `*.4f  1 a 1 30 ]
+"184
+} 0
+"10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 2 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 1 ]
+"10
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 2 ]
+"15
+[v ___xxtofl@sign sign `uc  1 a 1 0 ]
+"44
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+{
+[s S646 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+"13
+[s S651 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S654 . 4 `l 1 i 4 0 `d 1 f 4 0 `S646 1 fAsBytes 4 0 `S651 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S654  1 a 4 26 ]
+"12
+[v ___flmul@grs grs `ul  1 a 4 21 ]
+[s S723 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+"14
+[u S726 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S723 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S726  1 a 2 30 ]
+"10
+[v ___flmul@bexp bexp `uc  1 a 1 25 ]
+"11
+[v ___flmul@aexp aexp `uc  1 a 1 20 ]
+"9
+[v ___flmul@sign sign `uc  1 a 1 19 ]
+"8
+[v ___flmul@b b `d  1 p 4 6 ]
+[v ___flmul@a a `d  1 p 4 10 ]
+"205
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+{
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
+"6
+[v __Umul8_16@word_mpld word_mpld `ui  1 a 2 2 ]
+"5
+[v __Umul8_16@product product `ui  1 a 2 0 ]
+"4
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
+[v __Umul8_16@multiplicand multiplicand `uc  1 p 1 2 ]
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 4 ]
+"60
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
+"21
+[v ___fldiv@grs grs `ul  1 a 4 26 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 19 ]
+"20
+[v ___fldiv@new_exp new_exp `i  1 a 2 24 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 31 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 30 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 23 ]
+"8
+[v ___fldiv@a a `d  1 p 4 6 ]
+[v ___fldiv@b b `d  1 p 4 10 ]
+"185
+} 0
+"10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+{
+"17
+[v ___fladd@grs grs `uc  1 a 1 51 ]
+"15
+[v ___fladd@bexp bexp `uc  1 a 1 50 ]
+"16
+[v ___fladd@aexp aexp `uc  1 a 1 49 ]
+"13
+[v ___fladd@signs signs `uc  1 a 1 48 ]
+"10
+[v ___fladd@b b `d  1 p 4 32 ]
+[v ___fladd@a a `d  1 p 4 36 ]
+"237
+} 0
+"30 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
 [v _I2C_Start I2C_Start `(v  1 e 1 0 ]
 {
 [v I2C_Start@add add `uc  1 a 1 wreg ]
 [v I2C_Start@add add `uc  1 a 1 wreg ]
-[v I2C_Start@add add `uc  1 a 1 6 ]
-"112
+"32
+[v I2C_Start@add add `uc  1 a 1 3 ]
+"35
 } 0
-"66
-[v _I2C_Master_Write I2C_Master_Write `(v  1 e 1 0 ]
+"63
+[v _I2C_Master_Write I2C_Master_Write `(uc  1 e 1 0 ]
 {
-[v I2C_Master_Write@d d `ui  1 p 2 2 ]
-"69
+[v I2C_Master_Write@data data `uc  1 a 1 wreg ]
+[v I2C_Master_Write@data data `uc  1 a 1 wreg ]
+"65
+[v I2C_Master_Write@data data `uc  1 a 1 2 ]
+"70
 } 0
-"114
+"83
 [v _I2C_Read I2C_Read `(uc  1 e 1 0 ]
 {
 [v I2C_Read@ACK_NACK ACK_NACK `uc  1 a 1 wreg ]
-"116
+"86
 [v I2C_Read@Data Data `uc  1 a 1 4 ]
-"114
+"83
 [v I2C_Read@ACK_NACK ACK_NACK `uc  1 a 1 wreg ]
-"117
+"87
 [v I2C_Read@ACK_NACK ACK_NACK `uc  1 a 1 3 ]
-"127
-} 0
-"135
-[v _I2C_NACK I2C_NACK `(v  1 e 1 0 ]
-{
-"139
-} 0
-"129
-[v _I2C_ACK I2C_ACK `(v  1 e 1 0 ]
-{
-"133
+"97
 } 0
 "56
+[v _I2C_NACK I2C_NACK `(v  1 e 1 0 ]
+{
+"61
+} 0
+"49
+[v _I2C_ACK I2C_ACK `(v  1 e 1 0 ]
+{
+"54
+} 0
+"43
 [v _I2C_Master_Stop I2C_Master_Stop `(v  1 e 1 0 ]
 {
-"59
+"47
 } 0
-"48
+"37
 [v _I2C_Master_RepeatedStart I2C_Master_RepeatedStart `(v  1 e 1 0 ]
 {
-"51
+"41
 } 0
-"33
+"19
 [v _I2C_Master_Wait I2C_Master_Wait `(v  1 e 1 0 ]
 {
-"35
+"22
 } 0
-"47 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
+"48 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\main.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"50
+"51
 } 0

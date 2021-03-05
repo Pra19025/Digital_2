@@ -8,7 +8,7 @@
 # 2 "<built-in>" 2
 # 1 "UART.c" 2
 # 1 "./UART.h" 1
-# 16 "./UART.h"
+# 15 "./UART.h"
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2489,7 +2489,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 16 "./UART.h" 2
+# 15 "./UART.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
@@ -2624,8 +2624,8 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 17 "./UART.h" 2
-# 32 "./UART.h"
+# 16 "./UART.h" 2
+# 31 "./UART.h"
 void UARTInit(const uint32_t baud_rate, const uint8_t BRGH);
 
 
@@ -2639,13 +2639,13 @@ void UARTSendChar(const char c);
 
 
 
-void UARTSendString(const char* str);
+void UARTSendString(const char* str, const uint8_t max_length);
 
 
 
 
 
-uint8_t UARTDataReady(void);
+uint8_t UARTDataReady();
 
 
 
@@ -2661,9 +2661,6 @@ char UARTReadChar();
 
 uint8_t UARTReadString(char *buf, uint8_t max_length);
 # 1 "UART.c" 2
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
-# 2 "UART.c" 2
 
 
 
@@ -2712,13 +2709,10 @@ void UARTSendChar(const char c) {
 
 
 
-void UARTSendString(const char* str){
+void UARTSendString(const char* str, const uint8_t max_length) {
     int i = 0;
-
-
-
-        while(str[i] != '\0'){
-        UARTSendChar(str[i++]);
+    for (i=0 ; i<max_length && str[i]!='\0' ; i++) {
+        UARTSendChar(str[i]);
     }
 }
 
@@ -2738,7 +2732,7 @@ char UARTReadChar() {
     while (!UARTDataReady());
     return RCREG;
 }
-# 84 "UART.c"
+# 80 "UART.c"
 uint8_t UARTReadString(char *buf, uint8_t max_length) {
     uint8_t i = 0;
     char tmp = 1;

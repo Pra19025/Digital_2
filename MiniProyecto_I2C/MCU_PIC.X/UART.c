@@ -1,5 +1,4 @@
 #include "UART.h"
-#include <stdint.h>
 
 /**
  * Initialize the UART module with given baud rate and speed mode
@@ -47,13 +46,10 @@ void UARTSendChar(const char c) {
  * @param str
  * @param max_length
  */
-void UARTSendString(const char* str){//, const uint8_t max_length) {
+void UARTSendString(const char* str, const uint8_t max_length) {
     int i = 0;
-//    for (i=0 ; i<max_length && str[i]!='\0' ; i++) {
-//        UARTSendChar(str[i]);
-    
-        while(str[i] != '\0'){
-        UARTSendChar(str[i++]);
+    for (i=0 ; i<max_length && str[i]!='\0' ; i++) {
+        UARTSendChar(str[i]);
     }
 }
 

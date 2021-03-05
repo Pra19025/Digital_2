@@ -2632,65 +2632,32 @@ typedef uint16_t uintptr_t;
 # 6 "./GY-521.h" 2
 
 void GY_init(void);
-void GY_Read(void);
+void GY_Read(float*);
 # 11 "GY-521.c" 2
 
 # 1 "./I2C.h" 1
-# 20 "./I2C.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
-# 20 "./I2C.h" 2
-# 29 "./I2C.h"
-void I2C_Master_Init(const unsigned long c);
-
-
-
-
-
-
-
-void I2C_Master_Wait(void);
-
-
-
-void I2C_Master_Start(void);
-
-
-
-void I2C_Master_RepeatedStart(void);
-
-
-
-void I2C_Master_Stop(void);
-
-
-
-
-
-void I2C_Master_Write(unsigned d);
-
-
-
-
-unsigned short I2C_Master_Read(unsigned short a);
-
-
-
-void I2C_Slave_Init(uint8_t address);
-
+# 13 "./I2C.h"
+void I2C_Master_Init();
+void I2C_Master_Wait();
+void I2C_Master_Start();
 void I2C_Start(char add);
-unsigned char I2C_Read(unsigned char ACK_NACK);
-void I2C_ACK(void);
-void I2C_NACK(void);
+void I2C_Master_RepeatedStart();
+void I2C_Master_Stop();
+void I2C_ACK();
+void I2C_NACK();
+unsigned char I2C_Master_Write(unsigned char data);
+unsigned char I2C_Read_Byte();
+unsigned char I2C_Read(unsigned char);
 # 12 "GY-521.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "GY-521.c" 2
 
 # 1 "./UART.h" 1
-# 17 "./UART.h"
+# 16 "./UART.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
-# 17 "./UART.h" 2
-# 32 "./UART.h"
+# 16 "./UART.h" 2
+# 31 "./UART.h"
 void UARTInit(const uint32_t baud_rate, const uint8_t BRGH);
 
 
@@ -2704,13 +2671,13 @@ void UARTSendChar(const char c);
 
 
 
-void UARTSendString(const char* str);
+void UARTSendString(const char* str, const uint8_t max_length);
 
 
 
 
 
-uint8_t UARTDataReady(void);
+uint8_t UARTDataReady();
 
 
 
@@ -2831,94 +2798,83 @@ void GY_init(void) {
 
 
 
-
-
-
-    I2C_Start(0xD0);
+    I2C_Master_Start();
+    I2C_Master_Write(0xD0);
     I2C_Master_Write(0x6B);
     I2C_Master_Write(0x01);
     I2C_Master_Stop();
 
-    I2C_Start(0xD0);
-    I2C_Master_Write(0x19);
-    I2C_Master_Write(0x08);
-    I2C_Master_Stop();
-
-
-    I2C_Start(0xD0);
-    I2C_Master_Write(0x1A);
+    I2C_Master_Start();
+    I2C_Master_Write(0xD0);
     I2C_Master_Write(0x00);
     I2C_Master_Stop();
 
 
-    I2C_Start(0xD0);
-    I2C_Master_Write(0x1B);
-    I2C_Master_Write(0x18);
+    I2C_Master_Start();
+    I2C_Master_Write(0xD0);
+    I2C_Master_Write(0x19);
+    I2C_Master_Write(0x08);
     I2C_Master_Stop();
 
+    I2C_Master_Start();
+    I2C_Master_Write(0xD0);
+    I2C_Master_Write(0x1A);
+    I2C_Master_Write(0x00);
+    I2C_Master_Stop();
 
-    I2C_Start(0xD0);
+    I2C_Master_Start();
+    I2C_Master_Write(0xD0);
+    I2C_Master_Write(0x1B);
+    I2C_Master_Write(0x00);
+    I2C_Master_Stop();
+
+    I2C_Master_Start();
+    I2C_Master_Write(0xD0);
     I2C_Master_Write(0x1C);
     I2C_Master_Write(0x00);
     I2C_Master_Stop();
 
 
-    I2C_Start(0xD0);
-    I2C_Master_Write(0x38);
+
+    I2C_Master_Start();
+    I2C_Master_Write(0x68);
+    I2C_Master_Write(0x6C);
     I2C_Master_Write(0x00);
     I2C_Master_Stop();
-
+# 111 "GY-521.c"
     return;
 }
 
-void GY_Read(void) {
-
-
-    int Ax, Ay, Az, Gx, Gy, Gz, T;
-    char buf[50];
-    char valores[14];
-
+void GY_Read(float* datos) {
+# 152 "GY-521.c"
+ char valores[14];
+    int guardar[7];
     I2C_Start(0xD0);
+    while (SSPCON2bits.ACKSTAT);
     I2C_Master_Write(0x3B);
-
+    while (SSPCON2bits.ACKSTAT);
     I2C_Master_RepeatedStart();
-
     I2C_Master_Write(0xD1);
-# 82 "GY-521.c"
     for (int i = 0; i < 13; i++) valores[i] = I2C_Read(0);
     valores[13] = I2C_Read(1);
     I2C_Master_Stop();
 
-    Ax = ((int) valores[0] << 8) | ((int) valores[1]);
-    Ay = ((int) valores[2] << 8) | ((int) valores[3]);
-    Az = ((int) valores[4] << 8) | ((int) valores[5]);
-    T = ((int) valores[6] << 8) | ((int) valores[7]);
-    Gx = ((int) valores[8] << 8) | ((int) valores[9]);
-    Gy = ((int) valores[10] << 8) | ((int) valores[11]);
-    Gz = ((int) valores[12] << 8) | ((int) valores[13]);
 
+    guardar[0] = ((int) valores[0] << 8) | ((int) valores[1]);
+    guardar[1] = ((int) valores[2] << 8) | ((int) valores[3]);
+    guardar[2] = ((int) valores[4] << 8) | ((int) valores[5]);
+    guardar[3] = ((int) valores[6] << 8) | ((int) valores[7]);
+    guardar[4] = ((int) valores[8] << 8) | ((int) valores[9]);
+    guardar[5] = ((int) valores[10] << 8) | ((int) valores[11]);
+    guardar[6] = ((int) valores[12] << 8) | ((int) valores[13]);
 
-
-    sprintf(buf, "Ax = %d    ", Ax);
-    UARTSendString(buf);
-
-    sprintf(buf, " Ay = %d    ", Ay);
-    UARTSendString(buf);
-
-    sprintf(buf, " Az = %d    ", Az);
-    UARTSendString(buf);
-
-    sprintf(buf, " T = %d  ", T);
-    UARTSendString(buf);
-
-    sprintf(buf, " Gx = %d    ", Gx);
-    UARTSendString(buf);
-
-    sprintf(buf, " Gy = %d    ", Gy);
-    UARTSendString(buf);
-
-    sprintf(buf, " Gz = %d\r\n", Gz);
-    UARTSendString(buf);
+    datos[0] = ((float) guardar[0]) * 0.0005982;
+    datos[1] = ((float) guardar[1]) * 0.0005982;
+    datos[2] = ((float) guardar[2]) * 0.0005982;
+    datos[3] = ((float) guardar[3])/340 + 36.53;
+    datos[4] = ((float) guardar[4]) * 0.00763;
+    datos[5] = ((float) guardar[5]) * 0.00763;
+    datos[6] = ((float) guardar[6]) * 0.00763;
 
 
     return;
