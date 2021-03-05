@@ -84,7 +84,7 @@ void main(void) {
 
 
         buffer = ftoa(datos[0], status);
-        UARTSendString(buffer, 6); //solo 5 cifras se envian
+        UARTSendString(buffer, 6); 
 
         buffer = ftoa(datos[1], status);
         UARTSendString(" ", 10);

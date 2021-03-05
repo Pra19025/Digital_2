@@ -73,11 +73,11 @@ void GY_read(float* datos) {
     while (SSPCON2bits.ACKSTAT);
     I2C_Master_RepeatedStart();
     I2C_Master_Write(0xD1);
+    
     for (int i = 0; i < 13; i++) valores[i] = I2C_Read(0);
     valores[13] = I2C_Read(1);
     I2C_Master_Stop();
-    //        //-------------------------
-    //        
+            
     guardar[0] = ((int) valores[0] << 8) | ((int) valores[1]);
     guardar[1] = ((int) valores[2] << 8) | ((int) valores[3]);
     guardar[2] = ((int) valores[4] << 8) | ((int) valores[5]);
@@ -86,13 +86,13 @@ void GY_read(float* datos) {
     guardar[5] = ((int) valores[10] << 8) | ((int) valores[11]);
     guardar[6] = ((int) valores[12] << 8) | ((int) valores[13]);
     
-    datos[0] = ((float) guardar[0]) * 0.0005982; //aceleracion en m/s^2
-    datos[1] = ((float) guardar[1]) * 0.0005982; //aceleracion en m/s^2
-    datos[2] = ((float) guardar[2]) * 0.0005982; //aceleracion en m/s^2
+    datos[0] = ((float) guardar[0]) * 0.0005982; //Ax
+    datos[1] = ((float) guardar[1]) * 0.0005982; //Ay
+    datos[2] = ((float) guardar[2]) * 0.0005982; // Az
     datos[3] = ((float) guardar[3])/340 + 36.53;
-    datos[4] = ((float) guardar[4]) * 0.00763; //grados/s
-    datos[5] = ((float) guardar[5]) * 0.00763; //grados/s
-    datos[6] = ((float) guardar[6]) * 0.00763; //grados/s
+    datos[4] = ((float) guardar[4]) * 0.00763; //velocidad angular en x, y z 
+    datos[5] = ((float) guardar[5]) * 0.00763; 
+    datos[6] = ((float) guardar[6]) * 0.00763; 
     
     
     

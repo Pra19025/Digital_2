@@ -2725,10 +2725,10 @@ void GY_read(float* datos) {
     while (SSPCON2bits.ACKSTAT);
     I2C_Master_RepeatedStart();
     I2C_Master_Write(0xD1);
+
     for (int i = 0; i < 13; i++) valores[i] = I2C_Read(0);
     valores[13] = I2C_Read(1);
     I2C_Master_Stop();
-
 
     guardar[0] = ((int) valores[0] << 8) | ((int) valores[1]);
     guardar[1] = ((int) valores[2] << 8) | ((int) valores[3]);

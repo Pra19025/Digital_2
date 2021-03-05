@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Thu Mar 04 22:24:53 2021
+                                                                                               Thu Mar 04 22:29:39 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	16F887
@@ -4439,7 +4439,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   4379  03A3  160A  118A  2251  120A  118A  	fcall	_I2C_Master_Write
   4380  03A8                     l2896:
   4381                           
-  4382                           ;GY-521.c: 76:     for (int i = 0; i < 13; i++) valores[i] = I2C_Read(0);
+  4382                           ;GY-521.c: 77:     for (int i = 0; i < 13; i++) valores[i] = I2C_Read(0);
   4383  03A8  1683               	bsf	3,5	;RP0=1, select bank1
   4384  03A9  1303               	bcf	3,6	;RP1=0, select bank1
   4385  03AA  01EB               	clrf	GY_read@i^(0+128)
@@ -4488,7 +4488,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   4428  03D4                     u4120:
   4429  03D4                     l2908:
   4430                           
-  4431                           ;GY-521.c: 77:     valores[13] = I2C_Read(1);
+  4431                           ;GY-521.c: 78:     valores[13] = I2C_Read(1);
   4432  03D4  3001               	movlw	1
   4433  03D5  160A  118A  22E5  120A  118A  	fcall	_I2C_Read
   4434  03DA  1283               	bcf	3,5	;RP0=0, select bank0
@@ -4499,7 +4499,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   4439  03DF  1303               	bcf	3,6	;RP1=0, select bank1
   4440  03E0  00DC               	movwf	(GY_read@valores^(0+128)+13)
   4441                           
-  4442                           ;GY-521.c: 78:     I2C_Master_Stop();
+  4442                           ;GY-521.c: 79:     I2C_Master_Stop();
   4443  03E1  160A  118A  21EB  120A  118A  	fcall	_I2C_Master_Stop
   4444  03E6                     l2910:
   4445                           
@@ -9432,7 +9432,7 @@ DATA                 0      0      A5      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Thu Mar 04 22:24:53 2021
+Symbol Table                                                                                   Thu Mar 04 22:29:39 2021
 
                 UARTInit@baud_rate 002D                       ___fldiv@aexp 0047  
                      ___fldiv@bexp 0046                                  pc 0002  
