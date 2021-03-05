@@ -3,7 +3,7 @@
 // visit io.adafruit.com if you need to create an account,
 // or if you need your Adafruit IO key.
 #define IO_USERNAME  "NoelFPB"
-#define IO_KEY       "aio_nCUz09n35Qx8l33ZREG69a6wbspo"
+#define IO_KEY       "aio_igYx54JBgfjR6ooFJpu5r6LbLUSy"
 /******************************* WIFI **************************************/
 
 // the AdafruitIO_WiFi client will work with the following boards:
@@ -16,8 +16,6 @@
 //   - Adafruit Metro M4 Express AirLift Lite ->
 //   https://www.adafruit.com/product/4000
 //   - Adafruit AirLift Breakout -> https://www.adafruit.com/product/4201
-//   - Adafruit AirLift Shield -> https://www.adafruit.com/product/4285
-//   - Adafruit AirLift FeatherWing -> https://www.adafruit.com/product/4264
 
 #define WIFI_SSID "Balanya"
 #define WIFI_PASS "2016ba0000"
@@ -36,7 +34,6 @@
 // Configure the pins used for the ESP32 connection
 #if !defined(SPIWIFI_SS) // if the wifi definition isnt in the board variant
 // Don't change the names of these #define's! they match the variant ones
-
 #define SPIWIFI SPI
 #define SPIWIFI_SS 10  // Chip select pin
 #define SPIWIFI_ACK 9  // a.k.a BUSY or READY pin
