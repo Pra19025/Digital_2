@@ -5,7 +5,8 @@
 String dataIn = ""; // guarda dataIn que manda el pic
 String G;
 float aX,aY,aZ,T;
-
+char *valor1;
+char *valor2;
 #define IO_LOOP_DELAY 10000
 unsigned long lastUpdate = 0;
 
@@ -15,7 +16,8 @@ AdafruitIO_Feed *Az = io.feed("Az");
 AdafruitIO_Feed *p1 = io.feed("p1");
 AdafruitIO_Feed *p2 = io.feed("p2");
 AdafruitIO_Feed *Temperatura = io.feed("Temperatura");
-AdafruitIO_Feed *Giroscopio= io.feed("Giroscopio");
+//AdafruitIO_Feed *Giroscopio= io.feed("Giroscopio");
+//Ya no se van a mandar los datos del giroscopio porque se traba mucho adafruit
 void setup() {
 
   // start the serial connection
@@ -59,7 +61,7 @@ void loop() {
         //Serial.println(dataIn.substring(14,21));
         aZ = (dataIn.substring(14,21)).toFloat();
         T = (dataIn.substring(21,28)).toFloat();
-        G =(dataIn.substring(28,49));
+        //G =(dataIn.substring(28,49));
         dataIn = "";
       }
   }
@@ -83,7 +85,7 @@ void loop() {
     Temperatura -> save(T);
     Serial.print("sending -> ");
     Serial.println(G);
-    Giroscopio -> save(G);
+    //Giroscopio -> save(G);
     // after publishing, store the current time
     lastUpdate = millis();
   }
@@ -93,18 +95,18 @@ void loop() {
 
 void varP1(AdafruitIO_Data *data){
   Serial.print("received <- ");
-  char* dato=  data->value(); // se obtiene el valor enviado;
-  Serial.println(dato);
-  if(*dato == '1') Serial2.print('A'); //encender luz 1
+  valor1 =  data->value(); // se obtiene el valor enviado;
+  Serial.println(valor1);
+  if(*valor1 == '1') Serial2.print('A'); //encender luz 1
   else Serial2.print('B'); // apagar luz 1
   return;
 }
 
 void varP2(AdafruitIO_Data *data){
   Serial.print("received <- ");
-  char* dato=  data->value(); // se obtiene el valor enviado;
-  Serial.println(dato);
-  if(*dato == '1') Serial2.print('C'); //encender luz 2
+  valor2 =  data->value(); // se obtiene el valor enviado;
+  Serial.println(valor2);
+  if(*valor2 == '1') Serial2.print('C'); //encender luz 2
   else Serial2.print('D'); // apagar luz 2
   return;
 }

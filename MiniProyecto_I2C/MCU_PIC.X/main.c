@@ -37,6 +37,7 @@
 char* buffer;
 int status;
 float datos[7];
+char entrada;
 //***********************************************************************************************************************************************
 // Prototipos de funciones
 //**********************************************************************************************************************************************
@@ -49,25 +50,20 @@ void Setup(void);
 void __interrupt() ISR(void) {
 
     if (PIR1bits.RCIF) {
-        char entrante = RCREG;
-        switch (entrante) {
-            case 'A':
-                PORTAbits.RA0 = 1;
-                break;
-            case 'B':
-                PORTAbits.RA0 = 0;
-                break;
-            case 'C':
-                PORTAbits.RA1 = 1;
-                break;
-            case 'D':
-                PORTAbits.RA1 = 0;
-            default:
-                break;
+        entrada = RCREG;
+        if (entrada == 'A') {
+            PORTAbits.RA0 = 1;
+        }
+        if (entrada == 'B') {
+            PORTAbits.RA0 = 0;
+        }
+        if (entrada == 'C') {
+            PORTAbits.RA0 = 1;
+        }
+        if (entrada == 'D') {
+            PORTAbits.RA0 = 0;
         }
     }
-
-
 }
 
 void main(void) {
@@ -84,7 +80,7 @@ void main(void) {
 
 
         buffer = ftoa(datos[0], status);
-        UARTSendString(buffer, 6); 
+        UARTSendString(buffer, 6);
 
         buffer = ftoa(datos[1], status);
         UARTSendString(" ", 10);
@@ -120,7 +116,7 @@ void Setup(void) {
     ANSEL = 0;
     TRISA = 0;
     PORTA = 0;
-    
+
     // configuracion de la interrupcion 
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;

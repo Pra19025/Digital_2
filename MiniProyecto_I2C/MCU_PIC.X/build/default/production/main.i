@@ -2913,6 +2913,7 @@ void GY_read(float*);
 char* buffer;
 int status;
 float datos[7];
+char entrada;
 
 
 
@@ -2925,25 +2926,20 @@ void Setup(void);
 void __attribute__((picinterrupt(("")))) ISR(void) {
 
     if (PIR1bits.RCIF) {
-        char entrante = RCREG;
-        switch (entrante) {
-            case 'A':
-                PORTAbits.RA0 = 1;
-                break;
-            case 'B':
-                PORTAbits.RA0 = 0;
-                break;
-            case 'C':
-                PORTAbits.RA1 = 1;
-                break;
-            case 'D':
-                PORTAbits.RA1 = 0;
-            default:
-                break;
+        entrada = RCREG;
+        if (entrada == 'A') {
+            PORTAbits.RA0 = 1;
+        }
+        if (entrada == 'B') {
+            PORTAbits.RA0 = 0;
+        }
+        if (entrada == 'C') {
+            PORTAbits.RA0 = 1;
+        }
+        if (entrada == 'D') {
+            PORTAbits.RA0 = 0;
         }
     }
-
-
 }
 
 void main(void) {
