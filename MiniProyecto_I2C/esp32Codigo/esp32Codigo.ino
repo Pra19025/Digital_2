@@ -30,7 +30,7 @@ void setup() {
 
   // connect to io.adafruit.com
   io.connect();
-
+//es lo de handle message para poder comunicarse con los switches de on y off
   p1->onMessage(varP1);
   p2->onMessage(varP2);
   // wait for a connection
@@ -48,14 +48,15 @@ void setup() {
 
 void loop() {
 
-
+//main loop, aquí se convierten los datos a floats
+// previo a esto se parte la string para separar los datos
+//se mandan los datos tambien
   
   while(Serial2.available()){
       char varIN = Serial2.read();
       if( varIN != '\n') dataIn.concat(varIN);
       else{
-        //Serial.println(dataIn);
-      
+    
         aX = (dataIn.substring(0,7)).toFloat();
         aY = (dataIn.substring(7,14)).toFloat();
         //Serial.println(dataIn.substring(14,21));
@@ -92,21 +93,23 @@ void loop() {
 
 }
 
-
+//con las funciones varP se envia un valor específico según el estado del switch
+//se coloco en el switch un 0 y un 1 en lugar de on y off
+//por facilidad
 void varP1(AdafruitIO_Data *data){
   Serial.print("received <- ");
-  valor1 =  data->value(); // se obtiene el valor enviado;
+  valor1 =  data->value();
   Serial.println(valor1);
-  if(*valor1 == '1') Serial2.print('A'); //encender luz 1
-  else Serial2.print('B'); // apagar luz 1
+  if(*valor1 == '1') Serial2.print('A'); 
+  else Serial2.print('B'); 
   return;
 }
 
 void varP2(AdafruitIO_Data *data){
   Serial.print("received <- ");
-  valor2 =  data->value(); // se obtiene el valor enviado;
+  valor2 =  data->value(); 
   Serial.println(valor2);
-  if(*valor2 == '1') Serial2.print('C'); //encender luz 2
-  else Serial2.print('D'); // apagar luz 2
+  if(*valor2 == '1') Serial2.print('C'); 
+  else Serial2.print('D'); 
   return;
 }

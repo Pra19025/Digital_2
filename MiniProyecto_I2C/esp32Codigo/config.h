@@ -3,7 +3,7 @@
 // visit io.adafruit.com if you need to create an account,
 // or if you need your Adafruit IO key.
 #define IO_USERNAME  "NoelFPB"
-#define IO_KEY       "aio_xzqQ87oLV3fyG4bQJciNFjJsPkF4"
+#define IO_KEY       "aio_RhoC335PvlKa5anFyQviwO4astfT"
 /******************************* WIFI **************************************/
 
 // the AdafruitIO_WiFi client will work with the following boards:
