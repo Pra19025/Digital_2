@@ -1,4 +1,5 @@
-
+//esta librería fue obtenida de: 
+//https://deepbluembedded.com/interfacing-i2c-lcd-16x2-tutorial-with-pic-microcontrollers-mplab-xc8/
 #include <xc.h>
 #include "I2C.h"
 
