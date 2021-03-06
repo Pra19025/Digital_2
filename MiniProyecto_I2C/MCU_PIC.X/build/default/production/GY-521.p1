@@ -274,152 +274,152 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"14 GY-521.c
-[; ;GY-521.c: 14: void GY_init() {
+"15 GY-521.c
+[; ;GY-521.c: 15: void GY_init() {
 [v _GY_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _GY_init ]
 [f ]
-"16
-[; ;GY-521.c: 16:     I2C_Master_Init();
-[e ( _I2C_Master_Init ..  ]
 "17
-[; ;GY-521.c: 17:     UARTInit(9600, 1);
+[; ;GY-521.c: 17:     I2C_Master_Init();
+[e ( _I2C_Master_Init ..  ]
+"18
+[; ;GY-521.c: 18:     UARTInit(9600, 1);
 [e ( _UARTInit (2 , -> -> -> 9600 `i `l `ul -> -> 1 `i `uc ]
-"21
-[; ;GY-521.c: 21:     I2C_Start(0XD0);
-[e ( _I2C_Start (1 -> -> 208 `i `uc ]
 "22
-[; ;GY-521.c: 22:     I2C_Master_Write(0x6B);
-[e ( _I2C_Master_Write (1 -> -> 107 `i `uc ]
+[; ;GY-521.c: 22:     I2C_Start(0XD0);
+[e ( _I2C_Start (1 -> -> 208 `i `uc ]
 "23
-[; ;GY-521.c: 23:     I2C_Master_Write(0x01);
-[e ( _I2C_Master_Write (1 -> -> 1 `i `uc ]
+[; ;GY-521.c: 23:     I2C_Master_Write(0x6B);
+[e ( _I2C_Master_Write (1 -> -> 107 `i `uc ]
 "24
-[; ;GY-521.c: 24:     I2C_Master_Stop();
+[; ;GY-521.c: 24:     I2C_Master_Write(0x01);
+[e ( _I2C_Master_Write (1 -> -> 1 `i `uc ]
+"25
+[; ;GY-521.c: 25:     I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
-"28
-[; ;GY-521.c: 28:     I2C_Start(0XD0);
-[e ( _I2C_Start (1 -> -> 208 `i `uc ]
 "29
-[; ;GY-521.c: 29:     I2C_Master_Write(0x00);
-[e ( _I2C_Master_Write (1 -> -> 0 `i `uc ]
+[; ;GY-521.c: 29:     I2C_Start(0XD0);
+[e ( _I2C_Start (1 -> -> 208 `i `uc ]
 "30
-[; ;GY-521.c: 30:     I2C_Master_Stop();
+[; ;GY-521.c: 30:     I2C_Master_Write(0x00);
+[e ( _I2C_Master_Write (1 -> -> 0 `i `uc ]
+"31
+[; ;GY-521.c: 31:     I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
-"33
-[; ;GY-521.c: 33:     I2C_Start(0XD0);
-[e ( _I2C_Start (1 -> -> 208 `i `uc ]
 "34
-[; ;GY-521.c: 34:     I2C_Master_Write(0x19);
-[e ( _I2C_Master_Write (1 -> -> 25 `i `uc ]
+[; ;GY-521.c: 34:     I2C_Start(0XD0);
+[e ( _I2C_Start (1 -> -> 208 `i `uc ]
 "35
-[; ;GY-521.c: 35:     I2C_Master_Write(0x08);
-[e ( _I2C_Master_Write (1 -> -> 8 `i `uc ]
+[; ;GY-521.c: 35:     I2C_Master_Write(0x19);
+[e ( _I2C_Master_Write (1 -> -> 25 `i `uc ]
 "36
-[; ;GY-521.c: 36:     I2C_Master_Stop();
+[; ;GY-521.c: 36:     I2C_Master_Write(0x08);
+[e ( _I2C_Master_Write (1 -> -> 8 `i `uc ]
+"37
+[; ;GY-521.c: 37:     I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
-"39
-[; ;GY-521.c: 39:  I2C_Start(0XD0);
-[e ( _I2C_Start (1 -> -> 208 `i `uc ]
 "40
-[; ;GY-521.c: 40:     I2C_Master_Write(0x1A);
-[e ( _I2C_Master_Write (1 -> -> 26 `i `uc ]
+[; ;GY-521.c: 40:  I2C_Start(0XD0);
+[e ( _I2C_Start (1 -> -> 208 `i `uc ]
 "41
-[; ;GY-521.c: 41:     I2C_Master_Write(0x00);
-[e ( _I2C_Master_Write (1 -> -> 0 `i `uc ]
+[; ;GY-521.c: 41:     I2C_Master_Write(0x1A);
+[e ( _I2C_Master_Write (1 -> -> 26 `i `uc ]
 "42
-[; ;GY-521.c: 42:     I2C_Master_Stop();
+[; ;GY-521.c: 42:     I2C_Master_Write(0x00);
+[e ( _I2C_Master_Write (1 -> -> 0 `i `uc ]
+"43
+[; ;GY-521.c: 43:     I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
-"44
-[; ;GY-521.c: 44:  I2C_Start(0XD0);
-[e ( _I2C_Start (1 -> -> 208 `i `uc ]
 "45
-[; ;GY-521.c: 45:     I2C_Master_Write(0x1B);
-[e ( _I2C_Master_Write (1 -> -> 27 `i `uc ]
-"46
-[; ;GY-521.c: 46:     I2C_Master_Write(0x00);
-[e ( _I2C_Master_Write (1 -> -> 0 `i `uc ]
-"47
-[; ;GY-521.c: 47:     I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"49
-[; ;GY-521.c: 49:      I2C_Start(0XD0);
+[; ;GY-521.c: 45:  I2C_Start(0XD0);
 [e ( _I2C_Start (1 -> -> 208 `i `uc ]
+"46
+[; ;GY-521.c: 46:     I2C_Master_Write(0x1B);
+[e ( _I2C_Master_Write (1 -> -> 27 `i `uc ]
+"47
+[; ;GY-521.c: 47:     I2C_Master_Write(0x00);
+[e ( _I2C_Master_Write (1 -> -> 0 `i `uc ]
+"48
+[; ;GY-521.c: 48:     I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
 "50
-[; ;GY-521.c: 50:     I2C_Master_Write(0x1C);
-[e ( _I2C_Master_Write (1 -> -> 28 `i `uc ]
+[; ;GY-521.c: 50:      I2C_Start(0XD0);
+[e ( _I2C_Start (1 -> -> 208 `i `uc ]
 "51
-[; ;GY-521.c: 51:     I2C_Master_Write(0x00);
-[e ( _I2C_Master_Write (1 -> -> 0 `i `uc ]
+[; ;GY-521.c: 51:     I2C_Master_Write(0x1C);
+[e ( _I2C_Master_Write (1 -> -> 28 `i `uc ]
 "52
-[; ;GY-521.c: 52:     I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"56
-[; ;GY-521.c: 56:     I2C_Start(0X68);
-[e ( _I2C_Start (1 -> -> 104 `i `uc ]
-"57
-[; ;GY-521.c: 57:     I2C_Master_Write(0x6C);
-[e ( _I2C_Master_Write (1 -> -> 108 `i `uc ]
-"58
-[; ;GY-521.c: 58:     I2C_Master_Write(0x00);
+[; ;GY-521.c: 52:     I2C_Master_Write(0x00);
 [e ( _I2C_Master_Write (1 -> -> 0 `i `uc ]
-"59
-[; ;GY-521.c: 59:     I2C_Master_Stop();
+"53
+[; ;GY-521.c: 53:     I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
-"61
-[; ;GY-521.c: 61:     return;
+"57
+[; ;GY-521.c: 57:     I2C_Start(0X68);
+[e ( _I2C_Start (1 -> -> 104 `i `uc ]
+"58
+[; ;GY-521.c: 58:     I2C_Master_Write(0x6C);
+[e ( _I2C_Master_Write (1 -> -> 108 `i `uc ]
+"59
+[; ;GY-521.c: 59:     I2C_Master_Write(0x00);
+[e ( _I2C_Master_Write (1 -> -> 0 `i `uc ]
+"60
+[; ;GY-521.c: 60:     I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"62
+[; ;GY-521.c: 62:     return;
 [e $UE 143  ]
-"63
-[; ;GY-521.c: 63: }
+"64
+[; ;GY-521.c: 64: }
 [e :UE 143 ]
 }
-"65
-[; ;GY-521.c: 65: void GY_read(void) {
+"66
+[; ;GY-521.c: 66: void GY_read(void) {
 [v _GY_read `(v ~T0 @X0 1 ef ]
 {
 [e :U _GY_read ]
 [f ]
-"66
-[; ;GY-521.c: 66:     float final[7];
-[v _final `f ~T0 @X0 -> 7 `i a ]
 "67
-[; ;GY-521.c: 67:     char* impresion;
-[v _impresion `*uc ~T0 @X0 1 a ]
+[; ;GY-521.c: 67:     float final[7];
+[v _final `f ~T0 @X0 -> 7 `i a ]
 "68
-[; ;GY-521.c: 68:     char val[14];
-[v _val `uc ~T0 @X0 -> 14 `i a ]
+[; ;GY-521.c: 68:     char* impresion;
+[v _impresion `*uc ~T0 @X0 1 a ]
 "69
-[; ;GY-521.c: 69:     int almacenar1[7];
-[v _almacenar1 `i ~T0 @X0 -> 7 `i a ]
+[; ;GY-521.c: 69:     char val[14];
+[v _val `uc ~T0 @X0 -> 14 `i a ]
 "70
-[; ;GY-521.c: 70:     I2C_Start(0xD0);
-[e ( _I2C_Start (1 -> -> 208 `i `uc ]
+[; ;GY-521.c: 70:     int almacenar1[7];
+[v _almacenar1 `i ~T0 @X0 -> 7 `i a ]
 "71
-[; ;GY-521.c: 71:     while (SSPCON2bits.ACKSTAT);
+[; ;GY-521.c: 71:     I2C_Start(0xD0);
+[e ( _I2C_Start (1 -> -> 208 `i `uc ]
+"72
+[; ;GY-521.c: 72:     while (SSPCON2bits.ACKSTAT);
 [e $U 145  ]
 [e :U 146 ]
 [e :U 145 ]
 [e $ != -> . . _SSPCON2bits 0 6 `i -> 0 `i 146  ]
 [e :U 147 ]
-"72
-[; ;GY-521.c: 72:     I2C_Master_Write(0x3B);
-[e ( _I2C_Master_Write (1 -> -> 59 `i `uc ]
 "73
-[; ;GY-521.c: 73:     while (SSPCON2bits.ACKSTAT);
+[; ;GY-521.c: 73:     I2C_Master_Write(0x3B);
+[e ( _I2C_Master_Write (1 -> -> 59 `i `uc ]
+"74
+[; ;GY-521.c: 74:     while (SSPCON2bits.ACKSTAT);
 [e $U 148  ]
 [e :U 149 ]
 [e :U 148 ]
 [e $ != -> . . _SSPCON2bits 0 6 `i -> 0 `i 149  ]
 [e :U 150 ]
-"74
-[; ;GY-521.c: 74:     I2C_Master_RepeatedStart();
-[e ( _I2C_Master_RepeatedStart ..  ]
 "75
-[; ;GY-521.c: 75:     I2C_Master_Write(0xD1);
+[; ;GY-521.c: 75:     I2C_Master_RepeatedStart();
+[e ( _I2C_Master_RepeatedStart ..  ]
+"76
+[; ;GY-521.c: 76:     I2C_Master_Write(0xD1);
 [e ( _I2C_Master_Write (1 -> -> 209 `i `uc ]
-"77
-[; ;GY-521.c: 77:     for (int i = 0; i < 13; i++) val[i] = I2C_Read(0);
+"78
+[; ;GY-521.c: 78:     for (int i = 0; i < 13; i++) val[i] = I2C_Read(0);
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -431,125 +431,125 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ < _i -> 13 `i 151  ]
 [e :U 152 ]
 }
-"78
-[; ;GY-521.c: 78:     val[13] = I2C_Read(1);
-[e = *U + &U _val * -> -> -> 13 `i `ui `ux -> -> # *U &U _val `ui `ux -> ( _I2C_Read (1 -> -> 1 `i `uc `uc ]
 "79
-[; ;GY-521.c: 79:     I2C_Master_Stop();
+[; ;GY-521.c: 79:     val[13] = I2C_Read(1);
+[e = *U + &U _val * -> -> -> 13 `i `ui `ux -> -> # *U &U _val `ui `ux -> ( _I2C_Read (1 -> -> 1 `i `uc `uc ]
+"80
+[; ;GY-521.c: 80:     I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
-"81
-[; ;GY-521.c: 81:     almacenar1[0] = ((int) val[0] << 8) | ((int) val[1]);
-[e = *U + &U _almacenar1 * -> -> -> 0 `i `ui `ux -> -> # *U &U _almacenar1 `ui `ux | << -> *U + &U _val * -> -> -> 0 `i `ui `ux -> -> # *U &U _val `ui `ux `i -> 8 `i -> *U + &U _val * -> -> -> 1 `i `ui `ux -> -> # *U &U _val `ui `ux `i ]
 "82
-[; ;GY-521.c: 82:     almacenar1[1] = ((int) val[2] << 8) | ((int) val[3]);
-[e = *U + &U _almacenar1 * -> -> -> 1 `i `ui `ux -> -> # *U &U _almacenar1 `ui `ux | << -> *U + &U _val * -> -> -> 2 `i `ui `ux -> -> # *U &U _val `ui `ux `i -> 8 `i -> *U + &U _val * -> -> -> 3 `i `ui `ux -> -> # *U &U _val `ui `ux `i ]
+[; ;GY-521.c: 82:     almacenar1[0] = ((int) val[0] << 8) | ((int) val[1]);
+[e = *U + &U _almacenar1 * -> -> -> 0 `i `ui `ux -> -> # *U &U _almacenar1 `ui `ux | << -> *U + &U _val * -> -> -> 0 `i `ui `ux -> -> # *U &U _val `ui `ux `i -> 8 `i -> *U + &U _val * -> -> -> 1 `i `ui `ux -> -> # *U &U _val `ui `ux `i ]
 "83
-[; ;GY-521.c: 83:     almacenar1[2] = ((int) val[4] << 8) | ((int) val[5]);
-[e = *U + &U _almacenar1 * -> -> -> 2 `i `ui `ux -> -> # *U &U _almacenar1 `ui `ux | << -> *U + &U _val * -> -> -> 4 `i `ui `ux -> -> # *U &U _val `ui `ux `i -> 8 `i -> *U + &U _val * -> -> -> 5 `i `ui `ux -> -> # *U &U _val `ui `ux `i ]
+[; ;GY-521.c: 83:     almacenar1[1] = ((int) val[2] << 8) | ((int) val[3]);
+[e = *U + &U _almacenar1 * -> -> -> 1 `i `ui `ux -> -> # *U &U _almacenar1 `ui `ux | << -> *U + &U _val * -> -> -> 2 `i `ui `ux -> -> # *U &U _val `ui `ux `i -> 8 `i -> *U + &U _val * -> -> -> 3 `i `ui `ux -> -> # *U &U _val `ui `ux `i ]
 "84
-[; ;GY-521.c: 84:     almacenar1[3] = ((int) val[6] << 8) | ((int) val[7]);
-[e = *U + &U _almacenar1 * -> -> -> 3 `i `ui `ux -> -> # *U &U _almacenar1 `ui `ux | << -> *U + &U _val * -> -> -> 6 `i `ui `ux -> -> # *U &U _val `ui `ux `i -> 8 `i -> *U + &U _val * -> -> -> 7 `i `ui `ux -> -> # *U &U _val `ui `ux `i ]
+[; ;GY-521.c: 84:     almacenar1[2] = ((int) val[4] << 8) | ((int) val[5]);
+[e = *U + &U _almacenar1 * -> -> -> 2 `i `ui `ux -> -> # *U &U _almacenar1 `ui `ux | << -> *U + &U _val * -> -> -> 4 `i `ui `ux -> -> # *U &U _val `ui `ux `i -> 8 `i -> *U + &U _val * -> -> -> 5 `i `ui `ux -> -> # *U &U _val `ui `ux `i ]
 "85
-[; ;GY-521.c: 85:     almacenar1[4] = ((int) val[8] << 8) | ((int) val[9]);
-[e = *U + &U _almacenar1 * -> -> -> 4 `i `ui `ux -> -> # *U &U _almacenar1 `ui `ux | << -> *U + &U _val * -> -> -> 8 `i `ui `ux -> -> # *U &U _val `ui `ux `i -> 8 `i -> *U + &U _val * -> -> -> 9 `i `ui `ux -> -> # *U &U _val `ui `ux `i ]
+[; ;GY-521.c: 85:     almacenar1[3] = ((int) val[6] << 8) | ((int) val[7]);
+[e = *U + &U _almacenar1 * -> -> -> 3 `i `ui `ux -> -> # *U &U _almacenar1 `ui `ux | << -> *U + &U _val * -> -> -> 6 `i `ui `ux -> -> # *U &U _val `ui `ux `i -> 8 `i -> *U + &U _val * -> -> -> 7 `i `ui `ux -> -> # *U &U _val `ui `ux `i ]
 "86
-[; ;GY-521.c: 86:     almacenar1[5] = ((int) val[10] << 8) | ((int) val[11]);
-[e = *U + &U _almacenar1 * -> -> -> 5 `i `ui `ux -> -> # *U &U _almacenar1 `ui `ux | << -> *U + &U _val * -> -> -> 10 `i `ui `ux -> -> # *U &U _val `ui `ux `i -> 8 `i -> *U + &U _val * -> -> -> 11 `i `ui `ux -> -> # *U &U _val `ui `ux `i ]
+[; ;GY-521.c: 86:     almacenar1[4] = ((int) val[8] << 8) | ((int) val[9]);
+[e = *U + &U _almacenar1 * -> -> -> 4 `i `ui `ux -> -> # *U &U _almacenar1 `ui `ux | << -> *U + &U _val * -> -> -> 8 `i `ui `ux -> -> # *U &U _val `ui `ux `i -> 8 `i -> *U + &U _val * -> -> -> 9 `i `ui `ux -> -> # *U &U _val `ui `ux `i ]
 "87
-[; ;GY-521.c: 87:     almacenar1[6] = ((int) val[12] << 8) | ((int) val[13]);
+[; ;GY-521.c: 87:     almacenar1[5] = ((int) val[10] << 8) | ((int) val[11]);
+[e = *U + &U _almacenar1 * -> -> -> 5 `i `ui `ux -> -> # *U &U _almacenar1 `ui `ux | << -> *U + &U _val * -> -> -> 10 `i `ui `ux -> -> # *U &U _val `ui `ux `i -> 8 `i -> *U + &U _val * -> -> -> 11 `i `ui `ux -> -> # *U &U _val `ui `ux `i ]
+"88
+[; ;GY-521.c: 88:     almacenar1[6] = ((int) val[12] << 8) | ((int) val[13]);
 [e = *U + &U _almacenar1 * -> -> -> 6 `i `ui `ux -> -> # *U &U _almacenar1 `ui `ux | << -> *U + &U _val * -> -> -> 12 `i `ui `ux -> -> # *U &U _val `ui `ux `i -> 8 `i -> *U + &U _val * -> -> -> 13 `i `ui `ux -> -> # *U &U _val `ui `ux `i ]
-"90
-[; ;GY-521.c: 90: https:
+"91
+[; ;GY-521.c: 91: https:
 [e :U 154 ]
-"92
-[; ;GY-521.c: 92:     final[0] = ((float) almacenar1[0]) * 0.0005982;
-[e = *U + &U _final * -> -> -> 0 `i `ui `ux -> -> # *U &U _final `ui `ux -> * -> -> *U + &U _almacenar1 * -> -> -> 0 `i `ui `ux -> -> # *U &U _almacenar1 `ui `ux `f `d .0.0005982 `f ]
 "93
-[; ;GY-521.c: 93:     final[1] = ((float) almacenar1[1]) * 0.0005982;
-[e = *U + &U _final * -> -> -> 1 `i `ui `ux -> -> # *U &U _final `ui `ux -> * -> -> *U + &U _almacenar1 * -> -> -> 1 `i `ui `ux -> -> # *U &U _almacenar1 `ui `ux `f `d .0.0005982 `f ]
+[; ;GY-521.c: 93:     final[0] = ((float) almacenar1[0]) * 0.0005982;
+[e = *U + &U _final * -> -> -> 0 `i `ui `ux -> -> # *U &U _final `ui `ux -> * -> -> *U + &U _almacenar1 * -> -> -> 0 `i `ui `ux -> -> # *U &U _almacenar1 `ui `ux `f `d .0.0005982 `f ]
 "94
-[; ;GY-521.c: 94:     final[2] = ((float) almacenar1[2]) * 0.0005982;
-[e = *U + &U _final * -> -> -> 2 `i `ui `ux -> -> # *U &U _final `ui `ux -> * -> -> *U + &U _almacenar1 * -> -> -> 2 `i `ui `ux -> -> # *U &U _almacenar1 `ui `ux `f `d .0.0005982 `f ]
+[; ;GY-521.c: 94:     final[1] = ((float) almacenar1[1]) * 0.0005982;
+[e = *U + &U _final * -> -> -> 1 `i `ui `ux -> -> # *U &U _final `ui `ux -> * -> -> *U + &U _almacenar1 * -> -> -> 1 `i `ui `ux -> -> # *U &U _almacenar1 `ui `ux `f `d .0.0005982 `f ]
 "95
-[; ;GY-521.c: 95:     final[3] = ((float) almacenar1[3]) / 340 + 36.53;
-[e = *U + &U _final * -> -> -> 3 `i `ui `ux -> -> # *U &U _final `ui `ux -> + -> / -> *U + &U _almacenar1 * -> -> -> 3 `i `ui `ux -> -> # *U &U _almacenar1 `ui `ux `f -> -> 340 `i `f `d .36.53 `f ]
+[; ;GY-521.c: 95:     final[2] = ((float) almacenar1[2]) * 0.0005982;
+[e = *U + &U _final * -> -> -> 2 `i `ui `ux -> -> # *U &U _final `ui `ux -> * -> -> *U + &U _almacenar1 * -> -> -> 2 `i `ui `ux -> -> # *U &U _almacenar1 `ui `ux `f `d .0.0005982 `f ]
 "96
-[; ;GY-521.c: 96:     final[4] = ((float) almacenar1[4]) * 0.00763;
-[e = *U + &U _final * -> -> -> 4 `i `ui `ux -> -> # *U &U _final `ui `ux -> * -> -> *U + &U _almacenar1 * -> -> -> 4 `i `ui `ux -> -> # *U &U _almacenar1 `ui `ux `f `d .0.00763 `f ]
+[; ;GY-521.c: 96:     final[3] = ((float) almacenar1[3]) / 340 + 36.53;
+[e = *U + &U _final * -> -> -> 3 `i `ui `ux -> -> # *U &U _final `ui `ux -> + -> / -> *U + &U _almacenar1 * -> -> -> 3 `i `ui `ux -> -> # *U &U _almacenar1 `ui `ux `f -> -> 340 `i `f `d .36.53 `f ]
 "97
-[; ;GY-521.c: 97:     final[5] = ((float) almacenar1[5]) * 0.00763;
-[e = *U + &U _final * -> -> -> 5 `i `ui `ux -> -> # *U &U _final `ui `ux -> * -> -> *U + &U _almacenar1 * -> -> -> 5 `i `ui `ux -> -> # *U &U _almacenar1 `ui `ux `f `d .0.00763 `f ]
+[; ;GY-521.c: 97:     final[4] = ((float) almacenar1[4]) * 0.00763;
+[e = *U + &U _final * -> -> -> 4 `i `ui `ux -> -> # *U &U _final `ui `ux -> * -> -> *U + &U _almacenar1 * -> -> -> 4 `i `ui `ux -> -> # *U &U _almacenar1 `ui `ux `f `d .0.00763 `f ]
 "98
-[; ;GY-521.c: 98:     final[6] = ((float) almacenar1[6]) * 0.00763;
+[; ;GY-521.c: 98:     final[5] = ((float) almacenar1[5]) * 0.00763;
+[e = *U + &U _final * -> -> -> 5 `i `ui `ux -> -> # *U &U _final `ui `ux -> * -> -> *U + &U _almacenar1 * -> -> -> 5 `i `ui `ux -> -> # *U &U _almacenar1 `ui `ux `f `d .0.00763 `f ]
+"99
+[; ;GY-521.c: 99:     final[6] = ((float) almacenar1[6]) * 0.00763;
 [e = *U + &U _final * -> -> -> 6 `i `ui `ux -> -> # *U &U _final `ui `ux -> * -> -> *U + &U _almacenar1 * -> -> -> 6 `i `ui `ux -> -> # *U &U _almacenar1 `ui `ux `f `d .0.00763 `f ]
-"101
-[; ;GY-521.c: 101:     impresion = ftoa(final[0], 2);
-[e = _impresion ( _ftoa (2 , *U + &U _final * -> -> -> 0 `i `ui `ux -> -> # *U &U _final `ui `ux -> -> 2 `i `*i ]
 "102
-[; ;GY-521.c: 102:     UARTSendString(impresion, 6);
+[; ;GY-521.c: 102:     impresion = ftoa(final[0], 2);
+[e = _impresion ( _ftoa (2 , *U + &U _final * -> -> -> 0 `i `ui `ux -> -> # *U &U _final `ui `ux -> -> 2 `i `*i ]
+"103
+[; ;GY-521.c: 103:     UARTSendString(impresion, 6);
 [e ( _UARTSendString (2 , -> _impresion `*Cuc -> -> 6 `i `uc ]
-"104
-[; ;GY-521.c: 104:     impresion = ftoa(final[1], 2);
-[e = _impresion ( _ftoa (2 , *U + &U _final * -> -> -> 1 `i `ui `ux -> -> # *U &U _final `ui `ux -> -> 2 `i `*i ]
 "105
-[; ;GY-521.c: 105:     UARTSendString(" ", 10);
-[e ( _UARTSendString (2 , :s 1C -> -> 10 `i `uc ]
+[; ;GY-521.c: 105:     impresion = ftoa(final[1], 2);
+[e = _impresion ( _ftoa (2 , *U + &U _final * -> -> -> 1 `i `ui `ux -> -> # *U &U _final `ui `ux -> -> 2 `i `*i ]
 "106
-[; ;GY-521.c: 106:     UARTSendString(impresion, 6);
+[; ;GY-521.c: 106:     UARTSendString(" ", 10);
+[e ( _UARTSendString (2 , :s 1C -> -> 10 `i `uc ]
+"107
+[; ;GY-521.c: 107:     UARTSendString(impresion, 6);
 [e ( _UARTSendString (2 , -> _impresion `*Cuc -> -> 6 `i `uc ]
-"108
-[; ;GY-521.c: 108:     impresion = ftoa(final[2], 2);
-[e = _impresion ( _ftoa (2 , *U + &U _final * -> -> -> 2 `i `ui `ux -> -> # *U &U _final `ui `ux -> -> 2 `i `*i ]
 "109
-[; ;GY-521.c: 109:     UARTSendString(" ", 10);
-[e ( _UARTSendString (2 , :s 2C -> -> 10 `i `uc ]
+[; ;GY-521.c: 109:     impresion = ftoa(final[2], 2);
+[e = _impresion ( _ftoa (2 , *U + &U _final * -> -> -> 2 `i `ui `ux -> -> # *U &U _final `ui `ux -> -> 2 `i `*i ]
 "110
-[; ;GY-521.c: 110:     UARTSendString(impresion, 6);
+[; ;GY-521.c: 110:     UARTSendString(" ", 10);
+[e ( _UARTSendString (2 , :s 2C -> -> 10 `i `uc ]
+"111
+[; ;GY-521.c: 111:     UARTSendString(impresion, 6);
 [e ( _UARTSendString (2 , -> _impresion `*Cuc -> -> 6 `i `uc ]
-"112
-[; ;GY-521.c: 112:     impresion = ftoa(final[3], 2);
-[e = _impresion ( _ftoa (2 , *U + &U _final * -> -> -> 3 `i `ui `ux -> -> # *U &U _final `ui `ux -> -> 2 `i `*i ]
 "113
-[; ;GY-521.c: 113:     UARTSendString(" ", 10);
-[e ( _UARTSendString (2 , :s 3C -> -> 10 `i `uc ]
+[; ;GY-521.c: 113:     impresion = ftoa(final[3], 2);
+[e = _impresion ( _ftoa (2 , *U + &U _final * -> -> -> 3 `i `ui `ux -> -> # *U &U _final `ui `ux -> -> 2 `i `*i ]
 "114
-[; ;GY-521.c: 114:     UARTSendString(impresion, 6);
+[; ;GY-521.c: 114:     UARTSendString(" ", 10);
+[e ( _UARTSendString (2 , :s 3C -> -> 10 `i `uc ]
+"115
+[; ;GY-521.c: 115:     UARTSendString(impresion, 6);
 [e ( _UARTSendString (2 , -> _impresion `*Cuc -> -> 6 `i `uc ]
-"116
-[; ;GY-521.c: 116:     impresion = ftoa(final[4], 2);
-[e = _impresion ( _ftoa (2 , *U + &U _final * -> -> -> 4 `i `ui `ux -> -> # *U &U _final `ui `ux -> -> 2 `i `*i ]
 "117
-[; ;GY-521.c: 117:     UARTSendString(" ", 10);
-[e ( _UARTSendString (2 , :s 4C -> -> 10 `i `uc ]
+[; ;GY-521.c: 117:     impresion = ftoa(final[4], 2);
+[e = _impresion ( _ftoa (2 , *U + &U _final * -> -> -> 4 `i `ui `ux -> -> # *U &U _final `ui `ux -> -> 2 `i `*i ]
 "118
-[; ;GY-521.c: 118:     UARTSendString(impresion, 6);
-[e ( _UARTSendString (2 , -> _impresion `*Cuc -> -> 6 `i `uc ]
+[; ;GY-521.c: 118:     UARTSendString(" ", 10);
+[e ( _UARTSendString (2 , :s 4C -> -> 10 `i `uc ]
 "119
-[; ;GY-521.c: 119:     impresion = ftoa(final[5], 2);
-[e = _impresion ( _ftoa (2 , *U + &U _final * -> -> -> 5 `i `ui `ux -> -> # *U &U _final `ui `ux -> -> 2 `i `*i ]
+[; ;GY-521.c: 119:     UARTSendString(impresion, 6);
+[e ( _UARTSendString (2 , -> _impresion `*Cuc -> -> 6 `i `uc ]
 "120
-[; ;GY-521.c: 120:     UARTSendString(" ", 10);
-[e ( _UARTSendString (2 , :s 5C -> -> 10 `i `uc ]
+[; ;GY-521.c: 120:     impresion = ftoa(final[5], 2);
+[e = _impresion ( _ftoa (2 , *U + &U _final * -> -> -> 5 `i `ui `ux -> -> # *U &U _final `ui `ux -> -> 2 `i `*i ]
 "121
-[; ;GY-521.c: 121:     UARTSendString(impresion, 6);
+[; ;GY-521.c: 121:     UARTSendString(" ", 10);
+[e ( _UARTSendString (2 , :s 5C -> -> 10 `i `uc ]
+"122
+[; ;GY-521.c: 122:     UARTSendString(impresion, 6);
 [e ( _UARTSendString (2 , -> _impresion `*Cuc -> -> 6 `i `uc ]
-"123
-[; ;GY-521.c: 123:     impresion = ftoa(final[6], 2);
-[e = _impresion ( _ftoa (2 , *U + &U _final * -> -> -> 6 `i `ui `ux -> -> # *U &U _final `ui `ux -> -> 2 `i `*i ]
 "124
-[; ;GY-521.c: 124:     UARTSendString(" ", 10);
-[e ( _UARTSendString (2 , :s 6C -> -> 10 `i `uc ]
+[; ;GY-521.c: 124:     impresion = ftoa(final[6], 2);
+[e = _impresion ( _ftoa (2 , *U + &U _final * -> -> -> 6 `i `ui `ux -> -> # *U &U _final `ui `ux -> -> 2 `i `*i ]
 "125
-[; ;GY-521.c: 125:     UARTSendString(impresion, 6);
+[; ;GY-521.c: 125:     UARTSendString(" ", 10);
+[e ( _UARTSendString (2 , :s 6C -> -> 10 `i `uc ]
+"126
+[; ;GY-521.c: 126:     UARTSendString(impresion, 6);
 [e ( _UARTSendString (2 , -> _impresion `*Cuc -> -> 6 `i `uc ]
-"127
-[; ;GY-521.c: 127:     UARTSendChar('\n');
+"128
+[; ;GY-521.c: 128:     UARTSendChar('\n');
 [e ( _UARTSendChar (1 -> -> 10 `ui `uc ]
-"129
-[; ;GY-521.c: 129:     return;
-[e $UE 144  ]
 "130
-[; ;GY-521.c: 130: }
+[; ;GY-521.c: 130:     return;
+[e $UE 144  ]
+"131
+[; ;GY-521.c: 131: }
 [e :UE 144 ]
 }
 [a 1C 32 0 ]

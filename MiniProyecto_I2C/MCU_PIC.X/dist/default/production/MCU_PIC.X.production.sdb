@@ -37,9 +37,9 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"14 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\GY-521.c
+"15 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\GY-521.c
 [v _GY_init GY_init `(v  1 e 1 0 ]
-"65
+"66
 [v _GY_read GY_read `(v  1 e 1 0 ]
 "10 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\I2C.c
 [v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
@@ -63,7 +63,7 @@
 [v _ISR ISR `II(v  1 e 1 0 ]
 "69
 [v _main main `(v  1 e 1 0 ]
-"86
+"87
 [v _Setup Setup `(v  1 e 1 0 ]
 "9 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
 [v _UARTInit UARTInit `(v  1 e 1 0 ]
@@ -242,27 +242,27 @@
 "69
 [v _main main `(v  1 e 1 0 ]
 {
-"84
+"85
 } 0
-"86
+"87
 [v _Setup Setup `(v  1 e 1 0 ]
 {
-"99
+"100
 } 0
-"65 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\GY-521.c
+"66 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\GY-521.c
 [v _GY_read GY_read `(v  1 e 1 0 ]
 {
-"77
+"78
 [v GY_read@i i `i  1 a 2 60 ]
-"66
-[v GY_read@final final `[7]f  1 a 28 18 ]
-"68
-[v GY_read@val val `[14]uc  1 a 14 4 ]
-"69
-[v GY_read@almacenar1 almacenar1 `[7]i  1 a 14 46 ]
 "67
+[v GY_read@final final `[7]f  1 a 28 18 ]
+"69
+[v GY_read@val val `[14]uc  1 a 14 4 ]
+"70
+[v GY_read@almacenar1 almacenar1 `[7]i  1 a 14 46 ]
+"68
 [v GY_read@impresion impresion `*.4uc  1 a 1 62 ]
-"130
+"131
 } 0
 "6 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\ftoa.c
 [v _ftoa ftoa `(*.4uc  1 e 1 0 ]
@@ -495,10 +495,10 @@
 {
 "42
 } 0
-"14 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\GY-521.c
+"15 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\GY-521.c
 [v _GY_init GY_init `(v  1 e 1 0 ]
 {
-"63
+"64
 } 0
 "9 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
 [v _UARTInit UARTInit `(v  1 e 1 0 ]

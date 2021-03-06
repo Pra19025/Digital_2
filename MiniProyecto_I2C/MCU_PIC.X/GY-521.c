@@ -4,7 +4,8 @@
  *
  * Created on 25 de febrero de 2021, 06:27 PM
  */
-
+// se incluyen todas las librerías para poder enviar datos directamente desde esta función 
+//enviar por uart
 #include "I2C.h"
 #include "UART.h"
 #include "GY-521.h"
