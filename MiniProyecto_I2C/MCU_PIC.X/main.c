@@ -69,8 +69,7 @@ void __interrupt() ISR(void) {
 void main(void) {
     __delay_ms(1000);
     Setup();    //se colocan condiciones iniciales
-    //esta led es para ver si el programa corre de manera normal
-    PORTAbits.RA3 = ~PORTAbits.RA3;
+    
     GY_init();  //se mandan las direcciones para comunicarse y configurar el sensor
 
 

@@ -63,7 +63,7 @@
 [v _ISR ISR `II(v  1 e 1 0 ]
 "69
 [v _main main `(v  1 e 1 0 ]
-"87
+"86
 [v _Setup Setup `(v  1 e 1 0 ]
 "9 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\UART.c
 [v _UARTInit UARTInit `(v  1 e 1 0 ]
@@ -242,12 +242,12 @@
 "69
 [v _main main `(v  1 e 1 0 ]
 {
-"85
+"84
 } 0
-"87
+"86
 [v _Setup Setup `(v  1 e 1 0 ]
 {
-"100
+"99
 } 0
 "66 C:\Users\noelp\Documents\GitHub\Digital_2\MiniProyecto_I2C\MCU_PIC.X\GY-521.c
 [v _GY_read GY_read `(v  1 e 1 0 ]

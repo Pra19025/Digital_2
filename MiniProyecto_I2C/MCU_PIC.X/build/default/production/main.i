@@ -2936,7 +2936,6 @@ void main(void) {
     _delay((unsigned long)((1000)*(4000000/4000.0)));
     Setup();
 
-    PORTAbits.RA3 = ~PORTAbits.RA3;
     GY_init();
 
 
