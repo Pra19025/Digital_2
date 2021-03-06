@@ -2882,10 +2882,8 @@ uint8_t UARTReadString(char *buf, uint8_t max_length);
 
 
 
-
-
 void GY_init(void);
-void GY_read(float*);
+void GY_read();
 # 14 "main.c" 2
 
 
@@ -2904,15 +2902,7 @@ void GY_read(float*);
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
-
-
-
-
-
-
-char* buf;
-int entero;
-float datos[7];
+# 40 "main.c"
 char entrada;
 
 
@@ -2945,43 +2935,15 @@ void __attribute__((picinterrupt(("")))) ISR(void) {
 void main(void) {
     _delay((unsigned long)((1000)*(4000000/4000.0)));
     Setup();
-    I2C_Master_Init();
-    UARTInit(9600, 1);
+
     GY_init();
 
 
 
     while (1) {
-        GY_read(datos);
+        GY_read();
 
 
-        buf = ftoa(datos[0], entero);
-        UARTSendString(buf, 6);
-
-        buf = ftoa(datos[1], entero);
-        UARTSendString(" ", 10);
-        UARTSendString(buf, 6);
-
-        buf = ftoa(datos[2], entero);
-        UARTSendString(" ", 10);
-        UARTSendString(buf, 6);
-
-        buf = ftoa(datos[3], entero);
-        UARTSendString(" ", 10);
-        UARTSendString(buf, 6);
-
-        buf = ftoa(datos[4], entero);
-        UARTSendString(" ", 10);
-        UARTSendString(buf, 6);
-        buf = ftoa(datos[5], entero);
-        UARTSendString(" ", 10);
-        UARTSendString(buf, 6);
-
-        buf = ftoa(datos[6], entero);
-        UARTSendString(" ", 10);
-        UARTSendString(buf, 6);
-
-        UARTSendChar('\n');
 
     }
     return;
