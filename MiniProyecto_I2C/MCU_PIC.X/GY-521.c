@@ -86,6 +86,9 @@ void GY_read(float* datos) {
     guardar[5] = ((int) valores[10] << 8) | ((int) valores[11]);
     guardar[6] = ((int) valores[12] << 8) | ((int) valores[13]);
     
+    //los valores por los que se multiplican fueron obtenidos de 
+    https://deepbluembedded.com/mpu6050-with-microchip-pic-accelerometer-gyroscope-interfacing-with-pic/
+    //al multiplicar por estos valores lo que era raw data se convierte en datos interpretables. 
     datos[0] = ((float) guardar[0]) * 0.0005982; //Ax
     datos[1] = ((float) guardar[1]) * 0.0005982; //Ay
     datos[2] = ((float) guardar[2]) * 0.0005982; // Az
