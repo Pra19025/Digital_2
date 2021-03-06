@@ -408,7 +408,7 @@
 [v GY_read@datos datos `*.4f  1 a 1 wreg ]
 "70
 [v GY_read@datos datos `*.4f  1 a 1 30 ]
-"100
+"103
 } 0
 "10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]

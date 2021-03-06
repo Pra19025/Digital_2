@@ -456,31 +456,34 @@ Version 4.0 HI-TECH Software Intermediate Code
 "87
 [; ;GY-521.c: 87:     guardar[6] = ((int) valores[12] << 8) | ((int) valores[13]);
 [e = *U + &U _guardar * -> -> -> 6 `i `ui `ux -> -> # *U &U _guardar `ui `ux | << -> *U + &U _valores * -> -> -> 12 `i `ui `ux -> -> # *U &U _valores `ui `ux `i -> 8 `i -> *U + &U _valores * -> -> -> 13 `i `ui `ux -> -> # *U &U _valores `ui `ux `i ]
-"89
-[; ;GY-521.c: 89:     datos[0] = ((float) guardar[0]) * 0.0005982;
-[e = *U + _datos * -> -> 0 `i `x -> -> # *U _datos `i `x -> * -> -> *U + &U _guardar * -> -> -> 0 `i `ui `ux -> -> # *U &U _guardar `ui `ux `f `d .0.0005982 `f ]
 "90
-[; ;GY-521.c: 90:     datos[1] = ((float) guardar[1]) * 0.0005982;
-[e = *U + _datos * -> -> 1 `i `x -> -> # *U _datos `i `x -> * -> -> *U + &U _guardar * -> -> -> 1 `i `ui `ux -> -> # *U &U _guardar `ui `ux `f `d .0.0005982 `f ]
-"91
-[; ;GY-521.c: 91:     datos[2] = ((float) guardar[2]) * 0.0005982;
-[e = *U + _datos * -> -> 2 `i `x -> -> # *U _datos `i `x -> * -> -> *U + &U _guardar * -> -> -> 2 `i `ui `ux -> -> # *U &U _guardar `ui `ux `f `d .0.0005982 `f ]
+[; ;GY-521.c: 90:     https:
+[e :U 149 ]
 "92
-[; ;GY-521.c: 92:     datos[3] = ((float) guardar[3])/340 + 36.53;
-[e = *U + _datos * -> -> 3 `i `x -> -> # *U _datos `i `x -> + -> / -> *U + &U _guardar * -> -> -> 3 `i `ui `ux -> -> # *U &U _guardar `ui `ux `f -> -> 340 `i `f `d .36.53 `f ]
+[; ;GY-521.c: 92:     datos[0] = ((float) guardar[0]) * 0.0005982;
+[e = *U + _datos * -> -> 0 `i `x -> -> # *U _datos `i `x -> * -> -> *U + &U _guardar * -> -> -> 0 `i `ui `ux -> -> # *U &U _guardar `ui `ux `f `d .0.0005982 `f ]
 "93
-[; ;GY-521.c: 93:     datos[4] = ((float) guardar[4]) * 0.00763;
-[e = *U + _datos * -> -> 4 `i `x -> -> # *U _datos `i `x -> * -> -> *U + &U _guardar * -> -> -> 4 `i `ui `ux -> -> # *U &U _guardar `ui `ux `f `d .0.00763 `f ]
+[; ;GY-521.c: 93:     datos[1] = ((float) guardar[1]) * 0.0005982;
+[e = *U + _datos * -> -> 1 `i `x -> -> # *U _datos `i `x -> * -> -> *U + &U _guardar * -> -> -> 1 `i `ui `ux -> -> # *U &U _guardar `ui `ux `f `d .0.0005982 `f ]
 "94
-[; ;GY-521.c: 94:     datos[5] = ((float) guardar[5]) * 0.00763;
-[e = *U + _datos * -> -> 5 `i `x -> -> # *U _datos `i `x -> * -> -> *U + &U _guardar * -> -> -> 5 `i `ui `ux -> -> # *U &U _guardar `ui `ux `f `d .0.00763 `f ]
+[; ;GY-521.c: 94:     datos[2] = ((float) guardar[2]) * 0.0005982;
+[e = *U + _datos * -> -> 2 `i `x -> -> # *U _datos `i `x -> * -> -> *U + &U _guardar * -> -> -> 2 `i `ui `ux -> -> # *U &U _guardar `ui `ux `f `d .0.0005982 `f ]
 "95
-[; ;GY-521.c: 95:     datos[6] = ((float) guardar[6]) * 0.00763;
+[; ;GY-521.c: 95:     datos[3] = ((float) guardar[3])/340 + 36.53;
+[e = *U + _datos * -> -> 3 `i `x -> -> # *U _datos `i `x -> + -> / -> *U + &U _guardar * -> -> -> 3 `i `ui `ux -> -> # *U &U _guardar `ui `ux `f -> -> 340 `i `f `d .36.53 `f ]
+"96
+[; ;GY-521.c: 96:     datos[4] = ((float) guardar[4]) * 0.00763;
+[e = *U + _datos * -> -> 4 `i `x -> -> # *U _datos `i `x -> * -> -> *U + &U _guardar * -> -> -> 4 `i `ui `ux -> -> # *U &U _guardar `ui `ux `f `d .0.00763 `f ]
+"97
+[; ;GY-521.c: 97:     datos[5] = ((float) guardar[5]) * 0.00763;
+[e = *U + _datos * -> -> 5 `i `x -> -> # *U _datos `i `x -> * -> -> *U + &U _guardar * -> -> -> 5 `i `ui `ux -> -> # *U &U _guardar `ui `ux `f `d .0.00763 `f ]
+"98
+[; ;GY-521.c: 98:     datos[6] = ((float) guardar[6]) * 0.00763;
 [e = *U + _datos * -> -> 6 `i `x -> -> # *U _datos `i `x -> * -> -> *U + &U _guardar * -> -> -> 6 `i `ui `ux -> -> # *U &U _guardar `ui `ux `f `d .0.00763 `f ]
-"99
-[; ;GY-521.c: 99:     return;
+"102
+[; ;GY-521.c: 102:     return;
 [e $UE 139  ]
-"100
-[; ;GY-521.c: 100: }
+"103
+[; ;GY-521.c: 103: }
 [e :UE 139 ]
 }

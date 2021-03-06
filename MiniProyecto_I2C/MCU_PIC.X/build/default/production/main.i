@@ -2934,10 +2934,10 @@ void __attribute__((picinterrupt(("")))) ISR(void) {
             PORTAbits.RA0 = 0;
         }
         if (entrada == 'C') {
-            PORTAbits.RA0 = 1;
+            PORTAbits.RA1 = 1;
         }
         if (entrada == 'D') {
-            PORTAbits.RA0 = 0;
+            PORTAbits.RA1 = 0;
         }
     }
 }

@@ -355,7 +355,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 26:             PORTAbits.RA0 = 0;
 [p x LVP  =  OFF         ]
 "29
-[; ;main.c: 29:             PORTAbits.RA0 = 1;
+[; ;main.c: 29:             PORTAbits.RA1 = 1;
 [p x BOR4V  =  BOR40V    ]
 "30
 [; ;main.c: 30:         }
@@ -414,7 +414,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "61
 [; ;main.c: 61:         buf = ftoa(datos[3], entero);
-[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+[e = . . _PORTAbits 0 1 -> -> 1 `i `uc ]
 "62
 [; ;main.c: 62:         UARTSendString(" ", 10);
 }
@@ -425,7 +425,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "64
 [; ;main.c: 64: 
-[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+[e = . . _PORTAbits 0 1 -> -> 0 `i `uc ]
 "65
 [; ;main.c: 65:         buf = ftoa(datos[4], entero);
 }

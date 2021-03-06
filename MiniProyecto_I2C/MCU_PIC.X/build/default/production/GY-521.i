@@ -2738,6 +2738,9 @@ void GY_read(float* datos) {
     guardar[5] = ((int) valores[10] << 8) | ((int) valores[11]);
     guardar[6] = ((int) valores[12] << 8) | ((int) valores[13]);
 
+
+    https:
+
     datos[0] = ((float) guardar[0]) * 0.0005982;
     datos[1] = ((float) guardar[1]) * 0.0005982;
     datos[2] = ((float) guardar[2]) * 0.0005982;
