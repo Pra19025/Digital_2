@@ -2,6 +2,11 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/noelp/Documents/GitHub/Digital_2/MiniProyecto_I2C/MCU_PIC.X/main.c</file>
+            <file>file:/C:/Users/noelp/Documents/GitHub/Digital_2/MiniProyecto_I2C/MCU_PIC.X/I2C.c</file>
+            <file>file:/C:/Users/noelp/Documents/GitHub/Digital_2/MiniProyecto_I2C/MCU_PIC.X/UART.c</file>
+            <file>file:/C:/Users/noelp/Documents/GitHub/Digital_2/MiniProyecto_I2C/MCU_PIC.X/GY-521.c</file>
+        </group>
     </open-files>
 </project-private>
