@@ -100,8 +100,8 @@ void varP1(AdafruitIO_Data *data){
   Serial.print("received <- ");
   valor1 =  data->value();
   Serial.println(valor1);
-  if(*valor1 == '1') Serial2.print('A'); 
-  else Serial2.print('B'); 
+  if(*valor1 == '1') Serial2.print('led1on'); 
+  else Serial2.print('led1off'); 
   return;
 }
 
@@ -109,7 +109,7 @@ void varP2(AdafruitIO_Data *data){
   Serial.print("received <- ");
   valor2 =  data->value(); 
   Serial.println(valor2);
-  if(*valor2 == '1') Serial2.print('C'); 
-  else Serial2.print('D'); 
+  if(*valor2 == '1') Serial2.print('led2on'); 
+  else Serial2.print('led2off'); 
   return;
 }

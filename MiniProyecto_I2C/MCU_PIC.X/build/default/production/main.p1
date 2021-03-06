@@ -351,8 +351,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 53:         entrada = RCREG;
 [e = _entrada -> _RCREG `uc ]
 "54
-[; ;main.c: 54:         if (entrada == 'A') {
-[e $ ! == -> _entrada `ui -> 65 `ui 145  ]
+[; ;main.c: 54:         if (entrada == 'led1on') {
+[e $ ! == -> _entrada `ui -> 28526 `ui 145  ]
 {
 "55
 [; ;main.c: 55:             PORTAbits.RA0 = 1;
@@ -362,8 +362,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 145 ]
 "57
-[; ;main.c: 57:         if (entrada == 'B') {
-[e $ ! == -> _entrada `ui -> 66 `ui 146  ]
+[; ;main.c: 57:         if (entrada == 'led1off') {
+[e $ ! == -> _entrada `ui -> 26214 `ui 146  ]
 {
 "58
 [; ;main.c: 58:             PORTAbits.RA0 = 0;
@@ -373,8 +373,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 146 ]
 "60
-[; ;main.c: 60:         if (entrada == 'C') {
-[e $ ! == -> _entrada `ui -> 67 `ui 147  ]
+[; ;main.c: 60:         if (entrada == 'led2on') {
+[e $ ! == -> _entrada `ui -> 28526 `ui 147  ]
 {
 "61
 [; ;main.c: 61:             PORTAbits.RA1 = 1;
@@ -384,8 +384,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 147 ]
 "63
-[; ;main.c: 63:         if (entrada == 'D') {
-[e $ ! == -> _entrada `ui -> 68 `ui 148  ]
+[; ;main.c: 63:         if (entrada == 'led2off') {
+[e $ ! == -> _entrada `ui -> 26214 `ui 148  ]
 {
 "64
 [; ;main.c: 64:             PORTAbits.RA1 = 0;

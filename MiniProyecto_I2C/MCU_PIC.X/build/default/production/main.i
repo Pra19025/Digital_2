@@ -2917,16 +2917,16 @@ void __attribute__((picinterrupt(("")))) ISR(void) {
 
     if (PIR1bits.RCIF) {
         entrada = RCREG;
-        if (entrada == 'A') {
+        if (entrada == 'led1on') {
             PORTAbits.RA0 = 1;
         }
-        if (entrada == 'B') {
+        if (entrada == 'led1off') {
             PORTAbits.RA0 = 0;
         }
-        if (entrada == 'C') {
+        if (entrada == 'led2on') {
             PORTAbits.RA1 = 1;
         }
-        if (entrada == 'D') {
+        if (entrada == 'led2off') {
             PORTAbits.RA1 = 0;
         }
     }
