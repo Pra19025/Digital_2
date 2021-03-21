@@ -1,3 +1,8 @@
+//Noel Prado  19025
+//Laboratorio 4
+
+//variables
+
 //PARA DEBOUNCE 1
 int ledState = HIGH;         // the current state of the output pin
 int buttonState;             // the current reading from the input pin
@@ -23,16 +28,18 @@ long lastDebounceTime3 = 0;  // the last time the output pin was toggled
 long debounceDelay3 = 50;    // the debounce time; increase if the output flickers
 
 
-//variables
 int contador1 = 0;
 int contador2 = 0;
 
+int port1[] = {PB_5, PB_0, PB_1, PE_4, PE_5, PB_4, PA_5, PA_6, PA_7};
+int port2[] = {PB_2, PF_3, PB_7, PB_6, PA_4, PF_4, PD_7, PD_6, PF_2};
 
 
 
 //prototipos de funciones
 void semaforo(void);
 void boton1(void);
+void boton2 (void);
 
 
 void setup() {
@@ -51,9 +58,33 @@ void setup() {
   pinMode(PE_4, OUTPUT);
   pinMode(PB_1, OUTPUT);
   pinMode(PB_0, OUTPUT);
+  pinMode(PB_5, OUTPUT);
+
+  pinMode(PB_2, OUTPUT);
+  pinMode(PF_3, OUTPUT);
+  pinMode(PB_7, OUTPUT);
+  pinMode(PB_6, OUTPUT);
+  pinMode(PA_4, OUTPUT);
+  pinMode(PF_4, OUTPUT);
+  pinMode(PD_7, OUTPUT);
+  pinMode(PD_6, OUTPUT);
+  pinMode(PF_2, OUTPUT);
+  //  for (int i=0; i < 9; i++) {
+  //    pinMode(port2[i], OUTPUT);
+  //
+  //  }
+
 }
 
 void loop() {
+
+
+
+
+
+
+  //botones y sus antirebotes
+  //---------------------------------------------------------------------------------
   //BOTON 1
   int reading = digitalRead(buttonPin);
   if (reading != lastButtonState) {
@@ -76,20 +107,45 @@ void loop() {
 
   if ((millis() - lastDebounceTime2) > debounceDelay2) {
     buttonState2 = reading2;
-    if (buttonState2 == 0) {
-     delay(100);
-      boton1();
-      
-      contador1++;
-    }
 
+    if (reading2 == 0) {
+      delay(10);
+      //se agrego esto para que no se cuenten los avances si no se suelta el boton
+      reading2 = digitalRead(buttonPin2);
+      if (reading2 == 1) {
+        boton1();
+        buttonState2 = 1;
+        contador1++;
+      }
+    }
+  }
+
+  //BOTON 3
+  int reading3 = digitalRead(buttonPin3);
+  if (reading3 != lastButtonState3) {
+    lastDebounceTime3 = millis();
+  }
+
+  if ((millis() - lastDebounceTime3) > debounceDelay3) {
+    buttonState3 = reading3;
+
+    if (reading3 == 0) {
+      delay(10);
+      //se agrego esto para que no se cuenten los avances si no se suelta el boton
+      reading3 = digitalRead(buttonPin3);
+      if (reading3 == 1) {
+        boton2();
+        buttonState3 = 1;
+        contador2++;
+      }
+    }
   }
 
 
-
-
+  //---------------------------------------------------------------------------------
   lastButtonState = reading;
-
+  lastButtonState2 = reading2;
+  lastButtonState3 = reading3;
 
 
 
@@ -116,23 +172,16 @@ void semaforo(void) {
 
 void boton1(void) {
 
-  if (contador1 == 0) {
-    digitalWrite(PA_7, 1);
-    return;
+  for (int i = 0; i < 9; i++) {
+    digitalWrite(port1[i], i == contador1);
   }
 
+}
 
-  if (contador1 == 1) {
-    digitalWrite(PA_7, 0);
-    digitalWrite(PA_6, 1);
-    return;
-  }
+void boton2(void) {
 
-
-  if (contador1 == 2) {
-    digitalWrite(PA_5, 1);
-    digitalWrite(PA_6, 0);
-    return;
+  for (int i = 0; i < 9; i++) {
+    digitalWrite(port2[i], i == contador2);
   }
 
 }
