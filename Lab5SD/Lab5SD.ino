@@ -24,7 +24,7 @@
 #include <SPI.h>
 #include <SD.h>
 
-File root;
+File myFile;
 int inByte = 0;
 int control = 0;
 void setup()
@@ -52,7 +52,7 @@ void setup()
   Serial.println();
 
 
-  root = SD.open("/");
+  myFile = SD.open("/");
 
 
   //Serial.println("done!");
@@ -65,16 +65,70 @@ void loop()
   if (Serial.available()) {
     inByte = Serial.read();
     Serial.write(inByte);
-
+    
 
     if (inByte == '1') {
-      Serial.print("hola");
+
+      
+      myFile = SD.open("1mew.txt");
+      if (myFile) {
+        Serial.println("1mew.txt:");
+
+        // read from the file until there's nothing else in it:
+        while (myFile.available()) {
+          Serial.write(myFile.read());
+        }
+        // close the file:
+        myFile.close();
+      } else {
+        // if the file didn't open, print an error:
+        Serial.println("error opening test.txt");
+      }
     }
+
+      if (inByte == '2') {
+
+      
+      myFile = SD.open("2icono.txt");
+      if (myFile) {
+        Serial.println("2trifuerza.txt:");
+
+        // read from the file until there's nothing else in it:
+        while (myFile.available()) {
+          Serial.write(myFile.read());
+        }
+        // close the file:
+        myFile.close();
+      } else {
+        // if the file didn't open, print an error:
+        Serial.println("error opening test.txt");
+      }
+    }
+
+        if (inByte == '3') {
+
+      
+      myFile = SD.open("3pikachu.txt");
+      if (myFile) {
+        Serial.println("3pikachu.txt:");
+
+        // read from the file until there's nothing else in it:
+        while (myFile.available()) {
+          Serial.write(myFile.read());
+        }
+        // close the file:
+        myFile.close();
+      } else {
+        // if the file didn't open, print an error:
+        Serial.println("error opening test.txt");
+      }
+    }
+    
 
   }
   if (control == 0) {
     Serial.println("Seleccione que dibujo desea visualziar");
-    printDirectory(root, 0);
+    printDirectory(myFile, 0);
     control = 1;
     delay(1000);
   }
