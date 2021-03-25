@@ -4,7 +4,7 @@
 //variables
 
 //PARA DEBOUNCE 1
-int ledState = HIGH;         // the current state of the output pin
+
 int buttonState;             // the current reading from the input pin
 int lastButtonState = LOW;   // the previous reading from the input pin
 const int buttonPin = PUSH2;     // the number of the pushbutton pin
@@ -12,7 +12,7 @@ long lastDebounceTime = 0;  // the last time the output pin was toggled
 long debounceDelay = 50;    // the debounce time; increase if the output flickers
 
 //PARA DEBOUNCE 2
-int ledState2 = HIGH;         // the current state of the output pin
+
 int buttonState2;             // the current reading from the input pin
 int lastButtonState2 = LOW;   // the previous reading from the input pin
 const int buttonPin2 = PA_2;     // the number of the pushbutton pin
@@ -20,14 +20,14 @@ long lastDebounceTime2 = 0;  // the last time the output pin was toggled
 long debounceDelay2 = 50;    // the debounce time; increase if the output flickers
 
 //PARA DEBOUNCE 3
-int ledState3 = HIGH;         // the current state of the output pin
+
 int buttonState3;             // the current reading from the input pin
 int lastButtonState3 = LOW;   // the previous reading from the input pin
 const int buttonPin3 = PA_3;     // the number of the pushbutton pin
 long lastDebounceTime3 = 0;  // the last time the output pin was toggled
 long debounceDelay3 = 50;    // the debounce time; increase if the output flickers
 
-int ledState4 = HIGH;         // the current state of the output pin
+
 int buttonState4;             // the current reading from the input pin
 int lastButtonState4 = LOW;   // the previous reading from the input pin
 const int buttonPin4 = PUSH1;     // the number of the pushbutton pin
